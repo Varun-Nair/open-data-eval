@@ -1,0 +1,60 @@
+Section,Metric,Count
+Access Level,Open,78
+Access Level,Gated-Open,19
+Access Level,Restricted,10
+Access Level,Unavailable,1
+,,
+URL Status,Live,100
+URL Status,Live but broken,5
+URL Status,Redirect,2
+URL Status,Dead,1
+,,
+License Type,Not specified,74
+License Type,Custom Academic,14
+License Type,CC-BY-NC-4.0,12
+License Type,CC-BY-4.0,2
+License Type,CC-BY-NC-SA-4.0,2
+License Type,S-Lab License,1
+License Type,Mixed,1
+License Type,Custom Open,1
+License Type,CC-BY-NC-ND-4.0,1
+,,
+Modality,RGB video,108
+Modality,Eye gaze,32
+Modality,Depth,25
+Modality,Hand pose annotations,24
+Modality,IMU,23
+Modality,Body pose annotations,22
+Modality,Audio,19
+Modality,3D point clouds,14
+Modality,SLAM/odometry,10
+Modality,Narrations/captions,9
+Modality,3D scene reconstruction,8
+Modality,Motion capture,6
+Modality,Optical flow,2
+Modality,Multi-view,1
+Modality,Hand masks,1
+Modality,Object tracking,1
+Modality,mmWave,1
+,,
+Category,Hand-object interaction,15
+Category,Body pose,13
+Category,Industrial and procedural,11
+Category,Classic,10
+Category,Action recognition,10
+Category,Navigation and localization,10
+Category,Ego-exo cross-view,9
+Category,Gaze and eye tracking,7
+Category,Social interaction,6
+Category,Large-scale foundation,5
+Category,3D reconstruction,3
+Category,Object detection,3
+Category,VQA and language,2
+Category,Surgical,2
+Category,Video generation,1
+Category,Summarization,1
+,,
+Scale,Total datasets,108
+Scale,Total hours (known),23327
+Scale,Datasets with no license,74
+Scale,Datasets with broken/dead URLs,8
