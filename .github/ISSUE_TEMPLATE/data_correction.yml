@@ -1,0 +1,40 @@
+name: "Data Correction"
+description: "Report incorrect or outdated information in the catalog"
+title: "[Correction] "
+labels: ["correction"]
+body:
+  - type: input
+    id: dataset
+    attributes:
+      label: Dataset Name
+      description: "Exact name as it appears in the catalog"
+    validations:
+      required: true
+  - type: input
+    id: field
+    attributes:
+      label: Field to Correct
+      description: "e.g., License Type, Total Hours, URL Status"
+    validations:
+      required: true
+  - type: input
+    id: current_value
+    attributes:
+      label: Current Value
+      description: "What the catalog currently says"
+    validations:
+      required: true
+  - type: input
+    id: correct_value
+    attributes:
+      label: Correct Value
+      description: "What it should be"
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source
+      description: "How you know this is correct (paper section, URL, personal experience)"
+    validations:
+      required: true
