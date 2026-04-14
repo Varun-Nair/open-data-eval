@@ -1,0 +1,104 @@
+Category,Dataset Name,Year,Total Hours,Access Level,License Type,URL Status,Ease of Access Score
+3D reconstruction,Aria Digital Twin (ADT),2023,Unknown,Gated-Open,Custom Academic,Live,7.8
+3D reconstruction,Ego-1K,2026,Unknown,Open,Custom Academic,Live,6.8
+3D reconstruction,EgoPAT3D,2022,Unknown,Open,Not specified,Live,5.5
+Action recognition,Assembly101,2022,513,Open,CC-BY-NC-4.0,Live,8.8
+Action recognition,Breakfast,2014,77,Open,CC-BY-4.0,Redirect,8.5
+Action recognition,50 Salads,2013,~4,Open,CC-BY-NC-SA-4.0,Dead,7.8
+Action recognition,THU-READ,2018,Unknown,Open,Custom Academic,Live,6.8
+Action recognition,EgoGesture,2018,Unknown,Gated-Open,Custom Academic,Live,6.2
+Action recognition,HOMAGE,2021,30,Gated-Open,Not specified,Live,6.0
+Action recognition,LEMMA,2020,Unknown,Gated-Open,Not specified,Live,6.0
+Action recognition,EgoK360,2020,Unknown,Open,Not specified,Live,5.5
+Action recognition,Ego-Deliver,2021,Unknown,Restricted,Not specified,Live,3.0
+Action recognition,FPVO,Unknown,Unknown,Unavailable,Not specified,Dead,0.0
+Body pose,EgoBody,2022,Unknown,Gated-Open,CC-BY-NC-SA-4.0,Live,8.8
+Body pose,Nymeria,2024,300,Gated-Open,CC-BY-NC-4.0,Live,8.8
+Body pose,EgoBody3M,2024,Unknown,Open,CC-BY-NC-4.0,Live,8.2
+Body pose,NymeriaPlus,2026,300,Gated-Open,CC-BY-NC-4.0,Live,8.2
+Body pose,xR-EgoPose,2019,Unknown,Open,Custom Academic,Live,8.2
+Body pose,GIMO,2022,Unknown,Gated-Open,Custom Academic,Live,7.2
+Body pose,EgoHumans,2023,Unknown,Open,Not specified,Live,7.0
+Body pose,UnrealEgo / UnrealEgo2,2022,Unknown,Open,Not specified,Live,7.0
+Body pose,UnrealEgo-RW,2024,Unknown,Open,Not specified,Live,7.0
+Body pose,HPS,2021,Unknown,Gated-Open,Custom Academic,Live,6.8
+Body pose,CIRCLE,2024,10,Open,Not specified,Live,5.5
+Body pose,EgoSim,2024,Unknown,Open,Not specified,Live,5.0
+Body pose,ADL4D,2024,Unknown,Open,Not specified,Live,5.0
+Classic,EPIC-KITCHENS-55,2018,55,Open,CC-BY-NC-4.0,Live,9.2
+Classic,CMU-MMAC,2009,~10,Open,Custom Open,Live,7.0
+Classic,EGTEA Gaze+,2018,28,Open,Not specified,Live,6.0
+Classic,GTEA,2011,<2,Open,Not specified,Live,5.5
+Classic,GTEA Gaze,2012,~2,Open,Not specified,Live,5.5
+Classic,BEOID,2014,Unknown,Open,Not specified,Live,5.5
+Classic,ADL (Activities of Daily Living),2012,~10,Open,Not specified,Redirect,4.5
+Classic,UT Egocentric,2012,~15,Gated-Open,Not specified,Live,4.5
+Classic,UEC Dataset,2011,Unknown,Open,Not specified,Live but broken,4.0
+Classic,FPPA,2015,Unknown,Restricted,Not specified,Live but broken,2.5
+Ego-exo cross-view,Ego-Exo4D,2024,1286,Gated-Open,Custom Academic,Live,7.5
+Ego-exo cross-view,Charades-Ego,2018,68.8,Open,Custom Academic,Live,7.2
+Ego-exo cross-view,EgoExoLearn,2024,120,Open,Not specified,Live,7.0
+Ego-exo cross-view,EgoExo-Fitness,2024,Unknown,Open,Not specified,Live,6.5
+Ego-exo cross-view,TF2023,2024,Unknown,Open,Not specified,Live,6.5
+Ego-exo cross-view,EgoMe,2025,Unknown,Open,Not specified,Live,6.5
+Ego-exo cross-view,EPIC-Tent,2019,~7,Open,Not specified,Live,6.0
+Ego-exo cross-view,CASTLE 2024,2025,600,Open,Not specified,Live,5.5
+Ego-exo cross-view,MultiEgo,2025,Unknown,Restricted,Not specified,Live,3.0
+Gaze and eye tracking,Aria Everyday Activities (AEA),2024,Unknown,Gated-Open,CC-BY-NC-4.0,Live,8.2
+Gaze and eye tracking,Object Search Dataset,2019,Unknown,Open,Not specified,Live,6.5
+Gaze and eye tracking,VEDB,2021,200,Open,Not specified,Live,5.5
+Gaze and eye tracking,EgoCampus,2025,Unknown,Open,Not specified,Live,5.0
+Gaze and eye tracking,Egocentric Shopper Dataset,2024,Unknown,Restricted,Not specified,Live,3.0
+Gaze and eye tracking,Sanctuaria-Gaze,2025,Unknown,Restricted,Not specified,Live,3.0
+Hand-object interaction,HO-Cap,2024,Unknown,Open,CC-BY-4.0,Live,9.5
+Hand-object interaction,EgoDex,2025,829,Open,CC-BY-NC-ND-4.0,Live,9.2
+Hand-object interaction,DexYCB,2021,Unknown,Open,CC-BY-NC-4.0,Live,9.2
+Hand-object interaction,AssemblyHands,2023,Unknown,Open,CC-BY-NC-4.0,Live,8.2
+Hand-object interaction,HOT3D,2025,~14,Gated-Open,Custom Academic,Live,7.8
+Hand-object interaction,ARCTIC,2023,2.17,Gated-Open,Custom Academic,Live,7.2
+Hand-object interaction,OpenEgo,2025,1107,Open,Mixed,Live but broken,7.0
+Hand-object interaction,HOI4D,2022,22.2,Open,Not specified,Live,7.0
+Hand-object interaction,TACO,2024,Unknown,Open,Not specified,Live,7.0
+Hand-object interaction,EgoDexter,2017,<1,Open,Custom Academic,Live,6.8
+Hand-object interaction,OAKINK2,2024,Unknown,Open,Not specified,Live,6.0
+Hand-object interaction,H2O,2021,Unknown,Gated-Open,Not specified,Live,6.0
+Hand-object interaction,FPHA,2018,Unknown,Gated-Open,Not specified,Live,6.0
+Hand-object interaction,Hand-Object Segments,2020,~3144,Open,Not specified,Live,6.0
+Hand-object interaction,EgoHands,2015,Unknown,Open,Not specified,Live,5.5
+Industrial and procedural,HoloAssist,2023,166,Open,Custom Academic,Live,9.0
+Industrial and procedural,MECCANO,2023,Unknown,Open,Not specified,Live,7.5
+Industrial and procedural,CaptainCook4D,2023,94.5,Open,Not specified,Live,7.0
+Industrial and procedural,EgoPER,2024,Unknown,Open,Not specified,Live,6.5
+Industrial and procedural,Egocentric-10K,2024,10000,Open,Not specified,Live,6.5
+Industrial and procedural,Egocentric-100K,2025,100405,Open,Not specified,Live,6.5
+Industrial and procedural,IndustReal,2024,Unknown,Open,Not specified,Live,6.0
+Industrial and procedural,AssistQ,2022,Unknown,Open,Not specified,Live,6.0
+Industrial and procedural,ENIGMA-51,2024,Unknown,Open,Not specified,Live,5.5
+Industrial and procedural,ENIGMA-360,2024,Unknown,Open,Not specified,Live,5.5
+Industrial and procedural,EgoProceL,2022,62,Open,Not specified,Live,5.5
+Large-scale foundation,EPIC-KITCHENS-100,2021,100,Open,CC-BY-NC-4.0,Live,9.8
+Large-scale foundation,HD-EPIC,2025,41,Open,CC-BY-NC-4.0,Live,8.2
+Large-scale foundation,Xperience-10M,2026,10000,Gated-Open,CC-BY-NC-4.0,Live,8.2
+Large-scale foundation,Ego4D,2022,3670,Gated-Open,Custom Academic,Live,7.5
+Large-scale foundation,EgoLife,2025,300,Gated-Open,S-Lab License,Live,7.0
+Navigation and localization,EgoSeg,2015,Unknown,Open,Not specified,Live,5.5
+Navigation and localization,VINST / Visual Diaries,2013,Unknown,Open,Not specified,Live,5.5
+Navigation and localization,EgoCart,2019,Unknown,Open,Not specified,Live,5.5
+Navigation and localization,EGO-CH,2020,Unknown,Open,Not specified,Live,5.5
+Navigation and localization,UNICT-VEDI,2018,Unknown,Open,Not specified,Live,5.5
+Navigation and localization,CEN,2025,6,Restricted,Not specified,Live,3.0
+Object detection,EgoObjects,2023,Unknown,Open,Not specified,Live,7.0
+Object detection,TEgO,2020,Unknown,Open,Not specified,Live,5.5
+Object detection,Visual Market Basket Analysis,2018,Unknown,Open,Not specified,Live,5.5
+Social interaction,EgoCom,2020,38.5,Open,CC-BY-NC-4.0,Live,9.2
+Social interaction,UTokyo Paired Ego-Video (PEV),2018,Unknown,Open,Not specified,Live,5.5
+Social interaction,UTokyo Ego-Surf,2018,Unknown,Open,Not specified,Live,5.5
+Social interaction,Multimodal Focused Interaction Dataset,2018,~6,Open,Not specified,Live,5.5
+Social interaction,First-Person Social Interactions (Disney),2012,~42,Open,Not specified,Live but broken,4.0
+Social interaction,EasyCom,2022,Unknown,Restricted,Not specified,Live,3.0
+Summarization,DoMSEV,2018,80,Open,Not specified,Live,5.5
+Surgical,EgoSurgery,2024,15,Open,Not specified,Live,7.0
+Surgical,EgoExOR,2025,Unknown,Restricted,Not specified,Live,3.0
+VQA and language,EgoTaskQA,2022,Unknown,Open,Not specified,Live,6.5
+VQA and language,EgoBlind,2025,Unknown,Restricted,Not specified,Live,3.0
+Video generation,EgoVid-5M,2024,Not reported,Open,Not specified,Live but broken,4.5

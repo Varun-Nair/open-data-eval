@@ -1,0 +1,104 @@
+Family,Dataset Name,Year,Category,Access Level,License Type
+EPIC-KITCHENS,EPIC-KITCHENS-100,2021,Large-scale foundation,Open,CC-BY-NC-4.0
+EPIC-KITCHENS,EPIC-KITCHENS-55,2018,Classic,Open,CC-BY-NC-4.0
+EPIC-KITCHENS,EPIC-Tent,2019,Ego-exo cross-view,Open,Not specified
+EPIC-KITCHENS,HD-EPIC,2025,Large-scale foundation,Open,CC-BY-NC-4.0
+Ego4D family,Ego-Exo4D,2024,Ego-exo cross-view,Gated-Open,Custom Academic
+Ego4D family,Ego4D,2022,Large-scale foundation,Gated-Open,Custom Academic
+EgoSurgery,EgoSurgery,2024,Surgical and medical,Open,Not specified
+GTEA,EGTEA Gaze+,2018,Classic,Open,Not specified
+GTEA,GTEA,2011,Classic,Open,Not specified
+GTEA,GTEA Gaze,2012,Classic,Open,Not specified
+IPLab Catania,EGO-CH,2020,Navigation and localization,Open,Not specified
+IPLab Catania,ENIGMA-360,2024,Industrial and procedural,Open,Not specified
+IPLab Catania,ENIGMA-51,2024,Industrial and procedural,Open,Not specified
+IPLab Catania,EgoCart,2019,Navigation and localization,Open,Not specified
+IPLab Catania,MECCANO,2023,Industrial and procedural,Open,Not specified
+IPLab Catania,UNICT-VEDI,2018,Navigation and localization,Open,Not specified
+IPLab Catania,Visual Market Basket Analysis,2018,Object detection,Open,Not specified
+Project Aria,Aria Digital Twin (ADT),2023,3D reconstruction,Gated-Open,Custom Academic
+Project Aria,Aria Everyday Activities (AEA),2024,Gaze and eye tracking,Gated-Open,CC-BY-NC-4.0
+Project Aria,Nymeria,2024,Body pose,Gated-Open,CC-BY-NC-4.0
+Project Aria,NymeriaPlus,2026,Body pose,Gated-Open,CC-BY-NC-4.0
+Standalone,50 Salads,2013,Action recognition,Open,CC-BY-NC-SA-4.0
+Standalone,ADL (Activities of Daily Living),2012,Classic,Open,Not specified
+Standalone,ADL4D,2024,Body pose,Open,Not specified
+Standalone,ARCTIC,2023,Hand-object interaction,Gated-Open,Custom Academic
+Standalone,Assembly101,2022,Action recognition,Open,CC-BY-NC-4.0
+Standalone,AssemblyHands,2023,Hand-object interaction,Open,CC-BY-NC-4.0
+Standalone,AssistQ,2022,Industrial and procedural,Open,Not specified
+Standalone,BEOID,2014,Classic,Open,Not specified
+Standalone,Breakfast,2014,Action recognition,Open,CC-BY-4.0
+Standalone,CASTLE 2024,2025,Ego-exo cross-view,Open,Not specified
+Standalone,CEN,2025,Navigation and localization,Restricted,Not specified
+Standalone,CIRCLE,2024,Body pose,Open,Not specified
+Standalone,CMU-MMAC,2009,Classic,Open,Custom Open
+Standalone,CaptainCook4D,2023,Industrial and procedural,Open,Not specified
+Standalone,Charades-Ego,2018,Ego-exo cross-view,Open,Custom Academic
+Standalone,DexYCB,2021,Hand-object interaction,Open,CC-BY-NC-4.0
+Standalone,DoMSEV,2018,Summarization,Open,Not specified
+Standalone,EasyCom,2022,Social interaction,Restricted,Not specified
+Standalone,Ego-1K,2026,3D reconstruction,Open,Custom Academic
+Standalone,Ego-Deliver,2021,Action recognition,Restricted,Not specified
+Standalone,EgoBlind,2025,Video QA and language,Restricted,Not specified
+Standalone,EgoBody,2022,Body pose,Gated-Open,CC-BY-NC-SA-4.0
+Standalone,EgoBody3M,2024,Body pose,Open,CC-BY-NC-4.0
+Standalone,EgoCampus,2025,Gaze and eye tracking,Open,Not specified
+Standalone,EgoCom,2020,Social interaction,Open,CC-BY-NC-4.0
+Standalone,EgoDex,2025,Hand-object interaction,Open,CC-BY-NC-ND-4.0
+Standalone,EgoDexter,2017,Hand-object interaction,Open,Custom Academic
+Standalone,EgoExOR,2025,Surgical and medical,Restricted,Not specified
+Standalone,EgoExo-Fitness,2024,Ego-exo cross-view,Open,Not specified
+Standalone,EgoExoLearn,2024,Ego-exo cross-view,Open,Not specified
+Standalone,EgoGesture,2018,Action recognition,Gated-Open,Custom Academic
+Standalone,EgoHands,2015,Hand-object interaction,Open,Not specified
+Standalone,EgoHumans,2023,Body pose,Open,Not specified
+Standalone,EgoK360,2020,Action recognition,Open,Not specified
+Standalone,EgoLife,2025,Large-scale foundation,Gated-Open,S-Lab License
+Standalone,EgoMe,2025,Ego-exo cross-view,Open,Not specified
+Standalone,EgoObjects,2023,Object detection,Open,Not specified
+Standalone,EgoPAT3D,2022,3D reconstruction,Open,Not specified
+Standalone,EgoPER,2024,Industrial and procedural,Open,Not specified
+Standalone,EgoProceL,2022,Industrial and procedural,Open,Not specified
+Standalone,EgoSeg,2015,Navigation and localization,Open,Not specified
+Standalone,EgoSim,2024,Body pose,Open,Not specified
+Standalone,EgoTaskQA,2022,Video QA and language,Open,Not specified
+Standalone,EgoVid-5M,2024,Video generation,Open,Not specified
+Standalone,Egocentric Shopper Dataset,2024,Gaze and eye tracking,Restricted,Not specified
+Standalone,Egocentric-100K,2025,Industrial and procedural,Open,Not specified
+Standalone,Egocentric-10K,2024,Industrial and procedural,Open,Not specified
+Standalone,FPHA,2018,Hand-object interaction,Gated-Open,Not specified
+Standalone,FPPA,2015,Classic,Restricted,Not specified
+Standalone,FPVO,Unknown,Action recognition,Unavailable,Not specified
+Standalone,First-Person Social Interactions (Disney),2012,Social interaction,Open,Not specified
+Standalone,GIMO,2022,Body pose,Gated-Open,Custom Academic
+Standalone,H2O,2021,Hand-object interaction,Gated-Open,Not specified
+Standalone,HO-Cap,2024,Hand-object interaction,Open,CC-BY-4.0
+Standalone,HOI4D,2022,Hand-object interaction,Open,Not specified
+Standalone,HOMAGE,2021,Action recognition,Gated-Open,Not specified
+Standalone,HOT3D,2025,Hand-object interaction,Gated-Open,Custom Academic
+Standalone,HPS,2021,Body pose,Gated-Open,Custom Academic
+Standalone,Hand-Object Segments,2020,Hand-object interaction,Open,Not specified
+Standalone,HoloAssist,2023,Industrial and procedural,Open,CDLAv2 (Permissive)
+Standalone,IndustReal,2024,Industrial and procedural,Open,Not specified
+Standalone,LEMMA,2020,Action recognition,Gated-Open,Not specified
+Standalone,MultiEgo,2025,Ego-exo cross-view,Restricted,Not specified
+Standalone,Multimodal Focused Interaction Dataset,2018,Social interaction,Open,Not specified
+Standalone,OAKINK2,2024,Hand-object interaction,Open,Not specified
+Standalone,Object Search Dataset,2019,Gaze and eye tracking,Open,Not specified
+Standalone,OpenEgo,2025,Hand-object interaction,Open,Mixed
+Standalone,Sanctuaria-Gaze,2025,Gaze and eye tracking,Restricted,Not specified
+Standalone,TACO,2024,Hand-object interaction,Open,Not specified
+Standalone,TEgO,2020,Object detection,Open,Not specified
+Standalone,TF2023,2024,Ego-exo cross-view,Open,Not specified
+Standalone,THU-READ,2018,Action recognition,Open,Custom Academic
+Standalone,UEC Dataset,2011,Classic,Open,Not specified
+Standalone,UT Egocentric,2012,Classic,Gated-Open,Not specified
+Standalone,UTokyo Ego-Surf,2018,Social interaction,Open,Not specified
+Standalone,UTokyo Paired Ego-Video (PEV),2018,Social interaction,Open,Not specified
+Standalone,VEDB,2021,Gaze and eye tracking,Open,Not specified
+Standalone,VINST / Visual Diaries,2013,Navigation and localization,Open,Not specified
+Standalone,Xperience-10M,2026,Large-scale foundation,Gated-Open,CC-BY-NC-4.0
+Standalone,xR-EgoPose,2019,Body pose,Open,Custom Academic
+UnrealEgo,UnrealEgo / UnrealEgo2,2022,Body pose,Open,Not specified
+UnrealEgo,UnrealEgo-RW,2024,Body pose,Open,Not specified

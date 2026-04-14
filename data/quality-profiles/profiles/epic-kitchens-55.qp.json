@@ -1,0 +1,374 @@
+{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    "cr": "http://mlcommons.org/croissant/",
+    "qp": "http://opendataeval.org/qp/",
+    "iso": "http://opendataeval.org/iso5259/"
+  },
+  "@type": "cr:Dataset",
+  "name": "EPIC-KITCHENS-55",
+  "url": "https://epic-kitchens.github.io/2018",
+  "dct:conformsTo": "http://opendataeval.org/qp/1.0",
+  "qp:qualityProfile": {
+    "qp:schemaVersion": "1.0",
+    "qp:evalLevel": "metadata",
+    "qp:evaluatedAt": "2026-04-14T21:41:20Z",
+    "qp:evaluatedBy": "open-data-eval",
+    "scores": {
+      "fps": {
+        "score": 1.0,
+        "raw_value": 60.0,
+        "method": "piecewise_continuous",
+        "source": "catalog",
+        "iso_mapping": "Acc-ML"
+      },
+      "resolution": {
+        "score": 1.0,
+        "width": 1920,
+        "height": 1080,
+        "short_edge": 1080,
+        "tier": "1080p+",
+        "method": "piecewise_continuous",
+        "source": "catalog",
+        "iso_mapping": "Acc-ML"
+      },
+      "modality_richness": {
+        "modalities_present": [
+          "Audio",
+          "Narrations/captions",
+          "Optical flow",
+          "RGB video"
+        ],
+        "modality_count": 4,
+        "scores_by_usecase": {
+          "manipulation": {
+            "critical": {
+              "present": [
+                "RGB video"
+              ],
+              "missing": [
+                "Depth"
+              ],
+              "ratio": 0.5
+            },
+            "important": {
+              "present": [
+                "Narrations/captions"
+              ],
+              "missing": [
+                "Hand pose annotations",
+                "Tactile",
+                "Force/torque",
+                "Proprioception",
+                "Gripper state"
+              ],
+              "ratio": 0.17
+            },
+            "bonus": {
+              "present": [
+                "Audio",
+                "Optical flow"
+              ],
+              "missing": [
+                "IMU",
+                "Object bounding boxes",
+                "End-effector pose",
+                "Segmentation masks"
+              ],
+              "ratio": 0.33
+            },
+            "score": 0.172
+          },
+          "action_recognition": {
+            "critical": {
+              "present": [
+                "RGB video"
+              ],
+              "missing": [],
+              "ratio": 1.0
+            },
+            "important": {
+              "present": [
+                "Audio",
+                "Narrations/captions",
+                "Optical flow"
+              ],
+              "missing": [],
+              "ratio": 1.0
+            },
+            "bonus": {
+              "present": [],
+              "missing": [
+                "Eye gaze",
+                "Hand pose annotations",
+                "IMU",
+                "Object bounding boxes"
+              ],
+              "ratio": 0.0
+            },
+            "score": 0.88
+          },
+          "hand_pose_estimation": {
+            "critical": {
+              "present": [
+                "RGB video"
+              ],
+              "missing": [
+                "Hand pose annotations"
+              ],
+              "ratio": 0.5
+            },
+            "important": {
+              "present": [],
+              "missing": [
+                "Depth",
+                "Stereo"
+              ],
+              "ratio": 0.0
+            },
+            "bonus": {
+              "present": [],
+              "missing": [
+                "Tactile",
+                "IMU",
+                "Segmentation masks"
+              ],
+              "ratio": 0.0
+            },
+            "score": 0.15
+          },
+          "navigation": {
+            "critical": {
+              "present": [
+                "RGB video"
+              ],
+              "missing": [
+                "IMU"
+              ],
+              "ratio": 0.5
+            },
+            "important": {
+              "present": [],
+              "missing": [
+                "Depth",
+                "SLAM/odometry",
+                "3D point clouds"
+              ],
+              "ratio": 0.0
+            },
+            "bonus": {
+              "present": [
+                "Audio"
+              ],
+              "missing": [
+                "Stereo",
+                "LiDAR",
+                "Segmentation masks"
+              ],
+              "ratio": 0.25
+            },
+            "score": 0.158
+          },
+          "robot_policy_learning": {
+            "critical": {
+              "present": [
+                "RGB video"
+              ],
+              "missing": [
+                "Proprioception",
+                "Gripper state"
+              ],
+              "ratio": 0.33
+            },
+            "important": {
+              "present": [
+                "Narrations/captions"
+              ],
+              "missing": [
+                "Depth",
+                "End-effector pose",
+                "Force/torque"
+              ],
+              "ratio": 0.25
+            },
+            "bonus": {
+              "present": [
+                "Audio"
+              ],
+              "missing": [
+                "Tactile",
+                "Joint torques"
+              ],
+              "ratio": 0.33
+            },
+            "score": 0.079
+          },
+          "vla_pretraining": {
+            "critical": {
+              "present": [
+                "RGB video",
+                "Narrations/captions"
+              ],
+              "missing": [],
+              "ratio": 1.0
+            },
+            "important": {
+              "present": [],
+              "missing": [
+                "Depth",
+                "Hand pose annotations",
+                "Proprioception"
+              ],
+              "ratio": 0.0
+            },
+            "bonus": {
+              "present": [
+                "Audio",
+                "Optical flow"
+              ],
+              "missing": [
+                "IMU",
+                "Eye gaze",
+                "SLAM/odometry"
+              ],
+              "ratio": 0.4
+            },
+            "score": 0.648
+          }
+        },
+        "source": "catalog",
+        "iso_mapping": "Div-ML"
+      },
+      "camera_calibration": {
+        "score": 0.0,
+        "tier": "none",
+        "notes": "No calibration in base EK-55 paper. EPIC-Fields provides retroactive calibration as a separate companion dataset.",
+        "method": "tier",
+        "source": "paper:arXiv:1804.02748",
+        "iso_mapping": "Aud-ML"
+      },
+      "license_clarity": {
+        "score": 1.0,
+        "license_type": "CC-BY-NC-4.0",
+        "tier": "standard",
+        "commercial_use": "No",
+        "method": "tier",
+        "source": "catalog",
+        "iso_mapping": "Cpl-ML"
+      },
+      "accessibility": {
+        "score": 0.925,
+        "raw_score": 9.25,
+        "access_level": "Open",
+        "url_status": "Live",
+        "method": "weighted_sum_normalized",
+        "source": "catalog",
+        "iso_mapping": "Acs-ML"
+      },
+      "scale": {
+        "score": 0.437,
+        "total_hours": 55.0,
+        "method": "log10(hrs+1)/log10(10001)",
+        "source": "catalog",
+        "iso_mapping": "Eff-ML"
+      },
+      "dataloader": {
+        "score": 0.8,
+        "available": true,
+        "framework": "unspecified",
+        "method": "tier",
+        "source": "catalog",
+        "iso_mapping": "Acs-ML"
+      },
+      "documentation_quality": {
+        "score": 0.667,
+        "rating": 2,
+        "method": "normalized_0_3",
+        "source": "catalog",
+        "iso_mapping": "Und-ML"
+      },
+      "annotation_coverage": {
+        "score": 1.0,
+        "notes": "100% narrations (collected post-hoc). 39,594 action segments. 454,255 object bboxes (selected frames).",
+        "method": "ratio",
+        "source": "paper:arXiv:1804.02748",
+        "iso_mapping": "Com-ML"
+      },
+      "download_efficiency": {
+        "score": 0.4,
+        "hours_per_gb": 0.0785,
+        "total_hours": 55.0,
+        "download_size_gb": 701,
+        "method": "percentile_rank",
+        "source": "catalog+paper",
+        "iso_mapping": "Eff-ML"
+      },
+      "environment_diversity": {
+        "score": 0.545,
+        "unique_environments": 32.0,
+        "method": "log_normalized",
+        "source": "catalog",
+        "iso_mapping": "Div-ML"
+      },
+      "demographic_diversity": {
+        "score": 0.538,
+        "participants": 32.0,
+        "geographic_locations": 4,
+        "method": "log_normalized_product",
+        "source": "catalog+paper",
+        "iso_mapping": "Div-ML"
+      }
+    },
+    "classifications": {
+      "capture_device": {
+        "value": "GoPro Hero 5 Black",
+        "documented": true,
+        "source": "paper:arXiv:1804.02748",
+        "iso_mapping": "Ide-ML"
+      },
+      "lens_type": {
+        "value": "rectilinear",
+        "fov_degrees": 94,
+        "documented": true,
+        "source": "paper:arXiv:1804.02748",
+        "iso_mapping": "Ide-ML"
+      },
+      "video_format": {
+        "value": "MP4; image sequences",
+        "source": "catalog"
+      },
+      "annotation_format": {
+        "value": "CSV",
+        "source": "catalog"
+      }
+    },
+    "context": {
+      "total_hours": 55.0,
+      "participants": "32",
+      "scenes_environments": "32 kitchens; 4 cities",
+      "commercial_use": "No",
+      "category": "Classic",
+      "year": "2018",
+      "paper": "ECCV 2018; arXiv 1804.02748",
+      "approximate_citations": "~1500 (Semantic Scholar; ECCV 2018 paper)",
+      "citations": {
+        "count": 1271,
+        "source": "semantic_scholar",
+        "fetched_at": "2026-04-14"
+      },
+      "no_paper": false
+    },
+    "confidence": {
+      "metadata_completeness": {
+        "score": 1.0,
+        "filled_fields": 16,
+        "total_fields": 16,
+        "method": "ratio",
+        "iso_mapping": [
+          "Com-ML",
+          "Und-ML"
+        ]
+      }
+    }
+  }
+}

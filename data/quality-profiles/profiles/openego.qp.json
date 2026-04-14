@@ -1,0 +1,371 @@
+{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    "cr": "http://mlcommons.org/croissant/",
+    "qp": "http://opendataeval.org/qp/",
+    "iso": "http://opendataeval.org/iso5259/"
+  },
+  "@type": "cr:Dataset",
+  "name": "OpenEgo",
+  "url": "https://www.openegocentric.com/",
+  "dct:conformsTo": "http://opendataeval.org/qp/1.0",
+  "qp:qualityProfile": {
+    "qp:schemaVersion": "1.0",
+    "qp:evalLevel": "metadata",
+    "qp:evaluatedAt": "2026-04-14T21:41:20Z",
+    "qp:evaluatedBy": "open-data-eval",
+    "scores": {
+      "fps": {
+        "score": 0.3,
+        "raw_value": 15.0,
+        "method": "piecewise_continuous",
+        "source": "paper:arXiv:2509.05513",
+        "iso_mapping": "Acc-ML"
+      },
+      "resolution": {
+        "score": null,
+        "width": null,
+        "height": null,
+        "short_edge": null,
+        "tier": null,
+        "method": "piecewise_continuous",
+        "source": "catalog",
+        "iso_mapping": "Acc-ML"
+      },
+      "modality_richness": {
+        "modalities_present": [
+          "Hand pose annotations",
+          "Narrations/captions",
+          "RGB video"
+        ],
+        "modality_count": 3,
+        "scores_by_usecase": {
+          "manipulation": {
+            "critical": {
+              "present": [
+                "RGB video"
+              ],
+              "missing": [
+                "Depth"
+              ],
+              "ratio": 0.5
+            },
+            "important": {
+              "present": [
+                "Hand pose annotations",
+                "Narrations/captions"
+              ],
+              "missing": [
+                "Tactile",
+                "Force/torque",
+                "Proprioception",
+                "Gripper state"
+              ],
+              "ratio": 0.33
+            },
+            "bonus": {
+              "present": [],
+              "missing": [
+                "Audio",
+                "IMU",
+                "Optical flow",
+                "Object bounding boxes",
+                "End-effector pose",
+                "Segmentation masks"
+              ],
+              "ratio": 0.0
+            },
+            "score": 0.173
+          },
+          "action_recognition": {
+            "critical": {
+              "present": [
+                "RGB video"
+              ],
+              "missing": [],
+              "ratio": 1.0
+            },
+            "important": {
+              "present": [
+                "Narrations/captions"
+              ],
+              "missing": [
+                "Audio",
+                "Optical flow"
+              ],
+              "ratio": 0.33
+            },
+            "bonus": {
+              "present": [
+                "Hand pose annotations"
+              ],
+              "missing": [
+                "Eye gaze",
+                "IMU",
+                "Object bounding boxes"
+              ],
+              "ratio": 0.25
+            },
+            "score": 0.723
+          },
+          "hand_pose_estimation": {
+            "critical": {
+              "present": [
+                "RGB video",
+                "Hand pose annotations"
+              ],
+              "missing": [],
+              "ratio": 1.0
+            },
+            "important": {
+              "present": [],
+              "missing": [
+                "Depth",
+                "Stereo"
+              ],
+              "ratio": 0.0
+            },
+            "bonus": {
+              "present": [],
+              "missing": [
+                "Tactile",
+                "IMU",
+                "Segmentation masks"
+              ],
+              "ratio": 0.0
+            },
+            "score": 0.6
+          },
+          "navigation": {
+            "critical": {
+              "present": [
+                "RGB video"
+              ],
+              "missing": [
+                "IMU"
+              ],
+              "ratio": 0.5
+            },
+            "important": {
+              "present": [],
+              "missing": [
+                "Depth",
+                "SLAM/odometry",
+                "3D point clouds"
+              ],
+              "ratio": 0.0
+            },
+            "bonus": {
+              "present": [],
+              "missing": [
+                "Audio",
+                "Stereo",
+                "LiDAR",
+                "Segmentation masks"
+              ],
+              "ratio": 0.0
+            },
+            "score": 0.15
+          },
+          "robot_policy_learning": {
+            "critical": {
+              "present": [
+                "RGB video"
+              ],
+              "missing": [
+                "Proprioception",
+                "Gripper state"
+              ],
+              "ratio": 0.33
+            },
+            "important": {
+              "present": [
+                "Narrations/captions"
+              ],
+              "missing": [
+                "Depth",
+                "End-effector pose",
+                "Force/torque"
+              ],
+              "ratio": 0.25
+            },
+            "bonus": {
+              "present": [],
+              "missing": [
+                "Tactile",
+                "Audio",
+                "Joint torques"
+              ],
+              "ratio": 0.0
+            },
+            "score": 0.074
+          },
+          "vla_pretraining": {
+            "critical": {
+              "present": [
+                "RGB video",
+                "Narrations/captions"
+              ],
+              "missing": [],
+              "ratio": 1.0
+            },
+            "important": {
+              "present": [
+                "Hand pose annotations"
+              ],
+              "missing": [
+                "Depth",
+                "Proprioception"
+              ],
+              "ratio": 0.33
+            },
+            "bonus": {
+              "present": [],
+              "missing": [
+                "Audio",
+                "IMU",
+                "Eye gaze",
+                "SLAM/odometry",
+                "Optical flow"
+              ],
+              "ratio": 0.0
+            },
+            "score": 0.693
+          }
+        },
+        "source": "catalog",
+        "iso_mapping": "Div-ML"
+      },
+      "camera_calibration": {
+        "score": 0.85,
+        "tier": "intrinsics_extrinsics_unvalidated",
+        "notes": "Per-dataset intrinsics + per-frame world-to-camera extrinsics unified across 6 source datasets. Distortion/validation not described for aggregated pipeline.",
+        "method": "tier",
+        "source": "paper:arXiv:2509.05513",
+        "iso_mapping": "Aud-ML"
+      },
+      "license_clarity": {
+        "score": 0.5,
+        "license_type": "Mixed",
+        "tier": "custom_named",
+        "commercial_use": "Varies (some sources CC-BY-NC-ND)",
+        "method": "tier",
+        "source": "catalog",
+        "iso_mapping": "Cpl-ML"
+      },
+      "accessibility": {
+        "score": 0.7,
+        "raw_score": 7.0,
+        "access_level": "Open",
+        "url_status": "Live but broken",
+        "method": "weighted_sum_normalized",
+        "source": "catalog",
+        "iso_mapping": "Acs-ML"
+      },
+      "scale": {
+        "score": 0.761,
+        "total_hours": 1107.0,
+        "method": "log10(hrs+1)/log10(10001)",
+        "source": "catalog",
+        "iso_mapping": "Eff-ML"
+      },
+      "dataloader": {
+        "score": 0.8,
+        "available": true,
+        "framework": "unspecified",
+        "method": "tier",
+        "source": "catalog",
+        "iso_mapping": "Acs-ML"
+      },
+      "documentation_quality": {
+        "score": 0.667,
+        "rating": 2,
+        "method": "normalized_0_3",
+        "source": "catalog",
+        "iso_mapping": "Und-ML"
+      },
+      "annotation_coverage": {
+        "score": null,
+        "notes": "MANO 21-joint hand poses + world-frame extrinsics for all frames. Language annotations automatically generated, only partially verified.",
+        "method": "ratio",
+        "source": "pending_paper_review",
+        "iso_mapping": "Com-ML"
+      },
+      "download_efficiency": {
+        "score": null,
+        "hours_per_gb": null,
+        "total_hours": null,
+        "download_size_gb": null,
+        "method": "percentile_rank",
+        "source": "catalog+paper",
+        "iso_mapping": "Eff-ML"
+      },
+      "environment_diversity": {
+        "score": 0.997,
+        "unique_environments": 600.0,
+        "method": "log_normalized",
+        "source": "catalog",
+        "iso_mapping": "Div-ML"
+      },
+      "demographic_diversity": {
+        "score": 0.615,
+        "participants": 258.0,
+        "geographic_locations": 1,
+        "method": "log_normalized_product",
+        "source": "catalog+paper",
+        "iso_mapping": "Div-ML"
+      }
+    },
+    "classifications": {
+      "capture_device": {
+        "value": "Multiple (aggregated: CaptainCook4D, HOI4D, HoloAssist, EgoDex, HOT3D, HO-Cap)",
+        "documented": true,
+        "source": "paper:arXiv:2509.05513",
+        "iso_mapping": "Ide-ML"
+      },
+      "lens_type": {
+        "value": "varies",
+        "fov_degrees": null,
+        "documented": true,
+        "source": "paper:arXiv:2509.05513",
+        "iso_mapping": "Ide-ML"
+      },
+      "video_format": {
+        "value": "Varies (per constituent dataset)",
+        "source": "catalog"
+      },
+      "annotation_format": {
+        "value": "Unified JSON/CSV",
+        "source": "catalog"
+      }
+    },
+    "context": {
+      "total_hours": 1107.0,
+      "participants": "258+",
+      "scenes_environments": "600+ (10 kitchens; 610 indoor rooms)",
+      "commercial_use": "Varies (some sources CC-BY-NC-ND)",
+      "category": "Hand-object interaction",
+      "year": "2025",
+      "paper": "arXiv 2509.05513",
+      "approximate_citations": "<20",
+      "citations": {
+        "count": 3,
+        "source": "semantic_scholar",
+        "fetched_at": "2026-04-14"
+      },
+      "no_paper": false
+    },
+    "confidence": {
+      "metadata_completeness": {
+        "score": 0.812,
+        "filled_fields": 13,
+        "total_fields": 16,
+        "method": "ratio",
+        "iso_mapping": [
+          "Com-ML",
+          "Und-ML"
+        ]
+      }
+    }
+  }
+}

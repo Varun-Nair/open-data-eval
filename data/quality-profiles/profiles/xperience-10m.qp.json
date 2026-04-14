@@ -1,0 +1,377 @@
+{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    "cr": "http://mlcommons.org/croissant/",
+    "qp": "http://opendataeval.org/qp/",
+    "iso": "http://opendataeval.org/iso5259/"
+  },
+  "@type": "cr:Dataset",
+  "name": "Xperience-10M",
+  "url": "https://huggingface.co/datasets/ropedia-ai/xperience-10m",
+  "dct:conformsTo": "http://opendataeval.org/qp/1.0",
+  "qp:qualityProfile": {
+    "qp:schemaVersion": "1.0",
+    "qp:evalLevel": "metadata",
+    "qp:evaluatedAt": "2026-04-14T21:41:20Z",
+    "qp:evaluatedBy": "open-data-eval",
+    "scores": {
+      "fps": {
+        "score": null,
+        "raw_value": null,
+        "method": "piecewise_continuous",
+        "source": "catalog",
+        "iso_mapping": "Acc-ML"
+      },
+      "resolution": {
+        "score": null,
+        "width": null,
+        "height": null,
+        "short_edge": null,
+        "tier": null,
+        "method": "piecewise_continuous",
+        "source": "catalog",
+        "iso_mapping": "Acc-ML"
+      },
+      "modality_richness": {
+        "modalities_present": [
+          "Audio",
+          "Body pose annotations",
+          "Depth",
+          "Hand pose annotations",
+          "IMU",
+          "Narrations/captions",
+          "RGB video",
+          "SLAM/odometry"
+        ],
+        "modality_count": 8,
+        "scores_by_usecase": {
+          "manipulation": {
+            "critical": {
+              "present": [
+                "RGB video",
+                "Depth"
+              ],
+              "missing": [],
+              "ratio": 1.0
+            },
+            "important": {
+              "present": [
+                "Hand pose annotations",
+                "Narrations/captions"
+              ],
+              "missing": [
+                "Tactile",
+                "Force/torque",
+                "Proprioception",
+                "Gripper state"
+              ],
+              "ratio": 0.33
+            },
+            "bonus": {
+              "present": [
+                "Audio",
+                "IMU"
+              ],
+              "missing": [
+                "Optical flow",
+                "Object bounding boxes",
+                "End-effector pose",
+                "Segmentation masks"
+              ],
+              "ratio": 0.33
+            },
+            "score": 0.733
+          },
+          "action_recognition": {
+            "critical": {
+              "present": [
+                "RGB video"
+              ],
+              "missing": [],
+              "ratio": 1.0
+            },
+            "important": {
+              "present": [
+                "Audio",
+                "Narrations/captions"
+              ],
+              "missing": [
+                "Optical flow"
+              ],
+              "ratio": 0.67
+            },
+            "bonus": {
+              "present": [
+                "Hand pose annotations",
+                "IMU"
+              ],
+              "missing": [
+                "Eye gaze",
+                "Object bounding boxes"
+              ],
+              "ratio": 0.5
+            },
+            "score": 0.847
+          },
+          "hand_pose_estimation": {
+            "critical": {
+              "present": [
+                "RGB video",
+                "Hand pose annotations"
+              ],
+              "missing": [],
+              "ratio": 1.0
+            },
+            "important": {
+              "present": [
+                "Depth"
+              ],
+              "missing": [
+                "Stereo"
+              ],
+              "ratio": 0.5
+            },
+            "bonus": {
+              "present": [
+                "IMU"
+              ],
+              "missing": [
+                "Tactile",
+                "Segmentation masks"
+              ],
+              "ratio": 0.33
+            },
+            "score": 0.78
+          },
+          "navigation": {
+            "critical": {
+              "present": [
+                "RGB video",
+                "IMU"
+              ],
+              "missing": [],
+              "ratio": 1.0
+            },
+            "important": {
+              "present": [
+                "Depth",
+                "SLAM/odometry"
+              ],
+              "missing": [
+                "3D point clouds"
+              ],
+              "ratio": 0.67
+            },
+            "bonus": {
+              "present": [
+                "Audio"
+              ],
+              "missing": [
+                "Stereo",
+                "LiDAR",
+                "Segmentation masks"
+              ],
+              "ratio": 0.25
+            },
+            "score": 0.817
+          },
+          "robot_policy_learning": {
+            "critical": {
+              "present": [
+                "RGB video"
+              ],
+              "missing": [
+                "Proprioception",
+                "Gripper state"
+              ],
+              "ratio": 0.33
+            },
+            "important": {
+              "present": [
+                "Depth",
+                "Narrations/captions"
+              ],
+              "missing": [
+                "End-effector pose",
+                "Force/torque"
+              ],
+              "ratio": 0.5
+            },
+            "bonus": {
+              "present": [
+                "Audio"
+              ],
+              "missing": [
+                "Tactile",
+                "Joint torques"
+              ],
+              "ratio": 0.33
+            },
+            "score": 0.087
+          },
+          "vla_pretraining": {
+            "critical": {
+              "present": [
+                "RGB video",
+                "Narrations/captions"
+              ],
+              "missing": [],
+              "ratio": 1.0
+            },
+            "important": {
+              "present": [
+                "Depth",
+                "Hand pose annotations"
+              ],
+              "missing": [
+                "Proprioception"
+              ],
+              "ratio": 0.67
+            },
+            "bonus": {
+              "present": [
+                "Audio",
+                "IMU",
+                "SLAM/odometry"
+              ],
+              "missing": [
+                "Eye gaze",
+                "Optical flow"
+              ],
+              "ratio": 0.6
+            },
+            "score": 0.859
+          }
+        },
+        "source": "catalog",
+        "iso_mapping": "Div-ML"
+      },
+      "camera_calibration": {
+        "score": null,
+        "tier": null,
+        "notes": "Calibration data present in annotation.hdf5/calibration/. Tier (intrinsics/distortion/extrinsics/validated) not described in dataset card.",
+        "method": "tier",
+        "source": "pending_paper_review",
+        "iso_mapping": "Aud-ML"
+      },
+      "license_clarity": {
+        "score": 1.0,
+        "license_type": "CC-BY-NC-4.0",
+        "tier": "standard",
+        "commercial_use": "No",
+        "method": "tier",
+        "source": "catalog",
+        "iso_mapping": "Cpl-ML"
+      },
+      "accessibility": {
+        "score": 0.825,
+        "raw_score": 8.25,
+        "access_level": "Gated-Open",
+        "url_status": "Live",
+        "method": "weighted_sum_normalized",
+        "source": "catalog",
+        "iso_mapping": "Acs-ML"
+      },
+      "scale": {
+        "score": 1.0,
+        "total_hours": 10000.0,
+        "method": "log10(hrs+1)/log10(10001)",
+        "source": "catalog",
+        "iso_mapping": "Eff-ML"
+      },
+      "dataloader": {
+        "score": 0.8,
+        "available": true,
+        "framework": "unspecified",
+        "method": "tier",
+        "source": "catalog",
+        "iso_mapping": "Acs-ML"
+      },
+      "documentation_quality": {
+        "score": 0.667,
+        "rating": 2,
+        "method": "normalized_0_3",
+        "source": "catalog",
+        "iso_mapping": "Und-ML"
+      },
+      "annotation_coverage": {
+        "score": null,
+        "notes": null,
+        "method": "ratio",
+        "source": "pending_paper_review",
+        "iso_mapping": "Com-ML"
+      },
+      "download_efficiency": {
+        "score": 0.6,
+        "hours_per_gb": 0.3135,
+        "total_hours": 10000.0,
+        "download_size_gb": 31900,
+        "method": "percentile_rank",
+        "source": "catalog+paper",
+        "iso_mapping": "Eff-ML"
+      },
+      "environment_diversity": {
+        "score": null,
+        "unique_environments": null,
+        "method": "log_normalized",
+        "source": "catalog",
+        "iso_mapping": "Div-ML"
+      },
+      "demographic_diversity": {
+        "score": null,
+        "participants": null,
+        "geographic_locations": null,
+        "method": "log_normalized_product",
+        "source": "catalog+paper",
+        "iso_mapping": "Div-ML"
+      }
+    },
+    "classifications": {
+      "capture_device": {
+        "value": null,
+        "documented": false,
+        "source": "pending_paper_review",
+        "iso_mapping": "Ide-ML"
+      },
+      "lens_type": {
+        "value": "fisheye",
+        "fov_degrees": null,
+        "documented": true,
+        "source": "paper:None",
+        "iso_mapping": "Ide-ML"
+      },
+      "video_format": {
+        "value": "Video files + HDF5",
+        "source": "catalog"
+      },
+      "annotation_format": {
+        "value": "HDF5 (annotation.hdf5 per episode)",
+        "source": "catalog"
+      }
+    },
+    "context": {
+      "total_hours": 10000.0,
+      "participants": "Not specified",
+      "scenes_environments": "Not specified",
+      "commercial_use": "No",
+      "category": "Large-scale foundation",
+      "year": "2026",
+      "paper": "Blog post March 2026 (no arxiv found)",
+      "approximate_citations": "<10 (very new)",
+      "citations": null,
+      "no_paper": true
+    },
+    "confidence": {
+      "metadata_completeness": {
+        "score": 0.562,
+        "filled_fields": 9,
+        "total_fields": 16,
+        "method": "ratio",
+        "iso_mapping": [
+          "Com-ML",
+          "Und-ML"
+        ]
+      }
+    }
+  }
+}

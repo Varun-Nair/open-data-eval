@@ -1,0 +1,94 @@
+name: "Dataset Submission"
+description: "Submit a new egocentric or robot dataset for the catalog"
+title: "[Dataset] "
+labels: ["new-dataset"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Dataset Name
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Primary URL
+      description: "Main website or download page"
+    validations:
+      required: true
+  - type: input
+    id: paper
+    attributes:
+      label: Paper Reference
+      description: "arXiv ID or conference citation (e.g., CVPR 2024)"
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - Large-scale foundation
+        - Classic
+        - Action recognition
+        - Hand-object interaction
+        - Body pose
+        - Gaze and eye tracking
+        - Industrial and procedural
+        - Social interaction
+        - Ego-exo cross-view
+        - Navigation and localization
+        - 3D reconstruction
+        - Object detection
+        - VQA and language
+        - Audio-visual
+        - Driving
+        - Video generation
+        - Lifelogging
+        - Surgical
+        - Child egocentric
+        - Drone FPV
+        - Sports
+        - Expert assistance
+        - Assistive
+        - Animal
+        - Tracking
+        - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: access
+    attributes:
+      label: Access Level
+      options:
+        - Open
+        - Gated-Open
+        - Restricted
+        - Commercial
+        - Unavailable
+    validations:
+      required: true
+  - type: input
+    id: license
+    attributes:
+      label: License
+      description: "e.g., CC-BY-NC-4.0, MIT, Custom Academic, Not specified"
+    validations:
+      required: true
+  - type: input
+    id: hours
+    attributes:
+      label: Total Hours
+      description: "Plain number only. Use Unknown if not reported."
+  - type: input
+    id: modalities
+    attributes:
+      label: Modalities
+      description: "Semicolon-separated. Use standard terms: RGB video; Depth (RGB-D); Audio; IMU; Eye gaze; Hand pose annotations; Body pose annotations; etc."
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional Notes
+      description: "Anything notable — download friction, license quirks, known issues"

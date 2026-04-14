@@ -1,0 +1,382 @@
+{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    "cr": "http://mlcommons.org/croissant/",
+    "qp": "http://opendataeval.org/qp/",
+    "iso": "http://opendataeval.org/iso5259/"
+  },
+  "@type": "cr:Dataset",
+  "name": "Ego-Exo4D",
+  "url": "https://ego-exo4d-data.org/",
+  "dct:conformsTo": "http://opendataeval.org/qp/1.0",
+  "qp:qualityProfile": {
+    "qp:schemaVersion": "1.0",
+    "qp:evalLevel": "metadata",
+    "qp:evaluatedAt": "2026-04-14T21:41:20Z",
+    "qp:evaluatedBy": "open-data-eval",
+    "scores": {
+      "fps": {
+        "score": 1.0,
+        "raw_value": 30.0,
+        "method": "piecewise_continuous",
+        "source": "paper:arXiv:2311.18259",
+        "iso_mapping": "Acc-ML"
+      },
+      "resolution": {
+        "score": 1.0,
+        "width": 1408,
+        "height": 1408,
+        "short_edge": 1408,
+        "tier": "1080p+",
+        "method": "piecewise_continuous",
+        "source": "catalog",
+        "iso_mapping": "Acc-ML"
+      },
+      "modality_richness": {
+        "modalities_present": [
+          "3D point clouds",
+          "Audio",
+          "Body pose annotations",
+          "Eye gaze",
+          "Hand pose annotations",
+          "IMU",
+          "Narrations/captions",
+          "RGB video",
+          "SLAM/odometry"
+        ],
+        "modality_count": 9,
+        "scores_by_usecase": {
+          "manipulation": {
+            "critical": {
+              "present": [
+                "RGB video"
+              ],
+              "missing": [
+                "Depth"
+              ],
+              "ratio": 0.5
+            },
+            "important": {
+              "present": [
+                "Hand pose annotations",
+                "Narrations/captions"
+              ],
+              "missing": [
+                "Tactile",
+                "Force/torque",
+                "Proprioception",
+                "Gripper state"
+              ],
+              "ratio": 0.33
+            },
+            "bonus": {
+              "present": [
+                "Audio",
+                "IMU"
+              ],
+              "missing": [
+                "Optical flow",
+                "Object bounding boxes",
+                "End-effector pose",
+                "Segmentation masks"
+              ],
+              "ratio": 0.33
+            },
+            "score": 0.183
+          },
+          "action_recognition": {
+            "critical": {
+              "present": [
+                "RGB video"
+              ],
+              "missing": [],
+              "ratio": 1.0
+            },
+            "important": {
+              "present": [
+                "Audio",
+                "Narrations/captions"
+              ],
+              "missing": [
+                "Optical flow"
+              ],
+              "ratio": 0.67
+            },
+            "bonus": {
+              "present": [
+                "Eye gaze",
+                "Hand pose annotations",
+                "IMU"
+              ],
+              "missing": [
+                "Object bounding boxes"
+              ],
+              "ratio": 0.75
+            },
+            "score": 0.877
+          },
+          "hand_pose_estimation": {
+            "critical": {
+              "present": [
+                "RGB video",
+                "Hand pose annotations"
+              ],
+              "missing": [],
+              "ratio": 1.0
+            },
+            "important": {
+              "present": [],
+              "missing": [
+                "Depth",
+                "Stereo"
+              ],
+              "ratio": 0.0
+            },
+            "bonus": {
+              "present": [
+                "IMU"
+              ],
+              "missing": [
+                "Tactile",
+                "Segmentation masks"
+              ],
+              "ratio": 0.33
+            },
+            "score": 0.64
+          },
+          "navigation": {
+            "critical": {
+              "present": [
+                "RGB video",
+                "IMU"
+              ],
+              "missing": [],
+              "ratio": 1.0
+            },
+            "important": {
+              "present": [
+                "SLAM/odometry",
+                "3D point clouds"
+              ],
+              "missing": [
+                "Depth"
+              ],
+              "ratio": 0.67
+            },
+            "bonus": {
+              "present": [
+                "Audio"
+              ],
+              "missing": [
+                "Stereo",
+                "LiDAR",
+                "Segmentation masks"
+              ],
+              "ratio": 0.25
+            },
+            "score": 0.817
+          },
+          "robot_policy_learning": {
+            "critical": {
+              "present": [
+                "RGB video"
+              ],
+              "missing": [
+                "Proprioception",
+                "Gripper state"
+              ],
+              "ratio": 0.33
+            },
+            "important": {
+              "present": [
+                "Narrations/captions"
+              ],
+              "missing": [
+                "Depth",
+                "End-effector pose",
+                "Force/torque"
+              ],
+              "ratio": 0.25
+            },
+            "bonus": {
+              "present": [
+                "Audio"
+              ],
+              "missing": [
+                "Tactile",
+                "Joint torques"
+              ],
+              "ratio": 0.33
+            },
+            "score": 0.079
+          },
+          "vla_pretraining": {
+            "critical": {
+              "present": [
+                "RGB video",
+                "Narrations/captions"
+              ],
+              "missing": [],
+              "ratio": 1.0
+            },
+            "important": {
+              "present": [
+                "Hand pose annotations"
+              ],
+              "missing": [
+                "Depth",
+                "Proprioception"
+              ],
+              "ratio": 0.33
+            },
+            "bonus": {
+              "present": [
+                "Audio",
+                "IMU",
+                "Eye gaze",
+                "SLAM/odometry"
+              ],
+              "missing": [
+                "Optical flow"
+              ],
+              "ratio": 0.8
+            },
+            "score": 0.789
+          }
+        },
+        "source": "catalog",
+        "iso_mapping": "Div-ML"
+      },
+      "camera_calibration": {
+        "score": 1.0,
+        "tier": "intrinsics_extrinsics_validated",
+        "notes": "Full intrinsics + extrinsics + distortion for Aria (Kannala-Brandt K3 fisheye) and GoPro (OpenCV fisheye, gopro_calibs.csv). Aria uses time-varying online MPS calibration (validated).",
+        "method": "tier",
+        "source": "paper:arXiv:2311.18259",
+        "iso_mapping": "Aud-ML"
+      },
+      "license_clarity": {
+        "score": 0.5,
+        "license_type": "Custom Academic",
+        "tier": "custom_named",
+        "commercial_use": "Yes (commercial license option per agreement)",
+        "method": "tier",
+        "source": "catalog",
+        "iso_mapping": "Cpl-ML"
+      },
+      "accessibility": {
+        "score": 0.8,
+        "raw_score": 8.0,
+        "access_level": "Gated-Open",
+        "url_status": "Live",
+        "method": "weighted_sum_normalized",
+        "source": "catalog",
+        "iso_mapping": "Acs-ML"
+      },
+      "scale": {
+        "score": 0.777,
+        "total_hours": 1286.0,
+        "method": "log10(hrs+1)/log10(10001)",
+        "source": "catalog",
+        "iso_mapping": "Eff-ML"
+      },
+      "dataloader": {
+        "score": 0.8,
+        "available": true,
+        "framework": "unspecified",
+        "method": "tier",
+        "source": "catalog",
+        "iso_mapping": "Acs-ML"
+      },
+      "documentation_quality": {
+        "score": 1.0,
+        "rating": 3,
+        "method": "normalized_0_3",
+        "source": "catalog",
+        "iso_mapping": "Und-ML"
+      },
+      "annotation_coverage": {
+        "score": 0.986,
+        "notes": "4,965 / 5,035 takes (~98.6%) have atomic action descriptions (432K sentences). >200K annotator-hours total.",
+        "method": "ratio",
+        "source": "paper:arXiv:2311.18259",
+        "iso_mapping": "Com-ML"
+      },
+      "download_efficiency": {
+        "score": 0.3,
+        "hours_per_gb": 0.0334,
+        "total_hours": 1286.0,
+        "download_size_gb": 38450,
+        "method": "percentile_rank",
+        "source": "catalog+paper",
+        "iso_mapping": "Eff-ML"
+      },
+      "environment_diversity": {
+        "score": 0.751,
+        "unique_environments": 123.0,
+        "method": "log_normalized",
+        "source": "catalog",
+        "iso_mapping": "Div-ML"
+      },
+      "demographic_diversity": {
+        "score": 0.93,
+        "participants": 740.0,
+        "geographic_locations": 6,
+        "method": "log_normalized_product",
+        "source": "catalog+paper",
+        "iso_mapping": "Div-ML"
+      }
+    },
+    "classifications": {
+      "capture_device": {
+        "value": "Project Aria Gen 1 (ego) + GoPro (4\u20135 stationary per take; model not stated in paper)",
+        "documented": true,
+        "source": "paper:arXiv:2311.18259",
+        "iso_mapping": "Ide-ML"
+      },
+      "lens_type": {
+        "value": "fisheye",
+        "fov_degrees": 110,
+        "documented": true,
+        "source": "paper:arXiv:2311.18259",
+        "iso_mapping": "Ide-ML"
+      },
+      "video_format": {
+        "value": "MP4; VRS (Aria native)",
+        "source": "catalog"
+      },
+      "annotation_format": {
+        "value": "JSON",
+        "source": "catalog"
+      }
+    },
+    "context": {
+      "total_hours": 1286.0,
+      "participants": "740+",
+      "scenes_environments": "123 sites; 13 cities",
+      "commercial_use": "Yes (commercial license option per agreement)",
+      "category": "Ego-exo cross-view",
+      "year": "2024",
+      "paper": "CVPR 2024; IJCV 2025; arXiv 2311.18259",
+      "approximate_citations": "~200 (Semantic Scholar; CVPR 2024 paper)",
+      "citations": {
+        "count": 401,
+        "source": "semantic_scholar",
+        "fetched_at": "2026-04-14"
+      },
+      "no_paper": false
+    },
+    "confidence": {
+      "metadata_completeness": {
+        "score": 1.0,
+        "filled_fields": 16,
+        "total_fields": 16,
+        "method": "ratio",
+        "iso_mapping": [
+          "Com-ML",
+          "Und-ML"
+        ]
+      }
+    }
+  }
+}

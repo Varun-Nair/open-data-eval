@@ -1,0 +1,68 @@
+Section,Category,Count
+Access Level,,
+,Open,74
+,Gated-Open,19
+,Restricted,9
+,Unavailable,1
+,,
+URL Status,,
+,Live,94
+,Live but broken,5
+,Redirect,2
+,Dead,2
+,,
+License Type,,
+,CC-BY-4.0,2
+,CC-BY-NC-4.0,12
+,CC-BY-NC-SA-4.0,2
+,CC-BY-NC-ND-4.0,1
+,Custom Academic,14
+,Custom Open,1
+,S-Lab License,1
+,Mixed,1
+,Not specified,69
+,,
+Modality,,
+,RGB video,103
+,Eye gaze,31
+,Hand pose annotations,24
+,IMU,23
+,Body pose annotations,22
+,Audio,19
+,Depth (RGB-D),19
+,3D point clouds,14
+,SLAM/odometry,10
+,Narrations/captions,9
+,3D scene reconstruction,8
+,Depth (stereo),6
+,Motion capture,6
+,Optical flow,2
+,Object tracking,1
+,Multi-view,1
+,mmWave,1
+,Hand masks,1
+,,
+Category,,
+,Hand-object interaction,15
+,Body pose,13
+,Industrial and procedural,11
+,Classic,10
+,Action recognition,10
+,Ego-exo cross-view,9
+,Social interaction,6
+,Gaze and eye tracking,6
+,Navigation and localization,6
+,Large-scale foundation,5
+,3D reconstruction,3
+,Object detection,3
+,VQA and language,2
+,Surgical,2
+,Video generation,1
+,Summarization,1
+,,
+Scale,,
+,1000h+,5
+,100-999h,10
+,10-99h,17
+,<10h,7
+,Unknown,64

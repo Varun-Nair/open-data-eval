@@ -1,0 +1,70 @@
+{
+  "Ego4D": {
+    "count": 1665,
+    "source": "semantic_scholar",
+    "fetched_at": "2026-04-14"
+  },
+  "EPIC-KITCHENS-100": {
+    "count": 634,
+    "source": "semantic_scholar",
+    "fetched_at": "2026-04-14"
+  },
+  "EPIC-KITCHENS-55": {
+    "count": 1271,
+    "source": "semantic_scholar",
+    "fetched_at": "2026-04-14"
+  },
+  "HD-EPIC": {
+    "count": 62,
+    "source": "semantic_scholar",
+    "fetched_at": "2026-04-14"
+  },
+  "EgoLife": {
+    "count": 47,
+    "source": "semantic_scholar",
+    "fetched_at": "2026-04-14"
+  },
+  "OpenEgo": {
+    "count": 3,
+    "source": "semantic_scholar",
+    "fetched_at": "2026-04-14"
+  },
+  "EgoVid-5M": {
+    "count": 34,
+    "source": "semantic_scholar",
+    "fetched_at": "2026-04-14"
+  },
+  "HOI4D": {
+    "count": 311,
+    "source": "semantic_scholar",
+    "fetched_at": "2026-04-14"
+  },
+  "HOT3D": {
+    "count": 77,
+    "source": "semantic_scholar",
+    "fetched_at": "2026-04-14"
+  },
+  "ARCTIC": {
+    "count": 289,
+    "source": "semantic_scholar",
+    "fetched_at": "2026-04-14"
+  },
+  "EgoDex": {
+    "count": 89,
+    "source": "semantic_scholar",
+    "fetched_at": "2026-04-14"
+  },
+  "TACO": {
+    "count": 64,
+    "source": "semantic_scholar",
+    "fetched_at": "2026-04-14"
+  },
+  "Xperience-10M": null,
+  "Egocentric-10K": null,
+  "Egocentric-100K": null,
+  "Ego-Exo4D": {
+    "count": 401,
+    "source": "semantic_scholar",
+    "fetched_at": "2026-04-14"
+  }
+}

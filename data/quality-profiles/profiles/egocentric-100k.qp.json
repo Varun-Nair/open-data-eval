@@ -1,0 +1,362 @@
+{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    "cr": "http://mlcommons.org/croissant/",
+    "qp": "http://opendataeval.org/qp/",
+    "iso": "http://opendataeval.org/iso5259/"
+  },
+  "@type": "cr:Dataset",
+  "name": "Egocentric-100K",
+  "url": "https://huggingface.co/datasets/builddotai/Egocentric-100K",
+  "dct:conformsTo": "http://opendataeval.org/qp/1.0",
+  "qp:qualityProfile": {
+    "qp:schemaVersion": "1.0",
+    "qp:evalLevel": "metadata",
+    "qp:evaluatedAt": "2026-04-14T21:41:20Z",
+    "qp:evaluatedBy": "open-data-eval",
+    "scores": {
+      "fps": {
+        "score": 1.0,
+        "raw_value": 30.0,
+        "method": "piecewise_continuous",
+        "source": "paper:HuggingFace:builddotai/Egocentric-100K",
+        "iso_mapping": "Acc-ML"
+      },
+      "resolution": {
+        "score": 0.16,
+        "width": 456,
+        "height": 256,
+        "short_edge": 256,
+        "tier": "<480p (256p)",
+        "method": "piecewise_continuous",
+        "source": "catalog",
+        "iso_mapping": "Acc-ML"
+      },
+      "modality_richness": {
+        "modalities_present": [
+          "RGB video"
+        ],
+        "modality_count": 1,
+        "scores_by_usecase": {
+          "manipulation": {
+            "critical": {
+              "present": [
+                "RGB video"
+              ],
+              "missing": [
+                "Depth"
+              ],
+              "ratio": 0.5
+            },
+            "important": {
+              "present": [],
+              "missing": [
+                "Hand pose annotations",
+                "Tactile",
+                "Force/torque",
+                "Narrations/captions",
+                "Proprioception",
+                "Gripper state"
+              ],
+              "ratio": 0.0
+            },
+            "bonus": {
+              "present": [],
+              "missing": [
+                "Audio",
+                "IMU",
+                "Optical flow",
+                "Object bounding boxes",
+                "End-effector pose",
+                "Segmentation masks"
+              ],
+              "ratio": 0.0
+            },
+            "score": 0.15
+          },
+          "action_recognition": {
+            "critical": {
+              "present": [
+                "RGB video"
+              ],
+              "missing": [],
+              "ratio": 1.0
+            },
+            "important": {
+              "present": [],
+              "missing": [
+                "Audio",
+                "Narrations/captions",
+                "Optical flow"
+              ],
+              "ratio": 0.0
+            },
+            "bonus": {
+              "present": [],
+              "missing": [
+                "Eye gaze",
+                "Hand pose annotations",
+                "IMU",
+                "Object bounding boxes"
+              ],
+              "ratio": 0.0
+            },
+            "score": 0.6
+          },
+          "hand_pose_estimation": {
+            "critical": {
+              "present": [
+                "RGB video"
+              ],
+              "missing": [
+                "Hand pose annotations"
+              ],
+              "ratio": 0.5
+            },
+            "important": {
+              "present": [],
+              "missing": [
+                "Depth",
+                "Stereo"
+              ],
+              "ratio": 0.0
+            },
+            "bonus": {
+              "present": [],
+              "missing": [
+                "Tactile",
+                "IMU",
+                "Segmentation masks"
+              ],
+              "ratio": 0.0
+            },
+            "score": 0.15
+          },
+          "navigation": {
+            "critical": {
+              "present": [
+                "RGB video"
+              ],
+              "missing": [
+                "IMU"
+              ],
+              "ratio": 0.5
+            },
+            "important": {
+              "present": [],
+              "missing": [
+                "Depth",
+                "SLAM/odometry",
+                "3D point clouds"
+              ],
+              "ratio": 0.0
+            },
+            "bonus": {
+              "present": [],
+              "missing": [
+                "Audio",
+                "Stereo",
+                "LiDAR",
+                "Segmentation masks"
+              ],
+              "ratio": 0.0
+            },
+            "score": 0.15
+          },
+          "robot_policy_learning": {
+            "critical": {
+              "present": [
+                "RGB video"
+              ],
+              "missing": [
+                "Proprioception",
+                "Gripper state"
+              ],
+              "ratio": 0.33
+            },
+            "important": {
+              "present": [],
+              "missing": [
+                "Depth",
+                "End-effector pose",
+                "Narrations/captions",
+                "Force/torque"
+              ],
+              "ratio": 0.0
+            },
+            "bonus": {
+              "present": [],
+              "missing": [
+                "Tactile",
+                "Audio",
+                "Joint torques"
+              ],
+              "ratio": 0.0
+            },
+            "score": 0.067
+          },
+          "vla_pretraining": {
+            "critical": {
+              "present": [
+                "RGB video"
+              ],
+              "missing": [
+                "Narrations/captions"
+              ],
+              "ratio": 0.5
+            },
+            "important": {
+              "present": [],
+              "missing": [
+                "Depth",
+                "Hand pose annotations",
+                "Proprioception"
+              ],
+              "ratio": 0.0
+            },
+            "bonus": {
+              "present": [],
+              "missing": [
+                "Audio",
+                "IMU",
+                "Eye gaze",
+                "SLAM/odometry",
+                "Optical flow"
+              ],
+              "ratio": 0.0
+            },
+            "score": 0.15
+          }
+        },
+        "source": "catalog",
+        "iso_mapping": "Div-ML"
+      },
+      "camera_calibration": {
+        "score": 0.5,
+        "tier": "intrinsics_distortion",
+        "notes": "Per-worker intrinsics JSON (Kannala-Brandt equidistant fisheye: fx, fy, cx, cy + k1-k4 distortion coefficients). No extrinsics. Same device as Egocentric-10K.",
+        "method": "tier",
+        "source": "paper:HuggingFace:builddotai/Egocentric-100K",
+        "iso_mapping": "Aud-ML"
+      },
+      "license_clarity": {
+        "score": 1.0,
+        "license_type": "Apache-2.0",
+        "tier": "standard",
+        "commercial_use": "Yes",
+        "method": "tier",
+        "source": "catalog",
+        "iso_mapping": "Cpl-ML"
+      },
+      "accessibility": {
+        "score": 0.9,
+        "raw_score": 9.0,
+        "access_level": "Open",
+        "url_status": "Live",
+        "method": "weighted_sum_normalized",
+        "source": "catalog",
+        "iso_mapping": "Acs-ML"
+      },
+      "scale": {
+        "score": 1.0,
+        "total_hours": 100405.0,
+        "method": "log10(hrs+1)/log10(10001)",
+        "source": "paper:HuggingFace:builddotai/Egocentric-100K",
+        "iso_mapping": "Eff-ML"
+      },
+      "dataloader": {
+        "score": 1.0,
+        "available": true,
+        "framework": "huggingface",
+        "method": "tier",
+        "source": "catalog",
+        "iso_mapping": "Acs-ML"
+      },
+      "documentation_quality": {
+        "score": 0.333,
+        "rating": 1,
+        "method": "normalized_0_3",
+        "source": "catalog",
+        "iso_mapping": "Und-ML"
+      },
+      "annotation_coverage": {
+        "score": null,
+        "notes": "Evaluation subset (30K labeled frames) available separately. Main corpus has no per-frame semantic annotations.",
+        "method": "ratio",
+        "source": "pending_paper_review",
+        "iso_mapping": "Com-ML"
+      },
+      "download_efficiency": {
+        "score": 1.0,
+        "hours_per_gb": 4.0502,
+        "total_hours": 100405.0,
+        "download_size_gb": 24790,
+        "method": "percentile_rank",
+        "source": "catalog+paper",
+        "iso_mapping": "Eff-ML"
+      },
+      "environment_diversity": {
+        "score": null,
+        "unique_environments": null,
+        "method": "log_normalized",
+        "source": "catalog",
+        "iso_mapping": "Div-ML"
+      },
+      "demographic_diversity": {
+        "score": null,
+        "participants": null,
+        "geographic_locations": null,
+        "method": "log_normalized_product",
+        "source": "catalog+paper",
+        "iso_mapping": "Div-ML"
+      }
+    },
+    "classifications": {
+      "capture_device": {
+        "value": "Build AI Gen 1 (proprietary head-mounted monocular fisheye camera)",
+        "documented": true,
+        "source": "paper:HuggingFace:builddotai/Egocentric-100K",
+        "iso_mapping": "Ide-ML"
+      },
+      "lens_type": {
+        "value": "fisheye",
+        "fov_degrees": null,
+        "documented": true,
+        "source": "paper:HuggingFace:builddotai/Egocentric-100K",
+        "iso_mapping": "Ide-ML"
+      },
+      "video_format": {
+        "value": "Video",
+        "source": "catalog"
+      },
+      "annotation_format": {
+        "value": "Custom",
+        "source": "catalog"
+      }
+    },
+    "context": {
+      "total_hours": 100405.0,
+      "participants": "Not specified",
+      "scenes_environments": "Multiple factories",
+      "commercial_use": "Yes",
+      "category": "Industrial and procedural",
+      "year": "2025",
+      "paper": "2025",
+      "approximate_citations": "<10",
+      "citations": null,
+      "no_paper": true
+    },
+    "confidence": {
+      "metadata_completeness": {
+        "score": 0.812,
+        "filled_fields": 13,
+        "total_fields": 16,
+        "method": "ratio",
+        "iso_mapping": [
+          "Com-ML",
+          "Und-ML"
+        ]
+      }
+    }
+  }
+}
