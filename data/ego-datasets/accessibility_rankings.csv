@@ -4,7 +4,7 @@ Rank,Dataset Name,Ease of Access (0-10),Hours,Modality Count,License Status,URL 
 3,EPIC-KITCHENS-55,9.2,55,3,CC-BY-NC-4.0,Live,Open,Superseded by EK-100 but still clean and fully accessible. Good for reproducibility of older baselines.
 4,EgoDex,9.2,829,4,CC-BY-NC-ND-4.0,Live,Open,Massive 829h from Apple Vision Pro. Open on GitHub but license unclear. Check before using.
 5,DexYCB,9.2,Unknown,3,CC-BY-NC-4.0,Live,Open,NVIDIA multi-view hand-grasping benchmark. Direct download. No formal license found.
-6,EgoCom,9.2,Unknown,2,CC-BY-NC-4.0,Live,Open,Multi-person egocentric conversations. CC-BY-NC-4.0. Direct GitHub download via Facebook Research.
+6,EgoCom,9.2,38.5,2,CC-BY-NC-4.0,Live,Open,Multi-person egocentric conversations. CC-BY-NC-4.0. Direct GitHub download via Facebook Research.
 7,HoloAssist,9.0,166,6,Custom Academic,Live,Open,166h HoloLens2 industrial dataset. CDLAv2 permissive — commercial use explicitly allowed. 7 synchronized modalities. PyHoloAssist toolkit.
 8,Assembly101,8.8,513,3,CC-BY-NC-4.0,Live,Open,"Best-in-class procedural dataset: 513h multi-view, CC-BY-NC, with great tooling. Just download it."
 9,EgoBody,8.8,Unknown,6,CC-BY-NC-SA-4.0,Live,Gated-Open,CC-BY-NC-SA-4.0. HoloLens2+Kinect. 7-day credentials.
