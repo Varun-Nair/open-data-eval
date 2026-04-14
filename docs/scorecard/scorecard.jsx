@@ -86,12 +86,11 @@ function CompletionRing({ value, size = 54 }) {
         <circle cx={size/2} cy={size/2} r={r} fill="none" stroke={col} strokeWidth={stroke}
           strokeDasharray={`${dash} ${circ}`} strokeLinecap="round" />
       </svg>
-      <div style={{ position:"absolute", inset:0, display:"flex", flexDirection:"column",
-        alignItems:"center", justifyContent:"center", gap:1 }}>
-        <span style={{ fontSize:13, fontWeight:700, color:col, lineHeight:1 }}>
-          {value != null ? Math.round(value * 100) : "—"}
+      <div style={{ position:"absolute", inset:0, display:"flex",
+        alignItems:"center", justifyContent:"center" }}>
+        <span style={{ fontSize:11, fontWeight:700, color:col, lineHeight:1, whiteSpace:"nowrap" }}>
+          {value != null ? `${Math.round(value * 100)}%` : "—"}
         </span>
-        <span style={{ fontSize:8, color:"var(--c-text-3)", lineHeight:1 }}>%</span>
       </div>
     </div>
   );
@@ -143,70 +142,22 @@ function TechStamp({ score, display, label }) {
   );
 }
 
-// ─── device info (below tech stamps) ─────────────────────────────
-function DeviceInfo({ d }) {
-  const [expanded, setExpanded] = useState(false);
-  const raw = (d.captureDevice || "").trim();
-
-  const lensStr = (() => {
-    if (!d.lensType) return null;
-    if (d.lensType === "varies") return "Mixed lenses";
-    const cap = d.lensType.charAt(0).toUpperCase() + d.lensType.slice(1);
-    return d.fovDegrees ? `${cap} ${d.fovDegrees}°` : cap;
-  })();
-
-  const suffix = lensStr ? ` · ${lensStr}` : "";
-  const wrap = { marginTop:10, fontSize:12, color:"var(--c-text-3)", lineHeight:1.5 };
-  const btn  = { fontSize:12, color:"var(--c-blue)", background:"none", border:"none",
-    cursor:"pointer", padding:0, fontFamily:"inherit",
-    textDecoration:"underline", textDecorationStyle:"dotted" };
-
-  if (!raw) {
-    return (
-      <div style={{ ...wrap, fontStyle:"italic" }}>
-        Device not documented{lensStr ? ` · ${lensStr}` : ""}
-      </div>
-    );
-  }
-
-  if (expanded) {
-    return (
-      <div style={wrap}>
-        {raw}{suffix}{" "}
-        <button style={btn} onClick={() => setExpanded(false)}>collapse</button>
-      </div>
-    );
-  }
-
-  // Multi-device: contains " + " separator
-  const plusIdx = raw.indexOf(" + ");
-  if (plusIdx !== -1) {
-    const parts = raw.split(" + ");
-    const primary = parts[0].replace(/\s*\(.*$/, "").trim();
-    const n = parts.length - 1;
-    return (
-      <div style={wrap}>
-        {primary}{" "}
-        <button style={btn} onClick={() => setExpanded(true)}>
-          +{n} other{n > 1 ? "s" : ""}
-        </button>
-        {suffix}
-      </div>
-    );
-  }
-
-  // Long string: truncate with show-more
-  if (raw.length > 50) {
-    return (
-      <div style={wrap}>
-        {raw.slice(0, 47).trim()}…{" "}
-        <button style={btn} onClick={() => setExpanded(true)}>show more</button>
-        {suffix}
-      </div>
-    );
-  }
-
-  return <div style={wrap}>{raw}{suffix}</div>;
+// ─── codec / audio stamp helpers ─────────────────────────────────
+function getCodecStamp(videoFormat) {
+  if (!videoFormat || videoFormat === "Not specified" || videoFormat === "Varies (per constituent dataset)") return null;
+  const vf = videoFormat.toLowerCase();
+  if (vf.includes("h.264") || vf.includes("h264") || vf.includes("avc"))
+    return { score: 1.0, display: "H.264" };
+  if (vf.includes("h.265") || vf.includes("h265") || vf.includes("hevc"))
+    return { score: 1.0, display: "H.265" };
+  if (vf.includes("proprietary"))
+    return { score: 0.5, display: "Prop." };
+  return null;
+}
+function getAudioStamp(modalities) {
+  if (!modalities || modalities.length === 0) return null;
+  const has = modalities.includes("Audio");
+  return { score: has ? 1.0 : null, display: has ? "Audio" : null };
 }
 
 // ─── downstream fit section ──────────────────────────────────────
@@ -287,13 +238,13 @@ function ScaleHero({ d }) {
   ].filter(Boolean);
   return (
     <div style={{ textAlign:"center", padding:"8px 0 10px" }}>
-      <div style={{ fontSize:28, fontWeight:700, lineHeight:1,
+      <div style={{ fontSize:22, fontWeight:700, lineHeight:1,
         color: hrsFmt ? "var(--c-text-1)" : "var(--c-text-3)" }}>
         {hrsFmt ?? "—"}
       </div>
       <div style={{ fontSize:11, color:"var(--c-text-3)", marginTop:4 }}>hours</div>
       {parts.length > 0 && (
-        <div style={{ fontSize:13, color:"var(--c-text-2)", marginTop:8, lineHeight:1.4 }}>
+        <div style={{ fontSize:15, color:"var(--c-text-2)", marginTop:8, lineHeight:1.4 }}>
           {parts.join(" · ")}
         </div>
       )}
@@ -411,7 +362,7 @@ function ScoreCard({ d, usecase, onUsecaseChange }) {
     technical:true, reliability:true, access:true,
     scale:true, downstream:true, hardware:false,
   });
-  const [modalOpen, setModalOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(true);
   const toggle = key => setOpen(s => ({...s, [key]:!s[key]}));
   const isMobile = useIsMobile();
 
@@ -477,19 +428,38 @@ function ScoreCard({ d, usecase, onUsecaseChange }) {
         padding:"0 22px",
       }}>
 
-        {/* ── LEFT: Technical · Reliability · Accessibility ─────── */}
+        {/* ── LEFT: Technical · Accessibility · Reliability ────── */}
         <div style={{ paddingRight: isMobile ? 0 : 18 }}>
 
           <Section title="Technical" open={open.technical} onToggle={() => toggle("technical")}>
-            <div style={{ display:"flex", gap:16, paddingTop:4 }}>
-              <TechStamp score={d.fps}
-                display={d.fpsRaw != null ? `${d.fpsRaw}fps` : null}
-                label="Frame rate" />
-              <TechStamp score={d.res}
-                display={shortEdge != null ? `${shortEdge}p` : null}
-                label="Resolution" />
-            </div>
-            <DeviceInfo d={d} />
+            {(() => {
+              const codecStamp = getCodecStamp(d.videoFormat);
+              const audioStamp = getAudioStamp(d.modalities);
+              return (
+                <div style={{ display:"flex", gap:16, paddingTop:4, flexWrap:"wrap" }}>
+                  <TechStamp score={d.fps}
+                    display={d.fpsRaw != null ? `${d.fpsRaw}fps` : null}
+                    label="Frame rate" />
+                  <TechStamp score={d.res}
+                    display={shortEdge != null ? `${shortEdge}p` : null}
+                    label="Resolution" />
+                  {codecStamp && (
+                    <TechStamp score={codecStamp.score} display={codecStamp.display} label="Codec" />
+                  )}
+                  {audioStamp && (
+                    <TechStamp score={audioStamp.score} display={audioStamp.display} label="Audio" />
+                  )}
+                </div>
+              );
+            })()}
+          </Section>
+
+          <Section title="Accessibility & Docs" open={open.access} onToggle={() => toggle("access")}>
+            <AccessRow label="License"       value={d.licType}  score={d.lic} />
+            <AccessRow label="Accessibility" value={accVal}     score={d.acc} />
+            <AccessRow label="Dataloader"    value={dlLabel}    score={d.dl}  />
+            <AccessRow label="Documentation"
+              value={d.docRating != null ? `${d.docRating}/3` : null} score={d.doc} />
           </Section>
 
           <Section title="Reliability" open={open.reliability} onToggle={() => toggle("reliability")}>
@@ -502,14 +472,6 @@ function ScoreCard({ d, usecase, onUsecaseChange }) {
               Camera calibration
             </div>
             <CalChecklist d={d} />
-          </Section>
-
-          <Section title="Accessibility & Docs" open={open.access} onToggle={() => toggle("access")}>
-            <AccessRow label="License"       value={d.licType}  score={d.lic} />
-            <AccessRow label="Accessibility" value={accVal}     score={d.acc} />
-            <AccessRow label="Dataloader"    value={dlLabel}    score={d.dl}  />
-            <AccessRow label="Documentation"
-              value={d.docRating != null ? `${d.docRating}/3` : null} score={d.doc} />
           </Section>
 
         </div>
