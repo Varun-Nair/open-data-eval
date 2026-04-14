@@ -305,6 +305,30 @@ function ScoreBreakdown({ d }) {
           </div>
         );
       })}
+      {/* Completeness — not on radar but shown here */}
+      {(() => {
+        const v = d.completeness;
+        const pct = v != null ? Math.round(v * 100) : 0;
+        return (
+          <div style={{ display:"flex", alignItems:"center", gap:8, marginBottom:6 }}>
+            <Tooltip text="Proportion of metadata fields filled">
+              <span style={{ width:72, fontSize:10, color:"var(--c-text-3)", fontWeight:500, cursor:"help" }}>
+                Completeness
+              </span>
+            </Tooltip>
+            <div style={{ flex:1, height:5, borderRadius:3, background:"var(--c-track)", overflow:"hidden" }}>
+              {v != null && (
+                <div style={{ width:`${pct}%`, height:"100%", borderRadius:3,
+                  background:completenessColor(v), transition:"width 0.4s ease" }} />
+              )}
+            </div>
+            <span style={{ width:22, fontSize:11, fontWeight:600, color:completenessColor(v),
+              fontVariantNumeric:"tabular-nums", textAlign:"right" }}>
+              {fmtPct(v)}
+            </span>
+          </div>
+        );
+      })()}
     </div>
   );
 }
