@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Open Data Eval — Metadata Scorecard</title>
+  <link rel="icon" type="image/svg+xml" href="./logo.svg" />
+  <!-- OG / Twitter meta -->
+  <meta property="og:title" content="Open Data Eval — Ego Dataset Scorecard" />
+  <meta property="og:description" content="Quality profiles for 103 egocentric datasets. 13 dimensions. Every license checked. Every URL verified." />
+  <meta property="og:image" content="https://varun-nair.github.io/open-data-eval/scorecard/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://varun-nair.github.io/open-data-eval/scorecard/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Open Data Eval — Ego Dataset Scorecard" />
+  <meta name="twitter:description" content="103 datasets. 13 quality dimensions. 65% have unspecified licenses." />
+  <meta name="twitter:image" content="https://varun-nair.github.io/open-data-eval/scorecard/og-image.png" />
+  <style>
+    /* ── reset ────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    button { cursor: pointer; font-family: inherit; }
+    select { font-family: inherit; }
+
+    /* ── color tokens ─────────────────────── */
+    :root {
+      --font: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", system-ui, sans-serif;
+
+      --c-bg:           #f1f3f7;
+      --c-surface:      #ffffff;
+      --c-surface-2:    #f8f9fb;
+      --c-border:       #e2e5eb;
+      --c-border-strong:#c9cdd6;
+      --c-track:        #edf0f4;
+      --c-hover:        #eef1f6;
+
+      --c-text-1:  #0d1017;
+      --c-text-2:  #3f4a59;
+      --c-text-3:  #8c95a4;
+      --c-null:    #c8cdd6;
+
+      --c-green:    #059669;
+      --c-green-bg: #ecfdf5;
+      --c-amber:    #d97706;
+      --c-amber-bg: #fffbeb;
+      --c-red:      #dc2626;
+      --c-red-bg:   #fef2f2;
+
+      --c-blue:   #2563eb;
+      --c-purple: #7c3aed;
+      --c-orange: #ea580c;
+
+      --shadow-card:  0 1px 3px rgba(15,17,23,0.06), 0 4px 16px rgba(15,17,23,0.04);
+      --shadow-stamp: inset 0 1px 0 rgba(255,255,255,0.5), 0 1px 3px rgba(15,17,23,0.15);
+
+      --c-accent-tech:   #3b82f6;
+      --c-accent-access: #8b5cf6;
+      --c-accent-rel:    #f59e0b;
+      --c-accent-scale:  #10b981;
+      --c-accent-fit:    #06b6d4;
+      --c-accent-hw:     #6b7280;
+    }
+
+    /* ── base ─────────────────────────────── */
+    html, body { height: 100%; background: var(--c-bg); color: var(--c-text-1); }
+    body { font-family: var(--font); font-size: 14px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+
+    #root { min-height: 100vh; }
+
+    /* ── scrollbar ────────────────────────── */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: var(--c-border); border-radius: 3px; }
+
+    /* ── table ────────────────────────────── */
+    table { border-collapse: collapse; }
+    th, td { border: none; }
+
+    /* ── landing panel ───────────────────── */
+    #landing {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 28px 20px 0;
+      font-family: var(--font);
+    }
+    #landing .landing-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 4px;
+    }
+    #landing h1 {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--c-text-1);
+      letter-spacing: -0.5px;
+      margin: 0;
+    }
+    #landing .landing-meta {
+      margin-left: auto;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--c-text-2);
+      padding: 2px 8px;
+      border-radius: 20px;
+      background: var(--c-track);
+      border: 1px solid var(--c-border);
+      white-space: nowrap;
+    }
+    #landing p {
+      font-size: 13px;
+      color: var(--c-text-2);
+      margin: 6px 0 0;
+    }
+    #landing .landing-divider {
+      border: none;
+      border-top: 1px solid var(--c-border);
+      margin: 16px 0 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="landing">
+    <div class="landing-header">
+      <img src="./logo.svg" alt="Open Data Eval logo" style="height:36px;width:auto;display:block;flex-shrink:0;" />
+      <h1>Open Data Eval</h1>
+      <span class="landing-meta">16 datasets &middot; 13 quality dimensions &middot; ISO&nbsp;5259-2</span>
+    </div>
+    <p>Interactive quality profiles for egocentric and manipulation datasets. Scores computed from catalog metadata&nbsp;+&nbsp;paper research.</p>
+    <hr class="landing-divider" />
+  </div>
+  <div id="root"></div>
+
+  <!-- React + ReactDOM (production UMD) -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+
+  <!-- Babel standalone (transpiles JSX in-browser — fine on HTTPS/GitHub Pages) -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- Dataset scores (generated by eval/metadata_eval.py) -->
+  <script src="./scorecard_data.js"></script>
+
+  <!-- Scorecard component -->
+  <script type="text/babel" src="./scorecard.jsx" data-presets="react"></script>
+</body>
+</html>

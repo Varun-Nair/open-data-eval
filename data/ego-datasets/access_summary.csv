@@ -20,7 +20,8 @@ License Type,,
 ,Custom Open,1
 ,S-Lab License,1
 ,Mixed,1
-,Not specified,69
+,Apache-2.0,2
+,Not specified,67
 ,,
 Modality,,
 ,RGB video,103
@@ -32,7 +33,7 @@ Modality,,
 ,Depth (RGB-D),19
 ,3D point clouds,14
 ,SLAM/odometry,10
-,Narrations/captions,9
+,Narrations/captions,11
 ,3D scene reconstruction,8
 ,Depth (stereo),6
 ,Motion capture,6
