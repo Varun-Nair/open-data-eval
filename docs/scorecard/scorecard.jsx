@@ -97,15 +97,16 @@ function CompletionRing({ value, size = 54 }) {
 }
 
 // ─── collapsible section ─────────────────────────────────────────
-function Section({ title, open, onToggle, children }) {
+function Section({ title, color, open, onToggle, children }) {
   return (
-    <div style={{ borderTop:"1px solid var(--c-border)" }}>
+    <div style={{ marginBottom:16, borderLeft:`3px solid ${color || "var(--c-border)"}`,
+      paddingLeft:12 }}>
       <button onClick={onToggle} style={{ width:"100%", display:"flex", alignItems:"center",
         justifyContent:"space-between", padding:"10px 0", background:"none", border:"none",
         cursor:"pointer", textAlign:"left" }}>
-        <span style={{ fontSize:11, fontWeight:600, color:"var(--c-text-1)",
-          letterSpacing:"0.7px", textTransform:"uppercase" }}>{title}</span>
-        <span style={{ fontSize:14, color:"var(--c-text-2)", lineHeight:1, display:"inline-block",
+        <span style={{ fontSize:11, fontWeight:600, color:"var(--c-text-2)",
+          letterSpacing:"0.3px" }}>{title}</span>
+        <span style={{ fontSize:14, color:"var(--c-text-3)", lineHeight:1, display:"inline-block",
           transform:open ? "rotate(180deg)" : "none", transition:"transform 0.15s" }}>▾</span>
       </button>
       {open && <div style={{ paddingBottom:16 }}>{children}</div>}
@@ -420,7 +421,7 @@ function ScoreCard({ d, usecase, onUsecaseChange }) {
         {/* ── LEFT: Technical · Accessibility · Reliability ────── */}
         <div style={{ paddingRight: isMobile ? 0 : 18 }}>
 
-          <Section title="Technical" open={open.technical} onToggle={() => toggle("technical")}>
+          <Section title="Technical" color="var(--c-accent-tech)" open={open.technical} onToggle={() => toggle("technical")}>
             {(() => {
               const audioStamp = getAudioStamp(d.modalities);
               return (
@@ -439,7 +440,7 @@ function ScoreCard({ d, usecase, onUsecaseChange }) {
             })()}
           </Section>
 
-          <Section title="Accessibility & Docs" open={open.access} onToggle={() => toggle("access")}>
+          <Section title="Accessibility & Docs" color="var(--c-accent-access)" open={open.access} onToggle={() => toggle("access")}>
             <AccessRow label="License"       value={d.licType}  score={d.lic} />
             <AccessRow label="Accessibility" value={accVal}     score={d.acc} />
             <AccessRow label="Dataloader"    value={dlLabel}    score={d.dl}  />
@@ -447,7 +448,7 @@ function ScoreCard({ d, usecase, onUsecaseChange }) {
               value={d.docRating != null ? `${d.docRating}/3` : null} score={d.doc} />
           </Section>
 
-          <Section title="Reliability" open={open.reliability} onToggle={() => toggle("reliability")}>
+          <Section title="Reliability" color="var(--c-accent-rel)" open={open.reliability} onToggle={() => toggle("reliability")}>
             <div style={{ fontSize:11, fontWeight:500, color:"var(--c-text-2)", marginBottom:8 }}>
               Annotation coverage
             </div>
@@ -467,15 +468,15 @@ function ScoreCard({ d, usecase, onUsecaseChange }) {
           borderLeft: isMobile ? "none" : "1px solid var(--c-border)",
         }}>
 
-          <Section title="Scale & Diversity" open={open.scale} onToggle={() => toggle("scale")}>
+          <Section title="Scale & Diversity" color="var(--c-accent-scale)" open={open.scale} onToggle={() => toggle("scale")}>
             <ScaleHero d={d} />
           </Section>
 
-          <Section title="Downstream Fit" open={open.downstream} onToggle={() => toggle("downstream")}>
+          <Section title="Downstream Fit" color="var(--c-accent-fit)" open={open.downstream} onToggle={() => toggle("downstream")}>
             <DownstreamFitSection d={d} usecase={usecase} onUsecaseChange={onUsecaseChange} />
           </Section>
 
-          <Section title="Hardware & Format" open={open.hardware} onToggle={() => toggle("hardware")}>
+          <Section title="Hardware & Format" color="var(--c-accent-hw)" open={open.hardware} onToggle={() => toggle("hardware")}>
             <div style={{ display:"flex", flexDirection:"column", gap:6 }}>
               {d.captureDevice && <HardwareRow label="Device"      value={d.captureDevice} />}
               {(d.lensType || d.fovDegrees) && (
