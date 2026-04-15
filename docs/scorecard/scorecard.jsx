@@ -1068,8 +1068,8 @@ function genSummary(A, B) {
   const common = [...modsA].filter(m => modsB.has(m));
   if (common.length >= 2) {
     shared.push(`Both include ${common.slice(0,2).join(" and ")}`);
-  } else if (A.category === B.category) {
-    shared.push(`Both are ${A.category.toLowerCase()} datasets`);
+  } else if (A.cat && A.cat === B.cat) {
+    shared.push(`Both are ${A.cat.toLowerCase()} datasets`);
   }
 
   aAdvantages.sort((a, b) => b.score - a.score);
