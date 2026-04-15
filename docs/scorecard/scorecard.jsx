@@ -827,9 +827,10 @@ function FH({ title }) {
   return <div style={{ fontSize:10, fontWeight:700, color:"var(--c-text-2)", textTransform:"uppercase",
     letterSpacing:0.8, padding:"10px 0 5px", borderBottom:"1px solid var(--c-border)" }}>{title}</div>;
 }
+
+// Scale bars — no winner highlighting; each side always its dataset color
 function FNum({ label, vA, vB }) {
   const nA = vA != null ? Number(vA) : null, nB = vB != null ? Number(vB) : null;
-  const win = nA != null && nB != null ? (nA > nB ? "A" : nB > nA ? "B" : null) : null;
   const ratio = nA && nB && Math.min(nA, nB) > 0 ? (Math.max(nA, nB) / Math.min(nA, nB)).toFixed(1) + "x" : "";
   const maxV = Math.max(nA || 0, nB || 0);
   const pA = maxV > 0 && nA ? (nA / maxV) * 100 : 0;
@@ -837,8 +838,8 @@ function FNum({ label, vA, vB }) {
   return (
     <div style={{ display:"flex", alignItems:"center", padding:"5px 0", borderBottom:"1px solid var(--c-track)" }}>
       <span style={{ width:80, fontSize:10, color:"var(--c-text-3)", fontWeight:500, flexShrink:0 }}>{label}</span>
-      <span style={{ width:52, fontSize:11, fontWeight: win === "A" ? 700 : 400, textAlign:"right",
-        color: win === "A" ? "var(--c-blue)" : "var(--c-text-2)", fontVariantNumeric:"tabular-nums", flexShrink:0 }}>
+      <span style={{ width:52, fontSize:11, fontWeight:400, textAlign:"right",
+        color:"var(--c-blue)", fontVariantNumeric:"tabular-nums", flexShrink:0 }}>
         {nA != null ? nA.toLocaleString() : "—"}</span>
       <div style={{ flex:1, display:"flex", gap:1, margin:"0 6px" }}>
         <div style={{ flex:1, height:4, borderRadius:2, background:"var(--c-track)", overflow:"hidden", direction:"rtl" }}>
@@ -848,13 +849,44 @@ function FNum({ label, vA, vB }) {
           <div style={{ width:`${pB}%`, height:"100%", borderRadius:2, background:"var(--c-amber)" }} />
         </div>
       </div>
-      <span style={{ width:52, fontSize:11, fontWeight: win === "B" ? 700 : 400,
-        color: win === "B" ? "var(--c-amber)" : "var(--c-text-2)", fontVariantNumeric:"tabular-nums", flexShrink:0 }}>
+      <span style={{ width:52, fontSize:11, fontWeight:400,
+        color:"var(--c-amber)", fontVariantNumeric:"tabular-nums", flexShrink:0 }}>
         {nB != null ? nB.toLocaleString() : "—"}</span>
       <span style={{ width:32, fontSize:9, color:"var(--c-text-3)", textAlign:"right", flexShrink:0 }}>{ratio}</span>
     </div>
   );
 }
+
+// Technical text — colored by threshold, dimmed when values match
+function FTech({ label, vA, vB, greenAt, amberAt }) {
+  const nA = vA != null ? parseFloat(vA) : null;
+  const nB = vB != null ? parseFloat(vB) : null;
+  const same = vA != null && vB != null && String(vA) === String(vB);
+  const colorOf = n => {
+    if (n == null) return "var(--c-text-3)";
+    if (n >= greenAt) return "var(--c-green)";
+    if (n >= amberAt) return "var(--c-amber)";
+    return "var(--c-red)";
+  };
+  return (
+    <div style={{ display:"flex", alignItems:"center", padding:"5px 0", borderBottom:"1px solid var(--c-track)" }}>
+      <span style={{ width:80, fontSize:10, color:"var(--c-text-3)", fontWeight:500, flexShrink:0 }}>{label}</span>
+      <div style={{ flex:1, textAlign:"right", paddingRight:8 }}>
+        <span style={{ fontSize:11, opacity: same ? 0.45 : 1,
+          color: same ? "var(--c-text-2)" : colorOf(nA),
+          fontStyle: vA ? "normal" : "italic" }}>{vA || "—"}</span>
+      </div>
+      <div style={{ width:1, height:16, background:"var(--c-border)", flexShrink:0 }} />
+      <div style={{ flex:1, paddingLeft:8 }}>
+        <span style={{ fontSize:11, opacity: same ? 0.45 : 1,
+          color: same ? "var(--c-text-2)" : colorOf(nB),
+          fontStyle: vB ? "normal" : "italic" }}>{vB || "—"}</span>
+      </div>
+      <span style={{ width:32, flexShrink:0 }}></span>
+    </div>
+  );
+}
+
 function FTxt({ label, vA, vB }) {
   return (
     <div style={{ display:"flex", alignItems:"center", padding:"5px 0", borderBottom:"1px solid var(--c-track)" }}>
@@ -890,6 +922,166 @@ function FChk({ label, vA, vB }) {
   );
 }
 
+// Access section — collapses to "identical" badge when all fields match
+function FAccessSection({ A, B, dlL }) {
+  const [expanded, setExpanded] = React.useState(false);
+  const fields = [
+    { label:"License",      vA: A.licType,      vB: B.licType },
+    { label:"Access level", vA: A.accLevel,      vB: B.accLevel },
+    { label:"URL status",   vA: A.accUrlStatus,  vB: B.accUrlStatus },
+    { label:"Dataloader",   vA: dlL(A),          vB: dlL(B) },
+    { label:"Docs",         vA: A.docRating != null ? A.docRating + "/3" : null,
+                            vB: B.docRating != null ? B.docRating + "/3" : null },
+  ];
+  const norm = v => v == null ? "—" : String(v);
+  const allSame = fields.every(f => norm(f.vA) === norm(f.vB));
+
+  if (allSame && !expanded) {
+    return (
+      <div style={{ display:"flex", alignItems:"center", padding:"6px 0",
+        borderBottom:"1px solid var(--c-track)" }}>
+        <span style={{ width:80, fontSize:10, color:"var(--c-text-3)", fontWeight:500, flexShrink:0 }}>Access</span>
+        <span style={{ fontSize:11, color:"var(--c-green)", fontWeight:500 }}>Identical</span>
+        <button onClick={() => setExpanded(true)}
+          style={{ marginLeft:8, fontSize:10, color:"var(--c-text-3)", background:"none",
+            border:"none", cursor:"pointer", padding:0, textDecoration:"underline" }}>show</button>
+      </div>
+    );
+  }
+
+  const toShow = allSame ? fields : fields.filter(f => norm(f.vA) !== norm(f.vB));
+  return (
+    <div>
+      {toShow.map(f => <FTxt key={f.label} label={f.label} vA={f.vA} vB={f.vB} />)}
+      {!allSame && toShow.length < fields.length && (
+        <div style={{ fontSize:10, color:"var(--c-text-3)", padding:"4px 0 2px" }}>
+          {fields.length - toShow.length} field{fields.length - toShow.length > 1 ? "s" : ""} identical, hidden
+        </div>
+      )}
+    </div>
+  );
+}
+
+// Downstream fit — three-state per use case
+function CmpDownstreamFitCompare({ A, B }) {
+  return (
+    <div style={{ display:"flex", flexDirection:"column", gap:8 }}>
+      {COMPARE_USECASES.map(uc => {
+        const vA = A[uc.field] != null ? Math.round(A[uc.field] * 100) : null;
+        const vB = B[uc.field] != null ? Math.round(B[uc.field] * 100) : null;
+        const bothStrong = vA != null && vB != null && vA >= 70 && vB >= 70;
+        const aStrong = vA != null && vB != null && vA >= 70 && vB < 70;
+        const bStrong = vA != null && vB != null && vB >= 70 && vA < 70;
+        const bothWeak = vA != null && vB != null && vA < 70 && vB < 70;
+        const delta = vA != null && vB != null ? Math.abs(vA - vB) : null;
+        const aLeads = vA != null && vB != null && vA > vB;
+
+        return (
+          <div key={uc.key} style={{ display:"flex", alignItems:"center", gap:10,
+            padding:"5px 0", borderBottom:"1px solid var(--c-track)" }}>
+            <span style={{ width:130, fontSize:11, color:"var(--c-text-2)", flexShrink:0 }}>{uc.label}</span>
+            <span style={{ width:36, fontSize:11, textAlign:"right", color:"var(--c-blue)",
+              fontVariantNumeric:"tabular-nums", flexShrink:0 }}>{vA != null ? vA + "%" : "—"}</span>
+
+            <div style={{ flex:1, textAlign:"center" }}>
+              {bothStrong && (
+                <span style={{ fontSize:10, fontWeight:600, color:"var(--c-green)",
+                  background:"var(--c-green-bg)", padding:"2px 8px", borderRadius:10 }}>Both strong</span>
+              )}
+              {(aStrong || bStrong) && (
+                <span style={{ fontSize:10, fontWeight:600,
+                  color: aStrong ? "var(--c-blue)" : "var(--c-amber)",
+                  background: aStrong ? "rgba(37,99,235,0.08)" : "rgba(217,119,6,0.08)",
+                  padding:"2px 8px", borderRadius:10 }}>
+                  {aStrong ? A.name : B.name} +{delta}
+                </span>
+              )}
+              {bothWeak && (
+                <span style={{ fontSize:10, color:"var(--c-text-3)" }}>
+                  {delta === 0 ? "Tied" : (aLeads ? A.name : B.name) + " slightly better"}
+                </span>
+              )}
+              {(vA == null || vB == null) && (
+                <span style={{ fontSize:10, color:"var(--c-text-3)", fontStyle:"italic" }}>no data</span>
+              )}
+            </div>
+
+            <span style={{ width:36, fontSize:11, textAlign:"left", color:"var(--c-amber)",
+              fontVariantNumeric:"tabular-nums", flexShrink:0 }}>{vB != null ? vB + "%" : "—"}</span>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+// Auto-summary: finds 2–3 largest relative differences, templates into sentences
+function genSummary(A, B) {
+  const fmtHrs = h => h >= 1000 ? (Math.round(h / 100) / 10) + "K" : String(Math.round(h));
+  const aAdvantages = [], bAdvantages = [], shared = [];
+
+  // Hours
+  if (A.hrs != null && B.hrs != null && A.hrs !== B.hrs) {
+    const ratio = Math.max(A.hrs, B.hrs) / Math.min(A.hrs, B.hrs);
+    if (ratio >= 1.5) {
+      const winner = A.hrs > B.hrs ? A : B;
+      const loser  = A.hrs > B.hrs ? B : A;
+      const txt = `${Math.round(ratio)}× more footage (${fmtHrs(winner.hrs)}h vs ${fmtHrs(loser.hrs)}h)`;
+      (A.hrs > B.hrs ? aAdvantages : bAdvantages).push({ score: ratio, txt });
+    }
+  }
+  // Participants
+  if (A.demoParts != null && B.demoParts != null && A.demoParts !== B.demoParts) {
+    const ratio = Math.max(A.demoParts, B.demoParts) / Math.min(A.demoParts, B.demoParts);
+    if (ratio >= 2) {
+      const txt = `${Math.round(ratio)}× more participants`;
+      (A.demoParts > B.demoParts ? aAdvantages : bAdvantages).push({ score: ratio * 0.8, txt });
+    }
+  }
+  // FPS
+  if (A.fpsRaw != null && B.fpsRaw != null && A.fpsRaw !== B.fpsRaw) {
+    const ratio = Math.max(A.fpsRaw, B.fpsRaw) / Math.min(A.fpsRaw, B.fpsRaw);
+    if (ratio >= 1.5) {
+      const winner = A.fpsRaw > B.fpsRaw ? A : B;
+      const loser  = A.fpsRaw > B.fpsRaw ? B : A;
+      const txt = `higher frame rate (${winner.fpsRaw}fps vs ${loser.fpsRaw}fps)`;
+      (A.fpsRaw > B.fpsRaw ? aAdvantages : bAdvantages).push({ score: ratio * 0.7, txt });
+    }
+  }
+  // License clarity
+  const stdLic = l => ["CC-BY-4.0","CC-BY-NC-4.0","CC-BY-NC-SA-4.0","Apache-2.0","MIT","CC-BY-NC-ND-4.0"].includes(l);
+  if (A.licType && B.licType && stdLic(A.licType) !== stdLic(B.licType)) {
+    const winner = stdLic(A.licType) ? A : B;
+    const loser  = stdLic(A.licType) ? B : A;
+    const txt = `a standard license (${winner.licType}) vs ${loser.licType || "unspecified"}`;
+    (stdLic(A.licType) ? aAdvantages : bAdvantages).push({ score: 1.4, txt });
+  }
+  // Modality count
+  if (A.modCount != null && B.modCount != null && Math.abs(A.modCount - B.modCount) >= 2) {
+    const diff = Math.abs(A.modCount - B.modCount);
+    const txt = `${diff} more sensor modalities`;
+    (A.modCount > B.modCount ? aAdvantages : bAdvantages).push({ score: diff * 0.4, txt });
+  }
+  // Shared modalities
+  const modsA = new Set((A.modalities || []).filter(m => m !== "RGB video"));
+  const modsB = new Set((B.modalities || []).filter(m => m !== "RGB video"));
+  const common = [...modsA].filter(m => modsB.has(m));
+  if (common.length >= 2) {
+    shared.push(`Both include ${common.slice(0,2).join(" and ")}`);
+  } else if (A.category === B.category) {
+    shared.push(`Both are ${A.category.toLowerCase()} datasets`);
+  }
+
+  aAdvantages.sort((a, b) => b.score - a.score);
+  bAdvantages.sort((a, b) => b.score - a.score);
+  const parts = [];
+  if (aAdvantages.length) parts.push(`${A.name} has ${aAdvantages[0].txt}`);
+  if (bAdvantages.length) parts.push(`${B.name} has ${bAdvantages[0].txt}`);
+  if (shared.length && parts.length >= 1) parts.push(shared[0]);
+  if (!parts.length) return `${A.name} and ${B.name} are similar across most dimensions.`;
+  return parts.map(p => p.endsWith(".") ? p : p + ".").join(" ");
+}
+
 // ─── compare: side-by-side view ───────────────────────────────────
 function CompareSideBySide() {
   const [aIdx, setAIdx] = React.useState(0);
@@ -923,9 +1115,17 @@ function CompareSideBySide() {
         </div>
       </div>
 
+      {/* auto-summary */}
+      <div style={{ fontSize:12, color:"var(--c-text-2)", lineHeight:1.6, marginBottom:14,
+        padding:"10px 14px", background:"var(--c-surface-2)", borderRadius:8,
+        border:"1px solid var(--c-border)" }}>
+        {genSummary(A, B)}
+      </div>
+
       <div style={{ background:"var(--c-surface)", border:"1px solid var(--c-border)",
         borderRadius:12, overflow:"hidden" }}>
         <div style={{ padding:"16px 22px" }}>
+          {/* column headers */}
           <div style={{ display:"flex", alignItems:"center", marginBottom:2 }}>
             <span style={{ width:80, flexShrink:0 }}></span>
             <div style={{ flex:1, textAlign:"right", paddingRight:8 }}>
@@ -946,8 +1146,14 @@ function CompareSideBySide() {
           <FNum label="Citations" vA={A.citations} vB={B.citations} />
 
           <FH title="Technical" />
-          <FTxt label="Frame rate" vA={A.fpsRaw != null ? A.fpsRaw + " fps" : null} vB={B.fpsRaw != null ? B.fpsRaw + " fps" : null} />
-          <FTxt label="Resolution" vA={shortA ? shortA + "p" : null} vB={shortB ? shortB + "p" : null} />
+          <FTech label="Frame rate"
+            vA={A.fpsRaw != null ? A.fpsRaw + " fps" : null}
+            vB={B.fpsRaw != null ? B.fpsRaw + " fps" : null}
+            greenAt={30} amberAt={15} />
+          <FTech label="Resolution"
+            vA={shortA ? shortA + "p" : null}
+            vB={shortB ? shortB + "p" : null}
+            greenAt={1080} amberAt={720} />
           <FChk label="Intrinsics" vA={A.calIntrinsics} vB={B.calIntrinsics} />
           <FChk label="Distortion" vA={A.calDistortion} vB={B.calDistortion} />
           <FChk label="Extrinsics" vA={A.calExtrinsics} vB={B.calExtrinsics} />
@@ -998,11 +1204,7 @@ function CompareSideBySide() {
           })()}
 
           <FH title="Access" />
-          <FTxt label="License" vA={A.licType} vB={B.licType} />
-          <FTxt label="Access level" vA={A.accLevel} vB={B.accLevel} />
-          <FTxt label="URL status" vA={A.accUrlStatus} vB={B.accUrlStatus} />
-          <FTxt label="Dataloader" vA={dlL(A)} vB={dlL(B)} />
-          <FTxt label="Docs" vA={A.docRating != null ? A.docRating + "/3" : null} vB={B.docRating != null ? B.docRating + "/3" : null} />
+          <FAccessSection A={A} B={B} dlL={dlL} />
 
           <FH title="Hardware" />
           <FTxt label="Device" vA={A.captureDevice} vB={B.captureDevice} />
@@ -1011,19 +1213,14 @@ function CompareSideBySide() {
         </div>
 
         <div style={{ padding:"14px 22px", borderTop:"1px solid var(--c-border)" }}>
-          <div style={{ fontSize:10, fontWeight:700, color:"var(--c-text-2)", textTransform:"uppercase",
-            letterSpacing:0.8, marginBottom:12 }}>Downstream Fit</div>
-          <div style={{ display:"flex", gap:20 }}>
-            <div style={{ flex:1 }}>
-              <div style={{ fontSize:11, fontWeight:700, color:"var(--c-blue)", marginBottom:6 }}>{A.name}</div>
-              <CmpDownstreamFit d={A} />
-            </div>
-            <div style={{ width:1, background:"var(--c-border)", flexShrink:0 }} />
-            <div style={{ flex:1 }}>
-              <div style={{ fontSize:11, fontWeight:700, color:"var(--c-amber)", marginBottom:6 }}>{B.name}</div>
-              <CmpDownstreamFit d={B} />
-            </div>
+          {/* dataset color legend */}
+          <div style={{ display:"flex", alignItems:"center", gap:16, marginBottom:10 }}>
+            <div style={{ fontSize:10, fontWeight:700, color:"var(--c-text-2)", textTransform:"uppercase",
+              letterSpacing:0.8 }}>Downstream Fit</div>
+            <span style={{ fontSize:10, color:"var(--c-blue)", fontWeight:600 }}>{A.name}</span>
+            <span style={{ fontSize:10, color:"var(--c-amber)", fontWeight:600 }}>{B.name}</span>
           </div>
+          <CmpDownstreamFitCompare A={A} B={B} />
         </div>
       </div>
     </div>
