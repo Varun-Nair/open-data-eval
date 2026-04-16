@@ -1010,7 +1010,7 @@ function CmpDownstreamFitCompare({ A, B }) {
           <div key={uc.key} style={{ display:"flex", alignItems:"center",
             padding:"5px 0", borderBottom:"1px solid var(--c-track)" }}>
             <span style={{ width:130, fontSize:11, color:"var(--c-text-2)", flexShrink:0 }}>{uc.label}</span>
-            <span style={{ width:40, fontSize:11, textAlign:"right", paddingRight:8, color:"var(--c-blue)",
+            <span style={{ width:48, fontSize:11, textAlign:"left", color:"var(--c-blue)",
               fontVariantNumeric:"tabular-nums", flexShrink:0 }}>{vA != null ? vA + "%" : "—"}</span>
 
             <div style={{ flex:1, textAlign:"center" }}>
@@ -1041,7 +1041,7 @@ function CmpDownstreamFitCompare({ A, B }) {
               )}
             </div>
 
-            <span style={{ width:40, fontSize:11, textAlign:"left", paddingLeft:8, color:"var(--c-amber)",
+            <span style={{ width:48, fontSize:11, textAlign:"right", color:"var(--c-amber)",
               fontVariantNumeric:"tabular-nums", flexShrink:0 }}>{vB != null ? vB + "%" : "—"}</span>
           </div>
         );
@@ -1248,14 +1248,15 @@ function CompareSideBySide() {
         </div>
 
         <div style={{ padding:"14px 22px", borderTop:"1px solid var(--c-border)" }}>
-          {/* dataset color legend */}
-          <div style={{ display:"flex", alignItems:"center", marginBottom:10 }}>
+          {/* header row — columns match data rows exactly */}
+          <div style={{ display:"flex", alignItems:"center", marginBottom:8 }}>
             <span style={{ width:130, fontSize:10, fontWeight:700, color:"var(--c-text-2)",
               textTransform:"uppercase", letterSpacing:0.8, flexShrink:0 }}>Downstream Fit</span>
-            <span style={{ width:40, textAlign:"right", paddingRight:8, fontSize:10,
+            <span style={{ width:48, textAlign:"left", fontSize:10,
               color:"var(--c-blue)", fontWeight:600, flexShrink:0 }}>{A.name}</span>
-            <div style={{ flex:1 }} />
-            <span style={{ width:40, textAlign:"left", paddingLeft:8, fontSize:10,
+            <div style={{ flex:1, textAlign:"center", fontSize:10, color:"var(--c-text-3)",
+              fontWeight:500, letterSpacing:0.3 }}>Verdict</div>
+            <span style={{ width:48, textAlign:"right", fontSize:10,
               color:"var(--c-amber)", fontWeight:600, flexShrink:0 }}>{B.name}</span>
           </div>
           <CmpDownstreamFitCompare A={A} B={B} />
