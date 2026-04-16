@@ -939,30 +939,26 @@ function FAccessSection({ A, B, dlL }) {
   const diffFields = fields.filter(f => norm(f.vA) !== norm(f.vB));
   const sameFields = fields.filter(f => norm(f.vA) === norm(f.vB));
 
-  // All identical — single collapsed row
+  // All identical — single collapsed row (whole row clickable)
   if (allSame && !allExpanded) {
     return (
-      <div style={{ display:"flex", alignItems:"center", padding:"6px 0",
-        borderBottom:"1px solid var(--c-track)" }}>
+      <div onClick={() => setAllExpanded(true)}
+        style={{ display:"flex", alignItems:"center", padding:"6px 0",
+          borderBottom:"1px solid var(--c-track)", cursor:"pointer" }}>
         <span style={{ width:80, fontSize:10, color:"var(--c-text-3)", fontWeight:500, flexShrink:0 }}>Access</span>
         <span style={{ fontSize:11, color:"var(--c-green)", fontWeight:500 }}>Identical</span>
-        <button onClick={() => setAllExpanded(true)}
-          style={{ marginLeft:8, fontSize:10, color:"var(--c-blue)", background:"none",
-            border:"1px solid var(--c-blue)", borderRadius:4, cursor:"pointer",
-            padding:"1px 7px" }}>show</button>
       </div>
     );
   }
 
-  // All identical — expanded
+  // All identical — expanded (whole row clickable to collapse)
   if (allSame && allExpanded) {
     return (
       <div>
         {fields.map(f => <FTxt key={f.label} label={f.label} vA={f.vA} vB={f.vB} />)}
-        <div style={{ fontSize:10, color:"var(--c-text-3)", padding:"4px 0 2px" }}>
-          <button onClick={() => setAllExpanded(false)}
-            style={{ fontSize:10, color:"var(--c-text-3)", background:"none",
-              border:"none", cursor:"pointer", padding:0, textDecoration:"underline" }}>hide</button>
+        <div onClick={() => setAllExpanded(false)}
+          style={{ fontSize:10, color:"var(--c-text-3)", padding:"4px 0 2px", cursor:"pointer" }}>
+          {fields.length} fields identical
         </div>
       </div>
     );
@@ -973,19 +969,17 @@ function FAccessSection({ A, B, dlL }) {
     <div>
       {diffFields.map(f => <FTxt key={f.label} label={f.label} vA={f.vA} vB={f.vB} />)}
       {sameFields.length > 0 && !diffExpanded && (
-        <div style={{ fontSize:10, padding:"4px 0 2px", cursor:"pointer",
-          color:"var(--c-blue)", textDecoration:"underline" }}
-          onClick={() => setDiffExpanded(true)}>
-          {sameFields.length} field{sameFields.length > 1 ? "s" : ""} identical, hidden — show
+        <div onClick={() => setDiffExpanded(true)}
+          style={{ fontSize:10, padding:"4px 0 2px", cursor:"pointer", color:"var(--c-text-3)" }}>
+          {sameFields.length} field{sameFields.length > 1 ? "s" : ""} identical, hidden
         </div>
       )}
       {sameFields.length > 0 && diffExpanded && (
         <div>
           {sameFields.map(f => <FTxt key={f.label} label={f.label} vA={f.vA} vB={f.vB} />)}
-          <div style={{ fontSize:10, color:"var(--c-text-3)", padding:"4px 0 2px" }}>
-            <button onClick={() => setDiffExpanded(false)}
-              style={{ fontSize:10, color:"var(--c-text-3)", background:"none",
-                border:"none", cursor:"pointer", padding:0, textDecoration:"underline" }}>hide identical</button>
+          <div onClick={() => setDiffExpanded(false)}
+            style={{ fontSize:10, color:"var(--c-text-3)", padding:"4px 0 2px", cursor:"pointer" }}>
+            {sameFields.length} field{sameFields.length > 1 ? "s" : ""} identical
           </div>
         </div>
       )}
