@@ -1006,21 +1006,24 @@ function CmpDownstreamFitCompare({ A, B }) {
         const bothLow    = vA != null && vB != null && vA < 40 && vB < 40;
         const midRange   = vA != null && vB != null && !bothStrong && !oneStrong && !bothLow;
 
-        const verdictNode = bothStrong
+        const verdictNode = (vA == null || vB == null)
+          ? <span style={{ fontSize:10, color:"var(--c-text-3)", fontStyle:"italic",
+              whiteSpace:"nowrap" }}>no data</span>
+          : delta === 0
+          ? <span style={{ fontSize:10, color:"var(--c-text-3)",
+              whiteSpace:"nowrap" }}>Tied</span>
+          : bothStrong
           ? <span style={{ fontSize:10, fontWeight:600, color:"var(--c-green)",
               background:"var(--c-green-bg)", padding:"2px 8px", borderRadius:10,
               whiteSpace:"nowrap" }}>Both strong</span>
           : (oneStrong || midRange)
           ? <span style={{ fontSize:10, fontWeight:600, color: winColor, background: winBg,
               padding:"2px 8px", borderRadius:10, whiteSpace:"nowrap" }}>
-              {delta === 0 ? "Tied" : `${winner.name} +${delta}`}
+              {winner.name} +{delta}
             </span>
-          : bothLow
-          ? <span style={{ fontSize:10, color:"var(--c-text-3)", whiteSpace:"nowrap" }}>
-              {delta === 0 ? "Tied" : `${winner.name} +${delta}`}
-            </span>
-          : <span style={{ fontSize:10, color:"var(--c-text-3)", fontStyle:"italic",
-              whiteSpace:"nowrap" }}>no data</span>;
+          : <span style={{ fontSize:10, color:"var(--c-text-3)", whiteSpace:"nowrap" }}>
+              {winner.name} +{delta}
+            </span>;
 
         return (
           <div key={uc.key} style={{ padding:"7px 0", borderBottom:"1px solid var(--c-track)" }}>
