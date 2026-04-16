@@ -872,13 +872,13 @@ function FTech({ label, vA, vB, greenAt, amberAt }) {
     <div style={{ display:"flex", alignItems:"center", padding:"5px 0", borderBottom:"1px solid var(--c-track)" }}>
       <span style={{ width:80, fontSize:10, color:"var(--c-text-3)", fontWeight:500, flexShrink:0 }}>{label}</span>
       <div style={{ flex:1, textAlign:"right", paddingRight:8 }}>
-        <span style={{ fontSize:11, opacity: same ? 0.4 : 1,
+        <span style={{ fontSize:11, opacity: same ? 0.6 : 1,
           color: colorOf(nA),
           fontStyle: vA ? "normal" : "italic" }}>{vA || "—"}</span>
       </div>
       <div style={{ width:1, height:16, background:"var(--c-border)", flexShrink:0 }} />
       <div style={{ flex:1, paddingLeft:8 }}>
-        <span style={{ fontSize:11, opacity: same ? 0.4 : 1,
+        <span style={{ fontSize:11, opacity: same ? 0.6 : 1,
           color: colorOf(nB),
           fontStyle: vB ? "normal" : "italic" }}>{vB || "—"}</span>
       </div>
