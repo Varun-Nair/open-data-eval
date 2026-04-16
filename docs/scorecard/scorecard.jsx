@@ -922,9 +922,10 @@ function FChk({ label, vA, vB }) {
   );
 }
 
-// Access section — collapses to "identical" badge when all fields match
+// Access section — collapses identical fields, differing fields shown by default
 function FAccessSection({ A, B, dlL }) {
-  const [expanded, setExpanded] = React.useState(false);
+  const [allExpanded, setAllExpanded] = React.useState(false);
+  const [diffExpanded, setDiffExpanded] = React.useState(false);
   const fields = [
     { label:"License",      vA: A.licType,      vB: B.licType },
     { label:"Access level", vA: A.accLevel,      vB: B.accLevel },
@@ -935,14 +936,17 @@ function FAccessSection({ A, B, dlL }) {
   ];
   const norm = v => v == null ? "—" : String(v);
   const allSame = fields.every(f => norm(f.vA) === norm(f.vB));
+  const diffFields = fields.filter(f => norm(f.vA) !== norm(f.vB));
+  const sameFields = fields.filter(f => norm(f.vA) === norm(f.vB));
 
-  if (allSame && !expanded) {
+  // All identical — single collapsed row
+  if (allSame && !allExpanded) {
     return (
       <div style={{ display:"flex", alignItems:"center", padding:"6px 0",
         borderBottom:"1px solid var(--c-track)" }}>
         <span style={{ width:80, fontSize:10, color:"var(--c-text-3)", fontWeight:500, flexShrink:0 }}>Access</span>
         <span style={{ fontSize:11, color:"var(--c-green)", fontWeight:500 }}>Identical</span>
-        <button onClick={() => setExpanded(true)}
+        <button onClick={() => setAllExpanded(true)}
           style={{ marginLeft:8, fontSize:10, color:"var(--c-blue)", background:"none",
             border:"1px solid var(--c-blue)", borderRadius:4, cursor:"pointer",
             padding:"1px 7px" }}>show</button>
@@ -950,20 +954,39 @@ function FAccessSection({ A, B, dlL }) {
     );
   }
 
-  const toShow = allSame ? fields : fields.filter(f => norm(f.vA) !== norm(f.vB));
-  return (
-    <div>
-      {toShow.map(f => <FTxt key={f.label} label={f.label} vA={f.vA} vB={f.vB} />)}
-      {allSame && (
+  // All identical — expanded
+  if (allSame && allExpanded) {
+    return (
+      <div>
+        {fields.map(f => <FTxt key={f.label} label={f.label} vA={f.vA} vB={f.vB} />)}
         <div style={{ fontSize:10, color:"var(--c-text-3)", padding:"4px 0 2px" }}>
-          <button onClick={() => setExpanded(false)}
+          <button onClick={() => setAllExpanded(false)}
             style={{ fontSize:10, color:"var(--c-text-3)", background:"none",
               border:"none", cursor:"pointer", padding:0, textDecoration:"underline" }}>hide</button>
         </div>
+      </div>
+    );
+  }
+
+  // Some differ — show diff rows; identical rows collapsed behind clickable label
+  return (
+    <div>
+      {diffFields.map(f => <FTxt key={f.label} label={f.label} vA={f.vA} vB={f.vB} />)}
+      {sameFields.length > 0 && !diffExpanded && (
+        <div style={{ fontSize:10, padding:"4px 0 2px", cursor:"pointer",
+          color:"var(--c-blue)", textDecoration:"underline" }}
+          onClick={() => setDiffExpanded(true)}>
+          {sameFields.length} field{sameFields.length > 1 ? "s" : ""} identical, hidden — show
+        </div>
       )}
-      {!allSame && toShow.length < fields.length && (
-        <div style={{ fontSize:10, color:"var(--c-text-3)", padding:"4px 0 2px" }}>
-          {fields.length - toShow.length} field{fields.length - toShow.length > 1 ? "s" : ""} identical, hidden
+      {sameFields.length > 0 && diffExpanded && (
+        <div>
+          {sameFields.map(f => <FTxt key={f.label} label={f.label} vA={f.vA} vB={f.vB} />)}
+          <div style={{ fontSize:10, color:"var(--c-text-3)", padding:"4px 0 2px" }}>
+            <button onClick={() => setDiffExpanded(false)}
+              style={{ fontSize:10, color:"var(--c-text-3)", background:"none",
+                border:"none", cursor:"pointer", padding:0, textDecoration:"underline" }}>hide identical</button>
+          </div>
         </div>
       )}
     </div>
@@ -977,15 +1000,17 @@ function CmpDownstreamFitCompare({ A, B }) {
       {COMPARE_USECASES.map(uc => {
         const vA = A[uc.field] != null ? Math.round(A[uc.field] * 100) : null;
         const vB = B[uc.field] != null ? Math.round(B[uc.field] * 100) : null;
-        const STRONG = 60;
-        const bothStrong = vA != null && vB != null && vA >= STRONG && vB >= STRONG;
-        const aStrong = vA != null && vB != null && vA >= STRONG && vB < STRONG;
-        const bStrong = vA != null && vB != null && vB >= STRONG && vA < STRONG;
-        const bothWeak = vA != null && vB != null && vA < STRONG && vB < STRONG;
         const delta = vA != null && vB != null ? Math.abs(vA - vB) : null;
-        const aLeads = vA != null && vB != null && vA > vB;
+        const aLeads = vA != null && vB != null && vA >= vB;
         const winner = aLeads ? A : B;
         const winColor = aLeads ? "var(--c-blue)" : "var(--c-amber)";
+        const winBg = aLeads ? "rgba(37,99,235,0.08)" : "rgba(217,119,6,0.08)";
+
+        // 4-tier state
+        const bothStrong   = vA != null && vB != null && vA >= 70 && vB >= 70;
+        const oneStrong    = vA != null && vB != null && (vA >= 70) !== (vB >= 70);
+        const bothMid      = vA != null && vB != null && vA >= 40 && vB >= 40 && vA < 70 && vB < 70;
+        const bothLow      = vA != null && vB != null && vA < 40 && vB < 40;
 
         return (
           <div key={uc.key} style={{ display:"flex", alignItems:"center",
@@ -999,22 +1024,20 @@ function CmpDownstreamFitCompare({ A, B }) {
                 <span style={{ fontSize:10, fontWeight:600, color:"var(--c-green)",
                   background:"var(--c-green-bg)", padding:"2px 8px", borderRadius:10 }}>Both strong</span>
               )}
-              {(aStrong || bStrong) && (
-                <span style={{ fontSize:10, fontWeight:600,
-                  color: aStrong ? "var(--c-blue)" : "var(--c-amber)",
-                  background: aStrong ? "rgba(37,99,235,0.08)" : "rgba(217,119,6,0.08)",
-                  padding:"2px 8px", borderRadius:10 }}>
-                  {aStrong ? A.name : B.name} +{delta}
-                </span>
-              )}
-              {bothWeak && delta != null && delta >= 25 && (
-                <span style={{ fontSize:10, fontWeight:600, color: winColor,
-                  background: aLeads ? "rgba(37,99,235,0.08)" : "rgba(217,119,6,0.08)",
+              {oneStrong && (
+                <span style={{ fontSize:10, fontWeight:600, color: winColor, background: winBg,
                   padding:"2px 8px", borderRadius:10 }}>
                   {winner.name} +{delta}
                 </span>
               )}
-              {bothWeak && delta != null && delta < 25 && (
+              {bothMid && (
+                <span style={{ fontSize:10, fontWeight:500, color: delta === 0 ? "var(--c-text-3)" : winColor,
+                  background: delta === 0 ? "none" : winBg,
+                  padding:"2px 8px", borderRadius:10 }}>
+                  {delta === 0 ? "Tied" : `${winner.name} better (+${delta})`}
+                </span>
+              )}
+              {bothLow && (
                 <span style={{ fontSize:10, color:"var(--c-text-3)" }}>
                   {delta === 0 ? "Tied" : winner.name + " slightly better"}
                 </span>
@@ -1136,8 +1159,7 @@ function CompareSideBySide() {
       {/* auto-summary */}
       <div style={{ fontSize:12.5, color:"var(--c-text-1)", lineHeight:1.65, marginBottom:14,
         padding:"12px 16px", background:"var(--c-surface-2)", borderRadius:8,
-        borderLeft:"3px solid var(--c-blue)", border:"1px solid var(--c-border)",
-        borderLeftWidth:3, borderLeftColor:"var(--c-blue)" }}>
+        border:"1px solid var(--c-border)", borderLeft:"3px solid var(--c-accent-scale)" }}>
         {genSummary(A, B)}
       </div>
 
@@ -1233,11 +1255,14 @@ function CompareSideBySide() {
 
         <div style={{ padding:"14px 22px", borderTop:"1px solid var(--c-border)" }}>
           {/* dataset color legend */}
-          <div style={{ display:"flex", alignItems:"center", gap:16, marginBottom:10 }}>
-            <div style={{ fontSize:10, fontWeight:700, color:"var(--c-text-2)", textTransform:"uppercase",
-              letterSpacing:0.8 }}>Downstream Fit</div>
-            <span style={{ fontSize:10, color:"var(--c-blue)", fontWeight:600 }}>{A.name}</span>
-            <span style={{ fontSize:10, color:"var(--c-amber)", fontWeight:600 }}>{B.name}</span>
+          <div style={{ display:"flex", alignItems:"center", marginBottom:10 }}>
+            <span style={{ width:130, fontSize:10, fontWeight:700, color:"var(--c-text-2)",
+              textTransform:"uppercase", letterSpacing:0.8, flexShrink:0 }}>Downstream Fit</span>
+            <span style={{ width:40, textAlign:"right", paddingRight:8, fontSize:10,
+              color:"var(--c-blue)", fontWeight:600, flexShrink:0 }}>{A.name}</span>
+            <div style={{ flex:1 }} />
+            <span style={{ width:40, textAlign:"left", paddingLeft:8, fontSize:10,
+              color:"var(--c-amber)", fontWeight:600, flexShrink:0 }}>{B.name}</span>
           </div>
           <CmpDownstreamFitCompare A={A} B={B} />
         </div>
