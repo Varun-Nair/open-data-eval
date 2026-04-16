@@ -1025,25 +1025,17 @@ function CmpDownstreamFitCompare({ A, B }) {
         return (
           <div key={uc.key} style={{ display:"flex", alignItems:"center",
             padding:"5px 0", borderBottom:"1px solid var(--c-track)" }}>
-            {/* col 1: label — same width:80 as every other fact row */}
             <span style={{ width:80, fontSize:10, color:"var(--c-text-3)", fontWeight:500,
               flexShrink:0 }}>{FIT_SHORT[uc.key] || uc.label}</span>
-            {/* col 2: A score — flex:1 right-aligned, same as FTech */}
-            <div style={{ flex:1, textAlign:"right", paddingRight:8 }}>
+            <div style={{ flex:1, textAlign:"right", paddingRight:12 }}>
               <span style={{ fontSize:11, color:"var(--c-blue)", fontVariantNumeric:"tabular-nums" }}>
                 {vA != null ? vA + "%" : "—"}
               </span>
             </div>
-            {/* col 3: center divider with verdict overlaid — identical to FTech divider position */}
-            <div style={{ position:"relative", width:1, height:16,
-              background:"var(--c-border)", flexShrink:0 }}>
-              <div style={{ position:"absolute", left:"50%", top:"50%",
-                transform:"translate(-50%,-50%)", zIndex:1 }}>
-                {verdictNode}
-              </div>
+            <div style={{ width:140, textAlign:"center", flexShrink:0 }}>
+              {verdictNode}
             </div>
-            {/* col 4: B score — flex:1 left-aligned, same as FTech */}
-            <div style={{ flex:1, paddingLeft:8 }}>
+            <div style={{ flex:1, paddingLeft:12 }}>
               <span style={{ fontSize:11, color:"var(--c-amber)", fontVariantNumeric:"tabular-nums" }}>
                 {vB != null ? vB + "%" : "—"}
               </span>
@@ -1254,19 +1246,16 @@ function CompareSideBySide() {
         </div>
 
         <div style={{ padding:"14px 22px", borderTop:"1px solid var(--c-border)" }}>
-          {/* header — same column widths as data rows and every other fact section */}
+          {/* header — columns match data rows exactly */}
           <div style={{ display:"flex", alignItems:"center", marginBottom:8 }}>
             <span style={{ width:80, fontSize:10, fontWeight:700, color:"var(--c-text-2)",
               textTransform:"uppercase", letterSpacing:0.8, flexShrink:0 }}>Fit</span>
-            <div style={{ flex:1, textAlign:"right", paddingRight:8 }}>
+            <div style={{ flex:1, textAlign:"right", paddingRight:12 }}>
               <span style={{ fontSize:10, color:"var(--c-blue)", fontWeight:600 }}>{A.name}</span>
             </div>
-            <div style={{ position:"relative", width:1, flexShrink:0 }}>
-              <div style={{ position:"absolute", left:"50%", top:"50%",
-                transform:"translate(-50%,-50%)", fontSize:9, color:"var(--c-text-3)",
-                fontWeight:500, letterSpacing:0.3, whiteSpace:"nowrap" }}>Verdict</div>
-            </div>
-            <div style={{ flex:1, paddingLeft:8 }}>
+            <div style={{ width:140, textAlign:"center", flexShrink:0,
+              fontSize:9, color:"var(--c-text-3)", fontWeight:500, letterSpacing:0.3 }}>Verdict</div>
+            <div style={{ flex:1, paddingLeft:12 }}>
               <span style={{ fontSize:10, color:"var(--c-amber)", fontWeight:600 }}>{B.name}</span>
             </div>
             <span style={{ width:32, flexShrink:0 }} />
