@@ -872,14 +872,14 @@ function FTech({ label, vA, vB, greenAt, amberAt }) {
     <div style={{ display:"flex", alignItems:"center", padding:"5px 0", borderBottom:"1px solid var(--c-track)" }}>
       <span style={{ width:80, fontSize:10, color:"var(--c-text-3)", fontWeight:500, flexShrink:0 }}>{label}</span>
       <div style={{ flex:1, textAlign:"right", paddingRight:8 }}>
-        <span style={{ fontSize:11, opacity: same ? 0.45 : 1,
-          color: same ? "var(--c-text-2)" : colorOf(nA),
+        <span style={{ fontSize:11, opacity: same ? 0.4 : 1,
+          color: colorOf(nA),
           fontStyle: vA ? "normal" : "italic" }}>{vA || "—"}</span>
       </div>
       <div style={{ width:1, height:16, background:"var(--c-border)", flexShrink:0 }} />
       <div style={{ flex:1, paddingLeft:8 }}>
-        <span style={{ fontSize:11, opacity: same ? 0.45 : 1,
-          color: same ? "var(--c-text-2)" : colorOf(nB),
+        <span style={{ fontSize:11, opacity: same ? 0.4 : 1,
+          color: colorOf(nB),
           fontStyle: vB ? "normal" : "italic" }}>{vB || "—"}</span>
       </div>
       <span style={{ width:32, flexShrink:0 }}></span>
@@ -943,8 +943,9 @@ function FAccessSection({ A, B, dlL }) {
         <span style={{ width:80, fontSize:10, color:"var(--c-text-3)", fontWeight:500, flexShrink:0 }}>Access</span>
         <span style={{ fontSize:11, color:"var(--c-green)", fontWeight:500 }}>Identical</span>
         <button onClick={() => setExpanded(true)}
-          style={{ marginLeft:8, fontSize:10, color:"var(--c-text-3)", background:"none",
-            border:"none", cursor:"pointer", padding:0, textDecoration:"underline" }}>show</button>
+          style={{ marginLeft:8, fontSize:10, color:"var(--c-blue)", background:"none",
+            border:"1px solid var(--c-blue)", borderRadius:4, cursor:"pointer",
+            padding:"1px 7px" }}>show</button>
       </div>
     );
   }
@@ -953,6 +954,13 @@ function FAccessSection({ A, B, dlL }) {
   return (
     <div>
       {toShow.map(f => <FTxt key={f.label} label={f.label} vA={f.vA} vB={f.vB} />)}
+      {allSame && (
+        <div style={{ fontSize:10, color:"var(--c-text-3)", padding:"4px 0 2px" }}>
+          <button onClick={() => setExpanded(false)}
+            style={{ fontSize:10, color:"var(--c-text-3)", background:"none",
+              border:"none", cursor:"pointer", padding:0, textDecoration:"underline" }}>hide</button>
+        </div>
+      )}
       {!allSame && toShow.length < fields.length && (
         <div style={{ fontSize:10, color:"var(--c-text-3)", padding:"4px 0 2px" }}>
           {fields.length - toShow.length} field{fields.length - toShow.length > 1 ? "s" : ""} identical, hidden
@@ -969,18 +977,21 @@ function CmpDownstreamFitCompare({ A, B }) {
       {COMPARE_USECASES.map(uc => {
         const vA = A[uc.field] != null ? Math.round(A[uc.field] * 100) : null;
         const vB = B[uc.field] != null ? Math.round(B[uc.field] * 100) : null;
-        const bothStrong = vA != null && vB != null && vA >= 70 && vB >= 70;
-        const aStrong = vA != null && vB != null && vA >= 70 && vB < 70;
-        const bStrong = vA != null && vB != null && vB >= 70 && vA < 70;
-        const bothWeak = vA != null && vB != null && vA < 70 && vB < 70;
+        const STRONG = 60;
+        const bothStrong = vA != null && vB != null && vA >= STRONG && vB >= STRONG;
+        const aStrong = vA != null && vB != null && vA >= STRONG && vB < STRONG;
+        const bStrong = vA != null && vB != null && vB >= STRONG && vA < STRONG;
+        const bothWeak = vA != null && vB != null && vA < STRONG && vB < STRONG;
         const delta = vA != null && vB != null ? Math.abs(vA - vB) : null;
         const aLeads = vA != null && vB != null && vA > vB;
+        const winner = aLeads ? A : B;
+        const winColor = aLeads ? "var(--c-blue)" : "var(--c-amber)";
 
         return (
-          <div key={uc.key} style={{ display:"flex", alignItems:"center", gap:10,
+          <div key={uc.key} style={{ display:"flex", alignItems:"center",
             padding:"5px 0", borderBottom:"1px solid var(--c-track)" }}>
             <span style={{ width:130, fontSize:11, color:"var(--c-text-2)", flexShrink:0 }}>{uc.label}</span>
-            <span style={{ width:36, fontSize:11, textAlign:"right", color:"var(--c-blue)",
+            <span style={{ width:40, fontSize:11, textAlign:"right", paddingRight:8, color:"var(--c-blue)",
               fontVariantNumeric:"tabular-nums", flexShrink:0 }}>{vA != null ? vA + "%" : "—"}</span>
 
             <div style={{ flex:1, textAlign:"center" }}>
@@ -996,9 +1007,16 @@ function CmpDownstreamFitCompare({ A, B }) {
                   {aStrong ? A.name : B.name} +{delta}
                 </span>
               )}
-              {bothWeak && (
+              {bothWeak && delta != null && delta >= 25 && (
+                <span style={{ fontSize:10, fontWeight:600, color: winColor,
+                  background: aLeads ? "rgba(37,99,235,0.08)" : "rgba(217,119,6,0.08)",
+                  padding:"2px 8px", borderRadius:10 }}>
+                  {winner.name} +{delta}
+                </span>
+              )}
+              {bothWeak && delta != null && delta < 25 && (
                 <span style={{ fontSize:10, color:"var(--c-text-3)" }}>
-                  {delta === 0 ? "Tied" : (aLeads ? A.name : B.name) + " slightly better"}
+                  {delta === 0 ? "Tied" : winner.name + " slightly better"}
                 </span>
               )}
               {(vA == null || vB == null) && (
@@ -1006,7 +1024,7 @@ function CmpDownstreamFitCompare({ A, B }) {
               )}
             </div>
 
-            <span style={{ width:36, fontSize:11, textAlign:"left", color:"var(--c-amber)",
+            <span style={{ width:40, fontSize:11, textAlign:"left", paddingLeft:8, color:"var(--c-amber)",
               fontVariantNumeric:"tabular-nums", flexShrink:0 }}>{vB != null ? vB + "%" : "—"}</span>
           </div>
         );
@@ -1116,9 +1134,10 @@ function CompareSideBySide() {
       </div>
 
       {/* auto-summary */}
-      <div style={{ fontSize:12, color:"var(--c-text-2)", lineHeight:1.6, marginBottom:14,
-        padding:"10px 14px", background:"var(--c-surface-2)", borderRadius:8,
-        border:"1px solid var(--c-border)" }}>
+      <div style={{ fontSize:12.5, color:"var(--c-text-1)", lineHeight:1.65, marginBottom:14,
+        padding:"12px 16px", background:"var(--c-surface-2)", borderRadius:8,
+        borderLeft:"3px solid var(--c-blue)", border:"1px solid var(--c-border)",
+        borderLeftWidth:3, borderLeftColor:"var(--c-blue)" }}>
         {genSummary(A, B)}
       </div>
 
