@@ -988,7 +988,7 @@ function FAccessSection({ A, B, dlL }) {
 }
 
 // Downstream fit — four-tier verdict, columns match FTech/FNum exactly
-const FIT_SHORT = { actRecog:"Action Recog.", handObj:"Hand-Object", nav:"Navigation" };
+const FIT_LABELS = { actRecog:"Action Recognition", handObj:"Hand-Object Interaction", nav:"Navigation" };
 function CmpDownstreamFitCompare({ A, B }) {
   return (
     <div>
@@ -1025,8 +1025,8 @@ function CmpDownstreamFitCompare({ A, B }) {
         return (
           <div key={uc.key} style={{ display:"flex", alignItems:"center",
             padding:"5px 0", borderBottom:"1px solid var(--c-track)" }}>
-            <span style={{ width:80, fontSize:10, color:"var(--c-text-3)", fontWeight:500,
-              flexShrink:0 }}>{FIT_SHORT[uc.key] || uc.label}</span>
+            <span style={{ width:150, fontSize:11, color:"var(--c-text-1)", fontWeight:500,
+              flexShrink:0 }}>{FIT_LABELS[uc.key] || uc.label}</span>
             <div style={{ flex:1, textAlign:"right", paddingRight:12 }}>
               <span style={{ fontSize:11, color:"var(--c-blue)", fontVariantNumeric:"tabular-nums" }}>
                 {vA != null ? vA + "%" : "—"}
@@ -1248,8 +1248,8 @@ function CompareSideBySide() {
         <div style={{ padding:"14px 22px", borderTop:"1px solid var(--c-border)" }}>
           {/* header — columns match data rows exactly */}
           <div style={{ display:"flex", alignItems:"center", marginBottom:8 }}>
-            <span style={{ width:80, fontSize:10, fontWeight:700, color:"var(--c-text-2)",
-              textTransform:"uppercase", letterSpacing:0.8, flexShrink:0 }}>Fit</span>
+            <span style={{ width:150, fontSize:10, fontWeight:700, color:"var(--c-text-2)",
+              textTransform:"uppercase", letterSpacing:0.8, flexShrink:0 }}>Downstream Fit</span>
             <div style={{ flex:1, textAlign:"right", paddingRight:12 }}>
               <span style={{ fontSize:10, color:"var(--c-blue)", fontWeight:600 }}>{A.name}</span>
             </div>
