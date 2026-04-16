@@ -1028,12 +1028,12 @@ function CmpDownstreamFitCompare({ A, B }) {
                 <span style={{ fontSize:10, fontWeight:500, color: delta === 0 ? "var(--c-text-3)" : winColor,
                   background: delta === 0 ? "none" : winBg,
                   padding:"2px 8px", borderRadius:10 }}>
-                  {delta === 0 ? "Tied" : `${winner.name} better (+${delta})`}
+                  {delta === 0 ? "Tied" : `${winner.name} +${delta}`}
                 </span>
               )}
               {bothLow && (
                 <span style={{ fontSize:10, color:"var(--c-text-3)" }}>
-                  {delta === 0 ? "Tied" : winner.name + " slightly better"}
+                  {delta === 0 ? "Tied" : `${winner.name} +${delta}`}
                 </span>
               )}
               {(vA == null || vB == null) && (
