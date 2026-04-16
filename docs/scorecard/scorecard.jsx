@@ -1009,8 +1009,8 @@ function CmpDownstreamFitCompare({ A, B }) {
         // 4-tier state
         const bothStrong   = vA != null && vB != null && vA >= 70 && vB >= 70;
         const oneStrong    = vA != null && vB != null && (vA >= 70) !== (vB >= 70);
-        const bothMid      = vA != null && vB != null && vA >= 40 && vB >= 40 && vA < 70 && vB < 70;
         const bothLow      = vA != null && vB != null && vA < 40 && vB < 40;
+        const midRange     = vA != null && vB != null && !bothStrong && !oneStrong && !bothLow;
 
         return (
           <div key={uc.key} style={{ display:"flex", alignItems:"center",
@@ -1030,7 +1030,7 @@ function CmpDownstreamFitCompare({ A, B }) {
                   {winner.name} +{delta}
                 </span>
               )}
-              {bothMid && (
+              {midRange && (
                 <span style={{ fontSize:10, fontWeight:500, color: delta === 0 ? "var(--c-text-3)" : winColor,
                   background: delta === 0 ? "none" : winBg,
                   padding:"2px 8px", borderRadius:10 }}>
