@@ -987,10 +987,11 @@ function FAccessSection({ A, B, dlL }) {
   );
 }
 
-// Downstream fit — three-state per use case
+// Downstream fit — four-tier verdict, columns match FTech/FNum exactly
+const FIT_SHORT = { actRecog:"Action Recog.", handObj:"Hand-Object", nav:"Navigation" };
 function CmpDownstreamFitCompare({ A, B }) {
   return (
-    <div style={{ display:"flex", flexDirection:"column", gap:8 }}>
+    <div>
       {COMPARE_USECASES.map(uc => {
         const vA = A[uc.field] != null ? Math.round(A[uc.field] * 100) : null;
         const vB = B[uc.field] != null ? Math.round(B[uc.field] * 100) : null;
@@ -1000,49 +1001,54 @@ function CmpDownstreamFitCompare({ A, B }) {
         const winColor = aLeads ? "var(--c-blue)" : "var(--c-amber)";
         const winBg = aLeads ? "rgba(37,99,235,0.08)" : "rgba(217,119,6,0.08)";
 
-        // 4-tier state
-        const bothStrong   = vA != null && vB != null && vA >= 70 && vB >= 70;
-        const oneStrong    = vA != null && vB != null && (vA >= 70) !== (vB >= 70);
-        const bothLow      = vA != null && vB != null && vA < 40 && vB < 40;
-        const midRange     = vA != null && vB != null && !bothStrong && !oneStrong && !bothLow;
+        const bothStrong = vA != null && vB != null && vA >= 70 && vB >= 70;
+        const oneStrong  = vA != null && vB != null && (vA >= 70) !== (vB >= 70);
+        const bothLow    = vA != null && vB != null && vA < 40 && vB < 40;
+        const midRange   = vA != null && vB != null && !bothStrong && !oneStrong && !bothLow;
+
+        const verdictNode = bothStrong
+          ? <span style={{ fontSize:10, fontWeight:600, color:"var(--c-green)",
+              background:"var(--c-green-bg)", padding:"2px 8px", borderRadius:10,
+              whiteSpace:"nowrap" }}>Both strong</span>
+          : (oneStrong || midRange)
+          ? <span style={{ fontSize:10, fontWeight:600, color: winColor, background: winBg,
+              padding:"2px 8px", borderRadius:10, whiteSpace:"nowrap" }}>
+              {delta === 0 ? "Tied" : `${winner.name} +${delta}`}
+            </span>
+          : bothLow
+          ? <span style={{ fontSize:10, color:"var(--c-text-3)", whiteSpace:"nowrap" }}>
+              {delta === 0 ? "Tied" : `${winner.name} +${delta}`}
+            </span>
+          : <span style={{ fontSize:10, color:"var(--c-text-3)", fontStyle:"italic",
+              whiteSpace:"nowrap" }}>no data</span>;
 
         return (
           <div key={uc.key} style={{ display:"flex", alignItems:"center",
             padding:"5px 0", borderBottom:"1px solid var(--c-track)" }}>
-            <span style={{ width:130, fontSize:11, color:"var(--c-text-2)", flexShrink:0 }}>{uc.label}</span>
-            <span style={{ width:48, fontSize:11, textAlign:"left", color:"var(--c-blue)",
-              fontVariantNumeric:"tabular-nums", flexShrink:0 }}>{vA != null ? vA + "%" : "—"}</span>
-
-            <div style={{ flex:1, textAlign:"center" }}>
-              {bothStrong && (
-                <span style={{ fontSize:10, fontWeight:600, color:"var(--c-green)",
-                  background:"var(--c-green-bg)", padding:"2px 8px", borderRadius:10 }}>Both strong</span>
-              )}
-              {oneStrong && (
-                <span style={{ fontSize:10, fontWeight:600, color: winColor, background: winBg,
-                  padding:"2px 8px", borderRadius:10 }}>
-                  {winner.name} +{delta}
-                </span>
-              )}
-              {midRange && (
-                <span style={{ fontSize:10, fontWeight:500, color: delta === 0 ? "var(--c-text-3)" : winColor,
-                  background: delta === 0 ? "none" : winBg,
-                  padding:"2px 8px", borderRadius:10 }}>
-                  {delta === 0 ? "Tied" : `${winner.name} +${delta}`}
-                </span>
-              )}
-              {bothLow && (
-                <span style={{ fontSize:10, color:"var(--c-text-3)" }}>
-                  {delta === 0 ? "Tied" : `${winner.name} +${delta}`}
-                </span>
-              )}
-              {(vA == null || vB == null) && (
-                <span style={{ fontSize:10, color:"var(--c-text-3)", fontStyle:"italic" }}>no data</span>
-              )}
+            {/* col 1: label — same width:80 as every other fact row */}
+            <span style={{ width:80, fontSize:10, color:"var(--c-text-3)", fontWeight:500,
+              flexShrink:0 }}>{FIT_SHORT[uc.key] || uc.label}</span>
+            {/* col 2: A score — flex:1 right-aligned, same as FTech */}
+            <div style={{ flex:1, textAlign:"right", paddingRight:8 }}>
+              <span style={{ fontSize:11, color:"var(--c-blue)", fontVariantNumeric:"tabular-nums" }}>
+                {vA != null ? vA + "%" : "—"}
+              </span>
             </div>
-
-            <span style={{ width:48, fontSize:11, textAlign:"right", color:"var(--c-amber)",
-              fontVariantNumeric:"tabular-nums", flexShrink:0 }}>{vB != null ? vB + "%" : "—"}</span>
+            {/* col 3: center divider with verdict overlaid — identical to FTech divider position */}
+            <div style={{ position:"relative", width:1, height:16,
+              background:"var(--c-border)", flexShrink:0 }}>
+              <div style={{ position:"absolute", left:"50%", top:"50%",
+                transform:"translate(-50%,-50%)", zIndex:1 }}>
+                {verdictNode}
+              </div>
+            </div>
+            {/* col 4: B score — flex:1 left-aligned, same as FTech */}
+            <div style={{ flex:1, paddingLeft:8 }}>
+              <span style={{ fontSize:11, color:"var(--c-amber)", fontVariantNumeric:"tabular-nums" }}>
+                {vB != null ? vB + "%" : "—"}
+              </span>
+            </div>
+            <span style={{ width:32, flexShrink:0 }} />
           </div>
         );
       })}
@@ -1248,16 +1254,22 @@ function CompareSideBySide() {
         </div>
 
         <div style={{ padding:"14px 22px", borderTop:"1px solid var(--c-border)" }}>
-          {/* header row — columns match data rows exactly */}
+          {/* header — same column widths as data rows and every other fact section */}
           <div style={{ display:"flex", alignItems:"center", marginBottom:8 }}>
-            <span style={{ width:130, fontSize:10, fontWeight:700, color:"var(--c-text-2)",
-              textTransform:"uppercase", letterSpacing:0.8, flexShrink:0 }}>Downstream Fit</span>
-            <span style={{ width:48, textAlign:"left", fontSize:10,
-              color:"var(--c-blue)", fontWeight:600, flexShrink:0 }}>{A.name}</span>
-            <div style={{ flex:1, textAlign:"center", fontSize:10, color:"var(--c-text-3)",
-              fontWeight:500, letterSpacing:0.3 }}>Verdict</div>
-            <span style={{ width:48, textAlign:"right", fontSize:10,
-              color:"var(--c-amber)", fontWeight:600, flexShrink:0 }}>{B.name}</span>
+            <span style={{ width:80, fontSize:10, fontWeight:700, color:"var(--c-text-2)",
+              textTransform:"uppercase", letterSpacing:0.8, flexShrink:0 }}>Fit</span>
+            <div style={{ flex:1, textAlign:"right", paddingRight:8 }}>
+              <span style={{ fontSize:10, color:"var(--c-blue)", fontWeight:600 }}>{A.name}</span>
+            </div>
+            <div style={{ position:"relative", width:1, flexShrink:0 }}>
+              <div style={{ position:"absolute", left:"50%", top:"50%",
+                transform:"translate(-50%,-50%)", fontSize:9, color:"var(--c-text-3)",
+                fontWeight:500, letterSpacing:0.3, whiteSpace:"nowrap" }}>Verdict</div>
+            </div>
+            <div style={{ flex:1, paddingLeft:8 }}>
+              <span style={{ fontSize:10, color:"var(--c-amber)", fontWeight:600 }}>{B.name}</span>
+            </div>
+            <span style={{ width:32, flexShrink:0 }} />
           </div>
           <CmpDownstreamFitCompare A={A} B={B} />
         </div>
