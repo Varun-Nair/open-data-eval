@@ -12,7 +12,7 @@
   "qp:qualityProfile": {
     "qp:schemaVersion": "1.0",
     "qp:evalLevel": "metadata",
-    "qp:evaluatedAt": "2026-04-14T21:41:20Z",
+    "qp:evaluatedAt": "2026-04-17T03:38:42Z",
     "qp:evaluatedBy": "open-data-eval",
     "scores": {
       "fps": {
@@ -319,7 +319,7 @@
         "iso_mapping": "Div-ML"
       },
       "demographic_diversity": {
-        "score": 0.93,
+        "score": 0.878,
         "participants": 740.0,
         "geographic_locations": 6,
         "method": "log_normalized_product",
