@@ -1,43 +1,46 @@
 Section,Category,Count
 Access Level,,
-,Open,74
-,Gated-Open,19
+,Open,75
+,Gated-Open,20
 ,Restricted,9
 ,Unavailable,1
 ,,
 URL Status,,
-,Live,94
+,Live,95
 ,Live but broken,5
 ,Redirect,2
 ,Dead,2
+,Live but gated,1
 ,,
 License Type,,
-,CC-BY-4.0,2
-,CC-BY-NC-4.0,12
-,CC-BY-NC-SA-4.0,2
-,CC-BY-NC-ND-4.0,1
+,Not specified,67
 ,Custom Academic,14
-,Custom Open,1
+,CC-BY-NC-4.0,12
+,Apache-2.0,3
+,CC-BY-4.0,2
+,CC-BY-NC-SA-4.0,2
 ,S-Lab License,1
 ,Mixed,1
-,Apache-2.0,2
-,Not specified,67
+,Custom Open,1
+,CC-BY-NC-ND-4.0,1
+,CC-BY-SA-4.0,1
 ,,
 Modality,,
-,RGB video,103
+,RGB video,105
 ,Eye gaze,31
+,IMU,24
 ,Hand pose annotations,24
-,IMU,23
 ,Body pose annotations,22
+,Depth (RGB-D),20
 ,Audio,19
-,Depth (RGB-D),19
 ,3D point clouds,14
-,SLAM/odometry,10
-,Narrations/captions,11
+,Narrations/captions,12
+,SLAM/odometry,11
 ,3D scene reconstruction,8
 ,Depth (stereo),6
 ,Motion capture,6
 ,Optical flow,2
+,3D hand pose annotations,1
 ,Object tracking,1
 ,Multi-view,1
 ,mmWave,1
@@ -46,14 +49,14 @@ Modality,,
 Category,,
 ,Hand-object interaction,15
 ,Body pose,13
-,Industrial and procedural,11
+,Industrial and procedural,12
 ,Classic,10
 ,Action recognition,10
 ,Ego-exo cross-view,9
+,Large-scale foundation,6
 ,Social interaction,6
 ,Gaze and eye tracking,6
 ,Navigation and localization,6
-,Large-scale foundation,5
 ,3D reconstruction,3
 ,Object detection,3
 ,VQA and language,2
@@ -62,8 +65,8 @@ Category,,
 ,Summarization,1
 ,,
 Scale,,
-,1000h+,5
+,1000h+,9
 ,100-999h,10
-,10-99h,17
-,<10h,7
-,Unknown,64
+,10-99h,18
+,<10h,8
+,Unknown,60

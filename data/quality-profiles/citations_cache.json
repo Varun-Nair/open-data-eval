@@ -66,5 +66,10 @@
     "count": 401,
     "source": "semantic_scholar",
     "fetched_at": "2026-04-14"
+  },
+  "EgoVerse": {
+    "count": 0,
+    "source": "semantic_scholar",
+    "fetched_at": "2026-04-16"
   }
 }

@@ -114,6 +114,7 @@ TARGET_DATASETS = [
     "EgoLife", "Xperience-10M", "OpenEgo", "EgoVid-5M",
     "HOI4D", "HOT3D", "ARCTIC", "EgoDex", "TACO",
     "Egocentric-10K", "Egocentric-100K",
+    "EgoVerse",
 ]
 
 
@@ -382,6 +383,25 @@ PAPER_METADATA = {
         "arxiv_id": None,
         "paper_ref": "HuggingFace:builddotai/Egocentric-100K",
     },
+    "EgoVerse": {
+        # arXiv 2604.07607 (submitted April 2026)
+        # Georgia Tech RL2 + Stanford REAL + UC San Diego Wang + ETH Zurich CVG/SRL
+        # + Mecka AI + Scale AI + Meta
+        "capture_device": "Project Aria Gen 1 glasses (EgoVerse-A) + custom head-mounted stereo/depth rigs (EgoVerse-I) + iPhone on head strap (phone variant)",
+        "calibration_tier": 0.85,              # EgoVerse-A: Aria MPS provides time-varying intrinsics + extrinsics + distortion (F-Theta fisheye).
+                                               # EgoVerse paper does not separately validate; EgoVerse-I calibration not described.
+        "calibration_notes": "EgoVerse-A: Aria MPS pipeline provides time-varying intrinsics + extrinsics + F-Theta fisheye distortion (same as Ego-Exo4D). EgoVerse paper itself does not describe a separate validation step. EgoVerse-I: custom rigs — calibration not described in paper.",
+        "lens_type": "fisheye",                # Aria RGB is fisheye; EgoVerse-I stereo rigs also fisheye
+        "fov_degrees": 110,                    # Aria RGB 110° FOV (same as Ego-Exo4D / HOT3D)
+        "resolution_override": "1408x1408",    # Aria RGB native (EgoVerse-A); EgoVerse-I varies
+        "fps_override": 30,                    # Aria RGB at 30fps (standard profile, matches Ego-Exo4D); EgoVerse-I ~30fps
+        "annotation_coverage": 1.0,            # all 80K episodes have task-level language; EgoVerse-I adds dense subgoal annotations
+        "annotation_notes": "100% of 80K episodes have task-level language annotations and 6-DoF head pose from SLAM. EgoVerse-I additionally has dense subgoal annotations at 1–2 s intervals and 3D hand pose (21 keypoints). 1,965 distinct task types.",
+        "download_size_gb": None,              # not reported in paper or on website
+        "geo_locations": None,                 # multi-country collection; exact country count not stated in paper
+        "arxiv_id": "2604.07607",
+        "paper_ref": "arXiv:2604.07607",
+    },
 }
 
 
@@ -488,7 +508,7 @@ def parse_modalities(mod_str):
             continue
         if m.startswith('Depth'):
             mods.add('Depth')
-        elif m.startswith('Hand pose'):
+        elif m.startswith('Hand pose') or m.startswith('3D hand pose'):
             mods.add('Hand pose annotations')
         elif m.startswith('Body pose'):
             mods.add('Body pose annotations')

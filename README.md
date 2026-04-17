@@ -2,8 +2,8 @@
 
 > What is good data? We're building the systematic quality evaluation suite for AI/ML datasets.
 
-[![Datasets Audited](https://img.shields.io/badge/datasets%20audited-103-blue)](https://github.com/Varun-Nair/open-data-eval)
-[![Quality Profiles](https://img.shields.io/badge/quality%20profiles-16-5b21b6)](https://varun-nair.github.io/open-data-eval/scorecard/)
+[![Datasets Audited](https://img.shields.io/badge/datasets%20audited-105-blue)](https://github.com/Varun-Nair/open-data-eval)
+[![Quality Profiles](https://img.shields.io/badge/quality%20profiles-17-5b21b6)](https://varun-nair.github.io/open-data-eval/scorecard/)
 [![Live Scorecard](https://img.shields.io/badge/scorecard-live-059669)](https://varun-nair.github.io/open-data-eval/scorecard/)
 [![ISO 5259-2](https://img.shields.io/badge/ISO%205259--2-aligned-0369a1)](https://www.iso.org/standard/81088.html)
 [![License](https://img.shields.io/badge/license-CC--BY--4.0-green)](LICENSE)
@@ -17,7 +17,7 @@ We audit ML datasets the way code gets audited — systematically, quantitativel
 
 **[varun-nair.github.io/open-data-eval/scorecard/](https://varun-nair.github.io/open-data-eval/scorecard/)**
 
-Interactive quality profiles for 16 egocentric and manipulation datasets. Scores computed from catalog metadata and paper research. ISO/IEC 5259-2 aligned.
+Interactive quality profiles for 17 egocentric and manipulation datasets. Scores computed from catalog metadata and paper research. ISO/IEC 5259-2 aligned.
 
 ![Scorecard preview](docs/assets/scorecard-preview.png)
 
@@ -47,29 +47,30 @@ Interactive quality profiles for 16 egocentric and manipulation datasets. Scores
 
 ## Dataset Catalog
 
-103 egocentric video datasets audited across 33 fields each.
+105 egocentric video datasets audited across 33 fields each.
 
 | Metric | Value |
 |--------|-------|
-| Datasets audited | 103 |
-| Total video hours | 23,000+ |
-| Fully accessible | 94 (91%) |
+| Datasets audited | 105 |
+| Total video hours | 135,000+ |
+| Fully accessible | 95 (91%) |
 | Broken downloads | 5 (5%) |
 | Dead links | 2 (2%) |
-| **No license specified** | **67 of 103 (65%)** |
+| **No license specified** | **67 of 105 (64%)** |
 
 ### URL Status
 ```
-Live                ████████████████████████████████████████████ 94
+Live                ████████████████████████████████████████████ 95
 Broken download     ██ 5
 Redirect            █ 2
 Dead                █ 2
+Live but gated      █ 1
 ```
 
 ### Access Level
 ```
-Open                ████████████████████████████████████████████ 74
-Gated-Open          ██████████ 19
+Open                ████████████████████████████████████████████ 75
+Gated-Open          ██████████ 20
 Restricted          █████ 9
 Unavailable         █ 1
 ```
@@ -79,27 +80,28 @@ Unavailable         █ 1
 Not specified       ████████████████████████████████████████████ 67
 Custom Academic     ████████ 14
 CC-BY-NC-4.0        ███████ 12
+Apache-2.0          ██ 3
 CC-BY-4.0           █ 2
 CC-BY-NC-SA-4.0     █ 2
-Apache-2.0          █ 2
+CC-BY-SA-4.0        █ 1
 CC-BY-NC-ND-4.0     █ 1
 S-Lab License       █ 1
 Mixed               █ 1
 Custom Open         █ 1
 ```
 
-### Modalities (across all 103 datasets)
+### Modalities (across all 105 datasets)
 ```
-RGB Video           ████████████████████████████████████████████ 103
+RGB Video           ████████████████████████████████████████████ 105
 Eye Gaze            █████████████ 31
+IMU                 ██████████ 24
 Hand Pose           ██████████ 24
-IMU                 █████████ 23
 Body Pose           █████████ 22
+Depth (RGB-D)       ████████ 20
 Audio               ████████ 19
-Depth (RGB-D)       ████████ 19
 3D Point Clouds     ██████ 14
-SLAM/Odometry       ████ 10
-Narrations          █████ 11
+SLAM/Odometry       █████ 11
+Narrations          █████ 12
 3D Scene Recon.     ████ 8
 Motion Capture      ███ 6
 Depth (Stereo)      ███ 6
@@ -166,7 +168,7 @@ Each dataset gets a machine-readable Quality Profile (QP) — a structured recor
 - **ISO/IEC 5259-2 aligned** — 9 of 23 quality characteristics mapped at metadata level
 - **Progressively enriched** — metadata → file → frame → content (each phase adds depth)
 
-16 profiles live in [`data/quality-profiles/profiles/`](data/quality-profiles/profiles/).
+17 profiles live in [`data/quality-profiles/profiles/`](data/quality-profiles/profiles/).
 
 **Example: `data/quality-profiles/profiles/ego4d.qp.json`**
 
@@ -236,7 +238,7 @@ Each profile also includes 4 classifications (device, lens, video format, annota
 | File | Description |
 |------|-------------|
 | [`data/ego-datasets/ego_dataset_catalog.csv`](data/ego-datasets/ego_dataset_catalog.csv) | Full catalog, 33 fields per dataset |
-| [`data/ego-datasets/accessibility_rankings.csv`](data/ego-datasets/accessibility_rankings.csv) | All 103 datasets ranked by accessibility score |
+| [`data/ego-datasets/accessibility_rankings.csv`](data/ego-datasets/accessibility_rankings.csv) | All 105 datasets ranked by accessibility score |
 | [`data/ego-datasets/access_summary.csv`](data/ego-datasets/access_summary.csv) | Aggregate counts by access level, license, modality, category |
 | [`data/ego-datasets/issues_and_findings.csv`](data/ego-datasets/issues_and_findings.csv) | Flagged issues (dead links, unverified downloads, missing licenses) |
 | [`data/ego-datasets/datasets_by_category.csv`](data/ego-datasets/datasets_by_category.csv) | Datasets grouped and ranked within each category |
@@ -249,8 +251,8 @@ Each profile also includes 4 classifications (device, lens, video format, annota
 
 ## Roadmap
 
-- [x] Phase 0: Dataset catalog — 103 ego datasets, 33 fields each
-- [x] Phase 1a: Metadata Eval — quality profiles for 16 datasets, live scorecard
+- [x] Phase 0: Dataset catalog — 105 ego datasets, 33 fields each
+- [x] Phase 1a: Metadata Eval — quality profiles for 17 datasets, live scorecard
 - [ ] Phase 1b: File Eval — ffprobe verification on downloaded files (codec, actual fps, corruption)
 - [ ] Phase 1c: Frame Eval — ML models on sampled frames (hand visibility, blur, occlusion)
 - [ ] Phase 2: Robot dataset catalog

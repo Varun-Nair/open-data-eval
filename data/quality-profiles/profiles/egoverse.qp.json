@@ -6,8 +6,8 @@
     "iso": "http://opendataeval.org/iso5259/"
   },
   "@type": "cr:Dataset",
-  "name": "HD-EPIC",
-  "url": "https://hd-epic.github.io/",
+  "name": "EgoVerse",
+  "url": "https://egoverse.ai/",
   "dct:conformsTo": "http://opendataeval.org/qp/1.0",
   "qp:qualityProfile": {
     "qp:schemaVersion": "1.0",
@@ -17,61 +17,60 @@
     "scores": {
       "fps": {
         "score": 1.0,
-        "raw_value": 50.0,
+        "raw_value": 30.0,
         "method": "piecewise_continuous",
-        "source": "catalog",
+        "source": "paper:arXiv:2604.07607",
         "iso_mapping": "Acc-ML"
       },
       "resolution": {
         "score": 1.0,
-        "width": 1920,
-        "height": 1080,
-        "short_edge": 1080,
+        "width": 1408,
+        "height": 1408,
+        "short_edge": 1408,
         "tier": "1080p+",
         "method": "piecewise_continuous",
-        "source": "catalog",
+        "source": "paper:arXiv:2604.07607",
         "iso_mapping": "Acc-ML"
       },
       "modality_richness": {
         "modalities_present": [
-          "3D scene reconstruction",
-          "Audio",
-          "Eye gaze",
+          "Depth",
           "Hand pose annotations",
-          "Object tracking",
-          "RGB video"
+          "IMU",
+          "Narrations/captions",
+          "RGB video",
+          "SLAM/odometry"
         ],
         "modality_count": 6,
         "scores_by_usecase": {
           "manipulation": {
             "critical": {
               "present": [
-                "RGB video"
-              ],
-              "missing": [
+                "RGB video",
                 "Depth"
               ],
-              "ratio": 0.5
+              "missing": [],
+              "ratio": 1.0
             },
             "important": {
               "present": [
-                "Hand pose annotations"
+                "Hand pose annotations",
+                "Narrations/captions"
               ],
               "missing": [
                 "Tactile",
                 "Force/torque",
-                "Narrations/captions",
                 "Proprioception",
                 "Gripper state"
               ],
-              "ratio": 0.17
+              "ratio": 0.33
             },
             "bonus": {
               "present": [
-                "Audio"
+                "IMU"
               ],
               "missing": [
-                "IMU",
+                "Audio",
                 "Optical flow",
                 "Object bounding boxes",
                 "End-effector pose",
@@ -79,7 +78,7 @@
               ],
               "ratio": 0.17
             },
-            "score": 0.167
+            "score": 0.713
           },
           "action_recognition": {
             "critical": {
@@ -91,21 +90,21 @@
             },
             "important": {
               "present": [
-                "Audio"
+                "Narrations/captions"
               ],
               "missing": [
-                "Narrations/captions",
+                "Audio",
                 "Optical flow"
               ],
               "ratio": 0.33
             },
             "bonus": {
               "present": [
-                "Eye gaze",
-                "Hand pose annotations"
+                "Hand pose annotations",
+                "IMU"
               ],
               "missing": [
-                "IMU",
+                "Eye gaze",
                 "Object bounding boxes"
               ],
               "ratio": 0.5
@@ -122,55 +121,56 @@
               "ratio": 1.0
             },
             "important": {
-              "present": [],
+              "present": [
+                "Depth"
+              ],
               "missing": [
-                "Depth",
                 "Stereo"
               ],
-              "ratio": 0.0
+              "ratio": 0.5
             },
             "bonus": {
-              "present": [],
+              "present": [
+                "IMU"
+              ],
               "missing": [
                 "Tactile",
-                "IMU",
                 "Segmentation masks"
               ],
-              "ratio": 0.0
+              "ratio": 0.33
             },
-            "score": 0.6
+            "score": 0.78
           },
           "navigation": {
             "critical": {
               "present": [
-                "RGB video"
-              ],
-              "missing": [
+                "RGB video",
                 "IMU"
               ],
-              "ratio": 0.5
+              "missing": [],
+              "ratio": 1.0
             },
             "important": {
-              "present": [],
-              "missing": [
+              "present": [
                 "Depth",
-                "SLAM/odometry",
+                "SLAM/odometry"
+              ],
+              "missing": [
                 "3D point clouds"
               ],
-              "ratio": 0.0
+              "ratio": 0.67
             },
             "bonus": {
-              "present": [
-                "Audio"
-              ],
+              "present": [],
               "missing": [
+                "Audio",
                 "Stereo",
                 "LiDAR",
                 "Segmentation masks"
               ],
-              "ratio": 0.25
+              "ratio": 0.0
             },
-            "score": 0.158
+            "score": 0.787
           },
           "robot_policy_learning": {
             "critical": {
@@ -184,85 +184,84 @@
               "ratio": 0.33
             },
             "important": {
+              "present": [
+                "Depth",
+                "Narrations/captions"
+              ],
+              "missing": [
+                "End-effector pose",
+                "Force/torque"
+              ],
+              "ratio": 0.5
+            },
+            "bonus": {
               "present": [],
               "missing": [
-                "Depth",
-                "End-effector pose",
-                "Narrations/captions",
-                "Force/torque"
+                "Tactile",
+                "Audio",
+                "Joint torques"
               ],
               "ratio": 0.0
             },
-            "bonus": {
-              "present": [
-                "Audio"
-              ],
-              "missing": [
-                "Tactile",
-                "Joint torques"
-              ],
-              "ratio": 0.33
-            },
-            "score": 0.071
+            "score": 0.082
           },
           "vla_pretraining": {
             "critical": {
               "present": [
-                "RGB video"
-              ],
-              "missing": [
+                "RGB video",
                 "Narrations/captions"
               ],
-              "ratio": 0.5
+              "missing": [],
+              "ratio": 1.0
             },
             "important": {
               "present": [
+                "Depth",
                 "Hand pose annotations"
               ],
               "missing": [
-                "Depth",
                 "Proprioception"
               ],
-              "ratio": 0.33
+              "ratio": 0.67
             },
             "bonus": {
               "present": [
-                "Audio",
-                "Eye gaze"
+                "IMU",
+                "SLAM/odometry"
               ],
               "missing": [
-                "IMU",
-                "SLAM/odometry",
+                "Audio",
+                "Eye gaze",
                 "Optical flow"
               ],
               "ratio": 0.4
             },
-            "score": 0.185
+            "score": 0.835
           }
         },
         "source": "catalog",
         "iso_mapping": "Div-ML"
       },
       "camera_calibration": {
-        "score": null,
-        "tier": null,
-        "notes": "Not provided in HD-EPIC. EPIC-Fields (NeurIPS 2023) provides retroactive COLMAP calibration as a separate companion dataset.",
+        "score": 0.85,
+        "tier": "intrinsics_extrinsics_unvalidated",
+        "notes": "EgoVerse-A: Aria MPS pipeline provides time-varying intrinsics + extrinsics + F-Theta fisheye distortion (same as Ego-Exo4D). EgoVerse paper itself does not describe a separate validation step. EgoVerse-I: custom rigs \u2014 calibration not described in paper.",
         "method": "tier",
-        "source": "pending_paper_review",
+        "source": "paper:arXiv:2604.07607",
         "iso_mapping": "Aud-ML"
       },
       "license_clarity": {
         "score": 1.0,
-        "license_type": "CC-BY-NC-4.0",
+        "license_type": "CC-BY-SA-4.0",
         "tier": "standard",
-        "commercial_use": "No",
+        "commercial_use": "Yes",
         "method": "tier",
         "source": "catalog",
         "iso_mapping": "Cpl-ML"
       },
       "accessibility": {
-        "score": 0.825,
-        "raw_score": 8.25,
+        "score": 0.95,
+        "raw_score": 9.5,
         "access_level": "Open",
         "url_status": "Live",
         "method": "weighted_sum_normalized",
@@ -270,16 +269,16 @@
         "iso_mapping": "Acs-ML"
       },
       "scale": {
-        "score": 0.406,
-        "total_hours": 41.0,
+        "score": 0.784,
+        "total_hours": 1362.0,
         "method": "log10(hrs+1)/log10(10001)",
         "source": "catalog",
         "iso_mapping": "Eff-ML"
       },
       "dataloader": {
-        "score": 0.0,
-        "available": false,
-        "framework": null,
+        "score": 0.8,
+        "available": true,
+        "framework": "unspecified",
         "method": "tier",
         "source": "catalog",
         "iso_mapping": "Acs-ML"
@@ -292,31 +291,31 @@
         "iso_mapping": "Und-ML"
       },
       "annotation_coverage": {
-        "score": null,
-        "notes": "263 annotations/min (densest in EPIC family). Digital kitchen twins. Coverage fraction not stated in paper.",
+        "score": 1.0,
+        "notes": "100% of 80K episodes have task-level language annotations and 6-DoF head pose from SLAM. EgoVerse-I additionally has dense subgoal annotations at 1\u20132 s intervals and 3D hand pose (21 keypoints). 1,965 distinct task types.",
         "method": "ratio",
-        "source": "pending_paper_review",
+        "source": "paper:arXiv:2604.07607",
         "iso_mapping": "Com-ML"
       },
       "download_efficiency": {
-        "score": 0.2,
-        "hours_per_gb": 0.0178,
-        "total_hours": 41.0,
-        "download_size_gb": 2300,
+        "score": null,
+        "hours_per_gb": null,
+        "total_hours": null,
+        "download_size_gb": null,
         "method": "percentile_rank",
         "source": "catalog+paper",
         "iso_mapping": "Eff-ML"
       },
       "environment_diversity": {
-        "score": 0.359,
-        "unique_environments": 9.0,
+        "score": 0.855,
+        "unique_environments": 240.0,
         "method": "log_normalized",
         "source": "catalog",
         "iso_mapping": "Div-ML"
       },
       "demographic_diversity": {
-        "score": 0.241,
-        "participants": 9.0,
+        "score": 0.799,
+        "participants": 2087.0,
         "geographic_locations": 1,
         "method": "log_normalized_product",
         "source": "catalog+paper",
@@ -325,47 +324,47 @@
     },
     "classifications": {
       "capture_device": {
-        "value": "GoPro (EPIC-KITCHENS family; specific Hero model not confirmed in HD-EPIC paper)",
+        "value": "Project Aria Gen 1 glasses (EgoVerse-A) + custom head-mounted stereo/depth rigs (EgoVerse-I) + iPhone on head strap (phone variant)",
         "documented": true,
-        "source": "paper:arXiv:2502.04144",
+        "source": "paper:arXiv:2604.07607",
         "iso_mapping": "Ide-ML"
       },
       "lens_type": {
-        "value": "rectilinear",
-        "fov_degrees": 94,
+        "value": "fisheye",
+        "fov_degrees": 110,
         "documented": true,
-        "source": "paper:arXiv:2502.04144",
+        "source": "paper:arXiv:2604.07607",
         "iso_mapping": "Ide-ML"
       },
       "video_format": {
-        "value": "Not specified",
+        "value": "MP4 (various)",
         "source": "catalog"
       },
       "annotation_format": {
-        "value": "Not specified (multiple annotation types)",
+        "value": "JSON",
         "source": "catalog"
       }
     },
     "context": {
-      "total_hours": 41.0,
-      "participants": "9",
-      "scenes_environments": "9 kitchens; 413 kitchen fixtures (digital twins)",
-      "commercial_use": "No",
+      "total_hours": 1362.0,
+      "participants": "2087",
+      "scenes_environments": "240 scenes (growing; living dataset)",
+      "commercial_use": "Yes",
       "category": "Large-scale foundation",
-      "year": "2025",
-      "paper": "CVPR 2025; arXiv 2502.04144",
-      "approximate_citations": "~20 (new)",
+      "year": "2026",
+      "paper": "arXiv:2604.07607",
+      "approximate_citations": "0",
       "citations": {
-        "count": 62,
+        "count": 0,
         "source": "semantic_scholar",
-        "fetched_at": "2026-04-14"
+        "fetched_at": "2026-04-16"
       },
       "no_paper": false
     },
     "confidence": {
       "metadata_completeness": {
-        "score": 0.875,
-        "filled_fields": 14,
+        "score": 0.938,
+        "filled_fields": 15,
         "total_fields": 16,
         "method": "ratio",
         "iso_mapping": [

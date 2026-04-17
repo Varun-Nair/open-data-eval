@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1200px;
+    height: 800px;
+    background: #0f1117;
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", system-ui, sans-serif;
+    color: #ffffff;
+    padding: 36px 32px 28px;
+    overflow: hidden;
+  }
+
+  /* ── title ── */
+  .title-block { margin-bottom: 20px; }
+  .title {
+    font-size: 22px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.4px;
+    line-height: 1;
+  }
+  .subtitle {
+    font-size: 13px;
+    color: #8b949e;
+    margin-top: 5px;
+    font-weight: 400;
+  }
+
+  /* ── table ── */
+  table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 2px;
+    table-layout: fixed;
+  }
+
+  /* column widths */
+  col.label-col { width: 172px; }
+  col.data-col  { width: 72px; }
+
+  /* header row */
+  thead th {
+    font-size: 10px;
+    font-weight: 600;
+    color: #8b949e;
+    text-align: center;
+    padding: 0 2px 8px;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    vertical-align: bottom;
+    line-height: 1.25;
+  }
+  thead th.label-header {
+    text-align: left;
+    padding-left: 0;
+    font-size: 10px;
+    color: #4b5563;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+  }
+
+  /* data rows */
+  tbody tr { }
+  tbody td {
+    height: 40px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 3px;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1;
+  }
+  tbody td.row-label {
+    text-align: left;
+    padding: 0 10px 0 0;
+    font-size: 12px;
+    font-weight: 500;
+    color: #d1d5db;
+    background: transparent;
+  }
+  tbody td.row-label .cat-name { color: #e5e7eb; font-weight: 600; }
+  tbody td.row-label .cat-count { color: #4b5563; font-size: 11px; margin-left: 4px; }
+
+  /* ── legend ── */
+  .legend {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 14px;
+  }
+  .legend-label {
+    font-size: 10px;
+    color: #4b5563;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    margin-right: 4px;
+  }
+  .legend-items {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 10px;
+    color: #8b949e;
+  }
+  .legend-swatch {
+    width: 20px;
+    height: 14px;
+    border-radius: 2px;
+  }
+
+  /* ── footer ── */
+  .footer {
+    font-size: 10.5px;
+    font-family: "SF Mono", "Fira Code", "Consolas", monospace;
+    color: #374151;
+    margin-top: 10px;
+    letter-spacing: 0.2px;
+  }
+</style>
+</head>
+<body>
+
+<div class="title-block">
+  <div class="title">What 105 Egocentric Datasets Actually Contain</div>
+  <div class="subtitle">Beyond RGB video — modality coverage by dataset category</div>
+</div>
+
+<table id="heatmap">
+  <colgroup>
+    <col class="label-col" />
+    <col class="data-col" /><col class="data-col" /><col class="data-col" />
+    <col class="data-col" /><col class="data-col" /><col class="data-col" />
+    <col class="data-col" /><col class="data-col" /><col class="data-col" />
+    <col class="data-col" /><col class="data-col" /><col class="data-col" />
+    <col class="data-col" />
+  </colgroup>
+  <thead>
+    <tr>
+      <th class="label-header">Category</th>
+      <th>Eye<br>Gaze</th>
+      <th>Hand<br>Pose</th>
+      <th>Body<br>Pose</th>
+      <th>IMU</th>
+      <th>Audio</th>
+      <th>Depth<br>RGB-D</th>
+      <th>Depth<br>Stereo</th>
+      <th>3D<br>Points</th>
+      <th>SLAM</th>
+      <th>Narr-<br>ations</th>
+      <th>3D<br>Scene</th>
+      <th>Motion<br>Cap</th>
+      <th>Opt.<br>Flow</th>
+    </tr>
+  </thead>
+  <tbody id="tbody">
+  </tbody>
+</table>
+
+<div class="legend">
+  <span class="legend-label">Coverage</span>
+  <div class="legend-items">
+    <div class="legend-item"><div class="legend-swatch" style="background:#085041"></div>&gt;75%</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:#1D9E75"></div>50–75%</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:#9FE1CB"></div>25–50%</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:#E1F5EE"></div>1–25%</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:#FCEBEB"></div>None</div>
+  </div>
+  <span style="margin-left:auto; font-size:10px; color:#374151;">Cell shows raw count · color shows % of datasets in category</span>
+</div>
+
+<div class="footer">open-data-eval · varun-nair.github.io/open-data-eval</div>
+
+<script>
+const ROWS = [
+  { label: "Hand-object interaction", n: 15, counts: [1,15,5,0,0,6,1,5,1,2,0,2,0] },
+  { label: "Body pose",               n: 13, counts: [4,1,13,5,2,2,2,4,3,2,3,3,0] },
+  { label: "Industrial & procedural", n: 11, counts: [4,3,0,2,2,3,0,0,0,0,0,0,0] },
+  { label: "Classic",                 n: 10, counts: [3,0,0,1,3,0,0,0,0,1,1,1,1] },
+  { label: "Action recognition",      n: 10, counts: [0,1,0,2,1,5,0,2,0,0,0,0,0] },
+  { label: "Navigation",              n: 6,  counts: [2,0,0,1,0,0,0,0,1,0,0,0,0] },
+  { label: "Ego-exo cross-view",      n: 9,  counts: [4,1,2,2,1,0,0,1,1,2,0,0,0] },
+  { label: "Gaze & eye tracking",     n: 6,  counts: [6,0,0,3,1,0,0,1,2,0,0,0,0] },
+  { label: "Social interaction",      n: 6,  counts: [1,0,0,0,3,2,0,0,0,0,0,0,0] },
+  { label: "Large-scale foundation",  n: 5,  counts: [3,2,1,4,5,0,1,0,1,3,2,0,1] },
+  { label: "3D reconstruction",       n: 3,  counts: [1,0,1,1,0,1,2,1,1,0,1,0,0] },
+  { label: "Object detection",        n: 3,  counts: [0,0,0,0,0,0,0,0,0,0,0,0,0] },
+];
+
+function cellStyle(count, total) {
+  if (count === 0) return { bg: '#FCEBEB', fg: '#cc4444' };
+  const pct = count / total;
+  if (pct > 0.75) return { bg: '#085041', fg: '#ffffff' };
+  if (pct > 0.50) return { bg: '#1D9E75', fg: '#ffffff' };
+  if (pct > 0.25) return { bg: '#9FE1CB', fg: '#0a3d2e' };
+  return { bg: '#E1F5EE', fg: '#2d6b57' };
+}
+
+const tbody = document.getElementById('tbody');
+ROWS.forEach(row => {
+  const tr = document.createElement('tr');
+
+  // label cell
+  const labelTd = document.createElement('td');
+  labelTd.className = 'row-label';
+  labelTd.innerHTML = `<span class="cat-name">${row.label}</span><span class="cat-count">(${row.n})</span>`;
+  tr.appendChild(labelTd);
+
+  // data cells
+  row.counts.forEach(c => {
+    const td = document.createElement('td');
+    const { bg, fg } = cellStyle(c, row.n);
+    td.style.background = bg;
+    td.style.color = fg;
+    td.textContent = c === 0 ? '×' : c;
+    tr.appendChild(td);
+  });
+
+  tbody.appendChild(tr);
+});
+</script>
+</body>
+</html>
