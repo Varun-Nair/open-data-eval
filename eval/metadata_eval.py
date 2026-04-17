@@ -1168,6 +1168,136 @@ def generate_summary_csv(qps, path):
         w.writerows(rows)
 
 
+def _extract_file_eval(profile: dict) -> dict | None:
+    """Extract a compact fileEval summary from a QP profile's embedded file_eval section."""
+    fe = profile.get("file_eval")
+    if not fe:
+        return None
+
+    summary  = fe.get("summary", {})
+    dist     = fe.get("distributions", {})
+    ann_cov  = fe.get("annotation_coverage") or {}
+    raw_disc = fe.get("discrepancies") or []
+    scores   = profile.get("scores", {})
+
+    # ── actual technical values (from ffprobe) ──────────────────────────────
+    fps_dist   = dist.get("fps") or {}
+    actual_fps = fps_dist.get("mean")
+
+    resolutions     = summary.get("resolutions", {})
+    most_common_res = max(resolutions.items(), key=lambda x: x[1])[0] if resolutions else None
+    actual_res_w = actual_res_h = None
+    if most_common_res and "x" in most_common_res:
+        try:
+            actual_res_w, actual_res_h = [int(v) for v in most_common_res.split("x")]
+        except ValueError:
+            pass
+
+    codecs      = summary.get("codecs", {})
+    actual_codec = next(iter(codecs), None)
+
+    bkd  = dist.get("bitrate_kbps") or {}
+    bitrate = {
+        "mean": round(bkd["mean"]) if bkd.get("mean") is not None else None,
+        "min":  bkd.get("min"),
+        "max":  bkd.get("max"),
+    } if bkd else None
+
+    # ── claimed values (from metadata eval scores) ──────────────────────────
+    claimed_fps   = (scores.get("fps") or {}).get("raw_value")
+    claimed_res_w = (scores.get("resolution") or {}).get("width")
+    claimed_res_h = (scores.get("resolution") or {}).get("height")
+
+    fps_match = (
+        actual_fps is not None and claimed_fps is not None
+        and abs(actual_fps - claimed_fps) < 1.0
+    )
+    res_match = (
+        actual_res_w is not None and claimed_res_w is not None
+        and actual_res_w == claimed_res_w and actual_res_h == claimed_res_h
+    ) if (actual_res_w and claimed_res_w) else None
+
+    # ── annotation coverage per type ────────────────────────────────────────
+    ann_by_type = {
+        ann_type: {
+            "covered": v.get("clips_covered"),
+            "total":   v.get("clips_total"),
+            "pct":     v.get("coverage_pct"),
+        }
+        for ann_type, v in ann_cov.items()
+    }
+
+    # ── summarize discrepancies by field (many clip-level → one field-level) ─
+    disc_by_field: dict[str, list] = {}
+    for d in raw_disc:
+        f = d.get("field", "?")
+        disc_by_field.setdefault(f, []).append(d)
+
+    field_discrepancies = []
+    for field, discs in disc_by_field.items():
+        first = discs[0]
+        # For numeric fields with per-clip variation, show the full range
+        claimed_vals = [x.get("claimed") for x in discs if x.get("claimed") is not None]
+        actual_vals  = [x.get("actual")  for x in discs if x.get("actual")  is not None]
+        all_numeric = claimed_vals and all(isinstance(v, (int, float)) for v in claimed_vals)
+        if all_numeric and len(set(claimed_vals)) > 1:
+            claimed_display = f"{min(claimed_vals)}–{max(claimed_vals)}"
+            actual_display  = f"{min(actual_vals)}–{max(actual_vals)}" if actual_vals else None
+        else:
+            claimed_display = first.get("claimed")
+            actual_display  = first.get("actual")
+        field_discrepancies.append({
+            "field":         field,
+            "claimed":       claimed_display,
+            "actual":        actual_display,
+            "note":          first.get("note"),
+            "affectedClips": len(discs),
+            "totalClips":    summary.get("total_files"),
+            "severity":      first.get("severity", "info"),
+        })
+
+    # ── synthesize discrepancies from annotation coverage gaps ──────────────
+    total_clips = summary.get("total_files")
+    for ann_type, ann_info in ann_cov.items():
+        pct = ann_info.get("coverage_pct", 100)
+        covered  = ann_info.get("clips_covered", 0)
+        total_ac = ann_info.get("clips_total", total_clips)
+        if pct < 100:
+            sev = "high" if pct < 50 else "medium"
+            field_discrepancies.append({
+                "field":         f"{ann_type} coverage",
+                "claimed":       f"{total_ac}/{total_ac} clips",
+                "actual":        f"{covered}/{total_ac} clips",
+                "note":          None,
+                "affectedClips": total_ac - covered,
+                "totalClips":    total_ac,
+                "severity":      sev,
+            })
+
+    return {
+        "filesChecked":       summary.get("total_files"),
+        "evaluatedAt":        fe.get("evaluated_at"),
+        # actual (ffprobe)
+        "actualFps":          actual_fps,
+        "actualResW":         actual_res_w,
+        "actualResH":         actual_res_h,
+        "actualCodec":        actual_codec,
+        "bitrateKbps":        bitrate,
+        "hasAudio":           (summary.get("clips_with_audio", 0) > 0),
+        # claimed (from metadata eval)
+        "claimedFps":         claimed_fps,
+        "claimedResW":        claimed_res_w,
+        "claimedResH":        claimed_res_h,
+        # match flags
+        "fpsMatch":           fps_match,
+        "resMatch":           res_match,
+        # annotation coverage per annotation type
+        "annCovByType":       ann_by_type or None,
+        # field-level discrepancy summary
+        "fieldDiscrepancies": field_discrepancies or None,
+    }
+
+
 def generate_scorecard_data_js(qps, path):
     """Generate window.SCORECARD_DATA for the GitHub Pages scorecard."""
     def parse_citations(s):
@@ -1271,6 +1401,7 @@ def generate_scorecard_data_js(qps, path):
             "annotFormat":  cl["annotation_format"]["value"],
             "citations":    (p["context"].get("citations") or {}).get("count"),
             "noPaper":      p["context"].get("no_paper", False),
+            "fileEval":     _extract_file_eval(p),
         })
 
     js_entries = json.dumps(entries, indent=2)
@@ -1447,18 +1578,58 @@ def main():
     qps = [build_qp(r, max_scenes, max_product, citations_map) for r in target_rows]
     compute_download_efficiency_percentiles(qps)
 
-    # Write QP JSON files
+    # Write QP JSON files — preserving any existing file_eval section
     for qp in qps:
         slug = (qp["name"].lower()
                 .replace(' ', '-').replace('/', '-')
                 .replace('(', '').replace(')', ''))
         path = os.path.join(output_dir, 'profiles', f'{slug}.qp.json')
+        # Carry forward file_eval if it was previously appended to the on-disk file
+        if os.path.exists(path):
+            try:
+                with open(path) as f:
+                    existing = json.load(f)
+                existing_fe = existing.get("qp:qualityProfile", {}).get("file_eval")
+                if existing_fe:
+                    qp["qp:qualityProfile"]["file_eval"] = existing_fe
+            except Exception:
+                pass
         with open(path, 'w') as f:
             json.dump(qp, f, indent=2)
 
     # Write summary CSV
     csv_path = os.path.join(output_dir, 'metadata_eval_summary.csv')
     generate_summary_csv(qps, csv_path)
+
+    # Merge file_eval from companion report files (fallback when QP didn't preserve it)
+    profiles_dir = os.path.join(output_dir, 'profiles')
+    for qp in qps:
+        if qp.get("qp:qualityProfile", {}).get("file_eval"):
+            continue  # already present (preserved from on-disk QP)
+        slug = (qp["name"].lower()
+                .replace(' ', '-').replace('/', '-')
+                .replace('(', '').replace(')', ''))
+        fe_report_path = os.path.join(profiles_dir, f'{slug}-file-eval.json')
+        if os.path.exists(fe_report_path):
+            try:
+                with open(fe_report_path) as f:
+                    fe_report = json.load(f)
+                fe_summary = fe_report.get("summary", {})
+                qp["qp:qualityProfile"]["file_eval"] = {
+                    "eval_type":    "file",
+                    "evaluated_at": fe_report.get("evaluated_at"),
+                    "dataset_path": fe_report.get("dataset_path"),
+                    "summary":   {k: v for k, v in fe_summary.items()},
+                    "distributions":       {k: v for k, v in fe_report.get("distributions", {}).items() if v},
+                    "annotation_coverage": fe_report.get("annotation_coverage"),
+                    "discrepancies":       fe_report.get("discrepancies"),
+                }
+                # Also persist back to the QP JSON on disk
+                qp_slug_path = os.path.join(profiles_dir, f'{slug}.qp.json')
+                with open(qp_slug_path, 'w') as f:
+                    json.dump(qp, f, indent=2)
+            except Exception:
+                pass
 
     # Write scorecard data JS
     js_path = os.path.join(scorecard_dir, 'scorecard_data.js')

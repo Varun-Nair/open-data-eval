@@ -121,7 +121,7 @@ function Section({ title, color, open, onToggle, children }) {
 }
 
 // ─── tech stamp (44px rounded square) ────────────────────────────
-function TechStamp({ score, display, label }) {
+function TechStamp({ score, display, label, claimed }) {
   const isNull  = score == null;
   const isGreen = !isNull && score >= 0.95;
   const isAmber = !isNull && score >= 0.5 && !isGreen;
@@ -132,7 +132,7 @@ function TechStamp({ score, display, label }) {
   const bord = isNull ? "var(--c-border)"  : isGreen ? "var(--c-green)"  : isAmber ? "var(--c-amber)"  : "var(--c-red)";
   const col  = isNull ? "var(--c-text-3)"  : isGreen ? "var(--c-green)"  : isAmber ? "var(--c-amber)"  : "var(--c-red)";
   return (
-    <div style={{ display:"flex", flexDirection:"column", alignItems:"center", gap:6 }}>
+    <div style={{ display:"flex", flexDirection:"column", alignItems:"center", gap:4 }}>
       <div style={{ position:"relative", width:44, height:44, borderRadius:10,
         background:bg, border:`1.5px solid ${bord}`,
         boxShadow:"var(--shadow-stamp)",
@@ -149,6 +149,11 @@ function TechStamp({ score, display, label }) {
         )}
       </div>
       <span style={{ fontSize:10, fontWeight:500, color:"var(--c-text-2)" }}>{label}</span>
+      {claimed != null && (
+        <span style={{ fontSize:9, color:"var(--c-amber)", lineHeight:1, whiteSpace:"nowrap" }}>
+          claimed: {claimed}
+        </span>
+      )}
     </div>
   );
 }
@@ -531,6 +536,122 @@ function HardwareRow({ label, value }) {
   );
 }
 
+// ─── verification panel (below card body) ────────────────────────
+function VerificationPanel({ fe }) {
+  if (!fe) return null;
+
+  const CODEC_LABELS = { hevc:"H.265/HEVC", h265:"H.265/HEVC", h264:"H.264/AVC", avc:"H.264/AVC", vp9:"VP9", av1:"AV1" };
+  const codecLabel = CODEC_LABELS[fe.actualCodec] || fe.actualCodec || "—";
+  const bitrateStr = fe.bitrateKbps
+    ? `${fe.bitrateKbps.min.toLocaleString()}–${fe.bitrateKbps.max.toLocaleString()} kbps`
+    : "—";
+
+  const VRow = ({ label, value, ok }) => (
+    <div style={{ display:"flex", alignItems:"center", gap:8, padding:"5px 0",
+      borderBottom:"1px solid var(--c-track)" }}>
+      {ok != null
+        ? <span style={{ fontSize:10, fontWeight:700, width:12, flexShrink:0, textAlign:"center",
+            color: ok ? "var(--c-green)" : "var(--c-amber)" }}>{ok ? "✓" : "⚠"}</span>
+        : <span style={{ width:12, flexShrink:0 }} />}
+      <span style={{ fontSize:11, color:"var(--c-text-3)", fontWeight:500, width:76, flexShrink:0 }}>{label}</span>
+      <span style={{ fontSize:11, color:"var(--c-text-1)" }}>{value}</span>
+    </div>
+  );
+
+  return (
+    <div style={{ borderTop:"1px solid var(--c-border)", padding:"18px 24px 20px" }}>
+
+      {/* panel header */}
+      <div style={{ display:"flex", alignItems:"center", gap:14, marginBottom:16 }}>
+        <span style={{ fontSize:10, fontWeight:700, color:"var(--c-text-2)",
+          letterSpacing:"0.8px", textTransform:"uppercase" }}>Verification</span>
+        <span style={{ fontSize:10, color:"var(--c-text-3)" }}>
+          {fe.filesChecked} file{fe.filesChecked !== 1 ? "s" : ""} checked via ffprobe
+          {fe.evaluatedAt ? ` · ${fe.evaluatedAt.slice(0, 10)}` : ""}
+        </span>
+      </div>
+
+      {/* three columns */}
+      <div style={{ display:"grid", gridTemplateColumns:"repeat(3, 1fr)", gap:"0 32px" }}>
+
+        {/* ── col 1: actual values ─── */}
+        <div>
+          <div style={{ fontSize:10, fontWeight:600, color:"var(--c-text-3)",
+            textTransform:"uppercase", letterSpacing:0.5, marginBottom:8 }}>Actual (ffprobe)</div>
+          <VRow label="Frame rate" value={fe.actualFps != null ? `${fe.actualFps} fps` : "—"}
+            ok={fe.fpsMatch !== false} />
+          <VRow label="Resolution" value={fe.actualResW ? `${fe.actualResW}\u00d7${fe.actualResH}` : "—"}
+            ok={fe.resMatch !== false} />
+          <VRow label="Codec"      value={codecLabel}  ok={null} />
+          <VRow label="Bitrate"    value={bitrateStr}  ok={null} />
+          <VRow label="Audio"      value={fe.hasAudio ? "Present" : "None"} ok={null} />
+        </div>
+
+        {/* ── col 2: annotation coverage ─── */}
+        <div>
+          <div style={{ fontSize:10, fontWeight:600, color:"var(--c-text-3)",
+            textTransform:"uppercase", letterSpacing:0.5, marginBottom:8 }}>Annotation coverage</div>
+          {fe.annCovByType
+            ? Object.entries(fe.annCovByType).map(([type, info]) => {
+                const pct = info.pct != null ? info.pct : 0;
+                const col = pct >= 90 ? "var(--c-green)" : pct >= 50 ? "var(--c-amber)" : "var(--c-red)";
+                return (
+                  <div key={type} style={{ marginBottom:9 }}>
+                    <div style={{ display:"flex", justifyContent:"space-between", marginBottom:3 }}>
+                      <span style={{ fontSize:10, color:"var(--c-text-3)" }}>
+                        {type.replace(/_/g, " ")}
+                      </span>
+                      <span style={{ fontSize:10, fontWeight:600, color:col }}>
+                        {info.covered}/{info.total}
+                      </span>
+                    </div>
+                    <div style={{ height:4, borderRadius:2, background:"var(--c-track)", overflow:"hidden" }}>
+                      <div style={{ width:`${pct}%`, height:"100%", borderRadius:2, background:col }} />
+                    </div>
+                  </div>
+                );
+              })
+            : <span style={{ fontSize:11, color:"var(--c-text-3)", fontStyle:"italic" }}>No data</span>
+          }
+        </div>
+
+        {/* ── col 3: discrepancies ─── */}
+        <div>
+          <div style={{ fontSize:10, fontWeight:600, color:"var(--c-text-3)",
+            textTransform:"uppercase", letterSpacing:0.5, marginBottom:8 }}>Discrepancies</div>
+          {!fe.fieldDiscrepancies || fe.fieldDiscrepancies.length === 0
+            ? <span style={{ fontSize:11, color:"var(--c-green)" }}>None found</span>
+            : fe.fieldDiscrepancies.map((disc, i) => {
+                const sev = disc.severity || "info";
+                const isRed = sev === "critical" || sev === "high";
+                const bord = isRed ? "var(--c-red)"   : "var(--c-amber)";
+                const bg   = isRed ? "var(--c-red-bg)" : "var(--c-amber-bg)";
+                return (
+                  <div key={i} style={{ fontSize:10, lineHeight:1.5, padding:"5px 8px",
+                    marginBottom:5, borderRadius:6, background:bg,
+                    borderLeft:`2px solid ${bord}` }}>
+                    <span style={{ fontWeight:600, color:"var(--c-text-1)" }}>
+                      {disc.field.replace(/_/g, " ")}
+                    </span>
+                    <span style={{ color:"var(--c-text-3)" }}>
+                      {" · claimed "}{String(disc.claimed)}{", actual "}{String(disc.actual)}
+                    </span>
+                    {disc.affectedClips != null && (
+                      <span style={{ color:"var(--c-text-3)" }}>
+                        {" "}({disc.affectedClips}/{disc.totalClips} clips)
+                      </span>
+                    )}
+                  </div>
+                );
+              })
+          }
+        </div>
+
+      </div>
+    </div>
+  );
+}
+
 // ─── score card ───────────────────────────────────────────────────
 function ScoreCard({ d }) {
   const [open, setOpen] = useState({
@@ -543,6 +664,12 @@ function ScoreCard({ d }) {
   const isMobile = useIsMobile();
 
   const shortEdge = d.resW && d.resH ? Math.min(d.resW, d.resH) : null;
+  const fe = d.fileEval;
+  const verifiedFpsDisplay = fe ? `${fe.actualFps}fps` : (d.fpsRaw != null ? `${d.fpsRaw}fps` : null);
+  const claimedFpsDisplay  = (fe && fe.fpsMatch === false) ? `${fe.claimedFps}fps` : null;
+  const verifiedShortEdge  = fe ? Math.min(fe.actualResW, fe.actualResH) : shortEdge;
+  const claimedResDisplay  = (fe && fe.resMatch === false && fe.claimedResW && fe.claimedResH)
+    ? `${Math.min(fe.claimedResW, fe.claimedResH)}p` : null;
   const dlLabel = d.dl == null ? null
     : d.dl >= 0.8
         ? (d.dlFramework && d.dlFramework !== "unspecified" ? d.dlFramework : "Yes")
@@ -605,6 +732,13 @@ function ScoreCard({ d }) {
           <div style={{ display:"flex", flexDirection:"column", alignItems:"center", gap:3, flexShrink:0 }}>
             <CompletionRing value={d.completeness} />
             <span style={{ fontSize:9, color:"var(--c-text-3)" }}>fields documented</span>
+            {fe && (
+              <span style={{ fontSize:9, fontWeight:600, color:"var(--c-blue)",
+                background:"rgba(37,99,235,0.08)", padding:"2px 7px", borderRadius:10,
+                marginTop:2, whiteSpace:"nowrap" }}>
+                File verified
+              </span>
+            )}
           </div>
         </div>
       </div>
@@ -621,19 +755,21 @@ function ScoreCard({ d }) {
 
           <Section title="Technical" color="var(--c-accent-tech)"
             open={open.technical} onToggle={() => toggle("technical")}>
-            <div style={{ display:"flex", gap:16, paddingTop:4 }}>
+            <div style={{ display:"flex", gap:16, paddingTop:4, flexWrap:"wrap" }}>
               <TechStamp score={d.fps}
-                display={d.fpsRaw != null ? `${d.fpsRaw}fps` : null}
-                label="Frame rate" />
+                display={verifiedFpsDisplay}
+                label={fe ? "Frame rate ✓" : "Frame rate"}
+                claimed={claimedFpsDisplay} />
               <TechStamp score={d.res}
-                display={shortEdge != null ? `${shortEdge}p` : null}
-                label="Resolution" />
+                display={verifiedShortEdge != null ? `${verifiedShortEdge}p` : null}
+                label={fe ? "Resolution ✓" : "Resolution"}
+                claimed={claimedResDisplay} />
               {(() => {
-                const hasAudio = (d.modalities || []).includes("Audio");
+                const hasAudio = fe ? fe.hasAudio : (d.modalities || []).includes("Audio");
                 return (
                   <TechStamp score={hasAudio ? 1.0 : null}
                     display={hasAudio ? "Audio" : null}
-                    label="Audio" />
+                    label={fe ? "Audio ✓" : "Audio"} />
                 );
               })()}
             </div>
@@ -721,6 +857,9 @@ function ScoreCard({ d }) {
         </div>
 
       </div>
+
+      {/* ── verification panel ─────────────────────────────────── */}
+      {fe && <VerificationPanel fe={fe} />}
 
       {/* ── footer ─────────────────────────────────────────────── */}
       <div style={{ display:"flex", justifyContent:"space-between", padding:"10px 24px",
@@ -1133,6 +1272,11 @@ function CompareSideBySide() {
   const shortA = A.resW && A.resH ? Math.min(A.resW, A.resH) : null;
   const shortB = B.resW && B.resH ? Math.min(B.resW, B.resH) : null;
   const dlL = d => d.dl == null ? null : d.dl >= 0.8 ? (d.dlFramework && d.dlFramework !== "unspecified" ? d.dlFramework : "Yes") : d.dl >= 0.5 ? "Community" : "No";
+  // Use verified ffprobe values when file eval is available
+  const fpsValA = A.fileEval ? `${A.fileEval.actualFps} fps` : (A.fpsRaw != null ? A.fpsRaw + " fps" : null);
+  const fpsValB = B.fileEval ? `${B.fileEval.actualFps} fps` : (B.fpsRaw != null ? B.fpsRaw + " fps" : null);
+  const resValA = A.fileEval ? `${Math.min(A.fileEval.actualResW, A.fileEval.actualResH)}p` : (shortA ? shortA + "p" : null);
+  const resValB = B.fileEval ? `${Math.min(B.fileEval.actualResW, B.fileEval.actualResH)}p` : (shortB ? shortB + "p" : null);
 
   return (
     <div>
@@ -1186,13 +1330,27 @@ function CompareSideBySide() {
 
           <FH title="Technical" />
           <FTech label="Frame rate"
-            vA={A.fpsRaw != null ? A.fpsRaw + " fps" : null}
-            vB={B.fpsRaw != null ? B.fpsRaw + " fps" : null}
+            vA={fpsValA} vB={fpsValB}
             greenAt={30} amberAt={15} />
           <FTech label="Resolution"
-            vA={shortA ? shortA + "p" : null}
-            vB={shortB ? shortB + "p" : null}
+            vA={resValA} vB={resValB}
             greenAt={1080} amberAt={720} />
+          {(A.fileEval || B.fileEval) && (
+            <div style={{ display:"flex", alignItems:"center", padding:"3px 0 6px",
+              borderBottom:"1px solid var(--c-track)" }}>
+              <span style={{ width:80, flexShrink:0 }} />
+              <div style={{ flex:1, textAlign:"right", paddingRight:8 }}>
+                <span style={{ fontSize:9, color: A.fileEval ? "var(--c-green)" : "var(--c-text-3)",
+                  fontWeight:500 }}>{A.fileEval ? "ffprobe verified" : "metadata only"}</span>
+              </div>
+              <div style={{ width:1, height:12, background:"var(--c-border)", flexShrink:0 }} />
+              <div style={{ flex:1, paddingLeft:8 }}>
+                <span style={{ fontSize:9, color: B.fileEval ? "var(--c-green)" : "var(--c-text-3)",
+                  fontWeight:500 }}>{B.fileEval ? "ffprobe verified" : "metadata only"}</span>
+              </div>
+              <span style={{ width:32, flexShrink:0 }} />
+            </div>
+          )}
           <FChk label="Intrinsics" vA={A.calIntrinsics} vB={B.calIntrinsics} />
           <FChk label="Distortion" vA={A.calDistortion} vB={B.calDistortion} />
           <FChk label="Extrinsics" vA={A.calExtrinsics} vB={B.calExtrinsics} />
