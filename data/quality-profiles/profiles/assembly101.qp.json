@@ -12,7 +12,7 @@
   "qp:qualityProfile": {
     "qp:schemaVersion": "1.0",
     "qp:evalLevel": "metadata",
-    "qp:evaluatedAt": "2026-04-17T13:46:49Z",
+    "qp:evaluatedAt": "2026-04-18T01:05:48Z",
     "qp:evaluatedBy": "open-data-eval",
     "scores": {
       "fps": {
@@ -365,6 +365,921 @@
           "Com-ML",
           "Und-ML"
         ]
+      }
+    },
+    "file_eval": {
+      "eval_type": "file",
+      "dataset_path": "/Users/maitreemeher/Desktop/Github/open-data-eval-1/data/file-eval-samples/assembly101-prepared",
+      "evaluated_at": "2026-04-17T22:38:52.864884+00:00",
+      "summary": {
+        "total_files": 31,
+        "files_probed": 31,
+        "files_with_errors": 0,
+        "total_duration_sec": 11823.5,
+        "total_hours": 3.28431,
+        "total_frames": 709410,
+        "total_size_mb": 25208.246,
+        "resolutions": {
+          "1920x1080": 23,
+          "636x480": 8
+        },
+        "codecs": {
+          "h264": 31
+        },
+        "clips_with_audio": 0,
+        "clips_without_audio": 31
+      },
+      "distributions": {
+        "fps": {
+          "n": 31,
+          "mean": 60.0,
+          "min": 60.0,
+          "max": 60.0,
+          "std": 0.0,
+          "p5": 60.0,
+          "p95": 60.0
+        },
+        "duration_sec": {
+          "n": 31,
+          "mean": 381.4032,
+          "min": 341.5667,
+          "max": 406.7,
+          "std": 32.161,
+          "p5": 341.5833,
+          "p95": 406.7
+        },
+        "bitrate_kbps": {
+          "n": 31,
+          "mean": 17945.2258,
+          "min": 913,
+          "max": 44922,
+          "std": 11681.5835,
+          "p5": 931,
+          "p95": 34672
+        },
+        "nb_frames": {
+          "n": 31,
+          "mean": 22884.1935,
+          "min": 20494,
+          "max": 24402,
+          "std": 1929.6572,
+          "p5": 20495,
+          "p95": 24402
+        },
+        "file_size_mb": {
+          "n": 31,
+          "mean": 813.1692,
+          "min": 37.446,
+          "max": 1829.463,
+          "std": 516.6659,
+          "p5": 38.157,
+          "p95": 1680.616
+        }
+      },
+      "annotation_coverage": null,
+      "discrepancies": [
+        {
+          "source": "metadata/clips.json",
+          "clip_id": "nusar-2021_action_both_9031-c04d_9031_user_id_2021-02-04_104130__C10095_rgb",
+          "field": "fps",
+          "claimed": 30.0,
+          "actual": 60.0,
+          "delta": 30.0,
+          "severity": "medium"
+        },
+        {
+          "source": "metadata/clips.json",
+          "clip_id": "nusar-2021_action_both_9031-c04d_9031_user_id_2021-02-04_104130__C10115_rgb",
+          "field": "fps",
+          "claimed": 30.0,
+          "actual": 60.0,
+          "delta": 30.0,
+          "severity": "medium"
+        },
+        {
+          "source": "metadata/clips.json",
+          "clip_id": "nusar-2021_action_both_9031-c04d_9031_user_id_2021-02-04_104130__C10118_rgb",
+          "field": "fps",
+          "claimed": 30.0,
+          "actual": 60.0,
+          "delta": 30.0,
+          "severity": "medium"
+        },
+        {
+          "source": "metadata/clips.json",
+          "clip_id": "nusar-2021_action_both_9031-c04d_9031_user_id_2021-02-04_104130__C10119_rgb",
+          "field": "fps",
+          "claimed": 30.0,
+          "actual": 60.0,
+          "delta": 30.0,
+          "severity": "medium"
+        },
+        {
+          "source": "metadata/clips.json",
+          "clip_id": "nusar-2021_action_both_9031-c04d_9031_user_id_2021-02-04_104130__C10379_rgb",
+          "field": "fps",
+          "claimed": 30.0,
+          "actual": 60.0,
+          "delta": 30.0,
+          "severity": "medium"
+        },
+        {
+          "source": "metadata/clips.json",
+          "clip_id": "nusar-2021_action_both_9031-c04d_9031_user_id_2021-02-04_104130__C10390_rgb",
+          "field": "fps",
+          "claimed": 30.0,
+          "actual": 60.0,
+          "delta": 30.0,
+          "severity": "medium"
+        },
+        {
+          "source": "metadata/clips.json",
+          "clip_id": "nusar-2021_action_both_9031-c04d_9031_user_id_2021-02-04_104130__C10395_rgb",
+          "field": "fps",
+          "claimed": 30.0,
+          "actual": 60.0,
+          "delta": 30.0,
+          "severity": "medium"
+        },
+        {
+          "source": "metadata/clips.json",
+          "clip_id": "nusar-2021_action_both_9031-c04d_9031_user_id_2021-02-04_104130__C10404_rgb",
+          "field": "fps",
+          "claimed": 30.0,
+          "actual": 60.0,
+          "delta": 30.0,
+          "severity": "medium"
+        },
+        {
+          "source": "metadata/clips.json",
+          "clip_id": "nusar-2021_action_both_9031-c04d_9031_user_id_2021-02-04_104130__HMC_21110305_mono10bit",
+          "field": "fps",
+          "claimed": 30.0,
+          "actual": 60.0,
+          "delta": 30.0,
+          "severity": "medium"
+        },
+        {
+          "source": "metadata/clips.json",
+          "clip_id": "nusar-2021_action_both_9031-c04d_9031_user_id_2021-02-04_104130__HMC_21110305_mono10bit",
+          "field": "resolution",
+          "claimed": "640x480",
+          "actual": "636x480",
+          "severity": "medium"
+        },
+        {
+          "source": "metadata/clips.json",
+          "clip_id": "nusar-2021_action_both_9031-c04d_9031_user_id_2021-02-04_104130__HMC_21176623_mono10bit",
+          "field": "fps",
+          "claimed": 30.0,
+          "actual": 60.0,
+          "delta": 30.0,
+          "severity": "medium"
+        },
+        {
+          "source": "metadata/clips.json",
+          "clip_id": "nusar-2021_action_both_9031-c04d_9031_user_id_2021-02-04_104130__HMC_21176623_mono10bit",
+          "field": "resolution",
+          "claimed": "640x480",
+          "actual": "636x480",
+          "severity": "medium"
+        },
+        {
+          "source": "metadata/clips.json",
+          "clip_id": "nusar-2021_action_both_9031-c04d_9031_user_id_2021-02-04_104130__HMC_21176875_mono10bit",
+          "field": "fps",
+          "claimed": 30.0,
+          "actual": 60.0,
+          "delta": 30.0,
+          "severity": "medium"
+        },
+        {
+          "source": "metadata/clips.json",
+          "clip_id": "nusar-2021_action_both_9031-c04d_9031_user_id_2021-02-04_104130__HMC_21176875_mono10bit",
+          "field": "resolution",
+          "claimed": "640x480",
+          "actual": "636x480",
+          "severity": "medium"
+        },
+        {
+          "source": "metadata/clips.json",
+          "clip_id": "nusar-2021_action_both_9031-c04d_9031_user_id_2021-02-04_104130__HMC_21179183_mono10bit",
+          "field": "fps",
+          "claimed": 30.0,
+          "actual": 60.0,
+          "delta": 30.0,
+          "severity": "medium"
+        },
+        {
+          "source": "metadata/clips.json",
+          "clip_id": "nusar-2021_action_both_9031-c04d_9031_user_id_2021-02-04_104130__HMC_21179183_mono10bit",
+          "field": "resolution",
+          "claimed": "640x480",
+          "actual": "636x480",
+          "severity": "medium"
+        },
+        {
+          "source": "metadata/clips.json",
+          "clip_id": "nusar-2021_action_both_9043-a24_9043_user_id_2021-02-05_133010__C10095_rgb",
+          "field": "fps",
+          "claimed": 30.0,
+          "actual": 60.0,
+          "delta": 30.0,
+          "severity": "medium"
+        },
+        {
+          "source": "metadata/clips.json",
+          "clip_id": "nusar-2021_action_both_9043-a24_9043_user_id_2021-02-05_133010__C10115_rgb",
+          "field": "fps",
+          "claimed": 30.0,
+          "actual": 60.0,
+          "delta": 30.0,
+          "severity": "medium"
+        },
+        {
+          "source": "metadata/clips.json",
+          "clip_id": "nusar-2021_action_both_9043-a24_9043_user_id_2021-02-05_133010__C10118_rgb",
+          "field": "fps",
+          "claimed": 30.0,
+          "actual": 60.0,
+          "delta": 30.0,
+          "severity": "medium"
+        },
+        {
+          "source": "metadata/clips.json",
+          "clip_id": "nusar-2021_action_both_9043-a24_9043_user_id_2021-02-05_133010__C10119_rgb",
+          "field": "fps",
+          "claimed": 30.0,
+          "actual": 60.0,
+          "delta": 30.0,
+          "severity": "medium"
+        },
+        {
+          "source": "metadata/clips.json",
+          "clip_id": "nusar-2021_action_both_9043-a24_9043_user_id_2021-02-05_133010__C10379_rgb",
+          "field": "fps",
+          "claimed": 30.0,
+          "actual": 60.0,
+          "delta": 30.0,
+          "severity": "medium"
+        },
+        {
+          "source": "metadata/clips.json",
+          "clip_id": "nusar-2021_action_both_9043-a24_9043_user_id_2021-02-05_133010__C10390_rgb",
+          "field": "fps",
+          "claimed": 30.0,
+          "actual": 60.0,
+          "delta": 30.0,
+          "severity": "medium"
+        },
+        {
+          "source": "metadata/clips.json",
+          "clip_id": "nusar-2021_action_both_9043-a24_9043_user_id_2021-02-05_133010__C10395_rgb",
+          "field": "fps",
+          "claimed": 30.0,
+          "actual": 60.0,
+          "delta": 30.0,
+          "severity": "medium"
+        },
+        {
+          "source": "metadata/clips.json",
+          "clip_id": "nusar-2021_action_both_9043-a24_9043_user_id_2021-02-05_133010__C10404_rgb",
+          "field": "fps",
+          "claimed": 30.0,
+          "actual": 60.0,
+          "delta": 30.0,
+          "severity": "medium"
+        },
+        {
+          "source": "metadata/clips.json",
+          "clip_id": "nusar-2021_action_both_9043-a24_9043_user_id_2021-02-05_133010__HMC_21110305_mono10bit",
+          "field": "fps",
+          "claimed": 30.0,
+          "actual": 60.0,
+          "delta": 30.0,
+          "severity": "medium"
+        },
+        {
+          "source": "metadata/clips.json",
+          "clip_id": "nusar-2021_action_both_9043-a24_9043_user_id_2021-02-05_133010__HMC_21110305_mono10bit",
+          "field": "resolution",
+          "claimed": "640x480",
+          "actual": "636x480",
+          "severity": "medium"
+        },
+        {
+          "source": "metadata/clips.json",
+          "clip_id": "nusar-2021_action_both_9043-a24_9043_user_id_2021-02-05_133010__HMC_21176623_mono10bit",
+          "field": "fps",
+          "claimed": 30.0,
+          "actual": 60.0,
+          "delta": 30.0,
+          "severity": "medium"
+        },
+        {
+          "source": "metadata/clips.json",
+          "clip_id": "nusar-2021_action_both_9043-a24_9043_user_id_2021-02-05_133010__HMC_21176623_mono10bit",
+          "field": "resolution",
+          "claimed": "640x480",
+          "actual": "636x480",
+          "severity": "medium"
+        },
+        {
+          "source": "metadata/clips.json",
+          "clip_id": "nusar-2021_action_both_9043-a24_9043_user_id_2021-02-05_133010__HMC_21176875_mono10bit",
+          "field": "fps",
+          "claimed": 30.0,
+          "actual": 60.0,
+          "delta": 30.0,
+          "severity": "medium"
+        },
+        {
+          "source": "metadata/clips.json",
+          "clip_id": "nusar-2021_action_both_9043-a24_9043_user_id_2021-02-05_133010__HMC_21176875_mono10bit",
+          "field": "resolution",
+          "claimed": "640x480",
+          "actual": "636x480",
+          "severity": "medium"
+        },
+        {
+          "source": "metadata/clips.json",
+          "clip_id": "nusar-2021_action_both_9043-a24_9043_user_id_2021-02-05_133010__HMC_21179183_mono10bit",
+          "field": "fps",
+          "claimed": 30.0,
+          "actual": 60.0,
+          "delta": 30.0,
+          "severity": "medium"
+        },
+        {
+          "source": "metadata/clips.json",
+          "clip_id": "nusar-2021_action_both_9043-a24_9043_user_id_2021-02-05_133010__HMC_21179183_mono10bit",
+          "field": "resolution",
+          "claimed": "640x480",
+          "actual": "636x480",
+          "severity": "medium"
+        },
+        {
+          "source": "metadata/clips.json",
+          "clip_id": "nusar-2021_action_both_9046-a29_9046_user_id_2021-02-22_105358__C10095_rgb",
+          "field": "fps",
+          "claimed": 30.0,
+          "actual": 60.0,
+          "delta": 30.0,
+          "severity": "medium"
+        },
+        {
+          "source": "metadata/clips.json",
+          "clip_id": "nusar-2021_action_both_9046-a29_9046_user_id_2021-02-22_105358__C10115_rgb",
+          "field": "fps",
+          "claimed": 30.0,
+          "actual": 60.0,
+          "delta": 30.0,
+          "severity": "medium"
+        },
+        {
+          "source": "metadata/clips.json",
+          "clip_id": "nusar-2021_action_both_9046-a29_9046_user_id_2021-02-22_105358__C10118_rgb",
+          "field": "fps",
+          "claimed": 30.0,
+          "actual": 60.0,
+          "delta": 30.0,
+          "severity": "medium"
+        },
+        {
+          "source": "metadata/clips.json",
+          "clip_id": "nusar-2021_action_both_9046-a29_9046_user_id_2021-02-22_105358__C10119_rgb",
+          "field": "fps",
+          "claimed": 30.0,
+          "actual": 60.0,
+          "delta": 30.0,
+          "severity": "medium"
+        },
+        {
+          "source": "metadata/clips.json",
+          "clip_id": "nusar-2021_action_both_9046-a29_9046_user_id_2021-02-22_105358__C10379_rgb",
+          "field": "fps",
+          "claimed": 30.0,
+          "actual": 60.0,
+          "delta": 30.0,
+          "severity": "medium"
+        },
+        {
+          "source": "metadata/clips.json",
+          "clip_id": "nusar-2021_action_both_9046-a29_9046_user_id_2021-02-22_105358__C10390_rgb",
+          "field": "fps",
+          "claimed": 30.0,
+          "actual": 60.0,
+          "delta": 30.0,
+          "severity": "medium"
+        },
+        {
+          "source": "metadata/clips.json",
+          "clip_id": "nusar-2021_action_both_9046-a29_9046_user_id_2021-02-22_105358__C10395_rgb",
+          "field": "fps",
+          "claimed": 30.0,
+          "actual": 60.0,
+          "delta": 30.0,
+          "severity": "medium"
+        }
+      ],
+      "errors": null,
+      "per_file": {
+        "nusar-2021_action_both_9031-c04d_9031_user_id_2021-02-04_104130__C10095_rgb": {
+          "file": "nusar-2021_action_both_9031-c04d_9031_user_id_2021-02-04_104130__C10095_rgb.mp4",
+          "size_mb": 1049.47,
+          "video": {
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 60.0,
+            "duration_sec": 406.516667,
+            "nb_frames": 24391,
+            "bitrate_kbps": 21650,
+            "pix_fmt": "yuv420p",
+            "has_audio": false,
+            "audio_codecs": []
+          }
+        },
+        "nusar-2021_action_both_9031-c04d_9031_user_id_2021-02-04_104130__C10115_rgb": {
+          "file": "nusar-2021_action_both_9031-c04d_9031_user_id_2021-02-04_104130__C10115_rgb.mp4",
+          "size_mb": 1091.044,
+          "video": {
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 60.0,
+            "duration_sec": 406.516667,
+            "nb_frames": 24391,
+            "bitrate_kbps": 22508,
+            "pix_fmt": "yuv420p",
+            "has_audio": false,
+            "audio_codecs": []
+          }
+        },
+        "nusar-2021_action_both_9031-c04d_9031_user_id_2021-02-04_104130__C10118_rgb": {
+          "file": "nusar-2021_action_both_9031-c04d_9031_user_id_2021-02-04_104130__C10118_rgb.mp4",
+          "size_mb": 1680.616,
+          "video": {
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 60.0,
+            "duration_sec": 406.533333,
+            "nb_frames": 24392,
+            "bitrate_kbps": 34672,
+            "pix_fmt": "yuv420p",
+            "has_audio": false,
+            "audio_codecs": []
+          }
+        },
+        "nusar-2021_action_both_9031-c04d_9031_user_id_2021-02-04_104130__C10119_rgb": {
+          "file": "nusar-2021_action_both_9031-c04d_9031_user_id_2021-02-04_104130__C10119_rgb.mp4",
+          "size_mb": 895.76,
+          "video": {
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 60.0,
+            "duration_sec": 406.483333,
+            "nb_frames": 24389,
+            "bitrate_kbps": 18479,
+            "pix_fmt": "yuv420p",
+            "has_audio": false,
+            "audio_codecs": []
+          }
+        },
+        "nusar-2021_action_both_9031-c04d_9031_user_id_2021-02-04_104130__C10379_rgb": {
+          "file": "nusar-2021_action_both_9031-c04d_9031_user_id_2021-02-04_104130__C10379_rgb.mp4",
+          "size_mb": 995.699,
+          "video": {
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 60.0,
+            "duration_sec": 406.483333,
+            "nb_frames": 24389,
+            "bitrate_kbps": 20542,
+            "pix_fmt": "yuv420p",
+            "has_audio": false,
+            "audio_codecs": []
+          }
+        },
+        "nusar-2021_action_both_9031-c04d_9031_user_id_2021-02-04_104130__C10390_rgb": {
+          "file": "nusar-2021_action_both_9031-c04d_9031_user_id_2021-02-04_104130__C10390_rgb.mp4",
+          "size_mb": 809.852,
+          "video": {
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 60.0,
+            "duration_sec": 406.516667,
+            "nb_frames": 24391,
+            "bitrate_kbps": 16705,
+            "pix_fmt": "yuv420p",
+            "has_audio": false,
+            "audio_codecs": []
+          }
+        },
+        "nusar-2021_action_both_9031-c04d_9031_user_id_2021-02-04_104130__C10395_rgb": {
+          "file": "nusar-2021_action_both_9031-c04d_9031_user_id_2021-02-04_104130__C10395_rgb.mp4",
+          "size_mb": 979.899,
+          "video": {
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 60.0,
+            "duration_sec": 406.5,
+            "nb_frames": 24390,
+            "bitrate_kbps": 20215,
+            "pix_fmt": "yuv420p",
+            "has_audio": false,
+            "audio_codecs": []
+          }
+        },
+        "nusar-2021_action_both_9031-c04d_9031_user_id_2021-02-04_104130__C10404_rgb": {
+          "file": "nusar-2021_action_both_9031-c04d_9031_user_id_2021-02-04_104130__C10404_rgb.mp4",
+          "size_mb": 682.653,
+          "video": {
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 60.0,
+            "duration_sec": 406.5,
+            "nb_frames": 24390,
+            "bitrate_kbps": 14081,
+            "pix_fmt": "yuv420p",
+            "has_audio": false,
+            "audio_codecs": []
+          }
+        },
+        "nusar-2021_action_both_9031-c04d_9031_user_id_2021-02-04_104130__HMC_21110305_mono10bit": {
+          "file": "nusar-2021_action_both_9031-c04d_9031_user_id_2021-02-04_104130__HMC_21110305_mono10bit.mp4",
+          "size_mb": 68.772,
+          "video": {
+            "codec": "h264",
+            "width": 636,
+            "height": 480,
+            "fps": 60.0,
+            "duration_sec": 406.7,
+            "nb_frames": 24402,
+            "bitrate_kbps": 1412,
+            "pix_fmt": "yuv420p",
+            "has_audio": false,
+            "audio_codecs": []
+          }
+        },
+        "nusar-2021_action_both_9031-c04d_9031_user_id_2021-02-04_104130__HMC_21176623_mono10bit": {
+          "file": "nusar-2021_action_both_9031-c04d_9031_user_id_2021-02-04_104130__HMC_21176623_mono10bit.mp4",
+          "size_mb": 59.099,
+          "video": {
+            "codec": "h264",
+            "width": 636,
+            "height": 480,
+            "fps": 60.0,
+            "duration_sec": 406.683333,
+            "nb_frames": 24401,
+            "bitrate_kbps": 1213,
+            "pix_fmt": "yuv420p",
+            "has_audio": false,
+            "audio_codecs": []
+          }
+        },
+        "nusar-2021_action_both_9031-c04d_9031_user_id_2021-02-04_104130__HMC_21176875_mono10bit": {
+          "file": "nusar-2021_action_both_9031-c04d_9031_user_id_2021-02-04_104130__HMC_21176875_mono10bit.mp4",
+          "size_mb": 59.812,
+          "video": {
+            "codec": "h264",
+            "width": 636,
+            "height": 480,
+            "fps": 60.0,
+            "duration_sec": 406.7,
+            "nb_frames": 24402,
+            "bitrate_kbps": 1227,
+            "pix_fmt": "yuv420p",
+            "has_audio": false,
+            "audio_codecs": []
+          }
+        },
+        "nusar-2021_action_both_9031-c04d_9031_user_id_2021-02-04_104130__HMC_21179183_mono10bit": {
+          "file": "nusar-2021_action_both_9031-c04d_9031_user_id_2021-02-04_104130__HMC_21179183_mono10bit.mp4",
+          "size_mb": 75.529,
+          "video": {
+            "codec": "h264",
+            "width": 636,
+            "height": 480,
+            "fps": 60.0,
+            "duration_sec": 406.7,
+            "nb_frames": 24402,
+            "bitrate_kbps": 1552,
+            "pix_fmt": "yuv420p",
+            "has_audio": false,
+            "audio_codecs": []
+          }
+        },
+        "nusar-2021_action_both_9043-a24_9043_user_id_2021-02-05_133010__C10095_rgb": {
+          "file": "nusar-2021_action_both_9043-a24_9043_user_id_2021-02-05_133010__C10095_rgb.mp4",
+          "size_mb": 1127.835,
+          "video": {
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 60.0,
+            "duration_sec": 341.566667,
+            "nb_frames": 20494,
+            "bitrate_kbps": 27692,
+            "pix_fmt": "yuv420p",
+            "has_audio": false,
+            "audio_codecs": []
+          }
+        },
+        "nusar-2021_action_both_9043-a24_9043_user_id_2021-02-05_133010__C10115_rgb": {
+          "file": "nusar-2021_action_both_9043-a24_9043_user_id_2021-02-05_133010__C10115_rgb.mp4",
+          "size_mb": 1072.318,
+          "video": {
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 60.0,
+            "duration_sec": 341.583333,
+            "nb_frames": 20495,
+            "bitrate_kbps": 26327,
+            "pix_fmt": "yuv420p",
+            "has_audio": false,
+            "audio_codecs": []
+          }
+        },
+        "nusar-2021_action_both_9043-a24_9043_user_id_2021-02-05_133010__C10118_rgb": {
+          "file": "nusar-2021_action_both_9043-a24_9043_user_id_2021-02-05_133010__C10118_rgb.mp4",
+          "size_mb": 1829.463,
+          "video": {
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 60.0,
+            "duration_sec": 341.583333,
+            "nb_frames": 20495,
+            "bitrate_kbps": 44922,
+            "pix_fmt": "yuv420p",
+            "has_audio": false,
+            "audio_codecs": []
+          }
+        },
+        "nusar-2021_action_both_9043-a24_9043_user_id_2021-02-05_133010__C10119_rgb": {
+          "file": "nusar-2021_action_both_9043-a24_9043_user_id_2021-02-05_133010__C10119_rgb.mp4",
+          "size_mb": 1024.686,
+          "video": {
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 60.0,
+            "duration_sec": 341.583333,
+            "nb_frames": 20495,
+            "bitrate_kbps": 25158,
+            "pix_fmt": "yuv420p",
+            "has_audio": false,
+            "audio_codecs": []
+          }
+        },
+        "nusar-2021_action_both_9043-a24_9043_user_id_2021-02-05_133010__C10379_rgb": {
+          "file": "nusar-2021_action_both_9043-a24_9043_user_id_2021-02-05_133010__C10379_rgb.mp4",
+          "size_mb": 1100.989,
+          "video": {
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 60.0,
+            "duration_sec": 341.583333,
+            "nb_frames": 20495,
+            "bitrate_kbps": 27032,
+            "pix_fmt": "yuv420p",
+            "has_audio": false,
+            "audio_codecs": []
+          }
+        },
+        "nusar-2021_action_both_9043-a24_9043_user_id_2021-02-05_133010__C10390_rgb": {
+          "file": "nusar-2021_action_both_9043-a24_9043_user_id_2021-02-05_133010__C10390_rgb.mp4",
+          "size_mb": 1048.803,
+          "video": {
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 60.0,
+            "duration_sec": 341.583333,
+            "nb_frames": 20495,
+            "bitrate_kbps": 25750,
+            "pix_fmt": "yuv420p",
+            "has_audio": false,
+            "audio_codecs": []
+          }
+        },
+        "nusar-2021_action_both_9043-a24_9043_user_id_2021-02-05_133010__C10395_rgb": {
+          "file": "nusar-2021_action_both_9043-a24_9043_user_id_2021-02-05_133010__C10395_rgb.mp4",
+          "size_mb": 1082.648,
+          "video": {
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 60.0,
+            "duration_sec": 341.583333,
+            "nb_frames": 20495,
+            "bitrate_kbps": 26581,
+            "pix_fmt": "yuv420p",
+            "has_audio": false,
+            "audio_codecs": []
+          }
+        },
+        "nusar-2021_action_both_9043-a24_9043_user_id_2021-02-05_133010__C10404_rgb": {
+          "file": "nusar-2021_action_both_9043-a24_9043_user_id_2021-02-05_133010__C10404_rgb.mp4",
+          "size_mb": 813.546,
+          "video": {
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 60.0,
+            "duration_sec": 341.583333,
+            "nb_frames": 20495,
+            "bitrate_kbps": 19973,
+            "pix_fmt": "yuv420p",
+            "has_audio": false,
+            "audio_codecs": []
+          }
+        },
+        "nusar-2021_action_both_9043-a24_9043_user_id_2021-02-05_133010__HMC_21110305_mono10bit": {
+          "file": "nusar-2021_action_both_9043-a24_9043_user_id_2021-02-05_133010__HMC_21110305_mono10bit.mp4",
+          "size_mb": 38.207,
+          "video": {
+            "codec": "h264",
+            "width": 636,
+            "height": 480,
+            "fps": 60.0,
+            "duration_sec": 341.616667,
+            "nb_frames": 20497,
+            "bitrate_kbps": 932,
+            "pix_fmt": "yuv420p",
+            "has_audio": false,
+            "audio_codecs": []
+          }
+        },
+        "nusar-2021_action_both_9043-a24_9043_user_id_2021-02-05_133010__HMC_21176623_mono10bit": {
+          "file": "nusar-2021_action_both_9043-a24_9043_user_id_2021-02-05_133010__HMC_21176623_mono10bit.mp4",
+          "size_mb": 37.446,
+          "video": {
+            "codec": "h264",
+            "width": 636,
+            "height": 480,
+            "fps": 60.0,
+            "duration_sec": 341.616667,
+            "nb_frames": 20497,
+            "bitrate_kbps": 913,
+            "pix_fmt": "yuv420p",
+            "has_audio": false,
+            "audio_codecs": []
+          }
+        },
+        "nusar-2021_action_both_9043-a24_9043_user_id_2021-02-05_133010__HMC_21176875_mono10bit": {
+          "file": "nusar-2021_action_both_9043-a24_9043_user_id_2021-02-05_133010__HMC_21176875_mono10bit.mp4",
+          "size_mb": 38.157,
+          "video": {
+            "codec": "h264",
+            "width": 636,
+            "height": 480,
+            "fps": 60.0,
+            "duration_sec": 341.616667,
+            "nb_frames": 20497,
+            "bitrate_kbps": 931,
+            "pix_fmt": "yuv420p",
+            "has_audio": false,
+            "audio_codecs": []
+          }
+        },
+        "nusar-2021_action_both_9043-a24_9043_user_id_2021-02-05_133010__HMC_21179183_mono10bit": {
+          "file": "nusar-2021_action_both_9043-a24_9043_user_id_2021-02-05_133010__HMC_21179183_mono10bit.mp4",
+          "size_mb": 43.603,
+          "video": {
+            "codec": "h264",
+            "width": 636,
+            "height": 480,
+            "fps": 60.0,
+            "duration_sec": 341.616667,
+            "nb_frames": 20497,
+            "bitrate_kbps": 1064,
+            "pix_fmt": "yuv420p",
+            "has_audio": false,
+            "audio_codecs": []
+          }
+        },
+        "nusar-2021_action_both_9046-a29_9046_user_id_2021-02-22_105358__C10095_rgb": {
+          "file": "nusar-2021_action_both_9046-a29_9046_user_id_2021-02-22_105358__C10095_rgb.mp4",
+          "size_mb": 1049.47,
+          "video": {
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 60.0,
+            "duration_sec": 406.516667,
+            "nb_frames": 24391,
+            "bitrate_kbps": 21650,
+            "pix_fmt": "yuv420p",
+            "has_audio": false,
+            "audio_codecs": []
+          }
+        },
+        "nusar-2021_action_both_9046-a29_9046_user_id_2021-02-22_105358__C10115_rgb": {
+          "file": "nusar-2021_action_both_9046-a29_9046_user_id_2021-02-22_105358__C10115_rgb.mp4",
+          "size_mb": 1091.044,
+          "video": {
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 60.0,
+            "duration_sec": 406.516667,
+            "nb_frames": 24391,
+            "bitrate_kbps": 22508,
+            "pix_fmt": "yuv420p",
+            "has_audio": false,
+            "audio_codecs": []
+          }
+        },
+        "nusar-2021_action_both_9046-a29_9046_user_id_2021-02-22_105358__C10118_rgb": {
+          "file": "nusar-2021_action_both_9046-a29_9046_user_id_2021-02-22_105358__C10118_rgb.mp4",
+          "size_mb": 1680.616,
+          "video": {
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 60.0,
+            "duration_sec": 406.533333,
+            "nb_frames": 24392,
+            "bitrate_kbps": 34672,
+            "pix_fmt": "yuv420p",
+            "has_audio": false,
+            "audio_codecs": []
+          }
+        },
+        "nusar-2021_action_both_9046-a29_9046_user_id_2021-02-22_105358__C10119_rgb": {
+          "file": "nusar-2021_action_both_9046-a29_9046_user_id_2021-02-22_105358__C10119_rgb.mp4",
+          "size_mb": 895.76,
+          "video": {
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 60.0,
+            "duration_sec": 406.483333,
+            "nb_frames": 24389,
+            "bitrate_kbps": 18479,
+            "pix_fmt": "yuv420p",
+            "has_audio": false,
+            "audio_codecs": []
+          }
+        },
+        "nusar-2021_action_both_9046-a29_9046_user_id_2021-02-22_105358__C10379_rgb": {
+          "file": "nusar-2021_action_both_9046-a29_9046_user_id_2021-02-22_105358__C10379_rgb.mp4",
+          "size_mb": 995.699,
+          "video": {
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 60.0,
+            "duration_sec": 406.483333,
+            "nb_frames": 24389,
+            "bitrate_kbps": 20542,
+            "pix_fmt": "yuv420p",
+            "has_audio": false,
+            "audio_codecs": []
+          }
+        },
+        "nusar-2021_action_both_9046-a29_9046_user_id_2021-02-22_105358__C10390_rgb": {
+          "file": "nusar-2021_action_both_9046-a29_9046_user_id_2021-02-22_105358__C10390_rgb.mp4",
+          "size_mb": 809.852,
+          "video": {
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 60.0,
+            "duration_sec": 406.516667,
+            "nb_frames": 24391,
+            "bitrate_kbps": 16705,
+            "pix_fmt": "yuv420p",
+            "has_audio": false,
+            "audio_codecs": []
+          }
+        },
+        "nusar-2021_action_both_9046-a29_9046_user_id_2021-02-22_105358__C10395_rgb": {
+          "file": "nusar-2021_action_both_9046-a29_9046_user_id_2021-02-22_105358__C10395_rgb.mp4",
+          "size_mb": 979.899,
+          "video": {
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 60.0,
+            "duration_sec": 406.5,
+            "nb_frames": 24390,
+            "bitrate_kbps": 20215,
+            "pix_fmt": "yuv420p",
+            "has_audio": false,
+            "audio_codecs": []
+          }
+        }
       }
     }
   }
