@@ -2,7 +2,7 @@
 
 > What is good data? We're building the systematic quality evaluation suite for AI/ML datasets.
 
-[![Datasets Audited](https://img.shields.io/badge/datasets%20audited-106-blue)](https://github.com/Varun-Nair/open-data-eval)
+[![Datasets Audited](https://img.shields.io/badge/datasets%20audited-107-blue)](https://github.com/Varun-Nair/open-data-eval)
 [![Quality Profiles](https://img.shields.io/badge/quality%20profiles-26-5b21b6)](https://varun-nair.github.io/open-data-eval/scorecard/)
 [![Live Scorecard](https://img.shields.io/badge/scorecard-live-059669)](https://varun-nair.github.io/open-data-eval/scorecard/)
 [![ISO 5259-2](https://img.shields.io/badge/ISO%205259--2-aligned-0369a1)](https://www.iso.org/standard/81088.html)
@@ -47,20 +47,20 @@ Interactive quality profiles for 26 egocentric and manipulation datasets. Scores
 
 ## Dataset Catalog
 
-106 egocentric video datasets audited across 33 fields each.
+107 egocentric video datasets audited across 33 fields each.
 
 | Metric | Value |
 |--------|-------|
-| Datasets audited | 106 |
+| Datasets audited | 107 |
 | Total video hours | 135,000+ |
-| Fully accessible | 95 (90%) |
+| Fully accessible | 96 (90%) |
 | Broken downloads | 5 (5%) |
 | Dead links | 2 (2%) |
-| **No license specified** | **67 of 106 (63%)** |
+| **No license specified** | **67 of 107 (63%)** |
 
 ### URL Status
 ```
-Live                ████████████████████████████████████████████ 95
+Live                ████████████████████████████████████████████ 97
 Broken download     ██ 5
 Redirect            █ 2
 Dead                █ 2
@@ -70,7 +70,7 @@ Live but gated      █ 1
 ### Access Level
 ```
 Open                ████████████████████████████████████████████ 75
-Gated-Open          ██████████ 20
+Gated-Open          ██████████ 21
 Restricted          █████ 9
 Unavailable         █ 1
 ```
@@ -80,7 +80,7 @@ Unavailable         █ 1
 Not specified       ████████████████████████████████████████████ 67
 Custom Academic     ████████ 14
 CC-BY-NC-4.0        ███████ 12
-Apache-2.0          ██ 3
+Apache-2.0          ██ 4
 CC-BY-4.0           █ 2
 CC-BY-NC-SA-4.0     █ 2
 CC-BY-SA-4.0        █ 1
@@ -90,23 +90,24 @@ Mixed               █ 1
 Custom Open         █ 1
 ```
 
-### Modalities (across all 106 datasets)
+### Modalities (across all 107 datasets)
 ```
-RGB Video           ████████████████████████████████████████████ 106
+RGB Video           ████████████████████████████████████████████ 107
 Eye Gaze            █████████████ 31
-IMU                 █████████████ 25
-Hand Pose           █████████████ 25
+IMU                 █████████████ 26
+Hand Pose           █████████████ 26
 Body Pose           █████████ 22
 Depth (RGB-D)       ████████ 20
 Audio               ████████ 19
 3D Point Clouds     ██████ 14
-SLAM/Odometry       █████ 11
+SLAM/Odometry       █████ 12
 Narrations          █████ 12
 3D Scene Recon.     ████ 8
 Motion Capture      ███ 6
-Depth (Stereo)      ███ 6
+Depth (Stereo)      ████ 7
 Optical Flow        █ 2
 Object Tracking     █ 1
+Tactile             █ 1
 Multi-view          █ 1
 mmWave              █ 1
 Hand Masks          █ 1

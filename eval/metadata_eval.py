@@ -118,6 +118,7 @@ TARGET_DATASETS = [
     "Assembly101", "DexYCB", "EgoBody", "Aria Digital Twin (ADT)",
     "MECCANO", "H2O", "Nymeria", "GIMO",
     "RoboX EgoGrasp v0.1",
+    "Human Archive (HA-Multi)",
 ]
 
 
@@ -565,6 +566,26 @@ PAPER_METADATA = {
         "geo_locations": None,                 # crowdsourced; varied global locations
         "arxiv_id": None,                      # no paper; dataset-only release
         "paper_ref": "HuggingFace:RoboXTechnologies/RoboX-EgoGrasp-v0.1",
+    },
+    "Human Archive (HA-Multi)": {
+        # HuggingFace: humanarchive/HA-Multi-Samples (no arXiv paper)
+        # 36-episode sample; full dataset 2,000+ hrs/week; YC W26
+        "capture_device": "6 synchronized cameras: 1× egocentric fisheye (1920×1080), 1× chest (1920×1080), 2× wrist (1920×1080), 1× stereo pair head-mounted (1280×720); 256-taxel fiber-optic tactile gloves (both hands); 8 upper-body IMUs (head/chest/biceps/forearms + hand quaternions)",
+        "calibration_tier": 0.85,              # Full stereo calibration: intrinsics + rational polynomial distortion (14 coeff)
+                                               # + 74.95mm baseline for stereo pair. Egocentric fisheye intrinsics also published.
+                                               # Chest/wrist calibration not published. No independent validation step.
+        "calibration_notes": "Full stereo calibration published in dataset card: per-camera intrinsics + rational polynomial distortion (14 coefficients) + 74.95mm stereo baseline. Egocentric fisheye intrinsics provided (fx=1093.98, fy=1093.39, cx=953.05, cy=536.30). Chest and wrist camera calibration not published. Source: HuggingFace dataset card.",
+        "lens_type": "fisheye",                # Egocentric camera explicitly stated as fisheye; stereo/chest/wrist rectilinear
+        "fov_degrees": None,                   # Not specified in dataset card
+        "fps_override": None,                  # 30fps already in catalog
+        "resolution_override": "1920x1080",   # Primary cameras; stereo pair is 1280x720 (noted in catalog)
+        "annotation_coverage": 1.0,            # All 36 episodes have full sensor data: tactile (256/hand) + 8 IMUs + timestamps
+        "annotation_notes": "All 36 episodes fully annotated: 256-taxel fiber-optic tactile pressure arrays (both hands), 8 distributed upper-body IMUs (head/chest/biceps/forearms/hands), 11 task labels, per-frame timestamps. Hand finger bend (5-DOF per hand) derivable from tactile data. No language annotations. Cross-modal alignment <33ms. Source: HuggingFace dataset card.",
+        "total_hours_override": 3.9,           # 3 hours 54 minutes = 3.9h confirmed in README
+        "download_size_gb": 64.066,            # ~64 GB video + ~0.066 GB Parquet sensor data
+        "geo_locations": None,                 # Not specified
+        "arxiv_id": None,                      # No paper; dataset-only release
+        "paper_ref": "HuggingFace:humanarchive/HA-Multi-Samples",
     },
     "EgoVerse": {
         # arXiv 2604.07607 (submitted April 2026)

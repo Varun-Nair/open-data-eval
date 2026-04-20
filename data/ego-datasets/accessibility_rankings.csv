@@ -11,97 +11,98 @@ Rank,Dataset Name,Ease of Access (0-10),Hours,Modality Count,License Status,URL 
 10,EgoBody,8.8,Unknown,6,CC-BY-NC-SA-4.0,Live,Gated-Open,CC-BY-NC-SA-4.0. HoloLens2+Kinect. 7-day credentials.
 11,Nymeria,8.8,300,9,CC-BY-NC-4.0,Live,Gated-Open,"CC-BY-NC-4.0. 300h, 264 people, ~70TB."
 12,Breakfast,8.5,77,1,CC-BY-4.0,Redirect,Open,Gold standard for action segmentation. CC-BY-4.0! Not egocentric though  -  third-person views.
-13,RoboX EgoGrasp v0.1,8.3,0.03,4,CC-BY-NC-4.0,Live,Open,"10-clip crowdsourced sample; full dataset 1800+ clips at robox.to. CC-BY-NC-4.0. iPhone. Per-frame 21-joint hand keypoints (2D+3D), 6DoF pose + IMU in sensors.jsonl. Grasping-focused."
-14,HD-EPIC,8.2,41,6,CC-BY-NC-4.0,Live,Open,Newest EPIC-KITCHENS extension with digital kitchen twins. 263 annotations/min — densest in the family.
-15,Xperience-10M,8.2,10000,8,CC-BY-NC-4.0,Live,Gated-Open,"Most modalities and largest hours, but ~1 PB and no formal paper yet. Only for teams with serious infra."
-16,AssemblyHands,8.2,Unknown,2,CC-BY-NC-4.0,Live,Open,No download found. CVPR 2023 paper only.
-17,EgoBody3M,8.2,Unknown,3,CC-BY-NC-4.0,Live,Open,CC-BY-NC-4.0. Quest 3. 2688 seq.
-18,NymeriaPlus,8.2,300,9,CC-BY-NC-4.0,Live,Gated-Open,Same as Nymeria. March 2026.
-19,xR-EgoPose,8.2,Unknown,2,Custom Academic,Live,Open,Custom academic. 383K synthetic frames.
-20,Aria Everyday Activities (AEA),8.2,Unknown,6,CC-BY-NC-4.0,Live,Gated-Open,CC-BY-NC-4.0. 143 sequences. Project Aria.
-21,HOT3D,7.8,~14,6,Custom Academic,Live,Gated-Open,State-of-the-art hand-object tracking. CVPR 2025 highlight. Needs Ego4D license (~48h wait).
-22,Aria Digital Twin (ADT),7.8,Unknown,7,Custom Academic,Live,Gated-Open,
-23,Ego4D,7.5,3670,6,Custom Academic,Live,Gated-Open,Largest ego dataset at 3670h. Gated but fast approval. Rich benchmarks across 5 task categories.
-24,Ego-Exo4D,7.5,1286,9,Custom Academic,Live,Gated-Open,Best dataset for ego-exo correspondence. Synchronized Aria + 4-5 GoPros. Gated but same fast approval as Ego4D.
-25,MECCANO,7.5,Unknown,3,Not specified,Live,Open,
-26,Charades-Ego,7.2,68.8,1,Custom Academic,Live,Open,Excellent paired ego/exo data with direct S3 downloads; non-commercial AI2 license limits reuse.
-27,ARCTIC,7.2,2.17,4,Custom Academic,Live,Gated-Open,Beautiful bimanual hand data with MANO/SMPLX. MPG registration required. Non-commercial.
-28,GIMO,7.2,Unknown,5,Custom Academic,Live,Gated-Open,Non-commercial. Stanford/Tsinghua.
-29,EgoLife,7.0,300,6,S-Lab License,Live,Gated-Open,Unique week-long continuous recording of 6 people cohabitating. S-Lab license terms not fully public.
-30,OpenEgo,7.0,1107,3,Mixed,Live but broken,Open,Unified view across 6 datasets with standardized hand poses. Download via buried Box link — script still 'coming soon.'
-31,CMU-MMAC,7.0,~10,4,Custom Open,Live,Open,Explicitly free for any purpose. Rare multimodal combo of video + audio + IMU + motion capture. Underused.
-32,HOI4D,7.0,22.2,5,Not specified,Live,Open,Rich 2.4M RGB-D frames with dense annotations. Direct OneDrive download. No license specified.
-33,TACO,7.0,Unknown,4,Not specified,Live,Open,Good bimanual tool dataset with OneDrive/Dropbox downloads. No license specified.
-34,EgoHumans,7.0,Unknown,3,Not specified,Live,Open,No license. 550GB Google Drive. ICCV 2023 Oral.
-35,UnrealEgo / UnrealEgo2,7.0,Unknown,3,Not specified,Live,Open,Synthetic. No license. 1.25M images.
-36,UnrealEgo-RW,7.0,Unknown,3,Not specified,Live,Open,Real-world. No license. ~170GB.
-37,CaptainCook4D,7.0,94.5,6,Not specified,Live,Open,
-38,EgoExoLearn,7.0,120,3,Not specified,Live,Open,
-39,EgoObjects,7.0,Unknown,1,Not specified,Live,Open,
-40,EgoSurgery,7.0,15,3,Not specified,Live,Open,
-41,Egocentric-1M,7.0,1000000+,1,Apache-2.0,Live but gated,Gated-Open,~1M hours factory worker data. Apache-2.0. HuggingFace gated (requires account + data agreement). No academic paper. Build AI proprietary device. Not yet fully released (April 2026).
-42,THU-READ,6.8,Unknown,2,Custom Academic,Live,Open,Small clean RGB-D ego dataset. Google Drive links work. Non-commercial only.
-43,EgoDexter,6.8,<1,3,Custom Academic,Live,Open,Tiny but clean RGB-D hand benchmark. 1.99 GB direct download. Non-commercial MPG license.
-44,HPS,6.8,Unknown,4,Custom Academic,Live,Gated-Open,MPG non-commercial. CVPR 2021.
-45,Ego-1K,6.8,Unknown,2,Custom Academic,Live,Open,
-46,Object Search Dataset,6.5,Unknown,2,Not specified,Live,Open,GitHub available.
-47,EgoPER,6.5,Unknown,1,Not specified,Live,Open,
-48,Egocentric-10K,6.5,10000,1,Apache-2.0,Live,Open,
-49,Egocentric-100K,6.5,100405,1,Apache-2.0,Live,Open,
-50,EgoExo-Fitness,6.5,Unknown,2,Not specified,Live,Open,
-51,TF2023,6.5,Unknown,1,Not specified,Live,Open,
-52,EgoMe,6.5,Unknown,3,Not specified,Live,Open,
-53,EgoTaskQA,6.5,Unknown,1,Not specified,Live,Open,
-54,EgoGesture,6.2,Unknown,2,Custom Academic,Live,Gated-Open,Custom academic. 24K+ samples.
-55,EGTEA Gaze+,6.0,28,4,Not specified,Live,Open,Recommended by the authors over GTEA/GTEA Gaze. No license but Dropbox links are live and downloads are fast.
-56,HOMAGE,6.0,30,4,Not specified,Live,Gated-Open,Solid multi-view dataset but requires registration and license is unspecified. Check first.
-57,LEMMA,6.0,Unknown,3,Not specified,Live,Gated-Open,Interesting multi-agent setup but gated + only RGB subset released. Niche use case.
-58,OAKINK2,6.0,Unknown,4,Not specified,Live,Open,No download found. CVPR 2024 paper exists but dataset not publicly located.
-59,H2O,6.0,Unknown,4,Not specified,Live,Gated-Open,First two-hand 3D interaction benchmark. ETH server may require access. No license found.
-60,FPHA,6.0,Unknown,3,Not specified,Live,Gated-Open,Classic hand action benchmark. Google Form gating. Magnetic sensor-based 3D hand poses.
-61,Hand-Object Segments,6.0,~3144,2,Not specified,Live,Open,No download found. May be part of 100DOH project. Paper-only.
-62,IndustReal,6.0,Unknown,1,Not specified,Live,Open,
-63,AssistQ,6.0,Unknown,1,Not specified,Live,Open,
-64,EPIC-Tent,6.0,~7,2,Not specified,Live,Open,
-65,50 Salads,5.8,~4,3,CC-BY-NC-SA-4.0,Dead,Open,Classic benchmark but original site is dead. Features on Zenodo; raw data harder to find.
-66,GTEA,5.5,<2,1,Not specified,Live,Open,Tiny and outdated. Authors point researchers to EGTEA Gaze+ instead. Only use for legacy comparisons.
-67,GTEA Gaze,5.5,~2,2,Not specified,Live,Open,Adds gaze to GTEA but still superseded. Use EGTEA Gaze+ unless you specifically need this split.
-68,BEOID,5.5,Unknown,3,Not specified,Live,Open,"Early Bristol kitchen work, predates EPIC. Annotations and sample only — full videos may need author contact."
-69,DoMSEV,5.5,80,3,Not specified,Live,Open,80h ego video for hyperlapse research. Page loads but no license  -  risky for production use.
-70,EgoK360,5.5,Unknown,1,Not specified,Live,Open,Cannot locate any download or website. Effectively unavailable.
-71,EgoHands,5.5,Unknown,2,Not specified,Live,Open,48 Google Glass videos with dense hand masks. Free to use with citation. Nice and simple.
-72,CIRCLE,5.5,10,4,Not specified,Live,Open,"No license. 10h, 5 subjects."
-73,VEDB,5.5,200,3,Not specified,Live,Open,Download unverified.
-74,ENIGMA-51,5.5,Unknown,3,Not specified,Live,Open,
-75,ENIGMA-360,5.5,Unknown,1,Not specified,Live,Open,
-76,EgoProceL,5.5,62,1,Not specified,Live,Open,
-77,UTokyo Paired Ego-Video (PEV),5.5,Unknown,1,Not specified,Live,Open,
-78,UTokyo Ego-Surf,5.5,Unknown,1,Not specified,Live,Open,
-79,Multimodal Focused Interaction Dataset,5.5,~6,4,Not specified,Live,Open,
-80,CASTLE 2024,5.5,600,1,Not specified,Live,Open,
-81,EgoSeg,5.5,Unknown,1,Not specified,Live,Open,
-82,VINST / Visual Diaries,5.5,Unknown,1,Not specified,Live,Open,
-83,EgoCart,5.5,Unknown,1,Not specified,Live,Open,
-84,EGO-CH,5.5,Unknown,2,Not specified,Live,Open,
-85,UNICT-VEDI,5.5,Unknown,1,Not specified,Live,Open,
-86,EgoPAT3D,5.5,Unknown,3,Not specified,Live,Open,
-87,TEgO,5.5,Unknown,1,Not specified,Live,Open,
-88,Visual Market Basket Analysis,5.5,Unknown,1,Not specified,Live,Open,
-89,EgoSim,5.0,Unknown,3,Not specified,Live,Open,Download unverified.
-90,ADL4D,5.0,Unknown,3,Not specified,Live,Open,Download unverified.
-91,EgoCampus,5.0,Unknown,4,Not specified,Live,Open,Download unverified.
-92,EgoVid-5M,4.5,Not reported,3,Not specified,Live but broken,Open,No license anywhere. No actual video download mechanism — only metadata on ModelScope. Avoid until resolved.
-93,ADL (Activities of Daily Living),4.5,~10,1,Not specified,Redirect,Open,Primary URL dead; UC Davis mirror works. No license. Useful for daily activity recognition in home environments.
-94,UT Egocentric,4.5,~15,1,Not specified,Live,Gated-Open,Registration required. Only 4 of 10 videos shared (privacy). No license. Long clips but minimal annotations.
-95,UEC Dataset,4.0,Unknown,1,Not specified,Live but broken,Open,URL loads the wrong dataset entirely. Ego-action data referenced in literature is not findable here.
-96,First-Person Social Interactions (Disney),4.0,~42,1,Not specified,Live but broken,Open,Effectively dead. Stanford URL down; only downsampled Figshare subset survives. No license.
-97,Ego-Deliver,3.0,Unknown,1,Not specified,Live,Restricted,Paper-only; no independent website or download mechanism found. Skip unless you contact authors.
-98,Egocentric Shopper Dataset,3.0,Unknown,2,Not specified,Live,Restricted,Paper-only.
-99,Sanctuaria-Gaze,3.0,Unknown,2,Not specified,Live,Restricted,Paper-only.
-100,EasyCom,3.0,Unknown,3,Not specified,Live,Restricted,
-101,MultiEgo,3.0,Unknown,1,Not specified,Live,Restricted,
-102,CEN,3.0,6,4,Not specified,Live,Restricted,
-103,EgoBlind,3.0,Unknown,2,Not specified,Live,Restricted,
-104,EgoExOR,3.0,Unknown,2,Not specified,Live,Restricted,
-105,FPPA,2.5,Unknown,1,Not specified,Live but broken,Restricted,Requires emailing an author who may have graduated. Not worth the effort for 5 subjects.
-106,FPVO,0.0,Unknown,1,Not specified,Dead,Unavailable,Dead link (404). No alternatives found. Unavailable.
+13,Human Archive (HA-Multi),8.5,3.9,5,Apache-2.0,Live,Gated-Open,"36-episode sample of 2,000+ hrs/week multimodal collection. 6 synced cameras, 256-taxel tactile gloves, 8 IMUs. Full stereo calibration. Apache 2.0. LeRobot v3. YC W26."
+14,RoboX EgoGrasp v0.1,8.3,0.03,4,CC-BY-NC-4.0,Live,Open,"10-clip crowdsourced sample; full dataset 1800+ clips at robox.to. CC-BY-NC-4.0. iPhone. Per-frame 21-joint hand keypoints (2D+3D), 6DoF pose + IMU in sensors.jsonl. Grasping-focused."
+15,HD-EPIC,8.2,41,6,CC-BY-NC-4.0,Live,Open,Newest EPIC-KITCHENS extension with digital kitchen twins. 263 annotations/min — densest in the family.
+16,Xperience-10M,8.2,10000,8,CC-BY-NC-4.0,Live,Gated-Open,"Most modalities and largest hours, but ~1 PB and no formal paper yet. Only for teams with serious infra."
+17,AssemblyHands,8.2,Unknown,2,CC-BY-NC-4.0,Live,Open,No download found. CVPR 2023 paper only.
+18,EgoBody3M,8.2,Unknown,3,CC-BY-NC-4.0,Live,Open,CC-BY-NC-4.0. Quest 3. 2688 seq.
+19,NymeriaPlus,8.2,300,9,CC-BY-NC-4.0,Live,Gated-Open,Same as Nymeria. March 2026.
+20,xR-EgoPose,8.2,Unknown,2,Custom Academic,Live,Open,Custom academic. 383K synthetic frames.
+21,Aria Everyday Activities (AEA),8.2,Unknown,6,CC-BY-NC-4.0,Live,Gated-Open,CC-BY-NC-4.0. 143 sequences. Project Aria.
+22,HOT3D,7.8,~14,6,Custom Academic,Live,Gated-Open,State-of-the-art hand-object tracking. CVPR 2025 highlight. Needs Ego4D license (~48h wait).
+23,Aria Digital Twin (ADT),7.8,Unknown,7,Custom Academic,Live,Gated-Open,
+24,Ego4D,7.5,3670,6,Custom Academic,Live,Gated-Open,Largest ego dataset at 3670h. Gated but fast approval. Rich benchmarks across 5 task categories.
+25,Ego-Exo4D,7.5,1286,9,Custom Academic,Live,Gated-Open,Best dataset for ego-exo correspondence. Synchronized Aria + 4-5 GoPros. Gated but same fast approval as Ego4D.
+26,MECCANO,7.5,Unknown,3,Not specified,Live,Open,
+27,Charades-Ego,7.2,68.8,1,Custom Academic,Live,Open,Excellent paired ego/exo data with direct S3 downloads; non-commercial AI2 license limits reuse.
+28,ARCTIC,7.2,2.17,4,Custom Academic,Live,Gated-Open,Beautiful bimanual hand data with MANO/SMPLX. MPG registration required. Non-commercial.
+29,GIMO,7.2,Unknown,5,Custom Academic,Live,Gated-Open,Non-commercial. Stanford/Tsinghua.
+30,EgoLife,7.0,300,6,S-Lab License,Live,Gated-Open,Unique week-long continuous recording of 6 people cohabitating. S-Lab license terms not fully public.
+31,OpenEgo,7.0,1107,3,Mixed,Live but broken,Open,Unified view across 6 datasets with standardized hand poses. Download via buried Box link — script still 'coming soon.'
+32,CMU-MMAC,7.0,~10,4,Custom Open,Live,Open,Explicitly free for any purpose. Rare multimodal combo of video + audio + IMU + motion capture. Underused.
+33,HOI4D,7.0,22.2,5,Not specified,Live,Open,Rich 2.4M RGB-D frames with dense annotations. Direct OneDrive download. No license specified.
+34,TACO,7.0,Unknown,4,Not specified,Live,Open,Good bimanual tool dataset with OneDrive/Dropbox downloads. No license specified.
+35,EgoHumans,7.0,Unknown,3,Not specified,Live,Open,No license. 550GB Google Drive. ICCV 2023 Oral.
+36,UnrealEgo / UnrealEgo2,7.0,Unknown,3,Not specified,Live,Open,Synthetic. No license. 1.25M images.
+37,UnrealEgo-RW,7.0,Unknown,3,Not specified,Live,Open,Real-world. No license. ~170GB.
+38,CaptainCook4D,7.0,94.5,6,Not specified,Live,Open,
+39,EgoExoLearn,7.0,120,3,Not specified,Live,Open,
+40,EgoObjects,7.0,Unknown,1,Not specified,Live,Open,
+41,EgoSurgery,7.0,15,3,Not specified,Live,Open,
+42,Egocentric-1M,7.0,1000000+,1,Apache-2.0,Live but gated,Gated-Open,~1M hours factory worker data. Apache-2.0. HuggingFace gated (requires account + data agreement). No academic paper. Build AI proprietary device. Not yet fully released (April 2026).
+43,THU-READ,6.8,Unknown,2,Custom Academic,Live,Open,Small clean RGB-D ego dataset. Google Drive links work. Non-commercial only.
+44,EgoDexter,6.8,<1,3,Custom Academic,Live,Open,Tiny but clean RGB-D hand benchmark. 1.99 GB direct download. Non-commercial MPG license.
+45,HPS,6.8,Unknown,4,Custom Academic,Live,Gated-Open,MPG non-commercial. CVPR 2021.
+46,Ego-1K,6.8,Unknown,2,Custom Academic,Live,Open,
+47,Object Search Dataset,6.5,Unknown,2,Not specified,Live,Open,GitHub available.
+48,EgoPER,6.5,Unknown,1,Not specified,Live,Open,
+49,Egocentric-10K,6.5,10000,1,Apache-2.0,Live,Open,
+50,Egocentric-100K,6.5,100405,1,Apache-2.0,Live,Open,
+51,EgoExo-Fitness,6.5,Unknown,2,Not specified,Live,Open,
+52,TF2023,6.5,Unknown,1,Not specified,Live,Open,
+53,EgoMe,6.5,Unknown,3,Not specified,Live,Open,
+54,EgoTaskQA,6.5,Unknown,1,Not specified,Live,Open,
+55,EgoGesture,6.2,Unknown,2,Custom Academic,Live,Gated-Open,Custom academic. 24K+ samples.
+56,EGTEA Gaze+,6.0,28,4,Not specified,Live,Open,Recommended by the authors over GTEA/GTEA Gaze. No license but Dropbox links are live and downloads are fast.
+57,HOMAGE,6.0,30,4,Not specified,Live,Gated-Open,Solid multi-view dataset but requires registration and license is unspecified. Check first.
+58,LEMMA,6.0,Unknown,3,Not specified,Live,Gated-Open,Interesting multi-agent setup but gated + only RGB subset released. Niche use case.
+59,OAKINK2,6.0,Unknown,4,Not specified,Live,Open,No download found. CVPR 2024 paper exists but dataset not publicly located.
+60,H2O,6.0,Unknown,4,Not specified,Live,Gated-Open,First two-hand 3D interaction benchmark. ETH server may require access. No license found.
+61,FPHA,6.0,Unknown,3,Not specified,Live,Gated-Open,Classic hand action benchmark. Google Form gating. Magnetic sensor-based 3D hand poses.
+62,Hand-Object Segments,6.0,~3144,2,Not specified,Live,Open,No download found. May be part of 100DOH project. Paper-only.
+63,IndustReal,6.0,Unknown,1,Not specified,Live,Open,
+64,AssistQ,6.0,Unknown,1,Not specified,Live,Open,
+65,EPIC-Tent,6.0,~7,2,Not specified,Live,Open,
+66,50 Salads,5.8,~4,3,CC-BY-NC-SA-4.0,Dead,Open,Classic benchmark but original site is dead. Features on Zenodo; raw data harder to find.
+67,GTEA,5.5,<2,1,Not specified,Live,Open,Tiny and outdated. Authors point researchers to EGTEA Gaze+ instead. Only use for legacy comparisons.
+68,GTEA Gaze,5.5,~2,2,Not specified,Live,Open,Adds gaze to GTEA but still superseded. Use EGTEA Gaze+ unless you specifically need this split.
+69,BEOID,5.5,Unknown,3,Not specified,Live,Open,"Early Bristol kitchen work, predates EPIC. Annotations and sample only — full videos may need author contact."
+70,DoMSEV,5.5,80,3,Not specified,Live,Open,80h ego video for hyperlapse research. Page loads but no license  -  risky for production use.
+71,EgoK360,5.5,Unknown,1,Not specified,Live,Open,Cannot locate any download or website. Effectively unavailable.
+72,EgoHands,5.5,Unknown,2,Not specified,Live,Open,48 Google Glass videos with dense hand masks. Free to use with citation. Nice and simple.
+73,CIRCLE,5.5,10,4,Not specified,Live,Open,"No license. 10h, 5 subjects."
+74,VEDB,5.5,200,3,Not specified,Live,Open,Download unverified.
+75,ENIGMA-51,5.5,Unknown,3,Not specified,Live,Open,
+76,ENIGMA-360,5.5,Unknown,1,Not specified,Live,Open,
+77,EgoProceL,5.5,62,1,Not specified,Live,Open,
+78,UTokyo Paired Ego-Video (PEV),5.5,Unknown,1,Not specified,Live,Open,
+79,UTokyo Ego-Surf,5.5,Unknown,1,Not specified,Live,Open,
+80,Multimodal Focused Interaction Dataset,5.5,~6,4,Not specified,Live,Open,
+81,CASTLE 2024,5.5,600,1,Not specified,Live,Open,
+82,EgoSeg,5.5,Unknown,1,Not specified,Live,Open,
+83,VINST / Visual Diaries,5.5,Unknown,1,Not specified,Live,Open,
+84,EgoCart,5.5,Unknown,1,Not specified,Live,Open,
+85,EGO-CH,5.5,Unknown,2,Not specified,Live,Open,
+86,UNICT-VEDI,5.5,Unknown,1,Not specified,Live,Open,
+87,EgoPAT3D,5.5,Unknown,3,Not specified,Live,Open,
+88,TEgO,5.5,Unknown,1,Not specified,Live,Open,
+89,Visual Market Basket Analysis,5.5,Unknown,1,Not specified,Live,Open,
+90,EgoSim,5.0,Unknown,3,Not specified,Live,Open,Download unverified.
+91,ADL4D,5.0,Unknown,3,Not specified,Live,Open,Download unverified.
+92,EgoCampus,5.0,Unknown,4,Not specified,Live,Open,Download unverified.
+93,EgoVid-5M,4.5,Not reported,3,Not specified,Live but broken,Open,No license anywhere. No actual video download mechanism — only metadata on ModelScope. Avoid until resolved.
+94,ADL (Activities of Daily Living),4.5,~10,1,Not specified,Redirect,Open,Primary URL dead; UC Davis mirror works. No license. Useful for daily activity recognition in home environments.
+95,UT Egocentric,4.5,~15,1,Not specified,Live,Gated-Open,Registration required. Only 4 of 10 videos shared (privacy). No license. Long clips but minimal annotations.
+96,UEC Dataset,4.0,Unknown,1,Not specified,Live but broken,Open,URL loads the wrong dataset entirely. Ego-action data referenced in literature is not findable here.
+97,First-Person Social Interactions (Disney),4.0,~42,1,Not specified,Live but broken,Open,Effectively dead. Stanford URL down; only downsampled Figshare subset survives. No license.
+98,Ego-Deliver,3.0,Unknown,1,Not specified,Live,Restricted,Paper-only; no independent website or download mechanism found. Skip unless you contact authors.
+99,Egocentric Shopper Dataset,3.0,Unknown,2,Not specified,Live,Restricted,Paper-only.
+100,Sanctuaria-Gaze,3.0,Unknown,2,Not specified,Live,Restricted,Paper-only.
+101,EasyCom,3.0,Unknown,3,Not specified,Live,Restricted,
+102,MultiEgo,3.0,Unknown,1,Not specified,Live,Restricted,
+103,CEN,3.0,6,4,Not specified,Live,Restricted,
+104,EgoBlind,3.0,Unknown,2,Not specified,Live,Restricted,
+105,EgoExOR,3.0,Unknown,2,Not specified,Live,Restricted,
+106,FPPA,2.5,Unknown,1,Not specified,Live but broken,Restricted,Requires emailing an author who may have graduated. Not worth the effort for 5 subjects.
+107,FPVO,0.0,Unknown,1,Not specified,Dead,Unavailable,Dead link (404). No alternatives found. Unavailable.

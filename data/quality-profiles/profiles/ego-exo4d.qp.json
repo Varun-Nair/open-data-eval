@@ -12,7 +12,7 @@
   "qp:qualityProfile": {
     "qp:schemaVersion": "1.0",
     "qp:evalLevel": "metadata",
-    "qp:evaluatedAt": "2026-04-17T13:46:49Z",
+    "qp:evaluatedAt": "2026-04-20T22:13:35Z",
     "qp:evaluatedBy": "open-data-eval",
     "scores": {
       "fps": {
@@ -303,7 +303,7 @@
         "iso_mapping": "Com-ML"
       },
       "download_efficiency": {
-        "score": 0.308,
+        "score": 0.286,
         "hours_per_gb": 0.0334,
         "total_hours": 1286.0,
         "download_size_gb": 38450,

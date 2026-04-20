@@ -53,6 +53,7 @@ Gaze and eye tracking,Sanctuaria-Gaze,2025,Unknown,Restricted,Not specified,Live
 Hand-object interaction,HO-Cap,2024,Unknown,Open,CC-BY-4.0,Live,9.5
 Hand-object interaction,EgoDex,2025,829,Open,CC-BY-NC-ND-4.0,Live,9.2
 Hand-object interaction,DexYCB,2021,Unknown,Open,CC-BY-NC-4.0,Live,9.2
+Hand-object interaction,Human Archive (HA-Multi),2026,3.9,Gated-Open,Apache-2.0,Live,8.5
 Hand-object interaction,AssemblyHands,2023,Unknown,Open,CC-BY-NC-4.0,Live,8.2
 Hand-object interaction,HOT3D,2025,~14,Gated-Open,Custom Academic,Live,7.8
 Hand-object interaction,ARCTIC,2023,2.17,Gated-Open,Custom Academic,Live,7.2

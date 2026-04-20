@@ -1,17 +1,17 @@
 Type,Value,Count
-Access Level,Gated-Open,20
+Access Level,Gated-Open,21
 Access Level,Open,76
 Access Level,Restricted,9
 Access Level,Unavailable,1
 URL Status,Dead,2
-URL Status,Live,96
+URL Status,Live,97
 URL Status,Live but broken,5
 URL Status,Live but gated,1
 URL Status,Redirect,2
 License,Not specified,67
 License,Custom Academic,14
 License,CC-BY-NC-4.0,13
-License,Apache-2.0,3
+License,Apache-2.0,4
 License,CC-BY-4.0,2
 License,CC-BY-NC-SA-4.0,2
 License,S-Lab License,1
@@ -19,10 +19,10 @@ License,Mixed,1
 License,Custom Open,1
 License,CC-BY-NC-ND-4.0,1
 License,CC-BY-SA-4.0,1
-Modality,RGB video,106
+Modality,RGB video,107
 Modality,Eye gaze,31
-Modality,IMU,25
-Modality,Hand pose annotations,25
+Modality,IMU,26
+Modality,Hand pose annotations,26
 Modality,Body pose annotations,22
 Modality,Depth (RGB-D),20
 Modality,Audio,19
@@ -30,11 +30,12 @@ Modality,3D point clouds,14
 Modality,Narrations/captions,12
 Modality,SLAM/odometry,12
 Modality,3D scene reconstruction,8
-Modality,Depth (stereo),6
+Modality,Depth (stereo),7
 Modality,Motion capture,6
 Modality,Optical flow,2
 Modality,Object tracking,1
 Modality,Multi-view,1
 Modality,mmWave,1
 Modality,Hand masks,1
+Modality,Tactile,1
 Modality,3D hand pose annotations,1
