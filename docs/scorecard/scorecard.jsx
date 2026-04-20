@@ -665,7 +665,8 @@ function ScoreCard({ d }) {
 
   const shortEdge = d.resW && d.resH ? Math.min(d.resW, d.resH) : null;
   const fe = d.fileEval;
-  const verifiedFpsDisplay = fe ? `${fe.actualFps}fps` : (d.fpsRaw != null ? `${d.fpsRaw}fps` : null);
+  const fmtFps = v => v != null ? `${parseFloat(v.toFixed(2))}fps` : null;
+  const verifiedFpsDisplay = fe ? fmtFps(fe.actualFps) : (d.fpsRaw != null ? fmtFps(d.fpsRaw) : null);
   const claimedFpsDisplay  = (fe && fe.fpsMatch === false) ? `${fe.claimedFps}fps` : null;
   const verifiedShortEdge  = fe ? Math.min(fe.actualResW, fe.actualResH) : shortEdge;
   const claimedResDisplay  = (fe && fe.resMatch === false && fe.claimedResW && fe.claimedResH)
@@ -1273,8 +1274,9 @@ function CompareSideBySide() {
   const shortB = B.resW && B.resH ? Math.min(B.resW, B.resH) : null;
   const dlL = d => d.dl == null ? null : d.dl >= 0.8 ? (d.dlFramework && d.dlFramework !== "unspecified" ? d.dlFramework : "Yes") : d.dl >= 0.5 ? "Community" : "No";
   // Use verified ffprobe values when file eval is available
-  const fpsValA = A.fileEval ? `${A.fileEval.actualFps} fps` : (A.fpsRaw != null ? A.fpsRaw + " fps" : null);
-  const fpsValB = B.fileEval ? `${B.fileEval.actualFps} fps` : (B.fpsRaw != null ? B.fpsRaw + " fps" : null);
+  const fmtFpsVal = (fe, raw) => fe ? `${parseFloat(fe.actualFps.toFixed(2))} fps` : (raw != null ? raw + " fps" : null);
+  const fpsValA = fmtFpsVal(A.fileEval, A.fpsRaw);
+  const fpsValB = fmtFpsVal(B.fileEval, B.fpsRaw);
   const resValA = A.fileEval ? `${Math.min(A.fileEval.actualResW, A.fileEval.actualResH)}p` : (shortA ? shortA + "p" : null);
   const resValB = B.fileEval ? `${Math.min(B.fileEval.actualResW, B.fileEval.actualResH)}p` : (shortB ? shortB + "p" : null);
 

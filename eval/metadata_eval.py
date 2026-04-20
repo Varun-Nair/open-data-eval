@@ -1204,6 +1204,8 @@ def _extract_file_eval(profile: dict) -> dict | None:
     # ── actual technical values (from ffprobe) ──────────────────────────────
     fps_dist   = dist.get("fps") or {}
     actual_fps = fps_dist.get("mean")
+    if actual_fps is not None:
+        actual_fps = round(actual_fps, 2)
 
     resolutions     = summary.get("resolutions", {})
     most_common_res = max(resolutions.items(), key=lambda x: x[1])[0] if resolutions else None
