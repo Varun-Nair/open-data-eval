@@ -6,8 +6,8 @@
     "iso": "http://opendataeval.org/iso5259/"
   },
   "@type": "cr:Dataset",
-  "name": "H2O",
-  "url": "https://taeinkwon.com/projects/h2o/",
+  "name": "Human Archive (HA-Ego)",
+  "url": "https://huggingface.co/datasets/humanarchive/HA-Ego-Samples",
   "dct:conformsTo": "http://opendataeval.org/qp/1.0",
   "qp:qualityProfile": {
     "qp:schemaVersion": "1.0",
@@ -16,52 +16,49 @@
     "qp:evaluatedBy": "open-data-eval",
     "scores": {
       "fps": {
-        "score": null,
-        "raw_value": null,
+        "score": 1.0,
+        "raw_value": 30.0,
         "method": "piecewise_continuous",
         "source": "catalog",
         "iso_mapping": "Acc-ML"
       },
       "resolution": {
         "score": 1.0,
-        "width": 1280,
+        "width": 1920,
         "height": 1080,
         "short_edge": 1080,
         "tier": "1080p+",
         "method": "piecewise_continuous",
-        "source": "paper:arXiv:2104.11181",
+        "source": "catalog",
         "iso_mapping": "Acc-ML"
       },
       "modality_richness": {
         "modalities_present": [
-          "3D point clouds",
-          "Depth",
-          "Hand pose annotations",
           "RGB video"
         ],
-        "modality_count": 4,
+        "modality_count": 1,
         "scores_by_usecase": {
           "manipulation": {
             "critical": {
               "present": [
-                "RGB video",
-                "Depth"
-              ],
-              "missing": [],
-              "ratio": 1.0
-            },
-            "important": {
-              "present": [
-                "Hand pose annotations"
+                "RGB video"
               ],
               "missing": [
+                "Depth"
+              ],
+              "ratio": 0.5
+            },
+            "important": {
+              "present": [],
+              "missing": [
+                "Hand pose annotations",
                 "Tactile",
                 "Force/torque",
                 "Narrations/captions",
                 "Proprioception",
                 "Gripper state"
               ],
-              "ratio": 0.17
+              "ratio": 0.0
             },
             "bonus": {
               "present": [],
@@ -75,7 +72,7 @@
               ],
               "ratio": 0.0
             },
-            "score": 0.647
+            "score": 0.15
           },
           "action_recognition": {
             "critical": {
@@ -95,35 +92,34 @@
               "ratio": 0.0
             },
             "bonus": {
-              "present": [
-                "Hand pose annotations"
-              ],
+              "present": [],
               "missing": [
                 "Eye gaze",
+                "Hand pose annotations",
                 "IMU",
                 "Object bounding boxes"
               ],
-              "ratio": 0.25
+              "ratio": 0.0
             },
-            "score": 0.63
+            "score": 0.6
           },
           "hand_pose_estimation": {
             "critical": {
               "present": [
-                "RGB video",
-                "Hand pose annotations"
-              ],
-              "missing": [],
-              "ratio": 1.0
-            },
-            "important": {
-              "present": [
-                "Depth"
+                "RGB video"
               ],
               "missing": [
-                "Stereo"
+                "Hand pose annotations"
               ],
               "ratio": 0.5
+            },
+            "important": {
+              "present": [],
+              "missing": [
+                "Depth",
+                "Stereo"
+              ],
+              "ratio": 0.0
             },
             "bonus": {
               "present": [],
@@ -134,7 +130,7 @@
               ],
               "ratio": 0.0
             },
-            "score": 0.74
+            "score": 0.15
           },
           "navigation": {
             "critical": {
@@ -147,14 +143,13 @@
               "ratio": 0.5
             },
             "important": {
-              "present": [
+              "present": [],
+              "missing": [
                 "Depth",
+                "SLAM/odometry",
                 "3D point clouds"
               ],
-              "missing": [
-                "SLAM/odometry"
-              ],
-              "ratio": 0.67
+              "ratio": 0.0
             },
             "bonus": {
               "present": [],
@@ -166,7 +161,7 @@
               ],
               "ratio": 0.0
             },
-            "score": 0.197
+            "score": 0.15
           },
           "robot_policy_learning": {
             "critical": {
@@ -180,15 +175,14 @@
               "ratio": 0.33
             },
             "important": {
-              "present": [
-                "Depth"
-              ],
+              "present": [],
               "missing": [
+                "Depth",
                 "End-effector pose",
                 "Narrations/captions",
                 "Force/torque"
               ],
-              "ratio": 0.25
+              "ratio": 0.0
             },
             "bonus": {
               "present": [],
@@ -199,7 +193,7 @@
               ],
               "ratio": 0.0
             },
-            "score": 0.074
+            "score": 0.067
           },
           "vla_pretraining": {
             "critical": {
@@ -212,14 +206,13 @@
               "ratio": 0.5
             },
             "important": {
-              "present": [
-                "Depth",
-                "Hand pose annotations"
-              ],
+              "present": [],
               "missing": [
+                "Depth",
+                "Hand pose annotations",
                 "Proprioception"
               ],
-              "ratio": 0.67
+              "ratio": 0.0
             },
             "bonus": {
               "present": [],
@@ -232,32 +225,32 @@
               ],
               "ratio": 0.0
             },
-            "score": 0.197
+            "score": 0.15
           }
         },
         "source": "catalog",
         "iso_mapping": "Div-ML"
       },
       "camera_calibration": {
-        "score": 0.85,
-        "tier": "intrinsics_extrinsics_unvalidated",
-        "notes": "Cameras calibrated using IR sphere markers + PnP algorithm for extrinsics. Azure Kinect factory intrinsics + Brown-Conrady distortion. Ground-truth camera poses provided in dataset for all 5 views. Calibration validation not described in paper.",
+        "score": 0.0,
+        "tier": "none",
+        "notes": "No calibration data published. Chest-mounted camera only. No intrinsics, distortion, or extrinsics provided. Source: HuggingFace dataset card.",
         "method": "tier",
-        "source": "paper:arXiv:2104.11181",
+        "source": "paper:HuggingFace:humanarchive/HA-Ego-Samples",
         "iso_mapping": "Aud-ML"
       },
       "license_clarity": {
-        "score": 0.0,
-        "license_type": "Not specified",
-        "tier": "not_specified",
-        "commercial_use": "Not specified",
+        "score": 1.0,
+        "license_type": "Apache-2.0",
+        "tier": "standard",
+        "commercial_use": "Yes",
         "method": "tier",
         "source": "catalog",
         "iso_mapping": "Cpl-ML"
       },
       "accessibility": {
-        "score": 0.625,
-        "raw_score": 6.25,
+        "score": 0.85,
+        "raw_score": 8.5,
         "access_level": "Gated-Open",
         "url_status": "Live",
         "method": "weighted_sum_normalized",
@@ -265,16 +258,16 @@
         "iso_mapping": "Acs-ML"
       },
       "scale": {
-        "score": 0.2,
-        "total_hours": 5.3,
+        "score": 0.675,
+        "total_hours": 499.9,
         "method": "log10(hrs+1)/log10(10001)",
-        "source": "paper:arXiv:2104.11181",
+        "source": "paper:HuggingFace:humanarchive/HA-Ego-Samples",
         "iso_mapping": "Eff-ML"
       },
       "dataloader": {
-        "score": 0.8,
+        "score": 1.0,
         "available": true,
-        "framework": "unspecified",
+        "framework": "huggingface",
         "method": "tier",
         "source": "catalog",
         "iso_mapping": "Acs-ML"
@@ -287,31 +280,31 @@
         "iso_mapping": "Und-ML"
       },
       "annotation_coverage": {
-        "score": null,
-        "notes": "Per-frame annotations: 21-joint 3D hand pose (both hands), 6-DoF object pose, 11-class action labels for 571K frames. Annotation flag present (0=not annotated, 1=annotated); exact coverage % not stated. Semi-automated pipeline: OpenPose + MANO fitting + temporal smoothing.",
+        "score": 0.5,
+        "notes": "Per-segment task label (753 unique tasks) and environment label (181 unique) assigned via Gemini AI activity recognition. JSON metadata per person includes duration, environment, task, fps, codec, file size. No hand/body pose, no narrations, no frame-level annotations. Source: HuggingFace dataset card.",
         "method": "ratio",
-        "source": "pending_paper_review",
+        "source": "paper:HuggingFace:humanarchive/HA-Ego-Samples",
         "iso_mapping": "Com-ML"
       },
       "download_efficiency": {
-        "score": null,
-        "hours_per_gb": null,
-        "total_hours": null,
-        "download_size_gb": null,
+        "score": 0.667,
+        "hours_per_gb": 0.2,
+        "total_hours": 499.9,
+        "download_size_gb": 2500.0,
         "method": "percentile_rank",
         "source": "catalog+paper",
         "iso_mapping": "Eff-ML"
       },
       "environment_diversity": {
-        "score": null,
-        "unique_environments": null,
+        "score": 0.811,
+        "unique_environments": 181.0,
         "method": "log_normalized",
         "source": "catalog",
         "iso_mapping": "Div-ML"
       },
       "demographic_diversity": {
-        "score": 0.168,
-        "participants": 4.0,
+        "score": 0.902,
+        "participants": 5562.0,
         "geographic_locations": 1,
         "method": "log_normalized_product",
         "source": "catalog+paper",
@@ -320,47 +313,43 @@
     },
     "classifications": {
       "capture_device": {
-        "value": "5 synchronized Azure Kinect DK cameras (1 helmet-mounted ego + 4 fixed third-person)",
+        "value": "Chest-mounted camera (1920\u00d71080, 30fps, H.264); no additional sensors",
         "documented": true,
-        "source": "paper:arXiv:2104.11181",
+        "source": "paper:HuggingFace:humanarchive/HA-Ego-Samples",
         "iso_mapping": "Ide-ML"
       },
       "lens_type": {
-        "value": "rectilinear",
+        "value": "standard",
         "fov_degrees": null,
         "documented": true,
-        "source": "paper:arXiv:2104.11181",
+        "source": "paper:HuggingFace:humanarchive/HA-Ego-Samples",
         "iso_mapping": "Ide-ML"
       },
       "video_format": {
-        "value": "Not specified",
+        "value": "MP4 (H.264)",
         "source": "catalog"
       },
       "annotation_format": {
-        "value": "JSON",
+        "value": "JSON (per-segment metadata)",
         "source": "catalog"
       }
     },
     "context": {
-      "total_hours": 5.3,
-      "participants": "4",
-      "scenes_environments": "Lab environment",
-      "commercial_use": "Not specified",
-      "category": "Hand-object interaction",
-      "year": "2021",
-      "paper": "ICCV 2021 (Kwon et al.); arXiv 2104.11181",
-      "approximate_citations": "~100",
-      "citations": {
-        "count": 264,
-        "source": "semantic_scholar",
-        "fetched_at": "2026-04-17"
-      },
-      "no_paper": false
+      "total_hours": 499.9,
+      "participants": "5562",
+      "scenes_environments": "181",
+      "commercial_use": "Yes",
+      "category": "Large-scale foundation",
+      "year": "2026",
+      "paper": "None (no paper published)",
+      "approximate_citations": "0",
+      "citations": null,
+      "no_paper": true
     },
     "confidence": {
       "metadata_completeness": {
-        "score": 0.75,
-        "filled_fields": 12,
+        "score": 1.0,
+        "filled_fields": 16,
         "total_fields": 16,
         "method": "ratio",
         "iso_mapping": [

@@ -119,6 +119,7 @@ TARGET_DATASETS = [
     "MECCANO", "H2O", "Nymeria", "GIMO",
     "RoboX EgoGrasp v0.1",
     "Human Archive (HA-Multi)",
+    "Human Archive (HA-Ego)",
 ]
 
 
@@ -586,6 +587,25 @@ PAPER_METADATA = {
         "geo_locations": None,                 # Not specified
         "arxiv_id": None,                      # No paper; dataset-only release
         "paper_ref": "HuggingFace:humanarchive/HA-Multi-Samples",
+    },
+    "Human Archive (HA-Ego)": {
+        # HuggingFace: humanarchive/HA-Ego-Samples (no arXiv paper)
+        # 500h egocentric chest-cam sample; 5,562 persons, 181 environments, 753 tasks; YC W26
+        "capture_device": "Chest-mounted camera (1920×1080, 30fps, H.264); no additional sensors",
+        "calibration_tier": 0.0,               # No calibration information published
+        "calibration_notes": "No calibration data published. Chest-mounted camera only. No intrinsics, distortion, or extrinsics provided. Source: HuggingFace dataset card.",
+        "lens_type": "standard",               # Chest-mounted; no fisheye/lens type specified
+        "fov_degrees": None,                   # Not specified
+        "fps_override": None,                  # 30fps already in catalog
+        "resolution_override": "1920x1080",
+        "annotation_coverage": 0.5,            # Task + environment labels per segment (from Gemini AI segmentation)
+                                               # No hand pose, no body pose, no fine-grained action annotations
+        "annotation_notes": "Per-segment task label (753 unique tasks) and environment label (181 unique) assigned via Gemini AI activity recognition. JSON metadata per person includes duration, environment, task, fps, codec, file size. No hand/body pose, no narrations, no frame-level annotations. Source: HuggingFace dataset card.",
+        "total_hours_override": 499.9,         # 499.9 hours (10,633 segments, 5,562 persons)
+        "download_size_gb": 2500.0,            # ~2.5 TB per dataset card
+        "geo_locations": None,                 # Not specified; US-based
+        "arxiv_id": None,                      # No paper; dataset-only release
+        "paper_ref": "HuggingFace:humanarchive/HA-Ego-Samples",
     },
     "EgoVerse": {
         # arXiv 2604.07607 (submitted April 2026)

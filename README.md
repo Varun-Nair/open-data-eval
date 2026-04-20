@@ -2,8 +2,8 @@
 
 > What is good data? We're building the systematic quality evaluation suite for AI/ML datasets.
 
-[![Datasets Audited](https://img.shields.io/badge/datasets%20audited-107-blue)](https://github.com/Varun-Nair/open-data-eval)
-[![Quality Profiles](https://img.shields.io/badge/quality%20profiles-26-5b21b6)](https://varun-nair.github.io/open-data-eval/scorecard/)
+[![Datasets Audited](https://img.shields.io/badge/datasets%20audited-108-blue)](https://github.com/Varun-Nair/open-data-eval)
+[![Quality Profiles](https://img.shields.io/badge/quality%20profiles-28-5b21b6)](https://varun-nair.github.io/open-data-eval/scorecard/)
 [![Live Scorecard](https://img.shields.io/badge/scorecard-live-059669)](https://varun-nair.github.io/open-data-eval/scorecard/)
 [![ISO 5259-2](https://img.shields.io/badge/ISO%205259--2-aligned-0369a1)](https://www.iso.org/standard/81088.html)
 [![License](https://img.shields.io/badge/license-CC--BY--4.0-green)](LICENSE)
@@ -47,20 +47,20 @@ Interactive quality profiles for 26 egocentric and manipulation datasets. Scores
 
 ## Dataset Catalog
 
-107 egocentric video datasets audited across 33 fields each.
+108 egocentric video datasets audited across 33 fields each.
 
 | Metric | Value |
 |--------|-------|
-| Datasets audited | 107 |
-| Total video hours | 135,000+ |
-| Fully accessible | 96 (90%) |
+| Datasets audited | 108 |
+| Total video hours | 135,500+ |
+| Fully accessible | 96 (89%) |
 | Broken downloads | 5 (5%) |
 | Dead links | 2 (2%) |
-| **No license specified** | **67 of 107 (63%)** |
+| **No license specified** | **67 of 108 (62%)** |
 
 ### URL Status
 ```
-Live                ████████████████████████████████████████████ 97
+Live                ████████████████████████████████████████████ 98
 Broken download     ██ 5
 Redirect            █ 2
 Dead                █ 2
@@ -69,8 +69,8 @@ Live but gated      █ 1
 
 ### Access Level
 ```
-Open                ████████████████████████████████████████████ 75
-Gated-Open          ██████████ 21
+Open                ████████████████████████████████████████████ 76
+Gated-Open          ██████████ 22
 Restricted          █████ 9
 Unavailable         █ 1
 ```
@@ -80,7 +80,7 @@ Unavailable         █ 1
 Not specified       ████████████████████████████████████████████ 67
 Custom Academic     ████████ 14
 CC-BY-NC-4.0        ███████ 12
-Apache-2.0          ██ 4
+Apache-2.0          ███ 5
 CC-BY-4.0           █ 2
 CC-BY-NC-SA-4.0     █ 2
 CC-BY-SA-4.0        █ 1
@@ -90,9 +90,9 @@ Mixed               █ 1
 Custom Open         █ 1
 ```
 
-### Modalities (across all 107 datasets)
+### Modalities (across all 108 datasets)
 ```
-RGB Video           ████████████████████████████████████████████ 107
+RGB Video           ████████████████████████████████████████████ 108
 Eye Gaze            █████████████ 31
 IMU                 █████████████ 26
 Hand Pose           █████████████ 26
@@ -169,7 +169,7 @@ Each dataset gets a machine-readable Quality Profile (QP) — a structured recor
 - **ISO/IEC 5259-2 aligned** — 9 of 23 quality characteristics mapped at metadata level
 - **Progressively enriched** — metadata → file → frame → content (each phase adds depth)
 
-26 profiles live in [`data/quality-profiles/profiles/`](data/quality-profiles/profiles/).
+28 profiles live in [`data/quality-profiles/profiles/`](data/quality-profiles/profiles/).
 
 **Example: `data/quality-profiles/profiles/ego4d.qp.json`**
 
@@ -245,7 +245,7 @@ Each profile also includes 4 classifications (device, lens, video format, annota
 | [`data/ego-datasets/datasets_by_category.csv`](data/ego-datasets/datasets_by_category.csv) | Datasets grouped and ranked within each category |
 | [`data/ego-datasets/datasets_by_family.csv`](data/ego-datasets/datasets_by_family.csv) | Dataset family groupings (EPIC-KITCHENS, Project Aria, Ego4D, etc.) |
 | [`data/ego-datasets/catalog_health_report.csv`](data/ego-datasets/catalog_health_report.csv) | Per-dataset completeness audit (missing fields) |
-| [`data/quality-profiles/profiles/`](data/quality-profiles/profiles/) | 16 machine-readable QP JSON files |
+| [`data/quality-profiles/profiles/`](data/quality-profiles/profiles/) | 28 machine-readable QP JSON files |
 | [`docs/scorecard/`](docs/scorecard/) | GitHub Pages scorecard source |
 
 ---

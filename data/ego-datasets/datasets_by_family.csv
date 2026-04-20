@@ -99,6 +99,7 @@ Standalone,UTokyo Paired Ego-Video (PEV),2018,Social interaction,Open,Not specif
 Standalone,VEDB,2021,Gaze and eye tracking,Open,Not specified
 Standalone,VINST / Visual Diaries,2013,Navigation and localization,Open,Not specified
 Human Archive,Human Archive (HA-Multi),2026,Hand-object interaction,Gated-Open,Apache-2.0
+Human Archive,Human Archive (HA-Ego),2026,Large-scale foundation,Gated-Open,Apache-2.0
 Standalone,Xperience-10M,2026,Large-scale foundation,Gated-Open,CC-BY-NC-4.0
 Standalone,xR-EgoPose,2019,Body pose,Open,Custom Academic
 UnrealEgo,UnrealEgo / UnrealEgo2,2022,Body pose,Open,Not specified
