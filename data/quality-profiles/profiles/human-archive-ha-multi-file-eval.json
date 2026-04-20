@@ -1,0 +1,3531 @@
+{
+  "eval_type": "file",
+  "dataset_path": "/Users/varun/Downloads/HA-Multi-Samples",
+  "evaluated_at": "2026-04-20T23:47:40.484076+00:00",
+  "summary": {
+    "total_files": 216,
+    "files_probed": 216,
+    "files_with_errors": 0,
+    "total_duration_sec": 81366.964,
+    "total_hours": 22.60193,
+    "total_frames": 2456371,
+    "total_size_mb": 63981.078,
+    "resolutions": {
+      "1920x1080": 144,
+      "1280x720": 72
+    },
+    "codecs": {
+      "h264": 216
+    },
+    "clips_with_audio": 0,
+    "clips_without_audio": 216
+  },
+  "distributions": {
+    "fps": {
+      "n": 216,
+      "mean": 29.9853,
+      "min": 29.97,
+      "max": 30.0,
+      "std": 0.015,
+      "p5": 29.97,
+      "p95": 30.0
+    },
+    "duration_sec": {
+      "n": 216,
+      "mean": 376.6989,
+      "min": 18.066,
+      "max": 1274.084,
+      "std": 341.1092,
+      "p5": 18.1,
+      "p95": 1223.066
+    },
+    "bitrate_kbps": {
+      "n": 216,
+      "mean": 6167.2407,
+      "min": 3245,
+      "max": 15021,
+      "std": 1897.2773,
+      "p5": 3797,
+      "p95": 9484
+    },
+    "nb_frames": {
+      "n": 216,
+      "mean": 11372.088,
+      "min": 558,
+      "max": 38395,
+      "std": 10229.6135,
+      "p5": 642,
+      "p95": 36710
+    },
+    "file_size_mb": {
+      "n": 216,
+      "mean": 296.2087,
+      "min": 8.128,
+      "max": 1615.347,
+      "std": 320.4525,
+      "p5": 15.661,
+      "p95": 870.909
+    }
+  },
+  "annotation_coverage": null,
+  "discrepancies": null,
+  "errors": null,
+  "per_file": {
+    "videos/observation.images.chest/chunk-000/file-000": {
+      "file": "videos/observation.images.chest/chunk-000/file-000.mp4",
+      "size_mb": 758.178,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 879.866667,
+        "nb_frames": 26396,
+        "bitrate_kbps": 7227,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.chest/chunk-000/file-001": {
+      "file": "videos/observation.images.chest/chunk-000/file-001.mp4",
+      "size_mb": 646.588,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 588.067985,
+        "nb_frames": 17753,
+        "bitrate_kbps": 9155,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.chest/chunk-000/file-002": {
+      "file": "videos/observation.images.chest/chunk-000/file-002.mp4",
+      "size_mb": 1404.866,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 1274.084001,
+        "nb_frames": 38326,
+        "bitrate_kbps": 9214,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.chest/chunk-000/file-003": {
+      "file": "videos/observation.images.chest/chunk-000/file-003.mp4",
+      "size_mb": 870.909,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 1060.895979,
+        "nb_frames": 31849,
+        "bitrate_kbps": 6873,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.chest/chunk-000/file-004": {
+      "file": "videos/observation.images.chest/chunk-000/file-004.mp4",
+      "size_mb": 44.293,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 55.071989,
+        "nb_frames": 1834,
+        "bitrate_kbps": 6070,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.chest/chunk-000/file-005": {
+      "file": "videos/observation.images.chest/chunk-000/file-005.mp4",
+      "size_mb": 290.78,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 302.087004,
+        "nb_frames": 9081,
+        "bitrate_kbps": 8048,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.chest/chunk-000/file-006": {
+      "file": "videos/observation.images.chest/chunk-000/file-006.mp4",
+      "size_mb": 185.455,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 224.116033,
+        "nb_frames": 6736,
+        "bitrate_kbps": 6920,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.chest/chunk-000/file-007": {
+      "file": "videos/observation.images.chest/chunk-000/file-007.mp4",
+      "size_mb": 450.995,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 567.084001,
+        "nb_frames": 17118,
+        "bitrate_kbps": 6622,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.chest/chunk-000/file-008": {
+      "file": "videos/observation.images.chest/chunk-000/file-008.mp4",
+      "size_mb": 219.827,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 296.075993,
+        "nb_frames": 9002,
+        "bitrate_kbps": 6137,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.chest/chunk-000/file-009": {
+      "file": "videos/observation.images.chest/chunk-000/file-009.mp4",
+      "size_mb": 338.804,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 362.125959,
+        "nb_frames": 10882,
+        "bitrate_kbps": 7825,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.chest/chunk-000/file-010": {
+      "file": "videos/observation.images.chest/chunk-000/file-010.mp4",
+      "size_mb": 235.745,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 306.07299,
+        "nb_frames": 9266,
+        "bitrate_kbps": 6394,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.chest/chunk-000/file-011": {
+      "file": "videos/observation.images.chest/chunk-000/file-011.mp4",
+      "size_mb": 471.778,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 627.071989,
+        "nb_frames": 18938,
+        "bitrate_kbps": 6261,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.chest/chunk-000/file-012": {
+      "file": "videos/observation.images.chest/chunk-000/file-012.mp4",
+      "size_mb": 465.85,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 583.081999,
+        "nb_frames": 17684,
+        "bitrate_kbps": 6621,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.chest/chunk-000/file-013": {
+      "file": "videos/observation.images.chest/chunk-000/file-013.mp4",
+      "size_mb": 42.355,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 63.079997,
+        "nb_frames": 1925,
+        "bitrate_kbps": 5529,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.chest/chunk-000/file-014": {
+      "file": "videos/observation.images.chest/chunk-000/file-014.mp4",
+      "size_mb": 387.337,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 509.089006,
+        "nb_frames": 15399,
+        "bitrate_kbps": 6322,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.chest/chunk-000/file-015": {
+      "file": "videos/observation.images.chest/chunk-000/file-015.mp4",
+      "size_mb": 22.792,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 25.099016,
+        "nb_frames": 810,
+        "bitrate_kbps": 7072,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.chest/chunk-000/file-016": {
+      "file": "videos/observation.images.chest/chunk-000/file-016.mp4",
+      "size_mb": 32.165,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 35.096013,
+        "nb_frames": 1164,
+        "bitrate_kbps": 6945,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.chest/chunk-000/file-017": {
+      "file": "videos/observation.images.chest/chunk-000/file-017.mp4",
+      "size_mb": 89.01,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 95.079997,
+        "nb_frames": 2966,
+        "bitrate_kbps": 7543,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.chest/chunk-000/file-018": {
+      "file": "videos/observation.images.chest/chunk-000/file-018.mp4",
+      "size_mb": 16.868,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 18.090007,
+        "nb_frames": 642,
+        "bitrate_kbps": 6603,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.chest/chunk-000/file-019": {
+      "file": "videos/observation.images.chest/chunk-000/file-019.mp4",
+      "size_mb": 18.158,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 18.094011,
+        "nb_frames": 706,
+        "bitrate_kbps": 6464,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.chest/chunk-000/file-020": {
+      "file": "videos/observation.images.chest/chunk-000/file-020.mp4",
+      "size_mb": 15.661,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 19.087004,
+        "nb_frames": 580,
+        "bitrate_kbps": 6786,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.chest/chunk-000/file-021": {
+      "file": "videos/observation.images.chest/chunk-000/file-021.mp4",
+      "size_mb": 292.274,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 427.089006,
+        "nb_frames": 12833,
+        "bitrate_kbps": 5724,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.chest/chunk-000/file-022": {
+      "file": "videos/observation.images.chest/chunk-000/file-022.mp4",
+      "size_mb": 59.942,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 82.186019,
+        "nb_frames": 2524,
+        "bitrate_kbps": 5968,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.chest/chunk-000/file-023": {
+      "file": "videos/observation.images.chest/chunk-000/file-023.mp4",
+      "size_mb": 1074.707,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 1223.157991,
+        "nb_frames": 36694,
+        "bitrate_kbps": 7361,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.chest/chunk-000/file-024": {
+      "file": "videos/observation.images.chest/chunk-000/file-024.mp4",
+      "size_mb": 95.394,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 121.083,
+        "nb_frames": 3772,
+        "bitrate_kbps": 6356,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.chest/chunk-000/file-025": {
+      "file": "videos/observation.images.chest/chunk-000/file-025.mp4",
+      "size_mb": 301.335,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 343.600017,
+        "nb_frames": 10323,
+        "bitrate_kbps": 7337,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.chest/chunk-000/file-026": {
+      "file": "videos/observation.images.chest/chunk-000/file-026.mp4",
+      "size_mb": 140.008,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 183.096013,
+        "nb_frames": 5616,
+        "bitrate_kbps": 6265,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.chest/chunk-000/file-027": {
+      "file": "videos/observation.images.chest/chunk-000/file-027.mp4",
+      "size_mb": 288.577,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 328.092009,
+        "nb_frames": 10024,
+        "bitrate_kbps": 7236,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.chest/chunk-000/file-028": {
+      "file": "videos/observation.images.chest/chunk-000/file-028.mp4",
+      "size_mb": 37.844,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 54.081999,
+        "nb_frames": 1649,
+        "bitrate_kbps": 5768,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.chest/chunk-000/file-029": {
+      "file": "videos/observation.images.chest/chunk-000/file-029.mp4",
+      "size_mb": 201.119,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 276.070988,
+        "nb_frames": 8330,
+        "bitrate_kbps": 6068,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.chest/chunk-000/file-030": {
+      "file": "videos/observation.images.chest/chunk-000/file-030.mp4",
+      "size_mb": 147.869,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 202.076994,
+        "nb_frames": 6153,
+        "bitrate_kbps": 6040,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.chest/chunk-000/file-031": {
+      "file": "videos/observation.images.chest/chunk-000/file-031.mp4",
+      "size_mb": 549.245,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 699.079997,
+        "nb_frames": 21041,
+        "bitrate_kbps": 6560,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.chest/chunk-000/file-032": {
+      "file": "videos/observation.images.chest/chunk-000/file-032.mp4",
+      "size_mb": 30.309,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 58.09301,
+        "nb_frames": 1779,
+        "bitrate_kbps": 4281,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.chest/chunk-000/file-033": {
+      "file": "videos/observation.images.chest/chunk-000/file-033.mp4",
+      "size_mb": 476.325,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 920.148982,
+        "nb_frames": 27703,
+        "bitrate_kbps": 4320,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.chest/chunk-000/file-034": {
+      "file": "videos/observation.images.chest/chunk-000/file-034.mp4",
+      "size_mb": 262.158,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 486.070988,
+        "nb_frames": 14642,
+        "bitrate_kbps": 4499,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.chest/chunk-000/file-035": {
+      "file": "videos/observation.images.chest/chunk-000/file-035.mp4",
+      "size_mb": 214.638,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 394.067985,
+        "nb_frames": 11882,
+        "bitrate_kbps": 4539,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.egocentric/chunk-000/file-000": {
+      "file": "videos/observation.images.egocentric/chunk-000/file-000.mp4",
+      "size_mb": 1580.235,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 882.333333,
+        "nb_frames": 26470,
+        "bitrate_kbps": 15021,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.egocentric/chunk-000/file-001": {
+      "file": "videos/observation.images.egocentric/chunk-000/file-001.mp4",
+      "size_mb": 740.343,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 588.166992,
+        "nb_frames": 17708,
+        "bitrate_kbps": 10518,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.egocentric/chunk-000/file-002": {
+      "file": "videos/observation.images.egocentric/chunk-000/file-002.mp4",
+      "size_mb": 1613.321,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 1274.066016,
+        "nb_frames": 38382,
+        "bitrate_kbps": 10575,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.egocentric/chunk-000/file-003": {
+      "file": "videos/observation.images.egocentric/chunk-000/file-003.mp4",
+      "size_mb": 1010.877,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 1224.9,
+        "nb_frames": 36757,
+        "bitrate_kbps": 6919,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.egocentric/chunk-000/file-004": {
+      "file": "videos/observation.images.egocentric/chunk-000/file-004.mp4",
+      "size_mb": 52.725,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 55.066016,
+        "nb_frames": 1782,
+        "bitrate_kbps": 7444,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.egocentric/chunk-000/file-005": {
+      "file": "videos/observation.images.egocentric/chunk-000/file-005.mp4",
+      "size_mb": 393.491,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 302.066016,
+        "nb_frames": 9147,
+        "bitrate_kbps": 10824,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.egocentric/chunk-000/file-006": {
+      "file": "videos/observation.images.egocentric/chunk-000/file-006.mp4",
+      "size_mb": 216.705,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 224.133984,
+        "nb_frames": 6842,
+        "bitrate_kbps": 7968,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.egocentric/chunk-000/file-007": {
+      "file": "videos/observation.images.egocentric/chunk-000/file-007.mp4",
+      "size_mb": 439.032,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 567.066992,
+        "nb_frames": 17086,
+        "bitrate_kbps": 6464,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.egocentric/chunk-000/file-008": {
+      "file": "videos/observation.images.egocentric/chunk-000/file-008.mp4",
+      "size_mb": 214.182,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 296.066992,
+        "nb_frames": 9061,
+        "bitrate_kbps": 5946,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.egocentric/chunk-000/file-009": {
+      "file": "videos/observation.images.egocentric/chunk-000/file-009.mp4",
+      "size_mb": 453.82,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 362.1,
+        "nb_frames": 10973,
+        "bitrate_kbps": 10406,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.egocentric/chunk-000/file-010": {
+      "file": "videos/observation.images.egocentric/chunk-000/file-010.mp4",
+      "size_mb": 241.496,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 306.066016,
+        "nb_frames": 9378,
+        "bitrate_kbps": 6478,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.egocentric/chunk-000/file-011": {
+      "file": "videos/observation.images.egocentric/chunk-000/file-011.mp4",
+      "size_mb": 466.667,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 627.066992,
+        "nb_frames": 18889,
+        "bitrate_kbps": 6215,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.egocentric/chunk-000/file-012": {
+      "file": "videos/observation.images.egocentric/chunk-000/file-012.mp4",
+      "size_mb": 397.362,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 583.066992,
+        "nb_frames": 17519,
+        "bitrate_kbps": 5706,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.egocentric/chunk-000/file-013": {
+      "file": "videos/observation.images.egocentric/chunk-000/file-013.mp4",
+      "size_mb": 37.3,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 63.066992,
+        "nb_frames": 1907,
+        "bitrate_kbps": 4920,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.egocentric/chunk-000/file-014": {
+      "file": "videos/observation.images.egocentric/chunk-000/file-014.mp4",
+      "size_mb": 219.655,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 509.066992,
+        "nb_frames": 15283,
+        "bitrate_kbps": 3615,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.egocentric/chunk-000/file-015": {
+      "file": "videos/observation.images.egocentric/chunk-000/file-015.mp4",
+      "size_mb": 12.757,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 25.1,
+        "nb_frames": 858,
+        "bitrate_kbps": 3739,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.egocentric/chunk-000/file-016": {
+      "file": "videos/observation.images.egocentric/chunk-000/file-016.mp4",
+      "size_mb": 18.274,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 35.066992,
+        "nb_frames": 1120,
+        "bitrate_kbps": 4104,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.egocentric/chunk-000/file-017": {
+      "file": "videos/observation.images.egocentric/chunk-000/file-017.mp4",
+      "size_mb": 46.599,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 95.166992,
+        "nb_frames": 2942,
+        "bitrate_kbps": 3984,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.egocentric/chunk-000/file-018": {
+      "file": "videos/observation.images.egocentric/chunk-000/file-018.mp4",
+      "size_mb": 8.128,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 18.133008,
+        "nb_frames": 606,
+        "bitrate_kbps": 3373,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.egocentric/chunk-000/file-019": {
+      "file": "videos/observation.images.egocentric/chunk-000/file-019.mp4",
+      "size_mb": 8.337,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 18.1,
+        "nb_frames": 596,
+        "bitrate_kbps": 3518,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.egocentric/chunk-000/file-020": {
+      "file": "videos/observation.images.egocentric/chunk-000/file-020.mp4",
+      "size_mb": 14.175,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 19.066992,
+        "nb_frames": 662,
+        "bitrate_kbps": 5386,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.egocentric/chunk-000/file-021": {
+      "file": "videos/observation.images.egocentric/chunk-000/file-021.mp4",
+      "size_mb": 324.803,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 427.066992,
+        "nb_frames": 12838,
+        "bitrate_kbps": 6365,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.egocentric/chunk-000/file-022": {
+      "file": "videos/observation.images.egocentric/chunk-000/file-022.mp4",
+      "size_mb": 64.004,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 82.066016,
+        "nb_frames": 2556,
+        "bitrate_kbps": 6300,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.egocentric/chunk-000/file-023": {
+      "file": "videos/observation.images.egocentric/chunk-000/file-023.mp4",
+      "size_mb": 1350.045,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 1223.066992,
+        "nb_frames": 36793,
+        "bitrate_kbps": 9232,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.egocentric/chunk-000/file-024": {
+      "file": "videos/observation.images.egocentric/chunk-000/file-024.mp4",
+      "size_mb": 131.775,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 121.066992,
+        "nb_frames": 3664,
+        "bitrate_kbps": 9049,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.egocentric/chunk-000/file-025": {
+      "file": "videos/observation.images.egocentric/chunk-000/file-025.mp4",
+      "size_mb": 361.22,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 346.233008,
+        "nb_frames": 10410,
+        "bitrate_kbps": 8730,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.egocentric/chunk-000/file-026": {
+      "file": "videos/observation.images.egocentric/chunk-000/file-026.mp4",
+      "size_mb": 135.432,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 183.066016,
+        "nb_frames": 5529,
+        "bitrate_kbps": 6162,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.egocentric/chunk-000/file-027": {
+      "file": "videos/observation.images.egocentric/chunk-000/file-027.mp4",
+      "size_mb": 168.508,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 328.1,
+        "nb_frames": 9861,
+        "bitrate_kbps": 4298,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.egocentric/chunk-000/file-028": {
+      "file": "videos/observation.images.egocentric/chunk-000/file-028.mp4",
+      "size_mb": 26.007,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 54.066016,
+        "nb_frames": 1656,
+        "bitrate_kbps": 3950,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.egocentric/chunk-000/file-029": {
+      "file": "videos/observation.images.egocentric/chunk-000/file-029.mp4",
+      "size_mb": 171.94,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 276.066992,
+        "nb_frames": 8479,
+        "bitrate_kbps": 5101,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.egocentric/chunk-000/file-030": {
+      "file": "videos/observation.images.egocentric/chunk-000/file-030.mp4",
+      "size_mb": 121.023,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 202.066016,
+        "nb_frames": 6126,
+        "bitrate_kbps": 4969,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.egocentric/chunk-000/file-031": {
+      "file": "videos/observation.images.egocentric/chunk-000/file-031.mp4",
+      "size_mb": 329.735,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 699.066992,
+        "nb_frames": 21037,
+        "bitrate_kbps": 3942,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.egocentric/chunk-000/file-032": {
+      "file": "videos/observation.images.egocentric/chunk-000/file-032.mp4",
+      "size_mb": 41.769,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 58.066992,
+        "nb_frames": 1876,
+        "bitrate_kbps": 5601,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.egocentric/chunk-000/file-033": {
+      "file": "videos/observation.images.egocentric/chunk-000/file-033.mp4",
+      "size_mb": 615.651,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 920.066016,
+        "nb_frames": 27672,
+        "bitrate_kbps": 5597,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.egocentric/chunk-000/file-034": {
+      "file": "videos/observation.images.egocentric/chunk-000/file-034.mp4",
+      "size_mb": 322.819,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 486.066992,
+        "nb_frames": 14615,
+        "bitrate_kbps": 5557,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.egocentric/chunk-000/file-035": {
+      "file": "videos/observation.images.egocentric/chunk-000/file-035.mp4",
+      "size_mb": 271.36,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 394.066992,
+        "nb_frames": 11914,
+        "bitrate_kbps": 5730,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.left_wrist/chunk-000/file-000": {
+      "file": "videos/observation.images.left_wrist/chunk-000/file-000.mp4",
+      "size_mb": 854.343,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 879.666667,
+        "nb_frames": 26390,
+        "bitrate_kbps": 8145,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.left_wrist/chunk-000/file-001": {
+      "file": "videos/observation.images.left_wrist/chunk-000/file-001.mp4",
+      "size_mb": 740.697,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 588.067985,
+        "nb_frames": 17691,
+        "bitrate_kbps": 10524,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.left_wrist/chunk-000/file-002": {
+      "file": "videos/observation.images.left_wrist/chunk-000/file-002.mp4",
+      "size_mb": 1615.347,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 1274.083,
+        "nb_frames": 38395,
+        "bitrate_kbps": 10575,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.left_wrist/chunk-000/file-003": {
+      "file": "videos/observation.images.left_wrist/chunk-000/file-003.mp4",
+      "size_mb": 955.108,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 1060.561979,
+        "nb_frames": 31822,
+        "bitrate_kbps": 7543,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.left_wrist/chunk-000/file-004": {
+      "file": "videos/observation.images.left_wrist/chunk-000/file-004.mp4",
+      "size_mb": 63.011,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 55.106023,
+        "nb_frames": 1670,
+        "bitrate_kbps": 9484,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.left_wrist/chunk-000/file-005": {
+      "file": "videos/observation.images.left_wrist/chunk-000/file-005.mp4",
+      "size_mb": 370.773,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 302.087004,
+        "nb_frames": 9062,
+        "bitrate_kbps": 10284,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.left_wrist/chunk-000/file-006": {
+      "file": "videos/observation.images.left_wrist/chunk-000/file-006.mp4",
+      "size_mb": 250.858,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 224.081999,
+        "nb_frames": 6748,
+        "bitrate_kbps": 9344,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.left_wrist/chunk-000/file-007": {
+      "file": "videos/observation.images.left_wrist/chunk-000/file-007.mp4",
+      "size_mb": 536.674,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 567.084001,
+        "nb_frames": 17165,
+        "bitrate_kbps": 7858,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.left_wrist/chunk-000/file-008": {
+      "file": "videos/observation.images.left_wrist/chunk-000/file-008.mp4",
+      "size_mb": 258.549,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 296.108025,
+        "nb_frames": 8919,
+        "bitrate_kbps": 7286,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.left_wrist/chunk-000/file-009": {
+      "file": "videos/observation.images.left_wrist/chunk-000/file-009.mp4",
+      "size_mb": 435.028,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 362.125959,
+        "nb_frames": 10868,
+        "bitrate_kbps": 10061,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.left_wrist/chunk-000/file-010": {
+      "file": "videos/observation.images.left_wrist/chunk-000/file-010.mp4",
+      "size_mb": 295.375,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 306.07299,
+        "nb_frames": 9233,
+        "bitrate_kbps": 8041,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.left_wrist/chunk-000/file-011": {
+      "file": "videos/observation.images.left_wrist/chunk-000/file-011.mp4",
+      "size_mb": 547.639,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 627.071989,
+        "nb_frames": 18815,
+        "bitrate_kbps": 7315,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.left_wrist/chunk-000/file-012": {
+      "file": "videos/observation.images.left_wrist/chunk-000/file-012.mp4",
+      "size_mb": 528.157,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 583.080998,
+        "nb_frames": 17641,
+        "bitrate_kbps": 7525,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.left_wrist/chunk-000/file-013": {
+      "file": "videos/observation.images.left_wrist/chunk-000/file-013.mp4",
+      "size_mb": 45.89,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 63.079997,
+        "nb_frames": 1913,
+        "bitrate_kbps": 6029,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.left_wrist/chunk-000/file-014": {
+      "file": "videos/observation.images.left_wrist/chunk-000/file-014.mp4",
+      "size_mb": 394.141,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 509.090007,
+        "nb_frames": 15351,
+        "bitrate_kbps": 6453,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.left_wrist/chunk-000/file-015": {
+      "file": "videos/observation.images.left_wrist/chunk-000/file-015.mp4",
+      "size_mb": 21.779,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 25.098015,
+        "nb_frames": 774,
+        "bitrate_kbps": 7072,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.left_wrist/chunk-000/file-016": {
+      "file": "videos/observation.images.left_wrist/chunk-000/file-016.mp4",
+      "size_mb": 30.797,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 35.129963,
+        "nb_frames": 1080,
+        "bitrate_kbps": 7167,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.left_wrist/chunk-000/file-017": {
+      "file": "videos/observation.images.left_wrist/chunk-000/file-017.mp4",
+      "size_mb": 82.817,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 95.078996,
+        "nb_frames": 2877,
+        "bitrate_kbps": 7235,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.left_wrist/chunk-000/file-018": {
+      "file": "videos/observation.images.left_wrist/chunk-000/file-018.mp4",
+      "size_mb": 16.688,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 18.090007,
+        "nb_frames": 558,
+        "bitrate_kbps": 7516,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.left_wrist/chunk-000/file-019": {
+      "file": "videos/observation.images.left_wrist/chunk-000/file-019.mp4",
+      "size_mb": 15.874,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 18.094011,
+        "nb_frames": 580,
+        "bitrate_kbps": 6878,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.left_wrist/chunk-000/file-020": {
+      "file": "videos/observation.images.left_wrist/chunk-000/file-020.mp4",
+      "size_mb": 17.539,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 19.087004,
+        "nb_frames": 574,
+        "bitrate_kbps": 7680,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.left_wrist/chunk-000/file-021": {
+      "file": "videos/observation.images.left_wrist/chunk-000/file-021.mp4",
+      "size_mb": 346.944,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 427.089006,
+        "nb_frames": 12821,
+        "bitrate_kbps": 6801,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.left_wrist/chunk-000/file-022": {
+      "file": "videos/observation.images.left_wrist/chunk-000/file-022.mp4",
+      "size_mb": 82.755,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 82.086003,
+        "nb_frames": 2596,
+        "bitrate_kbps": 8012,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.left_wrist/chunk-000/file-023": {
+      "file": "videos/observation.images.left_wrist/chunk-000/file-023.mp4",
+      "size_mb": 1265.897,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 1223.124041,
+        "nb_frames": 36822,
+        "bitrate_kbps": 8641,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.left_wrist/chunk-000/file-024": {
+      "file": "videos/observation.images.left_wrist/chunk-000/file-024.mp4",
+      "size_mb": 126.684,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 121.083,
+        "nb_frames": 3674,
+        "bitrate_kbps": 8667,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.left_wrist/chunk-000/file-025": {
+      "file": "videos/observation.images.left_wrist/chunk-000/file-025.mp4",
+      "size_mb": 357.644,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 344.167,
+        "nb_frames": 10395,
+        "bitrate_kbps": 8648,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.left_wrist/chunk-000/file-026": {
+      "file": "videos/observation.images.left_wrist/chunk-000/file-026.mp4",
+      "size_mb": 166.481,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 183.128962,
+        "nb_frames": 5521,
+        "bitrate_kbps": 7579,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.left_wrist/chunk-000/file-027": {
+      "file": "videos/observation.images.left_wrist/chunk-000/file-027.mp4",
+      "size_mb": 268.442,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 328.09301,
+        "nb_frames": 9862,
+        "bitrate_kbps": 6841,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.left_wrist/chunk-000/file-028": {
+      "file": "videos/observation.images.left_wrist/chunk-000/file-028.mp4",
+      "size_mb": 44.297,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 54.081999,
+        "nb_frames": 1649,
+        "bitrate_kbps": 6751,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.left_wrist/chunk-000/file-029": {
+      "file": "videos/observation.images.left_wrist/chunk-000/file-029.mp4",
+      "size_mb": 226.496,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 276.070988,
+        "nb_frames": 8286,
+        "bitrate_kbps": 6870,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.left_wrist/chunk-000/file-030": {
+      "file": "videos/observation.images.left_wrist/chunk-000/file-030.mp4",
+      "size_mb": 169.047,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 202.075993,
+        "nb_frames": 6160,
+        "bitrate_kbps": 6897,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.left_wrist/chunk-000/file-031": {
+      "file": "videos/observation.images.left_wrist/chunk-000/file-031.mp4",
+      "size_mb": 513.616,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 699.078996,
+        "nb_frames": 21017,
+        "bitrate_kbps": 6142,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.left_wrist/chunk-000/file-032": {
+      "file": "videos/observation.images.left_wrist/chunk-000/file-032.mp4",
+      "size_mb": 48.221,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 58.09301,
+        "nb_frames": 1781,
+        "bitrate_kbps": 6805,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.left_wrist/chunk-000/file-033": {
+      "file": "videos/observation.images.left_wrist/chunk-000/file-033.mp4",
+      "size_mb": 740.412,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 920.081999,
+        "nb_frames": 27607,
+        "bitrate_kbps": 6740,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.left_wrist/chunk-000/file-034": {
+      "file": "videos/observation.images.left_wrist/chunk-000/file-034.mp4",
+      "size_mb": 396.333,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 486.069987,
+        "nb_frames": 14592,
+        "bitrate_kbps": 6826,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.left_wrist/chunk-000/file-035": {
+      "file": "videos/observation.images.left_wrist/chunk-000/file-035.mp4",
+      "size_mb": 304.606,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 394.066984,
+        "nb_frames": 11846,
+        "bitrate_kbps": 6462,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.right_wrist/chunk-000/file-000": {
+      "file": "videos/observation.images.right_wrist/chunk-000/file-000.mp4",
+      "size_mb": 1309.738,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 880.013347,
+        "nb_frames": 26374,
+        "bitrate_kbps": 12483,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.right_wrist/chunk-000/file-001": {
+      "file": "videos/observation.images.right_wrist/chunk-000/file-001.mp4",
+      "size_mb": 666.567,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 588.066984,
+        "nb_frames": 17712,
+        "bitrate_kbps": 9459,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.right_wrist/chunk-000/file-002": {
+      "file": "videos/observation.images.right_wrist/chunk-000/file-002.mp4",
+      "size_mb": 763.244,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 672.581999,
+        "nb_frames": 20190,
+        "bitrate_kbps": 9502,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.right_wrist/chunk-000/file-003": {
+      "file": "videos/observation.images.right_wrist/chunk-000/file-003.mp4",
+      "size_mb": 361.288,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 429.764014,
+        "nb_frames": 12898,
+        "bitrate_kbps": 7040,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.right_wrist/chunk-000/file-004": {
+      "file": "videos/observation.images.right_wrist/chunk-000/file-004.mp4",
+      "size_mb": 62.45,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 55.138972,
+        "nb_frames": 1734,
+        "bitrate_kbps": 9052,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.right_wrist/chunk-000/file-005": {
+      "file": "videos/observation.images.right_wrist/chunk-000/file-005.mp4",
+      "size_mb": 306.895,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 302.086003,
+        "nb_frames": 9097,
+        "bitrate_kbps": 8479,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.right_wrist/chunk-000/file-006": {
+      "file": "videos/observation.images.right_wrist/chunk-000/file-006.mp4",
+      "size_mb": 239.554,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 224.183016,
+        "nb_frames": 6745,
+        "bitrate_kbps": 8927,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.right_wrist/chunk-000/file-007": {
+      "file": "videos/observation.images.right_wrist/chunk-000/file-007.mp4",
+      "size_mb": 384.838,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 428.278028,
+        "nb_frames": 12911,
+        "bitrate_kbps": 7491,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.right_wrist/chunk-000/file-008": {
+      "file": "videos/observation.images.right_wrist/chunk-000/file-008.mp4",
+      "size_mb": 239.92,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 296.075993,
+        "nb_frames": 8907,
+        "bitrate_kbps": 6770,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.right_wrist/chunk-000/file-009": {
+      "file": "videos/observation.images.right_wrist/chunk-000/file-009.mp4",
+      "size_mb": 360.557,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 362.09301,
+        "nb_frames": 10928,
+        "bitrate_kbps": 8293,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.right_wrist/chunk-000/file-010": {
+      "file": "videos/observation.images.right_wrist/chunk-000/file-010.mp4",
+      "size_mb": 253.862,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 306.073991,
+        "nb_frames": 9231,
+        "bitrate_kbps": 6912,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.right_wrist/chunk-000/file-011": {
+      "file": "videos/observation.images.right_wrist/chunk-000/file-011.mp4",
+      "size_mb": 506.187,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 627.071989,
+        "nb_frames": 18827,
+        "bitrate_kbps": 6757,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.right_wrist/chunk-000/file-012": {
+      "file": "videos/observation.images.right_wrist/chunk-000/file-012.mp4",
+      "size_mb": 494.643,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 583.080998,
+        "nb_frames": 17641,
+        "bitrate_kbps": 7047,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.right_wrist/chunk-000/file-013": {
+      "file": "videos/observation.images.right_wrist/chunk-000/file-013.mp4",
+      "size_mb": 45.066,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 63.079997,
+        "nb_frames": 1925,
+        "bitrate_kbps": 5883,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.right_wrist/chunk-000/file-014": {
+      "file": "videos/observation.images.right_wrist/chunk-000/file-014.mp4",
+      "size_mb": 367.106,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 509.190023,
+        "nb_frames": 15375,
+        "bitrate_kbps": 6001,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.right_wrist/chunk-000/file-015": {
+      "file": "videos/observation.images.right_wrist/chunk-000/file-015.mp4",
+      "size_mb": 20.532,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 25.098015,
+        "nb_frames": 762,
+        "bitrate_kbps": 6772,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.right_wrist/chunk-000/file-016": {
+      "file": "videos/observation.images.right_wrist/chunk-000/file-016.mp4",
+      "size_mb": 27.82,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 35.096013,
+        "nb_frames": 1068,
+        "bitrate_kbps": 6547,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.right_wrist/chunk-000/file-017": {
+      "file": "videos/observation.images.right_wrist/chunk-000/file-017.mp4",
+      "size_mb": 77.837,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 95.079997,
+        "nb_frames": 2870,
+        "bitrate_kbps": 6816,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.right_wrist/chunk-000/file-018": {
+      "file": "videos/observation.images.right_wrist/chunk-000/file-018.mp4",
+      "size_mb": 16.528,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 18.090007,
+        "nb_frames": 582,
+        "bitrate_kbps": 7137,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.right_wrist/chunk-000/file-019": {
+      "file": "videos/observation.images.right_wrist/chunk-000/file-019.mp4",
+      "size_mb": 16.364,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 18.094011,
+        "nb_frames": 629,
+        "bitrate_kbps": 6538,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.right_wrist/chunk-000/file-020": {
+      "file": "videos/observation.images.right_wrist/chunk-000/file-020.mp4",
+      "size_mb": 18.478,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 19.087004,
+        "nb_frames": 670,
+        "bitrate_kbps": 6931,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.right_wrist/chunk-000/file-021": {
+      "file": "videos/observation.images.right_wrist/chunk-000/file-021.mp4",
+      "size_mb": 304.989,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 427.089006,
+        "nb_frames": 12833,
+        "bitrate_kbps": 5973,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.right_wrist/chunk-000/file-022": {
+      "file": "videos/observation.images.right_wrist/chunk-000/file-022.mp4",
+      "size_mb": 62.292,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 82.120037,
+        "nb_frames": 2583,
+        "bitrate_kbps": 6061,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.right_wrist/chunk-000/file-023": {
+      "file": "videos/observation.images.right_wrist/chunk-000/file-023.mp4",
+      "size_mb": 1139.682,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 1223.124041,
+        "nb_frames": 36783,
+        "bitrate_kbps": 7787,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.right_wrist/chunk-000/file-024": {
+      "file": "videos/observation.images.right_wrist/chunk-000/file-024.mp4",
+      "size_mb": 113.059,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 121.083,
+        "nb_frames": 3638,
+        "bitrate_kbps": 7811,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.right_wrist/chunk-000/file-025": {
+      "file": "videos/observation.images.right_wrist/chunk-000/file-025.mp4",
+      "size_mb": 309.799,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 344.733984,
+        "nb_frames": 10381,
+        "bitrate_kbps": 7501,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.right_wrist/chunk-000/file-026": {
+      "file": "videos/observation.images.right_wrist/chunk-000/file-026.mp4",
+      "size_mb": 143.452,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 183.095012,
+        "nb_frames": 5582,
+        "bitrate_kbps": 6459,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.right_wrist/chunk-000/file-027": {
+      "file": "videos/observation.images.right_wrist/chunk-000/file-027.mp4",
+      "size_mb": 250.991,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 328.092009,
+        "nb_frames": 9983,
+        "bitrate_kbps": 6319,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.right_wrist/chunk-000/file-028": {
+      "file": "videos/observation.images.right_wrist/chunk-000/file-028.mp4",
+      "size_mb": 38.636,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 54.081999,
+        "nb_frames": 1649,
+        "bitrate_kbps": 5888,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.right_wrist/chunk-000/file-029": {
+      "file": "videos/observation.images.right_wrist/chunk-000/file-029.mp4",
+      "size_mb": 206.233,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 276.070988,
+        "nb_frames": 8311,
+        "bitrate_kbps": 6236,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.right_wrist/chunk-000/file-030": {
+      "file": "videos/observation.images.right_wrist/chunk-000/file-030.mp4",
+      "size_mb": 147.875,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 202.111028,
+        "nb_frames": 6173,
+        "bitrate_kbps": 6020,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.right_wrist/chunk-000/file-031": {
+      "file": "videos/observation.images.right_wrist/chunk-000/file-031.mp4",
+      "size_mb": 485.677,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 699.079997,
+        "nb_frames": 21008,
+        "bitrate_kbps": 5810,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.right_wrist/chunk-000/file-032": {
+      "file": "videos/observation.images.right_wrist/chunk-000/file-032.mp4",
+      "size_mb": 43.919,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 58.09301,
+        "nb_frames": 1909,
+        "bitrate_kbps": 5782,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.right_wrist/chunk-000/file-033": {
+      "file": "videos/observation.images.right_wrist/chunk-000/file-033.mp4",
+      "size_mb": 671.474,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 920.083,
+        "nb_frames": 27595,
+        "bitrate_kbps": 6115,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.right_wrist/chunk-000/file-034": {
+      "file": "videos/observation.images.right_wrist/chunk-000/file-034.mp4",
+      "size_mb": 336.671,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 486.069987,
+        "nb_frames": 14573,
+        "bitrate_kbps": 5806,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.right_wrist/chunk-000/file-035": {
+      "file": "videos/observation.images.right_wrist/chunk-000/file-035.mp4",
+      "size_mb": 288.302,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 29.97,
+        "duration_sec": 394.066984,
+        "nb_frames": 11851,
+        "bitrate_kbps": 6114,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_left/chunk-000/file-000": {
+      "file": "videos/observation.images.stereo_left/chunk-000/file-000.mp4",
+      "size_mb": 844.493,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 882.333659,
+        "nb_frames": 26471,
+        "bitrate_kbps": 8027,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_left/chunk-000/file-001": {
+      "file": "videos/observation.images.stereo_left/chunk-000/file-001.mp4",
+      "size_mb": 388.451,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 588.066992,
+        "nb_frames": 17791,
+        "bitrate_kbps": 5492,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_left/chunk-000/file-002": {
+      "file": "videos/observation.images.stereo_left/chunk-000/file-002.mp4",
+      "size_mb": 832.424,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 1274.066992,
+        "nb_frames": 38374,
+        "bitrate_kbps": 5456,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_left/chunk-000/file-003": {
+      "file": "videos/observation.images.stereo_left/chunk-000/file-003.mp4",
+      "size_mb": 611.737,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 1221.966992,
+        "nb_frames": 36710,
+        "bitrate_kbps": 4191,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_left/chunk-000/file-004": {
+      "file": "videos/observation.images.stereo_left/chunk-000/file-004.mp4",
+      "size_mb": 29.647,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 55.066992,
+        "nb_frames": 1855,
+        "bitrate_kbps": 4019,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_left/chunk-000/file-005": {
+      "file": "videos/observation.images.stereo_left/chunk-000/file-005.mp4",
+      "size_mb": 183.772,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 302.166016,
+        "nb_frames": 9096,
+        "bitrate_kbps": 5081,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_left/chunk-000/file-006": {
+      "file": "videos/observation.images.stereo_left/chunk-000/file-006.mp4",
+      "size_mb": 101.894,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 224.066992,
+        "nb_frames": 6748,
+        "bitrate_kbps": 3797,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_left/chunk-000/file-007": {
+      "file": "videos/observation.images.stereo_left/chunk-000/file-007.mp4",
+      "size_mb": 268.241,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 567.1,
+        "nb_frames": 17074,
+        "bitrate_kbps": 3951,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_left/chunk-000/file-008": {
+      "file": "videos/observation.images.stereo_left/chunk-000/file-008.mp4",
+      "size_mb": 145.937,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 296.1,
+        "nb_frames": 9059,
+        "bitrate_kbps": 4051,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_left/chunk-000/file-009": {
+      "file": "videos/observation.images.stereo_left/chunk-000/file-009.mp4",
+      "size_mb": 227.969,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 362.066016,
+        "nb_frames": 10974,
+        "bitrate_kbps": 5225,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_left/chunk-000/file-010": {
+      "file": "videos/observation.images.stereo_left/chunk-000/file-010.mp4",
+      "size_mb": 144.225,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 306.066016,
+        "nb_frames": 9309,
+        "bitrate_kbps": 3896,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_left/chunk-000/file-011": {
+      "file": "videos/observation.images.stereo_left/chunk-000/file-011.mp4",
+      "size_mb": 298.178,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 627.066992,
+        "nb_frames": 19021,
+        "bitrate_kbps": 3942,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_left/chunk-000/file-012": {
+      "file": "videos/observation.images.stereo_left/chunk-000/file-012.mp4",
+      "size_mb": 326.982,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 583.166992,
+        "nb_frames": 17581,
+        "bitrate_kbps": 4678,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_left/chunk-000/file-013": {
+      "file": "videos/observation.images.stereo_left/chunk-000/file-013.mp4",
+      "size_mb": 30.684,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 63.1,
+        "nb_frames": 1915,
+        "bitrate_kbps": 4029,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_left/chunk-000/file-014": {
+      "file": "videos/observation.images.stereo_left/chunk-000/file-014.mp4",
+      "size_mb": 297.74,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 509.1,
+        "nb_frames": 15280,
+        "bitrate_kbps": 4901,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_left/chunk-000/file-015": {
+      "file": "videos/observation.images.stereo_left/chunk-000/file-015.mp4",
+      "size_mb": 18.434,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 25.066992,
+        "nb_frames": 902,
+        "bitrate_kbps": 5140,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_left/chunk-000/file-016": {
+      "file": "videos/observation.images.stereo_left/chunk-000/file-016.mp4",
+      "size_mb": 23.546,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 35.066016,
+        "nb_frames": 1170,
+        "bitrate_kbps": 5061,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_left/chunk-000/file-017": {
+      "file": "videos/observation.images.stereo_left/chunk-000/file-017.mp4",
+      "size_mb": 58.359,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 95.066992,
+        "nb_frames": 2999,
+        "bitrate_kbps": 4894,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_left/chunk-000/file-018": {
+      "file": "videos/observation.images.stereo_left/chunk-000/file-018.mp4",
+      "size_mb": 12.676,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 18.066016,
+        "nb_frames": 672,
+        "bitrate_kbps": 4743,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_left/chunk-000/file-019": {
+      "file": "videos/observation.images.stereo_left/chunk-000/file-019.mp4",
+      "size_mb": 10.471,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 18.1,
+        "nb_frames": 690,
+        "bitrate_kbps": 3815,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_left/chunk-000/file-020": {
+      "file": "videos/observation.images.stereo_left/chunk-000/file-020.mp4",
+      "size_mb": 10.861,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 19.066992,
+        "nb_frames": 622,
+        "bitrate_kbps": 4391,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_left/chunk-000/file-021": {
+      "file": "videos/observation.images.stereo_left/chunk-000/file-021.mp4",
+      "size_mb": 176.659,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 427.066992,
+        "nb_frames": 12824,
+        "bitrate_kbps": 3464,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_left/chunk-000/file-022": {
+      "file": "videos/observation.images.stereo_left/chunk-000/file-022.mp4",
+      "size_mb": 33.589,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 82.1,
+        "nb_frames": 2602,
+        "bitrate_kbps": 3245,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_left/chunk-000/file-023": {
+      "file": "videos/observation.images.stereo_left/chunk-000/file-023.mp4",
+      "size_mb": 777.945,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 1223.066016,
+        "nb_frames": 36786,
+        "bitrate_kbps": 5319,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_left/chunk-000/file-024": {
+      "file": "videos/observation.images.stereo_left/chunk-000/file-024.mp4",
+      "size_mb": 77.686,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 121.066992,
+        "nb_frames": 3716,
+        "bitrate_kbps": 5258,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_left/chunk-000/file-025": {
+      "file": "videos/observation.images.stereo_left/chunk-000/file-025.mp4",
+      "size_mb": 219.856,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 345.266016,
+        "nb_frames": 10404,
+        "bitrate_kbps": 5315,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_left/chunk-000/file-026": {
+      "file": "videos/observation.images.stereo_left/chunk-000/file-026.mp4",
+      "size_mb": 90.198,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 183.166016,
+        "nb_frames": 5622,
+        "bitrate_kbps": 4034,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_left/chunk-000/file-027": {
+      "file": "videos/observation.images.stereo_left/chunk-000/file-027.mp4",
+      "size_mb": 191.625,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 328.066992,
+        "nb_frames": 9862,
+        "bitrate_kbps": 4887,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_left/chunk-000/file-028": {
+      "file": "videos/observation.images.stereo_left/chunk-000/file-028.mp4",
+      "size_mb": 27.298,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 54.066016,
+        "nb_frames": 1629,
+        "bitrate_kbps": 4214,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_left/chunk-000/file-029": {
+      "file": "videos/observation.images.stereo_left/chunk-000/file-029.mp4",
+      "size_mb": 144.193,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 276.1,
+        "nb_frames": 8473,
+        "bitrate_kbps": 4280,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_left/chunk-000/file-030": {
+      "file": "videos/observation.images.stereo_left/chunk-000/file-030.mp4",
+      "size_mb": 97.92,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 202.166992,
+        "nb_frames": 6073,
+        "bitrate_kbps": 4055,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_left/chunk-000/file-031": {
+      "file": "videos/observation.images.stereo_left/chunk-000/file-031.mp4",
+      "size_mb": 383.678,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 699.066992,
+        "nb_frames": 21025,
+        "bitrate_kbps": 4589,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_left/chunk-000/file-032": {
+      "file": "videos/observation.images.stereo_left/chunk-000/file-032.mp4",
+      "size_mb": 28.519,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 58.066992,
+        "nb_frames": 1897,
+        "bitrate_kbps": 3780,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_left/chunk-000/file-033": {
+      "file": "videos/observation.images.stereo_left/chunk-000/file-033.mp4",
+      "size_mb": 418.55,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 920.066016,
+        "nb_frames": 27636,
+        "bitrate_kbps": 3808,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_left/chunk-000/file-034": {
+      "file": "videos/observation.images.stereo_left/chunk-000/file-034.mp4",
+      "size_mb": 221.765,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 486.133008,
+        "nb_frames": 14601,
+        "bitrate_kbps": 3819,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_left/chunk-000/file-035": {
+      "file": "videos/observation.images.stereo_left/chunk-000/file-035.mp4",
+      "size_mb": 182.771,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 394.066992,
+        "nb_frames": 11866,
+        "bitrate_kbps": 3873,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_right/chunk-000/file-000": {
+      "file": "videos/observation.images.stereo_right/chunk-000/file-000.mp4",
+      "size_mb": 843.952,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 882.266992,
+        "nb_frames": 26447,
+        "bitrate_kbps": 8023,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_right/chunk-000/file-001": {
+      "file": "videos/observation.images.stereo_right/chunk-000/file-001.mp4",
+      "size_mb": 386.291,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 588.066992,
+        "nb_frames": 17792,
+        "bitrate_kbps": 5461,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_right/chunk-000/file-002": {
+      "file": "videos/observation.images.stereo_right/chunk-000/file-002.mp4",
+      "size_mb": 826.138,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 1274.066992,
+        "nb_frames": 38374,
+        "bitrate_kbps": 5415,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_right/chunk-000/file-003": {
+      "file": "videos/observation.images.stereo_right/chunk-000/file-003.mp4",
+      "size_mb": 642.232,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 1222.133984,
+        "nb_frames": 36694,
+        "bitrate_kbps": 4402,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_right/chunk-000/file-004": {
+      "file": "videos/observation.images.stereo_right/chunk-000/file-004.mp4",
+      "size_mb": 32.747,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 55.133008,
+        "nb_frames": 1855,
+        "bitrate_kbps": 4439,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_right/chunk-000/file-005": {
+      "file": "videos/observation.images.stereo_right/chunk-000/file-005.mp4",
+      "size_mb": 191.323,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 302.066992,
+        "nb_frames": 9145,
+        "bitrate_kbps": 5262,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_right/chunk-000/file-006": {
+      "file": "videos/observation.images.stereo_right/chunk-000/file-006.mp4",
+      "size_mb": 107.273,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 224.066016,
+        "nb_frames": 6750,
+        "bitrate_kbps": 3996,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_right/chunk-000/file-007": {
+      "file": "videos/observation.images.stereo_right/chunk-000/file-007.mp4",
+      "size_mb": 280.642,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 567.066016,
+        "nb_frames": 17049,
+        "bitrate_kbps": 4139,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_right/chunk-000/file-008": {
+      "file": "videos/observation.images.stereo_right/chunk-000/file-008.mp4",
+      "size_mb": 152.91,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 296.1,
+        "nb_frames": 9059,
+        "bitrate_kbps": 4245,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_right/chunk-000/file-009": {
+      "file": "videos/observation.images.stereo_right/chunk-000/file-009.mp4",
+      "size_mb": 239.455,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 362.166016,
+        "nb_frames": 10974,
+        "bitrate_kbps": 5488,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_right/chunk-000/file-010": {
+      "file": "videos/observation.images.stereo_right/chunk-000/file-010.mp4",
+      "size_mb": 150.884,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 306.166992,
+        "nb_frames": 9310,
+        "bitrate_kbps": 4076,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_right/chunk-000/file-011": {
+      "file": "videos/observation.images.stereo_right/chunk-000/file-011.mp4",
+      "size_mb": 310.47,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 627.066016,
+        "nb_frames": 19023,
+        "bitrate_kbps": 4104,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_right/chunk-000/file-012": {
+      "file": "videos/observation.images.stereo_right/chunk-000/file-012.mp4",
+      "size_mb": 332.233,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 583.066992,
+        "nb_frames": 17581,
+        "bitrate_kbps": 4753,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_right/chunk-000/file-013": {
+      "file": "videos/observation.images.stereo_right/chunk-000/file-013.mp4",
+      "size_mb": 31.658,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 63.066992,
+        "nb_frames": 1918,
+        "bitrate_kbps": 4151,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_right/chunk-000/file-014": {
+      "file": "videos/observation.images.stereo_right/chunk-000/file-014.mp4",
+      "size_mb": 306.965,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 509.166016,
+        "nb_frames": 15282,
+        "bitrate_kbps": 5052,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_right/chunk-000/file-015": {
+      "file": "videos/observation.images.stereo_right/chunk-000/file-015.mp4",
+      "size_mb": 17.478,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 25.066016,
+        "nb_frames": 816,
+        "bitrate_kbps": 5387,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_right/chunk-000/file-016": {
+      "file": "videos/observation.images.stereo_right/chunk-000/file-016.mp4",
+      "size_mb": 24.57,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 35.066992,
+        "nb_frames": 1193,
+        "bitrate_kbps": 5180,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_right/chunk-000/file-017": {
+      "file": "videos/observation.images.stereo_right/chunk-000/file-017.mp4",
+      "size_mb": 59.845,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 95.066992,
+        "nb_frames": 3001,
+        "bitrate_kbps": 5015,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_right/chunk-000/file-018": {
+      "file": "videos/observation.images.stereo_right/chunk-000/file-018.mp4",
+      "size_mb": 13.14,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 18.066016,
+        "nb_frames": 675,
+        "bitrate_kbps": 4896,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_right/chunk-000/file-019": {
+      "file": "videos/observation.images.stereo_right/chunk-000/file-019.mp4",
+      "size_mb": 10.969,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 18.066016,
+        "nb_frames": 690,
+        "bitrate_kbps": 3997,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_right/chunk-000/file-020": {
+      "file": "videos/observation.images.stereo_right/chunk-000/file-020.mp4",
+      "size_mb": 10.944,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 19.1,
+        "nb_frames": 623,
+        "bitrate_kbps": 4418,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_right/chunk-000/file-021": {
+      "file": "videos/observation.images.stereo_right/chunk-000/file-021.mp4",
+      "size_mb": 179.627,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 427.066016,
+        "nb_frames": 12825,
+        "bitrate_kbps": 3522,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_right/chunk-000/file-022": {
+      "file": "videos/observation.images.stereo_right/chunk-000/file-022.mp4",
+      "size_mb": 35.143,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 82.066992,
+        "nb_frames": 2603,
+        "bitrate_kbps": 3394,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_right/chunk-000/file-023": {
+      "file": "videos/observation.images.stereo_right/chunk-000/file-023.mp4",
+      "size_mb": 759.777,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 1223.066992,
+        "nb_frames": 36787,
+        "bitrate_kbps": 5195,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_right/chunk-000/file-024": {
+      "file": "videos/observation.images.stereo_right/chunk-000/file-024.mp4",
+      "size_mb": 75.659,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 121.066016,
+        "nb_frames": 3720,
+        "bitrate_kbps": 5115,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_right/chunk-000/file-025": {
+      "file": "videos/observation.images.stereo_right/chunk-000/file-025.mp4",
+      "size_mb": 214.82,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 345.0,
+        "nb_frames": 10401,
+        "bitrate_kbps": 5195,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_right/chunk-000/file-026": {
+      "file": "videos/observation.images.stereo_right/chunk-000/file-026.mp4",
+      "size_mb": 88.372,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 183.133008,
+        "nb_frames": 5622,
+        "bitrate_kbps": 3953,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_right/chunk-000/file-027": {
+      "file": "videos/observation.images.stereo_right/chunk-000/file-027.mp4",
+      "size_mb": 190.349,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 328.1,
+        "nb_frames": 9864,
+        "bitrate_kbps": 4853,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_right/chunk-000/file-028": {
+      "file": "videos/observation.images.stereo_right/chunk-000/file-028.mp4",
+      "size_mb": 27.5,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 54.066992,
+        "nb_frames": 1634,
+        "bitrate_kbps": 4232,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_right/chunk-000/file-029": {
+      "file": "videos/observation.images.stereo_right/chunk-000/file-029.mp4",
+      "size_mb": 143.565,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 276.066992,
+        "nb_frames": 8522,
+        "bitrate_kbps": 4237,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_right/chunk-000/file-030": {
+      "file": "videos/observation.images.stereo_right/chunk-000/file-030.mp4",
+      "size_mb": 97.502,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 202.066992,
+        "nb_frames": 6079,
+        "bitrate_kbps": 4033,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_right/chunk-000/file-031": {
+      "file": "videos/observation.images.stereo_right/chunk-000/file-031.mp4",
+      "size_mb": 387.601,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 699.066016,
+        "nb_frames": 21036,
+        "bitrate_kbps": 4634,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_right/chunk-000/file-032": {
+      "file": "videos/observation.images.stereo_right/chunk-000/file-032.mp4",
+      "size_mb": 28.444,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 58.133008,
+        "nb_frames": 1897,
+        "bitrate_kbps": 3770,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_right/chunk-000/file-033": {
+      "file": "videos/observation.images.stereo_right/chunk-000/file-033.mp4",
+      "size_mb": 417.854,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 920.066016,
+        "nb_frames": 27636,
+        "bitrate_kbps": 3802,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_right/chunk-000/file-034": {
+      "file": "videos/observation.images.stereo_right/chunk-000/file-034.mp4",
+      "size_mb": 221.459,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 486.166992,
+        "nb_frames": 14602,
+        "bitrate_kbps": 3814,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "videos/observation.images.stereo_right/chunk-000/file-035": {
+      "file": "videos/observation.images.stereo_right/chunk-000/file-035.mp4",
+      "size_mb": 183.1,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 30.0,
+        "duration_sec": 394.066992,
+        "nb_frames": 11864,
+        "bitrate_kbps": 3881,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    }
+  }
+}

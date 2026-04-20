@@ -360,17 +360,17 @@ def run_file_eval(dataset_dir: Path, output_path: Path | None = None) -> dict:
     errors: list[dict] = []
 
     for vf in video_files:
-        cid = vf.stem
+        cid = str(vf.relative_to(dataset_dir).with_suffix(""))
         print(f"    {vf.name}", end="", flush=True)
         probe, err = run_ffprobe(vf)
         if err:
             print(f"  ERROR: {err}")
-            errors.append({"file": vf.name, "error": err})
+            errors.append({"file": str(vf.relative_to(dataset_dir)), "error": err})
             continue
 
         vi = parse_video_stream(probe)
         size_mb = round(vf.stat().st_size / (1024 * 1024), 3)
-        per_file[cid] = {"file": vf.name, "size_mb": size_mb, "video": vi}
+        per_file[cid] = {"file": str(vf.relative_to(dataset_dir)), "size_mb": size_mb, "video": vi}
 
         if vi:
             print(

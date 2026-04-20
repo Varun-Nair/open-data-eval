@@ -12,7 +12,7 @@
   "qp:qualityProfile": {
     "qp:schemaVersion": "1.0",
     "qp:evalLevel": "metadata",
-    "qp:evaluatedAt": "2026-04-20T22:13:35Z",
+    "qp:evaluatedAt": "2026-04-20T23:47:55Z",
     "qp:evaluatedBy": "open-data-eval",
     "scores": {
       "fps": {
@@ -368,6 +368,76 @@
           "Und-ML"
         ]
       }
+    },
+    "file_eval": {
+      "eval_type": "file",
+      "evaluated_at": "2026-04-20T23:47:40.484076+00:00",
+      "dataset_path": "/Users/varun/Downloads/HA-Multi-Samples",
+      "summary": {
+        "total_files": 216,
+        "total_duration_sec": 81366.964,
+        "total_hours": 22.60193,
+        "total_frames": 2456371,
+        "total_size_mb": 63981.078,
+        "resolutions": {
+          "1920x1080": 144,
+          "1280x720": 72
+        },
+        "codecs": {
+          "h264": 216
+        },
+        "clips_with_audio": 0,
+        "clips_without_audio": 216
+      },
+      "distributions": {
+        "fps": {
+          "n": 216,
+          "mean": 29.9853,
+          "min": 29.97,
+          "max": 30.0,
+          "std": 0.015,
+          "p5": 29.97,
+          "p95": 30.0
+        },
+        "duration_sec": {
+          "n": 216,
+          "mean": 376.6989,
+          "min": 18.066,
+          "max": 1274.084,
+          "std": 341.1092,
+          "p5": 18.1,
+          "p95": 1223.066
+        },
+        "bitrate_kbps": {
+          "n": 216,
+          "mean": 6167.2407,
+          "min": 3245,
+          "max": 15021,
+          "std": 1897.2773,
+          "p5": 3797,
+          "p95": 9484
+        },
+        "nb_frames": {
+          "n": 216,
+          "mean": 11372.088,
+          "min": 558,
+          "max": 38395,
+          "std": 10229.6135,
+          "p5": 642,
+          "p95": 36710
+        },
+        "file_size_mb": {
+          "n": 216,
+          "mean": 296.2087,
+          "min": 8.128,
+          "max": 1615.347,
+          "std": 320.4525,
+          "p5": 15.661,
+          "p95": 870.909
+        }
+      },
+      "annotation_coverage": null,
+      "discrepancies": null
     }
   }
 }
