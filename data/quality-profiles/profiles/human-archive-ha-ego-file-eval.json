@@ -1,0 +1,1674 @@
+{
+  "eval_type": "file",
+  "dataset_path": "/Users/varun/Downloads/HA-Ego-Samples",
+  "evaluated_at": "2026-04-21T00:56:51.349546+00:00",
+  "summary": {
+    "total_files": 100,
+    "files_probed": 100,
+    "files_with_errors": 0,
+    "total_duration_sec": 5898.133,
+    "total_hours": 1.63837,
+    "total_frames": 176944,
+    "total_size_mb": 7150.019,
+    "resolutions": {
+      "1920x1080": 100
+    },
+    "codecs": {
+      "h264": 100
+    },
+    "clips_with_audio": 0,
+    "clips_without_audio": 100
+  },
+  "distributions": {
+    "fps": {
+      "n": 100,
+      "mean": 30.0,
+      "min": 30.0,
+      "max": 30.0,
+      "std": 0.0,
+      "p5": 30.0,
+      "p95": 30.0
+    },
+    "duration_sec": {
+      "n": 100,
+      "mean": 58.9813,
+      "min": 33.0,
+      "max": 75.0,
+      "std": 5.1152,
+      "p5": 47.6333,
+      "p95": 62.0
+    },
+    "bitrate_kbps": {
+      "n": 100,
+      "mean": 10174.34,
+      "min": 9796,
+      "max": 32597,
+      "std": 2336.9656,
+      "p5": 9824,
+      "p95": 9857
+    },
+    "nb_frames": {
+      "n": 100,
+      "mean": 1769.44,
+      "min": 990,
+      "max": 2250,
+      "std": 153.4559,
+      "p5": 1429,
+      "p95": 1860
+    },
+    "file_size_mb": {
+      "n": 100,
+      "mean": 71.5002,
+      "min": 40.776,
+      "max": 233.177,
+      "std": 17.6547,
+      "p5": 55.981,
+      "p95": 72.669
+    }
+  },
+  "annotation_coverage": null,
+  "discrepancies": null,
+  "errors": null,
+  "per_file": {
+    "commercial/factory/person1020/person1020_segment1": {
+      "file": "commercial/factory/person1020/person1020_segment1.mp4",
+      "size_mb": 64.491,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 55.0,
+        "nb_frames": 1650,
+        "bitrate_kbps": 9834,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/factory/person106/person106_segment1": {
+      "file": "commercial/factory/person106/person106_segment1.mp4",
+      "size_mb": 72.664,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 62.0,
+        "nb_frames": 1860,
+        "bitrate_kbps": 9830,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/factory/person1131/person1131_segment1": {
+      "file": "commercial/factory/person1131/person1131_segment1.mp4",
+      "size_mb": 72.665,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 62.0,
+        "nb_frames": 1860,
+        "bitrate_kbps": 9830,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/factory/person1151/person1151_segment7": {
+      "file": "commercial/factory/person1151/person1151_segment7.mp4",
+      "size_mb": 70.334,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9832,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/factory/person1177/person1177_segment1": {
+      "file": "commercial/factory/person1177/person1177_segment1.mp4",
+      "size_mb": 72.669,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 62.0,
+        "nb_frames": 1860,
+        "bitrate_kbps": 9830,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/factory/person122/person122_segment1": {
+      "file": "commercial/factory/person122/person122_segment1.mp4",
+      "size_mb": 72.665,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 62.0,
+        "nb_frames": 1860,
+        "bitrate_kbps": 9830,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/factory/person122/person122_segment2": {
+      "file": "commercial/factory/person122/person122_segment2.mp4",
+      "size_mb": 72.666,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 62.0,
+        "nb_frames": 1860,
+        "bitrate_kbps": 9830,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/factory/person1291/person1291_segment1": {
+      "file": "commercial/factory/person1291/person1291_segment1.mp4",
+      "size_mb": 60.947,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 52.0,
+        "nb_frames": 1560,
+        "bitrate_kbps": 9830,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/factory/person1353/person1353_segment1": {
+      "file": "commercial/factory/person1353/person1353_segment1.mp4",
+      "size_mb": 72.625,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 62.0,
+        "nb_frames": 1860,
+        "bitrate_kbps": 9824,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/factory/person303/person303_segment4": {
+      "file": "commercial/factory/person303/person303_segment4.mp4",
+      "size_mb": 71.495,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 61.0,
+        "nb_frames": 1830,
+        "bitrate_kbps": 9830,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/factory/person314/person314_segment1": {
+      "file": "commercial/factory/person314/person314_segment1.mp4",
+      "size_mb": 50.354,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 43.0,
+        "nb_frames": 1290,
+        "bitrate_kbps": 9821,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/factory/person430/person430_segment2": {
+      "file": "commercial/factory/person430/person430_segment2.mp4",
+      "size_mb": 70.318,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9830,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/factory/person48/person48_segment1": {
+      "file": "commercial/factory/person48/person48_segment1.mp4",
+      "size_mb": 66.806,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 57.0,
+        "nb_frames": 1710,
+        "bitrate_kbps": 9830,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/factory/person488/person488_segment2": {
+      "file": "commercial/factory/person488/person488_segment2.mp4",
+      "size_mb": 70.323,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9830,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/factory/person529/person529_segment3": {
+      "file": "commercial/factory/person529/person529_segment3.mp4",
+      "size_mb": 70.323,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9830,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/factory/person541/person541_segment4": {
+      "file": "commercial/factory/person541/person541_segment4.mp4",
+      "size_mb": 70.316,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9829,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/factory/person5620/person5620_segment3": {
+      "file": "commercial/factory/person5620/person5620_segment3.mp4",
+      "size_mb": 50.216,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 33.0,
+        "nb_frames": 990,
+        "bitrate_kbps": 12761,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/factory/person615/person615_segment3": {
+      "file": "commercial/factory/person615/person615_segment3.mp4",
+      "size_mb": 87.896,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 75.0,
+        "nb_frames": 2250,
+        "bitrate_kbps": 9829,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/factory/person635/person635_segment1": {
+      "file": "commercial/factory/person635/person635_segment1.mp4",
+      "size_mb": 70.32,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9830,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/factory/person650/person650_segment3": {
+      "file": "commercial/factory/person650/person650_segment3.mp4",
+      "size_mb": 63.275,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 54.0,
+        "nb_frames": 1620,
+        "bitrate_kbps": 9828,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/factory/person707/person707_segment4": {
+      "file": "commercial/factory/person707/person707_segment4.mp4",
+      "size_mb": 70.323,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9830,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/factory/person713/person713_segment1": {
+      "file": "commercial/factory/person713/person713_segment1.mp4",
+      "size_mb": 70.323,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9830,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/factory/person810/person810_segment1": {
+      "file": "commercial/factory/person810/person810_segment1.mp4",
+      "size_mb": 71.493,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 61.0,
+        "nb_frames": 1830,
+        "bitrate_kbps": 9830,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/factory/person873/person873_segment1": {
+      "file": "commercial/factory/person873/person873_segment1.mp4",
+      "size_mb": 71.466,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 61.0,
+        "nb_frames": 1830,
+        "bitrate_kbps": 9826,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/factory/person909/person909_segment1": {
+      "file": "commercial/factory/person909/person909_segment1.mp4",
+      "size_mb": 70.372,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9837,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/factory/person965/person965_segment3": {
+      "file": "commercial/factory/person965/person965_segment3.mp4",
+      "size_mb": 70.315,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9829,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/factory/person987/person987_segment2": {
+      "file": "commercial/factory/person987/person987_segment2.mp4",
+      "size_mb": 70.318,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9829,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/factory/person998/person998_segment1": {
+      "file": "commercial/factory/person998/person998_segment1.mp4",
+      "size_mb": 233.177,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 32597,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person1005/person1005_segment1": {
+      "file": "commercial/hospitality/person1005/person1005_segment1.mp4",
+      "size_mb": 92.148,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 61.0,
+        "nb_frames": 1830,
+        "bitrate_kbps": 12668,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person1112/person1112_segment4": {
+      "file": "commercial/hospitality/person1112/person1112_segment4.mp4",
+      "size_mb": 90.375,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.033333,
+        "nb_frames": 1801,
+        "bitrate_kbps": 12625,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person1380/person1380_segment1": {
+      "file": "commercial/hospitality/person1380/person1380_segment1.mp4",
+      "size_mb": 71.501,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 61.0,
+        "nb_frames": 1830,
+        "bitrate_kbps": 9831,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person1381/person1381_segment2": {
+      "file": "commercial/hospitality/person1381/person1381_segment2.mp4",
+      "size_mb": 70.323,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9830,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person1418/person1418_segment1": {
+      "file": "commercial/hospitality/person1418/person1418_segment1.mp4",
+      "size_mb": 70.319,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9830,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person1420/person1420_segment3": {
+      "file": "commercial/hospitality/person1420/person1420_segment3.mp4",
+      "size_mb": 70.333,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9832,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person1434/person1434_segment3": {
+      "file": "commercial/hospitality/person1434/person1434_segment3.mp4",
+      "size_mb": 70.304,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9827,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person1468/person1468_segment1": {
+      "file": "commercial/hospitality/person1468/person1468_segment1.mp4",
+      "size_mb": 70.317,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9829,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person1524/person1524_segment2": {
+      "file": "commercial/hospitality/person1524/person1524_segment2.mp4",
+      "size_mb": 70.335,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9832,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person1526/person1526_segment4": {
+      "file": "commercial/hospitality/person1526/person1526_segment4.mp4",
+      "size_mb": 70.32,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9830,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person1546/person1546_segment1": {
+      "file": "commercial/hospitality/person1546/person1546_segment1.mp4",
+      "size_mb": 70.322,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9830,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person1558/person1558_segment3": {
+      "file": "commercial/hospitality/person1558/person1558_segment3.mp4",
+      "size_mb": 70.322,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9830,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person1592/person1592_segment3": {
+      "file": "commercial/hospitality/person1592/person1592_segment3.mp4",
+      "size_mb": 59.918,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 51.1,
+        "nb_frames": 1533,
+        "bitrate_kbps": 9834,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person1599/person1599_segment1": {
+      "file": "commercial/hospitality/person1599/person1599_segment1.mp4",
+      "size_mb": 70.298,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9827,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person1609/person1609_segment4": {
+      "file": "commercial/hospitality/person1609/person1609_segment4.mp4",
+      "size_mb": 70.323,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9830,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person1619/person1619_segment2": {
+      "file": "commercial/hospitality/person1619/person1619_segment2.mp4",
+      "size_mb": 70.317,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9829,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person1636/person1636_segment5": {
+      "file": "commercial/hospitality/person1636/person1636_segment5.mp4",
+      "size_mb": 71.495,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 61.0,
+        "nb_frames": 1830,
+        "bitrate_kbps": 9830,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person1661/person1661_segment1": {
+      "file": "commercial/hospitality/person1661/person1661_segment1.mp4",
+      "size_mb": 55.981,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 47.633333,
+        "nb_frames": 1429,
+        "bitrate_kbps": 9857,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person1668/person1668_segment2": {
+      "file": "commercial/hospitality/person1668/person1668_segment2.mp4",
+      "size_mb": 70.322,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9830,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person1686/person1686_segment1": {
+      "file": "commercial/hospitality/person1686/person1686_segment1.mp4",
+      "size_mb": 70.323,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9830,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person1687/person1687_segment3": {
+      "file": "commercial/hospitality/person1687/person1687_segment3.mp4",
+      "size_mb": 70.319,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9830,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person1741/person1741_segment1": {
+      "file": "commercial/hospitality/person1741/person1741_segment1.mp4",
+      "size_mb": 70.324,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9830,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person1752/person1752_segment2": {
+      "file": "commercial/hospitality/person1752/person1752_segment2.mp4",
+      "size_mb": 70.32,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9830,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person1754/person1754_segment1": {
+      "file": "commercial/hospitality/person1754/person1754_segment1.mp4",
+      "size_mb": 40.776,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 34.766667,
+        "nb_frames": 1043,
+        "bitrate_kbps": 9837,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person1756/person1756_segment1": {
+      "file": "commercial/hospitality/person1756/person1756_segment1.mp4",
+      "size_mb": 67.536,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 57.6,
+        "nb_frames": 1728,
+        "bitrate_kbps": 9834,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person1770/person1770_segment2": {
+      "file": "commercial/hospitality/person1770/person1770_segment2.mp4",
+      "size_mb": 70.32,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9830,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person1790/person1790_segment3": {
+      "file": "commercial/hospitality/person1790/person1790_segment3.mp4",
+      "size_mb": 70.325,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9830,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person1795/person1795_segment5": {
+      "file": "commercial/hospitality/person1795/person1795_segment5.mp4",
+      "size_mb": 70.077,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9796,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person18/person18_segment7": {
+      "file": "commercial/hospitality/person18/person18_segment7.mp4",
+      "size_mb": 92.658,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 12951,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person1803/person1803_segment2": {
+      "file": "commercial/hospitality/person1803/person1803_segment2.mp4",
+      "size_mb": 70.32,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9830,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person1852/person1852_segment3": {
+      "file": "commercial/hospitality/person1852/person1852_segment3.mp4",
+      "size_mb": 70.32,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9830,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person1925/person1925_segment2": {
+      "file": "commercial/hospitality/person1925/person1925_segment2.mp4",
+      "size_mb": 70.328,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9831,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person1929/person1929_segment1": {
+      "file": "commercial/hospitality/person1929/person1929_segment1.mp4",
+      "size_mb": 71.499,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 61.0,
+        "nb_frames": 1830,
+        "bitrate_kbps": 9831,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person1949/person1949_segment1": {
+      "file": "commercial/hospitality/person1949/person1949_segment1.mp4",
+      "size_mb": 70.305,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9828,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person1976/person1976_segment4": {
+      "file": "commercial/hospitality/person1976/person1976_segment4.mp4",
+      "size_mb": 70.275,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9823,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person1993/person1993_segment2": {
+      "file": "commercial/hospitality/person1993/person1993_segment2.mp4",
+      "size_mb": 70.322,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9830,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person2006/person2006_segment2": {
+      "file": "commercial/hospitality/person2006/person2006_segment2.mp4",
+      "size_mb": 70.317,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9829,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person2022/person2022_segment2": {
+      "file": "commercial/hospitality/person2022/person2022_segment2.mp4",
+      "size_mb": 70.326,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9830,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person2053/person2053_segment2": {
+      "file": "commercial/hospitality/person2053/person2053_segment2.mp4",
+      "size_mb": 56.83,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 48.5,
+        "nb_frames": 1455,
+        "bitrate_kbps": 9828,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person2098/person2098_segment1": {
+      "file": "commercial/hospitality/person2098/person2098_segment1.mp4",
+      "size_mb": 71.493,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 61.0,
+        "nb_frames": 1830,
+        "bitrate_kbps": 9830,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person2122/person2122_segment3": {
+      "file": "commercial/hospitality/person2122/person2122_segment3.mp4",
+      "size_mb": 70.32,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9830,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person2211/person2211_segment3": {
+      "file": "commercial/hospitality/person2211/person2211_segment3.mp4",
+      "size_mb": 70.319,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9830,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person2212/person2212_segment1": {
+      "file": "commercial/hospitality/person2212/person2212_segment1.mp4",
+      "size_mb": 70.316,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9829,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person2218/person2218_segment3": {
+      "file": "commercial/hospitality/person2218/person2218_segment3.mp4",
+      "size_mb": 70.282,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9824,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person2221/person2221_segment4": {
+      "file": "commercial/hospitality/person2221/person2221_segment4.mp4",
+      "size_mb": 71.498,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 61.0,
+        "nb_frames": 1830,
+        "bitrate_kbps": 9831,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person2246/person2246_segment1": {
+      "file": "commercial/hospitality/person2246/person2246_segment1.mp4",
+      "size_mb": 70.326,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9831,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person2253/person2253_segment6": {
+      "file": "commercial/hospitality/person2253/person2253_segment6.mp4",
+      "size_mb": 70.33,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9831,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person2263/person2263_segment2": {
+      "file": "commercial/hospitality/person2263/person2263_segment2.mp4",
+      "size_mb": 70.324,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9830,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person2278/person2278_segment2": {
+      "file": "commercial/hospitality/person2278/person2278_segment2.mp4",
+      "size_mb": 50.985,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 43.5,
+        "nb_frames": 1305,
+        "bitrate_kbps": 9830,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person2301/person2301_segment2": {
+      "file": "commercial/hospitality/person2301/person2301_segment2.mp4",
+      "size_mb": 70.321,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9830,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person2307/person2307_segment3": {
+      "file": "commercial/hospitality/person2307/person2307_segment3.mp4",
+      "size_mb": 70.309,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9828,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person2307/person2307_segment4": {
+      "file": "commercial/hospitality/person2307/person2307_segment4.mp4",
+      "size_mb": 70.349,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9834,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person2350/person2350_segment4": {
+      "file": "commercial/hospitality/person2350/person2350_segment4.mp4",
+      "size_mb": 70.279,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9824,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person2350/person2350_segment5": {
+      "file": "commercial/hospitality/person2350/person2350_segment5.mp4",
+      "size_mb": 70.327,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9831,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person2384/person2384_segment1": {
+      "file": "commercial/hospitality/person2384/person2384_segment1.mp4",
+      "size_mb": 70.317,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9829,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person2386/person2386_segment4": {
+      "file": "commercial/hospitality/person2386/person2386_segment4.mp4",
+      "size_mb": 70.318,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9829,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person2411/person2411_segment1": {
+      "file": "commercial/hospitality/person2411/person2411_segment1.mp4",
+      "size_mb": 70.329,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9831,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person2432/person2432_segment1": {
+      "file": "commercial/hospitality/person2432/person2432_segment1.mp4",
+      "size_mb": 70.322,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9830,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person2445/person2445_segment2": {
+      "file": "commercial/hospitality/person2445/person2445_segment2.mp4",
+      "size_mb": 70.322,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9830,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person2459/person2459_segment2": {
+      "file": "commercial/hospitality/person2459/person2459_segment2.mp4",
+      "size_mb": 70.293,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9826,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person2463/person2463_segment2": {
+      "file": "commercial/hospitality/person2463/person2463_segment2.mp4",
+      "size_mb": 70.373,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9837,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person2463/person2463_segment3": {
+      "file": "commercial/hospitality/person2463/person2463_segment3.mp4",
+      "size_mb": 70.321,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9830,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person2470/person2470_segment1": {
+      "file": "commercial/hospitality/person2470/person2470_segment1.mp4",
+      "size_mb": 71.492,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 61.0,
+        "nb_frames": 1830,
+        "bitrate_kbps": 9830,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person2492/person2492_segment1": {
+      "file": "commercial/hospitality/person2492/person2492_segment1.mp4",
+      "size_mb": 71.509,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 61.0,
+        "nb_frames": 1830,
+        "bitrate_kbps": 9832,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person2553/person2553_segment3": {
+      "file": "commercial/hospitality/person2553/person2553_segment3.mp4",
+      "size_mb": 71.48,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 61.0,
+        "nb_frames": 1830,
+        "bitrate_kbps": 9828,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person2556/person2556_segment1": {
+      "file": "commercial/hospitality/person2556/person2556_segment1.mp4",
+      "size_mb": 71.479,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 61.0,
+        "nb_frames": 1830,
+        "bitrate_kbps": 9828,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person2584/person2584_segment1": {
+      "file": "commercial/hospitality/person2584/person2584_segment1.mp4",
+      "size_mb": 71.491,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 61.0,
+        "nb_frames": 1830,
+        "bitrate_kbps": 9830,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person2601/person2601_segment3": {
+      "file": "commercial/hospitality/person2601/person2601_segment3.mp4",
+      "size_mb": 70.322,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9830,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person2607/person2607_segment3": {
+      "file": "commercial/hospitality/person2607/person2607_segment3.mp4",
+      "size_mb": 70.349,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9834,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person2611/person2611_segment3": {
+      "file": "commercial/hospitality/person2611/person2611_segment3.mp4",
+      "size_mb": 70.321,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9830,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person2635/person2635_segment1": {
+      "file": "commercial/hospitality/person2635/person2635_segment1.mp4",
+      "size_mb": 70.335,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9832,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "commercial/hospitality/person2641/person2641_segment2": {
+      "file": "commercial/hospitality/person2641/person2641_segment2.mp4",
+      "size_mb": 70.32,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 60.0,
+        "nb_frames": 1800,
+        "bitrate_kbps": 9830,
+        "pix_fmt": "yuvj420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    }
+  }
+}

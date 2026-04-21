@@ -12,7 +12,7 @@
   "qp:qualityProfile": {
     "qp:schemaVersion": "1.0",
     "qp:evalLevel": "metadata",
-    "qp:evaluatedAt": "2026-04-20T23:56:37Z",
+    "qp:evaluatedAt": "2026-04-21T00:56:56Z",
     "qp:evaluatedBy": "open-data-eval",
     "scores": {
       "fps": {
@@ -357,6 +357,75 @@
           "Und-ML"
         ]
       }
+    },
+    "file_eval": {
+      "eval_type": "file",
+      "evaluated_at": "2026-04-21T00:56:51.349546+00:00",
+      "dataset_path": "/Users/varun/Downloads/HA-Ego-Samples",
+      "summary": {
+        "total_files": 100,
+        "total_duration_sec": 5898.133,
+        "total_hours": 1.63837,
+        "total_frames": 176944,
+        "total_size_mb": 7150.019,
+        "resolutions": {
+          "1920x1080": 100
+        },
+        "codecs": {
+          "h264": 100
+        },
+        "clips_with_audio": 0,
+        "clips_without_audio": 100
+      },
+      "distributions": {
+        "fps": {
+          "n": 100,
+          "mean": 30.0,
+          "min": 30.0,
+          "max": 30.0,
+          "std": 0.0,
+          "p5": 30.0,
+          "p95": 30.0
+        },
+        "duration_sec": {
+          "n": 100,
+          "mean": 58.9813,
+          "min": 33.0,
+          "max": 75.0,
+          "std": 5.1152,
+          "p5": 47.6333,
+          "p95": 62.0
+        },
+        "bitrate_kbps": {
+          "n": 100,
+          "mean": 10174.34,
+          "min": 9796,
+          "max": 32597,
+          "std": 2336.9656,
+          "p5": 9824,
+          "p95": 9857
+        },
+        "nb_frames": {
+          "n": 100,
+          "mean": 1769.44,
+          "min": 990,
+          "max": 2250,
+          "std": 153.4559,
+          "p5": 1429,
+          "p95": 1860
+        },
+        "file_size_mb": {
+          "n": 100,
+          "mean": 71.5002,
+          "min": 40.776,
+          "max": 233.177,
+          "std": 17.6547,
+          "p5": 55.981,
+          "p95": 72.669
+        }
+      },
+      "annotation_coverage": null,
+      "discrepancies": null
     }
   }
 }
