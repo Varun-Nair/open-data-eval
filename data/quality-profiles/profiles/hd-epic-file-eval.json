@@ -1,0 +1,206 @@
+{
+  "eval_type": "file",
+  "dataset_path": "/Users/maitreemeher/Desktop/Github/open-data-eval-1/data/file-eval-samples/hd-epic-prepared",
+  "evaluated_at": "2026-04-17T22:38:51.343247+00:00",
+  "summary": {
+    "total_files": 7,
+    "files_probed": 7,
+    "files_with_errors": 0,
+    "total_duration_sec": 1344.433,
+    "total_hours": 0.37345,
+    "total_frames": 40333,
+    "total_size_mb": 1550.71,
+    "resolutions": {
+      "1408x1408": 6
+    },
+    "codecs": {
+      "h264": 6
+    },
+    "clips_with_audio": 6,
+    "clips_without_audio": 0
+  },
+  "distributions": {
+    "fps": {
+      "n": 6,
+      "mean": 30.0,
+      "min": 30.0,
+      "max": 30.0,
+      "std": 0.0,
+      "p5": 30.0,
+      "p95": 30.0
+    },
+    "duration_sec": {
+      "n": 6,
+      "mean": 224.0722,
+      "min": 165.5333,
+      "max": 327.6,
+      "std": 59.3881,
+      "p5": 165.5333,
+      "p95": 241.4333
+    },
+    "bitrate_kbps": {
+      "n": 6,
+      "mean": 8991.8333,
+      "min": 8328,
+      "max": 9702,
+      "std": 514.0107,
+      "p5": 8328,
+      "p95": 9299
+    },
+    "nb_frames": {
+      "n": 6,
+      "mean": 6722.1667,
+      "min": 4966,
+      "max": 9828,
+      "std": 1781.6442,
+      "p5": 4966,
+      "p95": 7243
+    },
+    "file_size_mb": {
+      "n": 7,
+      "mean": 221.53,
+      "min": 93.75,
+      "max": 344.021,
+      "std": 79.0137,
+      "p5": 93.75,
+      "p95": 283.257
+    }
+  },
+  "annotation_coverage": {
+    "audio": {
+      "clips_covered": 7,
+      "clips_total": 7,
+      "coverage_pct": 100.0,
+      "missing": null
+    },
+    "gaze": {
+      "clips_covered": 7,
+      "clips_total": 7,
+      "coverage_pct": 100.0,
+      "missing": null
+    },
+    "narrations": {
+      "clips_covered": 7,
+      "clips_total": 7,
+      "coverage_pct": 100.0,
+      "missing": null
+    }
+  },
+  "discrepancies": null,
+  "errors": null,
+  "per_file": {
+    "P01-20240202-161354": {
+      "file": "P01-20240202-161354.mp4",
+      "size_mb": 344.021,
+      "video": {
+        "codec": "h264",
+        "width": 1408,
+        "height": 1408,
+        "fps": 30.0,
+        "duration_sec": 327.6,
+        "nb_frames": 9828,
+        "bitrate_kbps": 8671,
+        "pix_fmt": "yuv420p",
+        "has_audio": true,
+        "audio_codecs": [
+          "aac"
+        ]
+      }
+    },
+    "P01-20240202-175627": {
+      "file": "P01-20240202-175627.mp4",
+      "size_mb": 212.002,
+      "video": {
+        "codec": "h264",
+        "width": 1408,
+        "height": 1408,
+        "fps": 30.0,
+        "duration_sec": 201.733333,
+        "nb_frames": 6052,
+        "bitrate_kbps": 8677,
+        "pix_fmt": "yuv420p",
+        "has_audio": true,
+        "audio_codecs": [
+          "aac"
+        ]
+      }
+    },
+    "P01-20240203-093333": {
+      "file": "P01-20240203-093333.mp4",
+      "size_mb": 194.987,
+      "video": {
+        "codec": "h264",
+        "width": 1408,
+        "height": 1408,
+        "fps": 30.0,
+        "duration_sec": 173.333333,
+        "nb_frames": 5200,
+        "bitrate_kbps": 9299,
+        "pix_fmt": "yuv420p",
+        "has_audio": true,
+        "audio_codecs": [
+          "aac"
+        ]
+      }
+    },
+    "P01-20240203-152323": {
+      "file": "P01-20240203-152323.mp4",
+      "size_mb": 93.75,
+      "video": null
+    },
+    "P01-20240203-161757": {
+      "file": "P01-20240203-161757.mp4",
+      "size_mb": 283.257,
+      "video": {
+        "codec": "h264",
+        "width": 1408,
+        "height": 1408,
+        "fps": 30.0,
+        "duration_sec": 241.433333,
+        "nb_frames": 7243,
+        "bitrate_kbps": 9702,
+        "pix_fmt": "yuv420p",
+        "has_audio": true,
+        "audio_codecs": [
+          "aac"
+        ]
+      }
+    },
+    "P01-20240204-095114": {
+      "file": "P01-20240204-095114.mp4",
+      "size_mb": 185.712,
+      "video": {
+        "codec": "h264",
+        "width": 1408,
+        "height": 1408,
+        "fps": 30.0,
+        "duration_sec": 165.533333,
+        "nb_frames": 4966,
+        "bitrate_kbps": 9274,
+        "pix_fmt": "yuv420p",
+        "has_audio": true,
+        "audio_codecs": [
+          "aac"
+        ]
+      }
+    },
+    "P01-20240204-120411": {
+      "file": "P01-20240204-120411.mp4",
+      "size_mb": 236.981,
+      "video": {
+        "codec": "h264",
+        "width": 1408,
+        "height": 1408,
+        "fps": 30.0,
+        "duration_sec": 234.8,
+        "nb_frames": 7044,
+        "bitrate_kbps": 8328,
+        "pix_fmt": "yuv420p",
+        "has_audio": true,
+        "audio_codecs": [
+          "aac"
+        ]
+      }
+    }
+  }
+}

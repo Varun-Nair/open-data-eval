@@ -1,0 +1,394 @@
+{
+  "eval_type": "file",
+  "dataset_path": "/Users/maitreemeher/Desktop/Github/open-data-eval-1/data/file-eval-samples/egodex/clips",
+  "evaluated_at": "2026-04-18T00:30:49.793827+00:00",
+  "summary": {
+    "total_files": 20,
+    "files_probed": 20,
+    "files_with_errors": 0,
+    "total_duration_sec": 242.933,
+    "total_hours": 0.06748,
+    "total_frames": 7288,
+    "total_size_mb": 132.212,
+    "resolutions": {
+      "1920x1080": 20
+    },
+    "codecs": {
+      "mpeg4": 20
+    },
+    "clips_with_audio": 0,
+    "clips_without_audio": 20
+  },
+  "distributions": {
+    "fps": {
+      "n": 20,
+      "mean": 30.0,
+      "min": 30.0,
+      "max": 30.0,
+      "std": 0.0,
+      "p5": 30.0,
+      "p95": 30.0
+    },
+    "duration_sec": {
+      "n": 20,
+      "mean": 12.1467,
+      "min": 1.4,
+      "max": 52.5667,
+      "std": 14.2601,
+      "p5": 1.4,
+      "p95": 41.8667
+    },
+    "bitrate_kbps": {
+      "n": 20,
+      "mean": 4509.1,
+      "min": 3452,
+      "max": 7270,
+      "std": 880.9193,
+      "p5": 3452,
+      "p95": 5484
+    },
+    "nb_frames": {
+      "n": 20,
+      "mean": 364.4,
+      "min": 42,
+      "max": 1577,
+      "std": 427.8017,
+      "p5": 42,
+      "p95": 1256
+    },
+    "file_size_mb": {
+      "n": 20,
+      "mean": 6.6106,
+      "min": 0.765,
+      "max": 28.041,
+      "std": 7.5761,
+      "p5": 0.765,
+      "p95": 19.529
+    }
+  },
+  "annotation_coverage": null,
+  "discrepancies": null,
+  "errors": null,
+  "per_file": {
+    "add_remove_lid__0": {
+      "file": "add_remove_lid__0.mp4",
+      "size_mb": 1.404,
+      "video": {
+        "codec": "mpeg4",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 3.133333,
+        "nb_frames": 94,
+        "bitrate_kbps": 3756,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "arrange_topple_dominoes__0": {
+      "file": "arrange_topple_dominoes__0.mp4",
+      "size_mb": 1.209,
+      "video": {
+        "codec": "mpeg4",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 2.5,
+        "nb_frames": 75,
+        "bitrate_kbps": 4051,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "assemble_disassemble_furniture_bench_chair__0": {
+      "file": "assemble_disassemble_furniture_bench_chair__0.mp4",
+      "size_mb": 1.31,
+      "video": {
+        "codec": "mpeg4",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 2.466667,
+        "nb_frames": 74,
+        "bitrate_kbps": 4452,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "assemble_disassemble_furniture_bench_desk__0": {
+      "file": "assemble_disassemble_furniture_bench_desk__0.mp4",
+      "size_mb": 1.739,
+      "video": {
+        "codec": "mpeg4",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 4.133333,
+        "nb_frames": 124,
+        "bitrate_kbps": 3527,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "assemble_disassemble_furniture_bench_drawer__0": {
+      "file": "assemble_disassemble_furniture_bench_drawer__0.mp4",
+      "size_mb": 0.808,
+      "video": {
+        "codec": "mpeg4",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 1.4,
+        "nb_frames": 42,
+        "bitrate_kbps": 4832,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "assemble_disassemble_furniture_bench_lamp__0": {
+      "file": "assemble_disassemble_furniture_bench_lamp__0.mp4",
+      "size_mb": 0.898,
+      "video": {
+        "codec": "mpeg4",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 1.7,
+        "nb_frames": 51,
+        "bitrate_kbps": 4426,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "assemble_disassemble_furniture_bench_square_table__0": {
+      "file": "assemble_disassemble_furniture_bench_square_table__0.mp4",
+      "size_mb": 0.993,
+      "video": {
+        "codec": "mpeg4",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 2.266667,
+        "nb_frames": 68,
+        "bitrate_kbps": 3671,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "assemble_disassemble_furniture_bench_stool__0": {
+      "file": "assemble_disassemble_furniture_bench_stool__0.mp4",
+      "size_mb": 8.116,
+      "video": {
+        "codec": "mpeg4",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 13.766667,
+        "nb_frames": 413,
+        "bitrate_kbps": 4944,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "assemble_disassemble_legos__0": {
+      "file": "assemble_disassemble_legos__0.mp4",
+      "size_mb": 4.504,
+      "video": {
+        "codec": "mpeg4",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 8.0,
+        "nb_frames": 240,
+        "bitrate_kbps": 4720,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "assemble_disassemble_soft_legos__0": {
+      "file": "assemble_disassemble_soft_legos__0.mp4",
+      "size_mb": 28.041,
+      "video": {
+        "codec": "mpeg4",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 52.566667,
+        "nb_frames": 1577,
+        "bitrate_kbps": 4473,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "assemble_disassemble_structures__0": {
+      "file": "assemble_disassemble_structures__0.mp4",
+      "size_mb": 17.239,
+      "video": {
+        "codec": "mpeg4",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 41.866667,
+        "nb_frames": 1256,
+        "bitrate_kbps": 3452,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "assemble_disassemble_tiles__0": {
+      "file": "assemble_disassemble_tiles__0.mp4",
+      "size_mb": 4.958,
+      "video": {
+        "codec": "mpeg4",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 10.0,
+        "nb_frames": 300,
+        "bitrate_kbps": 4156,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "assemble_jenga__0": {
+      "file": "assemble_jenga__0.mp4",
+      "size_mb": 4.518,
+      "video": {
+        "codec": "mpeg4",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 10.0,
+        "nb_frames": 300,
+        "bitrate_kbps": 3787,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "basic_fold__0": {
+      "file": "basic_fold__0.mp4",
+      "size_mb": 13.61,
+      "video": {
+        "codec": "mpeg4",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 15.7,
+        "nb_frames": 471,
+        "bitrate_kbps": 7270,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "basic_pick_place__0": {
+      "file": "basic_pick_place__0.mp4",
+      "size_mb": 2.543,
+      "video": {
+        "codec": "mpeg4",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 4.2,
+        "nb_frames": 126,
+        "bitrate_kbps": 5075,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "boil_serve_egg__0": {
+      "file": "boil_serve_egg__0.mp4",
+      "size_mb": 19.529,
+      "video": {
+        "codec": "mpeg4",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 31.433333,
+        "nb_frames": 943,
+        "bitrate_kbps": 5210,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "braid_unbraid__0": {
+      "file": "braid_unbraid__0.mp4",
+      "size_mb": 7.684,
+      "video": {
+        "codec": "mpeg4",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 17.0,
+        "nb_frames": 510,
+        "bitrate_kbps": 3789,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "build_unstack_lego__0": {
+      "file": "build_unstack_lego__0.mp4",
+      "size_mb": 10.071,
+      "video": {
+        "codec": "mpeg4",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 15.4,
+        "nb_frames": 462,
+        "bitrate_kbps": 5484,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "charge_uncharge_airpods__0": {
+      "file": "charge_uncharge_airpods__0.mp4",
+      "size_mb": 0.765,
+      "video": {
+        "codec": "mpeg4",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 1.533333,
+        "nb_frames": 46,
+        "bitrate_kbps": 4179,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "charge_uncharge_device__0": {
+      "file": "charge_uncharge_device__0.mp4",
+      "size_mb": 2.273,
+      "video": {
+        "codec": "mpeg4",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 3.866667,
+        "nb_frames": 116,
+        "bitrate_kbps": 4928,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    }
+  }
+}

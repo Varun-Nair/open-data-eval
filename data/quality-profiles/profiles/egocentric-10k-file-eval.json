@@ -1,0 +1,85 @@
+{
+  "eval_type": "file",
+  "dataset_path": "/Users/maitreemeher/Desktop/Github/open-data-eval-1/data/file-eval-samples/egocentric-10k-prepared",
+  "evaluated_at": "2026-04-17T23:38:26.341249+00:00",
+  "summary": {
+    "total_files": 1,
+    "files_probed": 1,
+    "files_with_errors": 0,
+    "total_duration_sec": 1199.833,
+    "total_hours": 0.33329,
+    "total_frames": 35995,
+    "total_size_mb": 571.991,
+    "resolutions": {
+      "1920x1080": 1
+    },
+    "codecs": {
+      "hevc": 1
+    },
+    "clips_with_audio": 0,
+    "clips_without_audio": 1
+  },
+  "distributions": {
+    "fps": {
+      "n": 1,
+      "mean": 30.0,
+      "min": 30.0,
+      "max": 30.0
+    },
+    "duration_sec": {
+      "n": 1,
+      "mean": 1199.8333,
+      "min": 1199.8333,
+      "max": 1199.8333
+    },
+    "bitrate_kbps": {
+      "n": 1,
+      "mean": 3998,
+      "min": 3998,
+      "max": 3998
+    },
+    "nb_frames": {
+      "n": 1,
+      "mean": 35995,
+      "min": 35995,
+      "max": 35995
+    },
+    "file_size_mb": {
+      "n": 1,
+      "mean": 571.991,
+      "min": 571.991,
+      "max": 571.991
+    }
+  },
+  "annotation_coverage": null,
+  "discrepancies": [
+    {
+      "source": "metadata/clips.json",
+      "clip_id": "factory001_worker001_00002",
+      "field": "duration_sec",
+      "claimed": 1200.0,
+      "actual": 1199.8333,
+      "delta": -0.1667,
+      "severity": "low"
+    }
+  ],
+  "errors": null,
+  "per_file": {
+    "factory001_worker001_00002": {
+      "file": "factory001_worker001_00002.mp4",
+      "size_mb": 571.991,
+      "video": {
+        "codec": "hevc",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30.0,
+        "duration_sec": 1199.833333,
+        "nb_frames": 35995,
+        "bitrate_kbps": 3998,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    }
+  }
+}

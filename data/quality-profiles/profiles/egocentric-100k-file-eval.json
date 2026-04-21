@@ -1,0 +1,314 @@
+{
+  "eval_type": "file",
+  "dataset_path": "/Users/maitreemeher/Desktop/Github/open-data-eval-1/data/file-eval-samples/egocentric-100k-prepared",
+  "evaluated_at": "2026-04-17T23:39:08.727586+00:00",
+  "summary": {
+    "total_files": 15,
+    "files_probed": 15,
+    "files_with_errors": 0,
+    "total_duration_sec": 2697.333,
+    "total_hours": 0.74926,
+    "total_frames": 80920,
+    "total_size_mb": 190.599,
+    "resolutions": {
+      "456x256": 15
+    },
+    "codecs": {
+      "hevc": 15
+    },
+    "clips_with_audio": 0,
+    "clips_without_audio": 15
+  },
+  "distributions": {
+    "fps": {
+      "n": 15,
+      "mean": 30.0,
+      "min": 30.0,
+      "max": 30.0,
+      "std": 0.0,
+      "p5": 30.0,
+      "p95": 30.0
+    },
+    "duration_sec": {
+      "n": 15,
+      "mean": 179.8222,
+      "min": 179.7,
+      "max": 180.0,
+      "std": 0.1096,
+      "p5": 179.7,
+      "p95": 180.0
+    },
+    "bitrate_kbps": {
+      "n": 15,
+      "mean": 620.3333,
+      "min": 577,
+      "max": 666,
+      "std": 26.669,
+      "p5": 577,
+      "p95": 650
+    },
+    "nb_frames": {
+      "n": 15,
+      "mean": 5394.6667,
+      "min": 5391,
+      "max": 5400,
+      "std": 3.2878,
+      "p5": 5391,
+      "p95": 5400
+    },
+    "file_size_mb": {
+      "n": 15,
+      "mean": 12.7066,
+      "min": 3.109,
+      "max": 14.296,
+      "std": 2.705,
+      "p5": 3.109,
+      "p95": 13.978
+    }
+  },
+  "annotation_coverage": null,
+  "discrepancies": null,
+  "errors": null,
+  "per_file": {
+    "factory_001_worker_001_0000": {
+      "file": "factory_001_worker_001_0000.mp4",
+      "size_mb": 12.398,
+      "video": {
+        "codec": "hevc",
+        "width": 456,
+        "height": 256,
+        "fps": 30.0,
+        "duration_sec": 179.7,
+        "nb_frames": 5391,
+        "bitrate_kbps": 577,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "factory_001_worker_001_0001": {
+      "file": "factory_001_worker_001_0001.mp4",
+      "size_mb": 13.401,
+      "video": {
+        "codec": "hevc",
+        "width": 456,
+        "height": 256,
+        "fps": 30.0,
+        "duration_sec": 179.733333,
+        "nb_frames": 5392,
+        "bitrate_kbps": 624,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "factory_001_worker_001_0002": {
+      "file": "factory_001_worker_001_0002.mp4",
+      "size_mb": 13.6,
+      "video": {
+        "codec": "hevc",
+        "width": 456,
+        "height": 256,
+        "fps": 30.0,
+        "duration_sec": 180.0,
+        "nb_frames": 5400,
+        "bitrate_kbps": 632,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "factory_001_worker_001_0003": {
+      "file": "factory_001_worker_001_0003.mp4",
+      "size_mb": 13.165,
+      "video": {
+        "codec": "hevc",
+        "width": 456,
+        "height": 256,
+        "fps": 30.0,
+        "duration_sec": 179.766667,
+        "nb_frames": 5393,
+        "bitrate_kbps": 613,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "factory_001_worker_001_0004": {
+      "file": "factory_001_worker_001_0004.mp4",
+      "size_mb": 13.459,
+      "video": {
+        "codec": "hevc",
+        "width": 456,
+        "height": 256,
+        "fps": 30.0,
+        "duration_sec": 179.733333,
+        "nb_frames": 5392,
+        "bitrate_kbps": 627,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "factory_001_worker_001_0005": {
+      "file": "factory_001_worker_001_0005.mp4",
+      "size_mb": 13.333,
+      "video": {
+        "codec": "hevc",
+        "width": 456,
+        "height": 256,
+        "fps": 30.0,
+        "duration_sec": 179.966667,
+        "nb_frames": 5399,
+        "bitrate_kbps": 620,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "factory_001_worker_001_0006": {
+      "file": "factory_001_worker_001_0006.mp4",
+      "size_mb": 13.074,
+      "video": {
+        "codec": "hevc",
+        "width": 456,
+        "height": 256,
+        "fps": 30.0,
+        "duration_sec": 179.833333,
+        "nb_frames": 5395,
+        "bitrate_kbps": 608,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "factory_001_worker_001_0007": {
+      "file": "factory_001_worker_001_0007.mp4",
+      "size_mb": 12.864,
+      "video": {
+        "codec": "hevc",
+        "width": 456,
+        "height": 256,
+        "fps": 30.0,
+        "duration_sec": 179.766667,
+        "nb_frames": 5393,
+        "bitrate_kbps": 599,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "factory_001_worker_001_0008": {
+      "file": "factory_001_worker_001_0008.mp4",
+      "size_mb": 13.551,
+      "video": {
+        "codec": "hevc",
+        "width": 456,
+        "height": 256,
+        "fps": 30.0,
+        "duration_sec": 179.766667,
+        "nb_frames": 5393,
+        "bitrate_kbps": 631,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "factory_001_worker_001_0009": {
+      "file": "factory_001_worker_001_0009.mp4",
+      "size_mb": 14.296,
+      "video": {
+        "codec": "hevc",
+        "width": 456,
+        "height": 256,
+        "fps": 30.0,
+        "duration_sec": 179.766667,
+        "nb_frames": 5393,
+        "bitrate_kbps": 666,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "factory_001_worker_001_0010": {
+      "file": "factory_001_worker_001_0010.mp4",
+      "size_mb": 13.926,
+      "video": {
+        "codec": "hevc",
+        "width": 456,
+        "height": 256,
+        "fps": 30.0,
+        "duration_sec": 179.766667,
+        "nb_frames": 5393,
+        "bitrate_kbps": 648,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "factory_001_worker_001_0011": {
+      "file": "factory_001_worker_001_0011.mp4",
+      "size_mb": 12.611,
+      "video": {
+        "codec": "hevc",
+        "width": 456,
+        "height": 256,
+        "fps": 30.0,
+        "duration_sec": 179.766667,
+        "nb_frames": 5393,
+        "bitrate_kbps": 587,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "factory_001_worker_001_0012": {
+      "file": "factory_001_worker_001_0012.mp4",
+      "size_mb": 13.834,
+      "video": {
+        "codec": "hevc",
+        "width": 456,
+        "height": 256,
+        "fps": 30.0,
+        "duration_sec": 179.766667,
+        "nb_frames": 5393,
+        "bitrate_kbps": 644,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "factory_001_worker_001_0013": {
+      "file": "factory_001_worker_001_0013.mp4",
+      "size_mb": 13.978,
+      "video": {
+        "codec": "hevc",
+        "width": 456,
+        "height": 256,
+        "fps": 30.0,
+        "duration_sec": 180.0,
+        "nb_frames": 5400,
+        "bitrate_kbps": 650,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "factory_001_worker_001_0014": {
+      "file": "factory_001_worker_001_0014.mp4",
+      "size_mb": 3.109,
+      "video": {
+        "codec": "hevc",
+        "width": 456,
+        "height": 256,
+        "fps": 30.0,
+        "duration_sec": 180.0,
+        "nb_frames": 5400,
+        "bitrate_kbps": 579,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    }
+  }
+}
