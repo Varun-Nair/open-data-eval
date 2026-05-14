@@ -340,7 +340,7 @@ def run_file_eval(dataset_dir: Path, output_path: Path | None = None) -> dict:
     if clips_dir.exists():
         exts = ("*.mp4", "*.MP4", "*.mov", "*.MOV", "*.avi", "*.AVI", "*.mkv", "*.MKV", "*.webm")
         video_files = sorted(
-            p for ext in exts for p in clips_dir.glob(ext)
+            p for ext in exts for p in clips_dir.rglob(ext)
         )
     else:
         video_files = sorted(
@@ -360,7 +360,9 @@ def run_file_eval(dataset_dir: Path, output_path: Path | None = None) -> dict:
     errors: list[dict] = []
 
     for vf in video_files:
-        cid = str(vf.relative_to(dataset_dir).with_suffix(""))
+        cid = vf.stem
+        if cid in per_file:
+            cid = str(vf.relative_to(dataset_dir).with_suffix(""))
         print(f"    {vf.name}", end="", flush=True)
         probe, err = run_ffprobe(vf)
         if err:

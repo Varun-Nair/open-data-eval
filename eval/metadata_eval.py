@@ -118,6 +118,7 @@ TARGET_DATASETS = [
     "Assembly101", "DexYCB", "EgoBody", "Aria Digital Twin (ADT)",
     "MECCANO", "H2O", "Nymeria", "GIMO",
     "RoboX EgoGrasp v0.1",
+    "RoboX EgoGrasp v0.2",
     "Human Archive (HA-Multi)",
     "Human Archive (HA-Ego)",
 ]
@@ -567,6 +568,25 @@ PAPER_METADATA = {
         "geo_locations": None,                 # crowdsourced; varied global locations
         "arxiv_id": None,                      # no paper; dataset-only release
         "paper_ref": "HuggingFace:RoboXTechnologies/RoboX-EgoGrasp-v0.1",
+    },
+    "RoboX EgoGrasp v0.2": {
+        # HuggingFace: RoboXTechnologies/RoboX-Egocentric-Collection-v0.2 / ego_grasp
+        # Dataset card is gated-auto. ego_grasp README title reports export version 0.5.
+        "capture_device": "ARKit-capable smartphone via RoboX mobile app (crowdsourced first-person capture)",
+        "calibration_tier": 0.35,              # Per-frame intrinsics documented; 6DoF camera pose also provided.
+                                               # No distortion parameters or independent validation reported in card.
+        "calibration_notes": "README reports per-frame camera intrinsics, ARKit 6DoF camera pose, velocity, IMU, exposure, scene structure, and light estimates when device capability allows. No distortion parameters or independent calibration validation are reported.",
+        "lens_type": "rectilinear",            # smartphone wide camera; exact lens/FOV not stated
+        "fov_degrees": None,
+        "fps_override": 57.8424,               # file_eval mean across 15,587 MP4s; 14,463 clips are 60fps.
+        "resolution_override": "1440x1920",    # file_eval dominant resolution: 15,586 portrait clips; 1 landscape clip.
+        "annotation_coverage": 0.956,          # hand_keypoints 7355/7697; object_tracks 7352/7697; sensors 7634/7697.
+        "annotation_notes": "README coverage: hand_keypoints 7355/7697 clips (95.6%), object_tracks 7352/7697 (95.5%), sensors 7634/7697 (99.2%), actions 7696/7697 (~100%), environment 7697/7697 (100%), people 7326/7697 (95.2%). Temporal object tracks cover 2261/7697 clips (29.4%); AI fallback object tracks cover 7319/7697 (95.1%).",
+        "total_hours_override": 7.44422,       # file_eval total duration; README claims 10h04m.
+        "download_size_gb": 19.851,            # HF paths-info: full ego_grasp folder, 19.154 GiB video
+        "geo_locations": None,                 # crowdsourced; locations not enumerated
+        "arxiv_id": None,
+        "paper_ref": "HuggingFace:RoboXTechnologies/RoboX-Egocentric-Collection-v0.2#ego_grasp",
     },
     "Human Archive (HA-Multi)": {
         # HuggingFace: humanarchive/HA-Multi-Samples (no arXiv paper)

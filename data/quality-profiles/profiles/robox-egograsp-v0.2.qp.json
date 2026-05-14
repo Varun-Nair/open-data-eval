@@ -6,8 +6,8 @@
     "iso": "http://opendataeval.org/iso5259/"
   },
   "@type": "cr:Dataset",
-  "name": "RoboX EgoGrasp v0.1",
-  "url": "https://huggingface.co/datasets/RoboXTechnologies/RoboX-EgoGrasp-v0.1",
+  "name": "RoboX EgoGrasp v0.2",
+  "url": "https://huggingface.co/datasets/RoboXTechnologies/RoboX-Egocentric-Collection-v0.2",
   "dct:conformsTo": "http://opendataeval.org/qp/1.0",
   "qp:qualityProfile": {
     "qp:schemaVersion": "1.0",
@@ -17,15 +17,15 @@
     "scores": {
       "fps": {
         "score": 1.0,
-        "raw_value": 60.0,
+        "raw_value": 57.8424,
         "method": "piecewise_continuous",
-        "source": "paper:HuggingFace:RoboXTechnologies/RoboX-EgoGrasp-v0.1",
+        "source": "paper:HuggingFace:RoboXTechnologies/RoboX-Egocentric-Collection-v0.2#ego_grasp",
         "iso_mapping": "Acc-ML"
       },
       "resolution": {
         "score": 1.0,
-        "width": 1920,
-        "height": 1440,
+        "width": 1440,
+        "height": 1920,
         "short_edge": 1440,
         "tier": "1080p+",
         "method": "piecewise_continuous",
@@ -36,10 +36,11 @@
         "modalities_present": [
           "Hand pose annotations",
           "IMU",
+          "Object bounding boxes",
           "RGB video",
           "SLAM/odometry"
         ],
-        "modality_count": 4,
+        "modality_count": 5,
         "scores_by_usecase": {
           "manipulation": {
             "critical": {
@@ -66,18 +67,18 @@
             },
             "bonus": {
               "present": [
-                "IMU"
+                "IMU",
+                "Object bounding boxes"
               ],
               "missing": [
                 "Audio",
                 "Optical flow",
-                "Object bounding boxes",
                 "End-effector pose",
                 "Segmentation masks"
               ],
-              "ratio": 0.17
+              "ratio": 0.33
             },
-            "score": 0.167
+            "score": 0.172
           },
           "action_recognition": {
             "critical": {
@@ -99,15 +100,15 @@
             "bonus": {
               "present": [
                 "Hand pose annotations",
-                "IMU"
-              ],
-              "missing": [
-                "Eye gaze",
+                "IMU",
                 "Object bounding boxes"
               ],
-              "ratio": 0.5
+              "missing": [
+                "Eye gaze"
+              ],
+              "ratio": 0.75
             },
-            "score": 0.66
+            "score": 0.69
           },
           "hand_pose_estimation": {
             "critical": {
@@ -242,9 +243,9 @@
       "camera_calibration": {
         "score": 0.35,
         "tier": "intrinsics_only",
-        "notes": "Per-frame camera intrinsics (3x3 matrix: fx, fy, cx, cy) from ARKit in sensors.jsonl. Output video is ARKit-undistorted. No distortion parameters provided in dataset files. Sensor intrinsics (1920\u00d71440) match actual video resolution (confirmed by ffprobe); clips.json metadata incorrectly claimed 1920\u00d71080.",
+        "notes": "README reports per-frame camera intrinsics, ARKit 6DoF camera pose, velocity, IMU, exposure, scene structure, and light estimates when device capability allows. No distortion parameters or independent calibration validation are reported.",
         "method": "tier",
-        "source": "paper:HuggingFace:RoboXTechnologies/RoboX-EgoGrasp-v0.1",
+        "source": "paper:HuggingFace:RoboXTechnologies/RoboX-Egocentric-Collection-v0.2#ego_grasp",
         "iso_mapping": "Aud-ML"
       },
       "license_clarity": {
@@ -257,19 +258,19 @@
         "iso_mapping": "Cpl-ML"
       },
       "accessibility": {
-        "score": 0.825,
-        "raw_score": 8.25,
-        "access_level": "Open",
+        "score": 0.725,
+        "raw_score": 7.25,
+        "access_level": "Gated-Open",
         "url_status": "Live",
         "method": "weighted_sum_normalized",
         "source": "catalog",
         "iso_mapping": "Acs-ML"
       },
       "scale": {
-        "score": 0.003,
-        "total_hours": 0.026,
+        "score": 0.232,
+        "total_hours": 7.44422,
         "method": "log10(hrs+1)/log10(10001)",
-        "source": "paper:HuggingFace:RoboXTechnologies/RoboX-EgoGrasp-v0.1",
+        "source": "paper:HuggingFace:RoboXTechnologies/RoboX-Egocentric-Collection-v0.2#ego_grasp",
         "iso_mapping": "Eff-ML"
       },
       "dataloader": {
@@ -288,17 +289,17 @@
         "iso_mapping": "Und-ML"
       },
       "annotation_coverage": {
-        "score": 1.0,
-        "notes": "All 10 clips annotated: per-frame 21-joint 2D+3D hand keypoints (both hands, grip type, finger curl angles), action segments (grasp/idle), and per-frame sensor data (IMU + 6DoF camera pose). Object tracks present for 1/10 clips only. AI-assisted annotations via Gemini 2.5 Flash Lite, human-verified.",
+        "score": 0.956,
+        "notes": "README coverage: hand_keypoints 7355/7697 clips (95.6%), object_tracks 7352/7697 (95.5%), sensors 7634/7697 (99.2%), actions 7696/7697 (~100%), environment 7697/7697 (100%), people 7326/7697 (95.2%). Temporal object tracks cover 2261/7697 clips (29.4%); AI fallback object tracks cover 7319/7697 (95.1%).",
         "method": "ratio",
-        "source": "paper:HuggingFace:RoboXTechnologies/RoboX-EgoGrasp-v0.1",
+        "source": "paper:HuggingFace:RoboXTechnologies/RoboX-Egocentric-Collection-v0.2#ego_grasp",
         "iso_mapping": "Com-ML"
       },
       "download_efficiency": {
-        "score": 0.5,
-        "hours_per_gb": 0.1204,
-        "total_hours": 0.026,
-        "download_size_gb": 0.216,
+        "score": 0.75,
+        "hours_per_gb": 0.375,
+        "total_hours": 7.44422,
+        "download_size_gb": 19.851,
         "method": "percentile_rank",
         "source": "catalog+paper",
         "iso_mapping": "Eff-ML"
@@ -311,8 +312,8 @@
         "iso_mapping": "Div-ML"
       },
       "demographic_diversity": {
-        "score": 0.115,
-        "participants": 2.0,
+        "score": 0.393,
+        "participants": 42.0,
         "geographic_locations": 1,
         "method": "log_normalized_product",
         "source": "catalog+paper",
@@ -321,20 +322,20 @@
     },
     "classifications": {
       "capture_device": {
-        "value": "Smartphone (iPhone; crowdsourced via RoboX mobile app)",
+        "value": "ARKit-capable smartphone via RoboX mobile app (crowdsourced first-person capture)",
         "documented": true,
-        "source": "paper:HuggingFace:RoboXTechnologies/RoboX-EgoGrasp-v0.1",
+        "source": "paper:HuggingFace:RoboXTechnologies/RoboX-Egocentric-Collection-v0.2#ego_grasp",
         "iso_mapping": "Ide-ML"
       },
       "lens_type": {
         "value": "rectilinear",
         "fov_degrees": null,
         "documented": true,
-        "source": "paper:HuggingFace:RoboXTechnologies/RoboX-EgoGrasp-v0.1",
+        "source": "paper:HuggingFace:RoboXTechnologies/RoboX-Egocentric-Collection-v0.2#ego_grasp",
         "iso_mapping": "Ide-ML"
       },
       "video_format": {
-        "value": "MP4 (H.265)",
+        "value": "MP4 (H.264; 1 HEVC outlier)",
         "source": "catalog"
       },
       "annotation_format": {
@@ -343,8 +344,8 @@
       }
     },
     "context": {
-      "total_hours": 0.026,
-      "participants": "2",
+      "total_hours": 7.44422,
+      "participants": "42",
       "scenes_environments": "Not specified (crowdsourced, varied)",
       "commercial_use": "No",
       "category": "Hand-object interaction",
@@ -368,278 +369,157 @@
     },
     "file_eval": {
       "eval_type": "file",
-      "evaluated_at": "2026-04-17T13:00:49.054170+00:00",
-      "dataset_path": "/Users/varun/Downloads/RoboX-EgoGrasp-v0.1",
+      "evaluated_at": "2026-05-14T22:36:00.283283+00:00",
+      "dataset_path": "/Users/varun/Downloads/RoboX-EgoGrasp-v0.2",
       "summary": {
-        "total_files": 10,
-        "files_probed": 10,
+        "total_files": 15587,
+        "files_probed": 15587,
         "files_with_errors": 0,
-        "total_duration_sec": 92.605,
-        "total_hours": 0.02572,
-        "total_frames": 5554,
-        "total_size_mb": 103.15,
+        "total_duration_sec": 26799.179,
+        "total_hours": 7.44422,
+        "total_frames": 1537658,
+        "total_size_mb": 19614.089,
         "resolutions": {
-          "1920x1440": 10
+          "1440x1920": 15586,
+          "1920x1440": 1
         },
         "codecs": {
-          "hevc": 10
+          "h264": 15586,
+          "hevc": 1
         },
         "clips_with_audio": 0,
-        "clips_without_audio": 10
+        "clips_without_audio": 15587
       },
       "distributions": {
         "fps": {
-          "n": 10,
-          "mean": 60.0,
-          "min": 60.0,
+          "n": 15587,
+          "mean": 57.8424,
+          "min": 20.0,
           "max": 60.0,
-          "std": 0.0,
-          "p5": 60.0,
+          "std": 7.756,
+          "p5": 30.0,
           "p95": 60.0
         },
         "duration_sec": {
-          "n": 10,
-          "mean": 9.2605,
-          "min": 6.4867,
-          "max": 13.555,
-          "std": 2.5133,
-          "p5": 6.4867,
-          "p95": 13.205
+          "n": 15587,
+          "mean": 1.7193,
+          "min": 0.0167,
+          "max": 15.0,
+          "std": 1.5285,
+          "p5": 0.65,
+          "p95": 4.5
         },
         "bitrate_kbps": {
-          "n": 10,
-          "mean": 9333.4,
-          "min": 9221,
-          "max": 9488,
-          "std": 105.1202,
-          "p5": 9221,
-          "p95": 9445
+          "n": 15587,
+          "mean": 6552.4055,
+          "min": 1158,
+          "max": 47803,
+          "std": 2432.9938,
+          "p5": 3339,
+          "p95": 10779
         },
         "nb_frames": {
-          "n": 10,
-          "mean": 555.4,
-          "min": 389,
-          "max": 813,
-          "std": 150.756,
-          "p5": 389,
-          "p95": 792
+          "n": 15587,
+          "mean": 98.65,
+          "min": 1,
+          "max": 900,
+          "std": 88.7485,
+          "p5": 38,
+          "p95": 270
         },
         "file_size_mb": {
-          "n": 10,
-          "mean": 10.315,
-          "min": 7.289,
-          "max": 15.12,
-          "std": 2.8299,
-          "p5": 7.289,
-          "p95": 14.947
+          "n": 15587,
+          "mean": 1.2584,
+          "min": 0.038,
+          "max": 19.956,
+          "std": 1.113,
+          "p5": 0.372,
+          "p95": 3.234
         }
       },
       "annotation_coverage": {
         "actions": {
-          "clips_covered": 10,
-          "clips_total": 10,
+          "clips_covered": 7696,
+          "clips_total": 7697,
           "coverage_pct": 100.0,
-          "missing": null
+          "missing": null,
+          "source": "ego_grasp README.md / VALIDATION_REPORT.json"
+        },
+        "environment": {
+          "clips_covered": 7697,
+          "clips_total": 7697,
+          "coverage_pct": 100.0,
+          "missing": null,
+          "source": "ego_grasp README.md / VALIDATION_REPORT.json"
         },
         "hand_keypoints": {
-          "clips_covered": 10,
-          "clips_total": 10,
-          "coverage_pct": 100.0,
-          "missing": null
+          "clips_covered": 7355,
+          "clips_total": 7697,
+          "coverage_pct": 95.6,
+          "missing": null,
+          "source": "ego_grasp README.md / VALIDATION_REPORT.json"
         },
         "object_tracks": {
-          "clips_covered": 1,
-          "clips_total": 10,
-          "coverage_pct": 10.0,
-          "missing": [
-            "clip_000001",
-            "clip_000002",
-            "clip_000003",
-            "clip_000005",
-            "clip_000006",
-            "clip_000007",
-            "clip_000008",
-            "clip_000009",
-            "clip_000010"
-          ]
+          "clips_covered": 7352,
+          "clips_total": 7697,
+          "coverage_pct": 95.5,
+          "missing": null,
+          "source": "ego_grasp README.md / VALIDATION_REPORT.json"
+        },
+        "object_tracks_temporal": {
+          "clips_covered": 2261,
+          "clips_total": 7697,
+          "coverage_pct": 29.4,
+          "missing": null,
+          "source": "ego_grasp README.md"
+        },
+        "object_tracks_ai_fallback": {
+          "clips_covered": 7319,
+          "clips_total": 7697,
+          "coverage_pct": 95.1,
+          "missing": null,
+          "source": "ego_grasp README.md"
+        },
+        "people": {
+          "clips_covered": 7326,
+          "clips_total": 7697,
+          "coverage_pct": 95.2,
+          "missing": null,
+          "source": "ego_grasp README.md / VALIDATION_REPORT.json"
         },
         "sensors": {
-          "clips_covered": 10,
-          "clips_total": 10,
-          "coverage_pct": 100.0,
-          "missing": null
+          "clips_covered": 7634,
+          "clips_total": 7697,
+          "coverage_pct": 99.2,
+          "missing": null,
+          "source": "ego_grasp README.md / VALIDATION_REPORT.json"
         }
       },
       "discrepancies": [
         {
-          "source": "metadata/clips.json",
-          "clip_id": "clip_000001",
-          "field": "total_frames",
-          "claimed": 165,
-          "actual": 792,
-          "delta": 627,
-          "severity": "low"
+          "source": "ego_grasp README.md / VALIDATION_REPORT.json vs HuggingFace file listing",
+          "field": "total_clips",
+          "claimed": 7697,
+          "actual": 15587,
+          "severity": "high",
+          "note": "README and validation report claim 7,697 clips; Hugging Face lists and file_eval probed 15,587 MP4 files under ego_grasp/clips/."
         },
         {
-          "source": "metadata/clips.json",
-          "clip_id": "clip_000001",
-          "field": "resolution",
-          "claimed": "1920x1080",
-          "actual": "1920x1440",
-          "severity": "medium"
+          "source": "ego_grasp README.md vs ffprobe",
+          "field": "total_duration_sec",
+          "claimed": 36240,
+          "actual": 26799.179,
+          "delta_sec": -9440.821,
+          "severity": "medium",
+          "note": "README claims 10h04m; ffprobe sums all local MP4 durations to 7.444h."
         },
         {
-          "source": "metadata/clips.json",
-          "clip_id": "clip_000002",
-          "field": "total_frames",
-          "claimed": 100,
-          "actual": 544,
-          "delta": 444,
-          "severity": "low"
-        },
-        {
-          "source": "metadata/clips.json",
-          "clip_id": "clip_000002",
-          "field": "resolution",
-          "claimed": "1920x1080",
-          "actual": "1920x1440",
-          "severity": "medium"
-        },
-        {
-          "source": "metadata/clips.json",
-          "clip_id": "clip_000003",
-          "field": "total_frames",
-          "claimed": 74,
-          "actual": 417,
-          "delta": 343,
-          "severity": "low"
-        },
-        {
-          "source": "metadata/clips.json",
-          "clip_id": "clip_000003",
-          "field": "resolution",
-          "claimed": "1920x1080",
-          "actual": "1920x1440",
-          "severity": "medium"
-        },
-        {
-          "source": "metadata/clips.json",
-          "clip_id": "clip_000004",
-          "field": "total_frames",
-          "claimed": 68,
-          "actual": 389,
-          "delta": 321,
-          "severity": "low"
-        },
-        {
-          "source": "metadata/clips.json",
-          "clip_id": "clip_000004",
-          "field": "resolution",
-          "claimed": "1920x1080",
-          "actual": "1920x1440",
-          "severity": "medium"
-        },
-        {
-          "source": "metadata/clips.json",
-          "clip_id": "clip_000005",
-          "field": "total_frames",
-          "claimed": 80,
-          "actual": 417,
-          "delta": 337,
-          "severity": "low"
-        },
-        {
-          "source": "metadata/clips.json",
-          "clip_id": "clip_000005",
-          "field": "resolution",
-          "claimed": "1920x1080",
-          "actual": "1920x1440",
-          "severity": "medium"
-        },
-        {
-          "source": "metadata/clips.json",
-          "clip_id": "clip_000006",
-          "field": "total_frames",
-          "claimed": 85,
-          "actual": 480,
-          "delta": 395,
-          "severity": "low"
-        },
-        {
-          "source": "metadata/clips.json",
-          "clip_id": "clip_000006",
-          "field": "resolution",
-          "claimed": "1920x1080",
-          "actual": "1920x1440",
-          "severity": "medium"
-        },
-        {
-          "source": "metadata/clips.json",
-          "clip_id": "clip_000007",
-          "field": "total_frames",
-          "claimed": 125,
-          "actual": 640,
-          "delta": 515,
-          "severity": "low"
-        },
-        {
-          "source": "metadata/clips.json",
-          "clip_id": "clip_000007",
-          "field": "resolution",
-          "claimed": "1920x1080",
-          "actual": "1920x1440",
-          "severity": "medium"
-        },
-        {
-          "source": "metadata/clips.json",
-          "clip_id": "clip_000008",
-          "field": "total_frames",
-          "claimed": 97,
-          "actual": 499,
-          "delta": 402,
-          "severity": "low"
-        },
-        {
-          "source": "metadata/clips.json",
-          "clip_id": "clip_000008",
-          "field": "resolution",
-          "claimed": "1920x1080",
-          "actual": "1920x1440",
-          "severity": "medium"
-        },
-        {
-          "source": "metadata/clips.json",
-          "clip_id": "clip_000009",
-          "field": "total_frames",
-          "claimed": 107,
-          "actual": 563,
-          "delta": 456,
-          "severity": "low"
-        },
-        {
-          "source": "metadata/clips.json",
-          "clip_id": "clip_000009",
-          "field": "resolution",
-          "claimed": "1920x1080",
-          "actual": "1920x1440",
-          "severity": "medium"
-        },
-        {
-          "source": "metadata/clips.json",
-          "clip_id": "clip_000010",
-          "field": "total_frames",
-          "claimed": 159,
-          "actual": 813,
-          "delta": 654,
-          "severity": "low"
-        },
-        {
-          "source": "metadata/clips.json",
-          "clip_id": "clip_000010",
-          "field": "resolution",
-          "claimed": "1920x1080",
-          "actual": "1920x1440",
-          "severity": "medium"
+          "source": "HuggingFace API sibling listing",
+          "field": "annotation_video_stem_alignment",
+          "claimed": "7,697 annotated clips align to video clips",
+          "actual": "environment annotations match 5,112 of 15,587 MP4 stems; 2,585 annotation stems have no matching MP4 stem in API listing",
+          "severity": "medium",
+          "note": "README coverage is reported over the 7,697 validated clip set; file_eval video metrics cover every MP4 exposed under ego_grasp/clips/."
         }
       ]
     }
