@@ -121,6 +121,9 @@ TARGET_DATASETS = [
     "RoboX EgoGrasp v0.2",
     "Human Archive (HA-Multi)",
     "Human Archive (HA-Ego)",
+    "EgoSuite-Open100K (EgoStandard)",
+    "EgoSuite-Open100K (EgoPro)",
+    "EgoSuite-Open100K (EgoDemo)",
 ]
 
 
@@ -626,6 +629,64 @@ PAPER_METADATA = {
         "geo_locations": None,                 # Not specified; US-based
         "arxiv_id": None,                      # No paper; dataset-only release
         "paper_ref": "HuggingFace:humanarchive/HA-Ego-Samples",
+    },
+    "EgoSuite-Open100K (EgoStandard)": {
+        # HuggingFace: LightwheelAI/EgoStandard (no arXiv paper)
+        # Head-view line: EgoStand 80,000h + EgoStand-body 10,000h. Data ships via HF Bucket.
+        "capture_device": "Lightwheel EgoSuite wearable rig: stereo head-mounted RGB cameras (head_left / head_right, H.264); optional head depth camera and PCM audio in the MCAP schema. Specific hardware model not published.",
+        "calibration_tier": 0.85,              # Per-camera intrinsics + distortion + extrinsics published in-stream.
+                                               # No independent validation step described.
+        "calibration_notes": "Each camera publishes foxglove.CameraCalibration (width, height, intrinsic matrix K, distortion model and parameters D, rectification R, projection P) and extrinsics as foxglove.FrameTransforms in the world frame. A separate RawCameraCalibration carries the rig's pre-undistortion calibration, naming the distortion model (equiDis62 equidistant fisheye, or brown); the delivered video stream is undistorted. OpenCV camera coordinate convention. No independent calibration validation is described. Source: docs.lightwheel.net + LW-Egosuite-DevKit topic schema.",
+        "lens_type": "fisheye",                # raw model is equidistant fisheye; distributed stream is undistorted
+        "fov_degrees": None,                   # not published
+        "fps_override": None,                  # not published anywhere; catalog says Not specified
+        "resolution_override": None,           # not published anywhere; catalog says Not specified
+        "annotation_coverage": 1.0,            # 21-joint hand pose + event-level semantics on all episodes;
+                                               # 22-joint full body only on the 10,000h EgoStand-body sub-SKU
+        "annotation_notes": "All episodes carry 21-joint 3D hand pose per hand (float32 world coordinates, positions (21,3) and quaternion rotations (21,4)), head / head-camera 6-DoF pose, and temporal event-level semantic subtask descriptions (released as a complimentary add-on). Full-body 22-joint pose covers only the EgoStand-body sub-SKU, 10,000 of 90,000 planned hours. Per-frame bad_frame quality flags are published for hand, upper-body, lower-body and each camera. Source: HuggingFace dataset card + docs.lightwheel.net.",
+        "total_hours_override": None,          # catalog already carries 90000 (planned, not delivered)
+        "download_size_gb": None,              # mutable HF Bucket; total not published
+        "geo_locations": None,                 # not disaggregated for this release
+        "arxiv_id": None,
+        "paper_ref": "HuggingFace:LightwheelAI/EgoStandard",
+    },
+    "EgoSuite-Open100K (EgoPro)": {
+        # HuggingFace: LightwheelAI/EgoPro (no arXiv paper)
+        # Head-and-wrist line: EgoProStandard 8,000h + EgoProStandard-body 2,000h.
+        "capture_device": "Lightwheel EgoSuite wearable rig: stereo head-mounted RGB cameras plus left and right wrist cameras (4 synchronized H.264 views); optional head depth camera and PCM audio in the MCAP schema. Specific hardware model not published.",
+        "calibration_tier": 0.85,
+        "calibration_notes": "Per-camera foxglove.CameraCalibration (K, D, R, P) plus extrinsics as foxglove.FrameTransforms for head and wrist cameras, plus RawCameraCalibration with the pre-undistortion distortion model (equiDis62 equidistant fisheye, or brown). Delivered video is undistorted. No independent calibration validation described. Source: docs.lightwheel.net + LW-Egosuite-DevKit topic schema.",
+        "lens_type": "fisheye",
+        "fov_degrees": None,
+        "fps_override": None,
+        "resolution_override": None,
+        "annotation_coverage": 1.0,            # hand pose + semantics on all episodes;
+                                               # full body only on the 2,000h -body sub-SKU
+        "annotation_notes": "All episodes carry 21-joint 3D hand pose per hand in world coordinates, head / head-camera / wrist-camera 6-DoF pose, and temporal event-level semantic subtask descriptions. Full-body 22-joint pose covers only EgoProStandard-body, 2,000 of 10,000 planned hours. Per-frame bad_frame quality flags for pose and each camera. Source: HuggingFace dataset card + docs.lightwheel.net.",
+        "total_hours_override": None,          # catalog carries 10000 (planned)
+        "download_size_gb": None,
+        "geo_locations": None,
+        "arxiv_id": None,
+        "paper_ref": "HuggingFace:LightwheelAI/EgoPro",
+    },
+    "EgoSuite-Open100K (EgoDemo)": {
+        # HuggingFace: LightwheelAI/EgoDemo (no arXiv paper)
+        # 50h developer sample; the only EgoSuite repo holding data directly.
+        # File counts below verified by full HF tree enumeration (32,293 files) on 2026-08-22.
+        "capture_device": "Lightwheel EgoSuite wearable rig: stereo head cameras (all variants) plus left/right wrist cameras (EgoPro variants); H.264. Specific hardware model not published.",
+        "calibration_tier": 0.85,
+        "calibration_notes": "Same rig calibration as the parent SKUs: per-camera foxglove.CameraCalibration (K, D, R, P) + FrameTransforms extrinsics + RawCameraCalibration pre-undistortion model (equiDis62 / brown) in the MCAP representation. The LeRobot representation carries head-left/head-right and optional wrist camera pose per frame. No independent validation described.",
+        "lens_type": "fisheye",
+        "fov_degrees": None,
+        "fps_override": None,                  # in per-episode meta/info.json, behind the gate
+        "resolution_override": None,           # ditto
+        "annotation_coverage": 0.723,          # 1,960 annotated of 2,712 total episodes (verified by tree enumeration)
+        "annotation_notes": "Verified by HuggingFace tree enumeration: 1,960 annotated episodes (EgoStand 408, EgoStand-body 424, EgoProStandard 668, EgoProStandard-body 460, matching the MCAP file count exactly) out of 2,712 total, the remaining 752 being raw-video-only episodes (EgoRaw 266, EgoProRaw 486) with no pose or semantic annotations. Annotated episodes carry 21-joint hand pose (21,3)+(21,4), 22-joint full body (22,3)+(22,4) on the -body variants, and event-level semantic subtask descriptions; quaternions in (qw,qx,qy,qz) order, float32 world coordinates. Manifests publish stable IDs, provenance, task/scene metadata, duration, modality flags and SHA-256 checksums. 585 unique task names across variants.",
+        "total_hours_override": None,          # catalog carries 50
+        "download_size_gb": 1477.463,          # verified sum over 32,293 files; double-counts LeRobot vs MCAP duplicates
+        "geo_locations": None,
+        "arxiv_id": None,
+        "paper_ref": "HuggingFace:LightwheelAI/EgoDemo",
     },
     "EgoVerse": {
         # arXiv 2604.07607 (submitted April 2026)

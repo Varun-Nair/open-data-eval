@@ -64,3 +64,8 @@ EgoBlind,Unverified Download,Download availability not confirmed.,High
 EgoTaskQA,No License,Open data with no license specified.,Medium
 EgoSurgery,No License,Open data with no license specified.,Medium
 EgoExOR,Unverified Download,Download availability not confirmed.,High
+EgoSuite-Open100K (EgoStandard),Unverified Download,"Hours are stated as planned, not delivered. Data ships through a mutable HuggingFace Bucket; released volume not confirmed.",Medium
+EgoSuite-Open100K (EgoPro),Unverified Download,"Hours are stated as planned, not delivered. Data ships through a mutable HuggingFace Bucket; released volume not confirmed.",Medium
+EgoSuite-Open100K (EgoStandard),Missing Technical Specs,"Resolution and frame rate not published on the site, docs, dataset card or DevKit.",Medium
+EgoSuite-Open100K (EgoPro),Missing Technical Specs,"Resolution and frame rate not published on the site, docs, dataset card or DevKit.",Medium
+EgoSuite-Open100K (EgoDemo),Missing Technical Specs,"Resolution and frame rate not published on the site, docs, dataset card or DevKit.",Medium

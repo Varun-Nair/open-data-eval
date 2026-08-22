@@ -33,7 +33,7 @@ CC-BY-4.0, CC-BY-NC-4.0, CC-BY-SA-4.0, CC-BY-NC-SA-4.0, CC-BY-NC-ND-4.0, MIT, Ap
 Live, Live but broken, Dead, Redirect
 
 **Modalities** — semicolon-separated, using these terms:
-RGB video, Depth (RGB-D), Depth (stereo), Audio, IMU, Eye gaze, Hand pose annotations, Body pose annotations, Force/torque, Tactile, Motion capture, SLAM/odometry, 3D point clouds, 3D scene reconstruction, LiDAR, Event camera, Optical flow, Narrations/captions
+RGB video, Depth (RGB-D), Depth (stereo), Multi-view, Audio, IMU, Eye gaze, Hand pose annotations, Body pose annotations, Force/torque, Tactile, Motion capture, SLAM/odometry, 3D point clouds, 3D scene reconstruction, LiDAR, Event camera, Optical flow, Narrations/captions
 
 ### Formatting Rules
 

@@ -104,3 +104,6 @@ Standalone,Xperience-10M,2026,Large-scale foundation,Gated-Open,CC-BY-NC-4.0
 Standalone,xR-EgoPose,2019,Body pose,Open,Custom Academic
 UnrealEgo,UnrealEgo / UnrealEgo2,2022,Body pose,Open,Not specified
 UnrealEgo,UnrealEgo-RW,2024,Body pose,Open,Not specified
+EgoSuite,EgoSuite-Open100K (EgoStandard),2026,Large-scale foundation,Gated-Open,Custom Open
+EgoSuite,EgoSuite-Open100K (EgoPro),2026,Hand-object interaction,Gated-Open,Custom Open
+EgoSuite,EgoSuite-Open100K (EgoDemo),2026,Hand-object interaction,Gated-Open,Custom Open

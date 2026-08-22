@@ -3,7 +3,6 @@ UEC Dataset,6,Total Hours; Number of Participants; Resolution; Frame Rate (fps);
 Ego-Deliver,6,Total Hours; Number of Participants; Resolution; Frame Rate (fps); Download Size (estimated); License Type,0
 EgoK360,6,Total Hours; Number of Participants; Resolution; Frame Rate (fps); Download Size (estimated); License Type,0
 FPVO,6,Total Hours; Number of Participants; Resolution; Frame Rate (fps); Download Size (estimated); License Type,0
-TACO,3,Total Hours; Download Size (estimated); License Type,50
 OAKINK2,6,Total Hours; Number of Participants; Resolution; Frame Rate (fps); Download Size (estimated); License Type,0
 H2O,6,Total Hours; Number of Participants; Resolution; Frame Rate (fps); Download Size (estimated); License Type,0
 EgoSim,6,Total Hours; Number of Participants; Resolution; Frame Rate (fps); Download Size (estimated); License Type,0
@@ -12,8 +11,6 @@ Sanctuaria-Gaze,6,Total Hours; Number of Participants; Resolution; Frame Rate (f
 ENIGMA-360,6,Total Hours; Number of Participants; Resolution; Frame Rate (fps); Download Size (estimated); License Type,0
 AssistQ,6,Total Hours; Number of Participants; Resolution; Frame Rate (fps); Download Size (estimated); License Type,0
 EgoPER,6,Total Hours; Number of Participants; Resolution; Frame Rate (fps); Download Size (estimated); License Type,0
-Egocentric-10K,1,Number of Participants,83
-Egocentric-100K,1,Number of Participants,83
 UTokyo Paired Ego-Video (PEV),6,Total Hours; Number of Participants; Resolution; Frame Rate (fps); Download Size (estimated); License Type,0
 UTokyo Ego-Surf,6,Total Hours; Number of Participants; Resolution; Frame Rate (fps); Download Size (estimated); License Type,0
 EasyCom,6,Total Hours; Number of Participants; Resolution; Frame Rate (fps); Download Size (estimated); License Type,0
@@ -29,7 +26,6 @@ Visual Market Basket Analysis,6,Total Hours; Number of Participants; Resolution;
 EgoBlind,6,Total Hours; Number of Participants; Resolution; Frame Rate (fps); Download Size (estimated); License Type,0
 EgoTaskQA,6,Total Hours; Number of Participants; Resolution; Frame Rate (fps); Download Size (estimated); License Type,0
 EgoExOR,6,Total Hours; Number of Participants; Resolution; Frame Rate (fps); Download Size (estimated); License Type,0
-EgoVid-5M,4,Total Hours; Number of Participants; Frame Rate (fps); License Type,33
 LEMMA,5,Total Hours; Resolution; Frame Rate (fps); Download Size (estimated); License Type,17
 DoMSEV,5,Number of Participants; Resolution; Frame Rate (fps); Download Size (estimated); License Type,17
 FPHA,5,Total Hours; Resolution; Frame Rate (fps); Download Size (estimated); License Type,17
@@ -42,7 +38,6 @@ Object Search Dataset,5,Total Hours; Resolution; Frame Rate (fps); Download Size
 ENIGMA-51,5,Total Hours; Resolution; Frame Rate (fps); Download Size (estimated); License Type,17
 IndustReal,5,Total Hours; Resolution; Frame Rate (fps); Download Size (estimated); License Type,17
 CaptainCook4D,5,Number of Participants; Resolution; Frame Rate (fps); Download Size (estimated); License Type,17
-EgoCom,4,Number of Participants; Resolution; Frame Rate (fps); Download Size (estimated),33
 EgoExoLearn,5,Number of Participants; Resolution; Frame Rate (fps); Download Size (estimated); License Type,17
 MultiEgo,5,Total Hours; Resolution; Frame Rate (fps); Download Size (estimated); License Type,17
 VINST / Visual Diaries,5,Total Hours; Resolution; Frame Rate (fps); Download Size (estimated); License Type,17
@@ -50,12 +45,12 @@ EGO-CH,5,Total Hours; Resolution; Frame Rate (fps); Download Size (estimated); L
 CEN,5,Number of Participants; Resolution; Frame Rate (fps); Download Size (estimated); License Type,17
 EgoObjects,5,Total Hours; Resolution; Frame Rate (fps); Download Size (estimated); License Type,17
 EgoSurgery,5,Number of Participants; Resolution; Frame Rate (fps); Download Size (estimated); License Type,17
+EgoVid-5M,4,Total Hours; Number of Participants; Frame Rate (fps); License Type,33
+EgoCom,4,Number of Participants; Resolution; Frame Rate (fps); Download Size (estimated),33
 FPPA,4,Total Hours; Resolution; Frame Rate (fps); License Type,33
 BEOID,4,Total Hours; Resolution; Frame Rate (fps); License Type,33
 HOMAGE,4,Resolution; Frame Rate (fps); Download Size (estimated); License Type,33
 THU-READ,4,Total Hours; Resolution; Frame Rate (fps); Download Size (estimated),33
-HOI4D,1,License Type,83
-ARCTIC,0,,100
 EgoHands,4,Total Hours; Number of Participants; Frame Rate (fps); License Type,33
 HO-Cap,4,Total Hours; Resolution; Frame Rate (fps); Download Size (estimated),33
 EgoBody,4,Total Hours; Resolution; Frame Rate (fps); Download Size (estimated),33
@@ -72,12 +67,19 @@ EgoProceL,4,Resolution; Frame Rate (fps); Download Size (estimated); License Typ
 Multimodal Focused Interaction Dataset,4,Resolution; Frame Rate (fps); Download Size (estimated); License Type,33
 EPIC-Tent,4,Resolution; Frame Rate (fps); Download Size (estimated); License Type,33
 Ego-1K,4,Total Hours; Number of Participants; Resolution; Frame Rate (fps),33
+EgoSuite-Open100K (EgoStandard),4,Number of Participants; Resolution; Frame Rate (fps); Download Size (estimated),33
+EgoSuite-Open100K (EgoPro),4,Number of Participants; Resolution; Frame Rate (fps); Download Size (estimated),33
+TACO,3,Total Hours; Download Size (estimated); License Type,50
 Xperience-10M,3,Number of Participants; Resolution; Frame Rate (fps),50
 First-Person Social Interactions (Disney),3,Frame Rate (fps); Download Size (estimated); License Type,50
 MECCANO,3,Total Hours; Download Size (estimated); License Type,50
 Aria Digital Twin (ADT),3,Total Hours; Number of Participants; Frame Rate (fps),50
-EgoLife,1,Download Size (estimated),83
+EgoSuite-Open100K (EgoDemo),3,Number of Participants; Resolution; Frame Rate (fps),50
 EgoGesture,2,Total Hours; Download Size (estimated),67
+Egocentric-10K,1,Number of Participants,83
+Egocentric-100K,1,Number of Participants,83
+HOI4D,1,License Type,83
+EgoLife,1,Download Size (estimated),83
 OpenEgo,1,Download Size (estimated),83
 GTEA,1,License Type,83
 GTEA Gaze,1,License Type,83
@@ -91,6 +93,7 @@ EgoDexter,1,Frame Rate (fps),83
 DexYCB,1,Total Hours,83
 HoloAssist,1,Frame Rate (fps),83
 CASTLE 2024,1,License Type,83
+ARCTIC,0,,100
 Ego4D,0,,100
 Ego-Exo4D,0,,100
 EPIC-KITCHENS-100,0,,100

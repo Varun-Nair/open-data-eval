@@ -6,8 +6,8 @@
     "iso": "http://opendataeval.org/iso5259/"
   },
   "@type": "cr:Dataset",
-  "name": "Human Archive (HA-Ego)",
-  "url": "https://huggingface.co/datasets/humanarchive/HA-Ego-Samples",
+  "name": "EgoSuite-Open100K (EgoStandard)",
+  "url": "https://huggingface.co/datasets/LightwheelAI/EgoStandard",
   "dct:conformsTo": "http://opendataeval.org/qp/1.0",
   "qp:qualityProfile": {
     "qp:schemaVersion": "1.0",
@@ -16,49 +16,54 @@
     "qp:evaluatedBy": "open-data-eval",
     "scores": {
       "fps": {
-        "score": 1.0,
-        "raw_value": 30.0,
+        "score": null,
+        "raw_value": null,
         "method": "piecewise_continuous",
         "source": "catalog",
         "iso_mapping": "Acc-ML"
       },
       "resolution": {
-        "score": 1.0,
-        "width": 1920,
-        "height": 1080,
-        "short_edge": 1080,
-        "tier": "1080p+",
+        "score": null,
+        "width": null,
+        "height": null,
+        "short_edge": null,
+        "tier": null,
         "method": "piecewise_continuous",
         "source": "catalog",
         "iso_mapping": "Acc-ML"
       },
       "modality_richness": {
         "modalities_present": [
-          "RGB video"
+          "Body pose annotations",
+          "Depth",
+          "Hand pose annotations",
+          "Narrations/captions",
+          "RGB video",
+          "SLAM/odometry"
         ],
-        "modality_count": 1,
+        "modality_count": 6,
         "scores_by_usecase": {
           "manipulation": {
             "critical": {
               "present": [
-                "RGB video"
-              ],
-              "missing": [
+                "RGB video",
                 "Depth"
               ],
-              "ratio": 0.5
+              "missing": [],
+              "ratio": 1.0
             },
             "important": {
-              "present": [],
-              "missing": [
+              "present": [
                 "Hand pose annotations",
+                "Narrations/captions"
+              ],
+              "missing": [
                 "Tactile",
                 "Force/torque",
-                "Narrations/captions",
                 "Proprioception",
                 "Gripper state"
               ],
-              "ratio": 0.0
+              "ratio": 0.33
             },
             "bonus": {
               "present": [],
@@ -72,7 +77,7 @@
               ],
               "ratio": 0.0
             },
-            "score": 0.15
+            "score": 0.693
           },
           "action_recognition": {
             "critical": {
@@ -83,43 +88,45 @@
               "ratio": 1.0
             },
             "important": {
-              "present": [],
+              "present": [
+                "Narrations/captions"
+              ],
               "missing": [
                 "Audio",
-                "Narrations/captions",
                 "Optical flow"
               ],
-              "ratio": 0.0
+              "ratio": 0.33
             },
             "bonus": {
-              "present": [],
+              "present": [
+                "Hand pose annotations"
+              ],
               "missing": [
                 "Eye gaze",
-                "Hand pose annotations",
                 "IMU",
                 "Object bounding boxes"
               ],
-              "ratio": 0.0
+              "ratio": 0.25
             },
-            "score": 0.6
+            "score": 0.723
           },
           "hand_pose_estimation": {
             "critical": {
               "present": [
-                "RGB video"
-              ],
-              "missing": [
+                "RGB video",
                 "Hand pose annotations"
               ],
-              "ratio": 0.5
+              "missing": [],
+              "ratio": 1.0
             },
             "important": {
-              "present": [],
+              "present": [
+                "Depth"
+              ],
               "missing": [
-                "Depth",
                 "Stereo"
               ],
-              "ratio": 0.0
+              "ratio": 0.5
             },
             "bonus": {
               "present": [],
@@ -130,7 +137,7 @@
               ],
               "ratio": 0.0
             },
-            "score": 0.15
+            "score": 0.74
           },
           "navigation": {
             "critical": {
@@ -143,13 +150,14 @@
               "ratio": 0.5
             },
             "important": {
-              "present": [],
-              "missing": [
+              "present": [
                 "Depth",
-                "SLAM/odometry",
+                "SLAM/odometry"
+              ],
+              "missing": [
                 "3D point clouds"
               ],
-              "ratio": 0.0
+              "ratio": 0.67
             },
             "bonus": {
               "present": [],
@@ -161,7 +169,7 @@
               ],
               "ratio": 0.0
             },
-            "score": 0.15
+            "score": 0.197
           },
           "robot_policy_learning": {
             "critical": {
@@ -175,14 +183,15 @@
               "ratio": 0.33
             },
             "important": {
-              "present": [],
-              "missing": [
+              "present": [
                 "Depth",
+                "Narrations/captions"
+              ],
+              "missing": [
                 "End-effector pose",
-                "Narrations/captions",
                 "Force/torque"
               ],
-              "ratio": 0.0
+              "ratio": 0.5
             },
             "bonus": {
               "present": [],
@@ -193,64 +202,65 @@
               ],
               "ratio": 0.0
             },
-            "score": 0.067
+            "score": 0.082
           },
           "vla_pretraining": {
             "critical": {
               "present": [
-                "RGB video"
-              ],
-              "missing": [
+                "RGB video",
                 "Narrations/captions"
               ],
-              "ratio": 0.5
+              "missing": [],
+              "ratio": 1.0
             },
             "important": {
-              "present": [],
-              "missing": [
+              "present": [
                 "Depth",
-                "Hand pose annotations",
+                "Hand pose annotations"
+              ],
+              "missing": [
                 "Proprioception"
               ],
-              "ratio": 0.0
+              "ratio": 0.67
             },
             "bonus": {
-              "present": [],
+              "present": [
+                "SLAM/odometry"
+              ],
               "missing": [
                 "Audio",
                 "IMU",
                 "Eye gaze",
-                "SLAM/odometry",
                 "Optical flow"
               ],
-              "ratio": 0.0
+              "ratio": 0.2
             },
-            "score": 0.15
+            "score": 0.811
           }
         },
         "source": "catalog",
         "iso_mapping": "Div-ML"
       },
       "camera_calibration": {
-        "score": 0.0,
-        "tier": "none",
-        "notes": "No calibration data published. Chest-mounted camera only. No intrinsics, distortion, or extrinsics provided. Source: HuggingFace dataset card.",
+        "score": 0.85,
+        "tier": "intrinsics_extrinsics_unvalidated",
+        "notes": "Each camera publishes foxglove.CameraCalibration (width, height, intrinsic matrix K, distortion model and parameters D, rectification R, projection P) and extrinsics as foxglove.FrameTransforms in the world frame. A separate RawCameraCalibration carries the rig's pre-undistortion calibration, naming the distortion model (equiDis62 equidistant fisheye, or brown); the delivered video stream is undistorted. OpenCV camera coordinate convention. No independent calibration validation is described. Source: docs.lightwheel.net + LW-Egosuite-DevKit topic schema.",
         "method": "tier",
-        "source": "paper:HuggingFace:humanarchive/HA-Ego-Samples",
+        "source": "paper:HuggingFace:LightwheelAI/EgoStandard",
         "iso_mapping": "Aud-ML"
       },
       "license_clarity": {
-        "score": 1.0,
-        "license_type": "Apache-2.0",
-        "tier": "standard",
+        "score": 0.5,
+        "license_type": "Custom Open",
+        "tier": "custom_named",
         "commercial_use": "Yes",
         "method": "tier",
         "source": "catalog",
         "iso_mapping": "Cpl-ML"
       },
       "accessibility": {
-        "score": 0.85,
-        "raw_score": 8.5,
+        "score": 0.75,
+        "raw_score": 7.5,
         "access_level": "Gated-Open",
         "url_status": "Live",
         "method": "weighted_sum_normalized",
@@ -258,10 +268,10 @@
         "iso_mapping": "Acs-ML"
       },
       "scale": {
-        "score": 0.675,
-        "total_hours": 499.9,
+        "score": 1.0,
+        "total_hours": 90000.0,
         "method": "log10(hrs+1)/log10(10001)",
-        "source": "paper:HuggingFace:humanarchive/HA-Ego-Samples",
+        "source": "catalog",
         "iso_mapping": "Eff-ML"
       },
       "dataloader": {
@@ -280,32 +290,32 @@
         "iso_mapping": "Und-ML"
       },
       "annotation_coverage": {
-        "score": 0.5,
-        "notes": "Per-segment task label (753 unique tasks) and environment label (181 unique) assigned via Gemini AI activity recognition. JSON metadata per person includes duration, environment, task, fps, codec, file size. No hand/body pose, no narrations, no frame-level annotations. Source: HuggingFace dataset card.",
+        "score": 1.0,
+        "notes": "All episodes carry 21-joint 3D hand pose per hand (float32 world coordinates, positions (21,3) and quaternion rotations (21,4)), head / head-camera 6-DoF pose, and temporal event-level semantic subtask descriptions (released as a complimentary add-on). Full-body 22-joint pose covers only the EgoStand-body sub-SKU, 10,000 of 90,000 planned hours. Per-frame bad_frame quality flags are published for hand, upper-body, lower-body and each camera. Source: HuggingFace dataset card + docs.lightwheel.net.",
         "method": "ratio",
-        "source": "paper:HuggingFace:humanarchive/HA-Ego-Samples",
+        "source": "paper:HuggingFace:LightwheelAI/EgoStandard",
         "iso_mapping": "Com-ML"
       },
       "download_efficiency": {
-        "score": 0.647,
-        "hours_per_gb": 0.2,
-        "total_hours": 499.9,
-        "download_size_gb": 2500.0,
+        "score": null,
+        "hours_per_gb": null,
+        "total_hours": null,
+        "download_size_gb": null,
         "method": "percentile_rank",
         "source": "catalog+paper",
         "iso_mapping": "Eff-ML"
       },
       "environment_diversity": {
-        "score": 0.811,
-        "unique_environments": 181.0,
+        "score": null,
+        "unique_environments": null,
         "method": "log_normalized",
         "source": "catalog",
         "iso_mapping": "Div-ML"
       },
       "demographic_diversity": {
-        "score": 0.902,
-        "participants": 5562.0,
-        "geographic_locations": 1,
+        "score": null,
+        "participants": null,
+        "geographic_locations": null,
         "method": "log_normalized_product",
         "source": "catalog+paper",
         "iso_mapping": "Div-ML"
@@ -313,16 +323,16 @@
     },
     "classifications": {
       "capture_device": {
-        "value": "Chest-mounted camera (1920\u00d71080, 30fps, H.264); no additional sensors",
+        "value": "Lightwheel EgoSuite wearable rig: stereo head-mounted RGB cameras (head_left / head_right, H.264); optional head depth camera and PCM audio in the MCAP schema. Specific hardware model not published.",
         "documented": true,
-        "source": "paper:HuggingFace:humanarchive/HA-Ego-Samples",
+        "source": "paper:HuggingFace:LightwheelAI/EgoStandard",
         "iso_mapping": "Ide-ML"
       },
       "lens_type": {
-        "value": "standard",
+        "value": "fisheye",
         "fov_degrees": null,
         "documented": true,
-        "source": "paper:HuggingFace:humanarchive/HA-Ego-Samples",
+        "source": "paper:HuggingFace:LightwheelAI/EgoStandard",
         "iso_mapping": "Ide-ML"
       },
       "video_format": {
@@ -330,14 +340,14 @@
         "source": "catalog"
       },
       "annotation_format": {
-        "value": "JSON (per-segment metadata)",
+        "value": "Parquet (LeRobot v3); MCAP (embedded Protobuf); JSON",
         "source": "catalog"
       }
     },
     "context": {
-      "total_hours": 499.9,
-      "participants": "5562",
-      "scenes_environments": "181",
+      "total_hours": 90000.0,
+      "participants": "Not specified",
+      "scenes_environments": "Not specified",
       "commercial_use": "Yes",
       "category": "Large-scale foundation",
       "year": "2026",
@@ -348,8 +358,8 @@
     },
     "confidence": {
       "metadata_completeness": {
-        "score": 1.0,
-        "filled_fields": 16,
+        "score": 0.688,
+        "filled_fields": 11,
         "total_fields": 16,
         "method": "ratio",
         "iso_mapping": [
@@ -357,75 +367,6 @@
           "Und-ML"
         ]
       }
-    },
-    "file_eval": {
-      "eval_type": "file",
-      "evaluated_at": "2026-04-21T00:56:51.349546+00:00",
-      "dataset_path": "/Users/varun/Downloads/HA-Ego-Samples",
-      "summary": {
-        "total_files": 100,
-        "total_duration_sec": 5898.133,
-        "total_hours": 1.63837,
-        "total_frames": 176944,
-        "total_size_mb": 7150.019,
-        "resolutions": {
-          "1920x1080": 100
-        },
-        "codecs": {
-          "h264": 100
-        },
-        "clips_with_audio": 0,
-        "clips_without_audio": 100
-      },
-      "distributions": {
-        "fps": {
-          "n": 100,
-          "mean": 30.0,
-          "min": 30.0,
-          "max": 30.0,
-          "std": 0.0,
-          "p5": 30.0,
-          "p95": 30.0
-        },
-        "duration_sec": {
-          "n": 100,
-          "mean": 58.9813,
-          "min": 33.0,
-          "max": 75.0,
-          "std": 5.1152,
-          "p5": 47.6333,
-          "p95": 62.0
-        },
-        "bitrate_kbps": {
-          "n": 100,
-          "mean": 10174.34,
-          "min": 9796,
-          "max": 32597,
-          "std": 2336.9656,
-          "p5": 9824,
-          "p95": 9857
-        },
-        "nb_frames": {
-          "n": 100,
-          "mean": 1769.44,
-          "min": 990,
-          "max": 2250,
-          "std": 153.4559,
-          "p5": 1429,
-          "p95": 1860
-        },
-        "file_size_mb": {
-          "n": 100,
-          "mean": 71.5002,
-          "min": 40.776,
-          "max": 233.177,
-          "std": 17.6547,
-          "p5": 55.981,
-          "p95": 72.669
-        }
-      },
-      "annotation_coverage": null,
-      "discrepancies": null
     }
   }
 }
