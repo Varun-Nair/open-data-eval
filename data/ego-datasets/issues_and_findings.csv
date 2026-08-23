@@ -64,8 +64,15 @@ EgoBlind,Unverified Download,Download availability not confirmed.,High
 EgoTaskQA,No License,Open data with no license specified.,Medium
 EgoSurgery,No License,Open data with no license specified.,Medium
 EgoExOR,Unverified Download,Download availability not confirmed.,High
-EgoSuite-Open100K (EgoStandard),Unverified Download,"Hours are stated as planned, not delivered. Data ships through a mutable HuggingFace Bucket; released volume not confirmed.",Medium
-EgoSuite-Open100K (EgoPro),Unverified Download,"Hours are stated as planned, not delivered. Data ships through a mutable HuggingFace Bucket; released volume not confirmed.",Medium
-EgoSuite-Open100K (EgoStandard),Missing Technical Specs,"Resolution and frame rate not published on the site, docs, dataset card or DevKit.",Medium
-EgoSuite-Open100K (EgoPro),Missing Technical Specs,"Resolution and frame rate not published on the site, docs, dataset card or DevKit.",Medium
-EgoSuite-Open100K (EgoDemo),Missing Technical Specs,"Resolution and frame rate not published on the site, docs, dataset card or DevKit.",Medium
+EgoSuite-Open100K (EgoStandard),Delivery Gap,"Approximately 10,757 of 90,000 planned hours delivered (12%), measured from the public bucket by size-to-duration regression and cross-checked by bitrate.",High
+EgoSuite-Open100K (EgoPro),Delivery Gap,"Approximately 1,103 of 10,000 planned hours delivered (11%), measured from the public bucket.",High
+EgoSuite-Open100K (EgoDemo),Metadata Mismatch,"Card advertises a 50-hour sample; publisher manifests total 79.54h across 2,712 episodes.",Medium
+EgoSuite-Open100K (EgoStandard),Format Mismatch,"Card and project page advertise LeRobot v3 and MCAP; bucket is 376,637 of 376,638 files MCAP with zero LeRobot metadata.",Medium
+EgoSuite-Open100K (EgoPro),Format Mismatch,Card advertises LeRobot v3 and MCAP; bucket is 100% MCAP.,Medium
+EgoSuite-Open100K (EgoStandard),Undocumented Subset,"EgoStandard/rd (47,708 files, 4.42 TB) appears in no dataset card, documentation or DevKit reference.",Low
+EgoSuite-Open100K (EgoStandard),Missing Technical Specs,Resolution and frame rate are not published by the vendor; measured by direct inspection of delivered MCAP.,Medium
+EgoSuite-Open100K (EgoPro),Missing Technical Specs,Resolution and frame rate are not published by the vendor; measured by direct inspection.,Medium
+EgoSuite-Open100K (EgoDemo),Missing Technical Specs,Resolution and frame rate are not published by the vendor; measured by ffprobe and LeRobot metadata.,Medium
+EgoSuite-Open100K (EgoStandard),Calibration Gap,"DevKit documents a pre-undistortion distortion model, but distortion_model is empty and D is empty in every sampled episode and no camera_raw calibration topic is present.",Medium
+EgoSuite-Open100K (EgoPro),Calibration Gap,Distortion parameters documented but not delivered; no camera_raw calibration topic in sampled episodes.,Medium
+EgoSuite-Open100K (EgoDemo),Calibration Gap,Distortion parameters documented but not delivered in any sampled episode.,Medium

@@ -1,0 +1,459 @@
+{
+  "eval_type": "file",
+  "dataset_path": "LightwheelAI/EgoDemo :: EgoRaw/mp4 (24-file head-view sample)",
+  "evaluated_at": "2026-08-23T00:22:14.635406+00:00",
+  "summary": {
+    "total_files": 24,
+    "files_probed": 24,
+    "files_with_errors": 0,
+    "total_duration_sec": 313.933,
+    "total_hours": 0.0872,
+    "total_frames": 9418,
+    "total_size_mb": 290.618,
+    "resolutions": {
+      "1920x1456": 24
+    },
+    "codecs": {
+      "h264": 24
+    },
+    "clips_with_audio": 0,
+    "clips_without_audio": 24
+  },
+  "distributions": {
+    "fps": {
+      "n": 24,
+      "mean": 30.0,
+      "min": 30.0,
+      "max": 30.0,
+      "std": 0.0,
+      "p5": 30.0,
+      "p95": 30.0
+    },
+    "duration_sec": {
+      "n": 24,
+      "mean": 13.0806,
+      "min": 7.5333,
+      "max": 18.1,
+      "std": 3.1039,
+      "p5": 7.5333,
+      "p95": 16.7667
+    },
+    "bitrate_kbps": {
+      "n": 24,
+      "mean": 7988.2083,
+      "min": 6376,
+      "max": 10138,
+      "std": 1161.9383,
+      "p5": 6445,
+      "p95": 9757
+    },
+    "nb_frames": {
+      "n": 24,
+      "mean": 392.4167,
+      "min": 226,
+      "max": 543,
+      "std": 93.1165,
+      "p5": 226,
+      "p95": 503
+    },
+    "file_size_mb": {
+      "n": 24,
+      "mean": 12.1091,
+      "min": 8.494,
+      "max": 14.484,
+      "std": 1.7667,
+      "p5": 8.978,
+      "p95": 14.085
+    }
+  },
+  "annotation_coverage": null,
+  "discrepancies": null,
+  "errors": null,
+  "per_file": {
+    "EgoRaw__mp4__Adjust Seal Sticker__2483b66f-9e9b-4291-929c-aec0a48f3f18__head_left_camera__head_left_camera_undistorted": {
+      "file": "EgoRaw__mp4__Adjust Seal Sticker__2483b66f-9e9b-4291-929c-aec0a48f3f18__head_left_camera__head_left_camera_undistorted.mp4",
+      "size_mb": 10.479,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1456,
+        "fps": 30.0,
+        "duration_sec": 8.666667,
+        "nb_frames": 260,
+        "bitrate_kbps": 10138,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "EgoRaw__mp4__Adjust Seal Sticker__2483b66f-9e9b-4291-929c-aec0a48f3f18__head_right_camera__head_right_camera_undistorted": {
+      "file": "EgoRaw__mp4__Adjust Seal Sticker__2483b66f-9e9b-4291-929c-aec0a48f3f18__head_right_camera__head_right_camera_undistorted.mp4",
+      "size_mb": 10.085,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1456,
+        "fps": 30.0,
+        "duration_sec": 8.666667,
+        "nb_frames": 260,
+        "bitrate_kbps": 9757,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "EgoRaw__mp4__Align and Place Sunglasses on Display__07002087-8969-4b3a-adb1-1d207f3fab2f__head_left_camera__head_left_camera_undistorted": {
+      "file": "EgoRaw__mp4__Align and Place Sunglasses on Display__07002087-8969-4b3a-adb1-1d207f3fab2f__head_left_camera__head_left_camera_undistorted.mp4",
+      "size_mb": 8.494,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1456,
+        "fps": 30.0,
+        "duration_sec": 7.533333,
+        "nb_frames": 226,
+        "bitrate_kbps": 9454,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "EgoRaw__mp4__Align and Place Sunglasses on Display__07002087-8969-4b3a-adb1-1d207f3fab2f__head_right_camera__head_right_camera_undistorted": {
+      "file": "EgoRaw__mp4__Align and Place Sunglasses on Display__07002087-8969-4b3a-adb1-1d207f3fab2f__head_right_camera__head_right_camera_undistorted.mp4",
+      "size_mb": 8.978,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1456,
+        "fps": 30.0,
+        "duration_sec": 7.533333,
+        "nb_frames": 226,
+        "bitrate_kbps": 9993,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "EgoRaw__mp4__Fold Table Napkins__305a09ad-a709-4cf4-be21-2b4b61ecf3e5__head_left_camera__head_left_camera_undistorted": {
+      "file": "EgoRaw__mp4__Fold Table Napkins__305a09ad-a709-4cf4-be21-2b4b61ecf3e5__head_left_camera__head_left_camera_undistorted.mp4",
+      "size_mb": 13.766,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1456,
+        "fps": 30.0,
+        "duration_sec": 18.1,
+        "nb_frames": 543,
+        "bitrate_kbps": 6376,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "EgoRaw__mp4__Fold Table Napkins__305a09ad-a709-4cf4-be21-2b4b61ecf3e5__head_right_camera__head_right_camera_undistorted": {
+      "file": "EgoRaw__mp4__Fold Table Napkins__305a09ad-a709-4cf4-be21-2b4b61ecf3e5__head_right_camera__head_right_camera_undistorted.mp4",
+      "size_mb": 14.055,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1456,
+        "fps": 30.0,
+        "duration_sec": 18.1,
+        "nb_frames": 543,
+        "bitrate_kbps": 6510,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "EgoRaw__mp4__Fold Table Napkins__3c4685a3-bc88-4f40-abfe-8fae875e7c07__head_left_camera__head_left_camera_undistorted": {
+      "file": "EgoRaw__mp4__Fold Table Napkins__3c4685a3-bc88-4f40-abfe-8fae875e7c07__head_left_camera__head_left_camera_undistorted.mp4",
+      "size_mb": 11.583,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1456,
+        "fps": 30.0,
+        "duration_sec": 15.066667,
+        "nb_frames": 452,
+        "bitrate_kbps": 6445,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "EgoRaw__mp4__Fold Table Napkins__3c4685a3-bc88-4f40-abfe-8fae875e7c07__head_right_camera__head_right_camera_undistorted": {
+      "file": "EgoRaw__mp4__Fold Table Napkins__3c4685a3-bc88-4f40-abfe-8fae875e7c07__head_right_camera__head_right_camera_undistorted.mp4",
+      "size_mb": 11.96,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1456,
+        "fps": 30.0,
+        "duration_sec": 15.066667,
+        "nb_frames": 452,
+        "bitrate_kbps": 6655,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "EgoRaw__mp4__Pour water from kettle into cup__4dfc3b37-a73f-4ea3-a799-779a752ee0e6__head_left_camera__head_left_camera_undistorted": {
+      "file": "EgoRaw__mp4__Pour water from kettle into cup__4dfc3b37-a73f-4ea3-a799-779a752ee0e6__head_left_camera__head_left_camera_undistorted.mp4",
+      "size_mb": 13.508,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1456,
+        "fps": 30.0,
+        "duration_sec": 14.633333,
+        "nb_frames": 439,
+        "bitrate_kbps": 7739,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "EgoRaw__mp4__Pour water from kettle into cup__4dfc3b37-a73f-4ea3-a799-779a752ee0e6__head_right_camera__head_right_camera_undistorted": {
+      "file": "EgoRaw__mp4__Pour water from kettle into cup__4dfc3b37-a73f-4ea3-a799-779a752ee0e6__head_right_camera__head_right_camera_undistorted.mp4",
+      "size_mb": 13.633,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1456,
+        "fps": 30.0,
+        "duration_sec": 14.633333,
+        "nb_frames": 439,
+        "bitrate_kbps": 7811,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "EgoRaw__mp4__Pour water from kettle into cup__6d231e38-a1af-4a09-a53a-6ffc00406412__head_left_camera__head_left_camera_undistorted": {
+      "file": "EgoRaw__mp4__Pour water from kettle into cup__6d231e38-a1af-4a09-a53a-6ffc00406412__head_left_camera__head_left_camera_undistorted.mp4",
+      "size_mb": 10.91,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1456,
+        "fps": 30.0,
+        "duration_sec": 11.133333,
+        "nb_frames": 334,
+        "bitrate_kbps": 8216,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "EgoRaw__mp4__Pour water from kettle into cup__6d231e38-a1af-4a09-a53a-6ffc00406412__head_right_camera__head_right_camera_undistorted": {
+      "file": "EgoRaw__mp4__Pour water from kettle into cup__6d231e38-a1af-4a09-a53a-6ffc00406412__head_right_camera__head_right_camera_undistorted.mp4",
+      "size_mb": 10.906,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1456,
+        "fps": 30.0,
+        "duration_sec": 11.133333,
+        "nb_frames": 334,
+        "bitrate_kbps": 8213,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "EgoRaw__mp4__Pour water from kettle into cup__c44c97aa-ecf8-43ce-9b71-c31add1e5009__head_left_camera__head_left_camera_undistorted": {
+      "file": "EgoRaw__mp4__Pour water from kettle into cup__c44c97aa-ecf8-43ce-9b71-c31add1e5009__head_left_camera__head_left_camera_undistorted.mp4",
+      "size_mb": 11.967,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1456,
+        "fps": 30.0,
+        "duration_sec": 12.333333,
+        "nb_frames": 370,
+        "bitrate_kbps": 8136,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "EgoRaw__mp4__Pour water from kettle into cup__c44c97aa-ecf8-43ce-9b71-c31add1e5009__head_right_camera__head_right_camera_undistorted": {
+      "file": "EgoRaw__mp4__Pour water from kettle into cup__c44c97aa-ecf8-43ce-9b71-c31add1e5009__head_right_camera__head_right_camera_undistorted.mp4",
+      "size_mb": 11.783,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1456,
+        "fps": 30.0,
+        "duration_sec": 12.333333,
+        "nb_frames": 370,
+        "bitrate_kbps": 8010,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "EgoRaw__mp4__Refill Stapler__73a52e4b-e7b6-4071-a11e-fdca1cc6934e__head_left_camera__head_left_camera_undistorted": {
+      "file": "EgoRaw__mp4__Refill Stapler__73a52e4b-e7b6-4071-a11e-fdca1cc6934e__head_left_camera__head_left_camera_undistorted.mp4",
+      "size_mb": 14.397,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1456,
+        "fps": 30.0,
+        "duration_sec": 16.766667,
+        "nb_frames": 503,
+        "bitrate_kbps": 7199,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "EgoRaw__mp4__Refill Stapler__73a52e4b-e7b6-4071-a11e-fdca1cc6934e__head_right_camera__head_right_camera_undistorted": {
+      "file": "EgoRaw__mp4__Refill Stapler__73a52e4b-e7b6-4071-a11e-fdca1cc6934e__head_right_camera__head_right_camera_undistorted.mp4",
+      "size_mb": 14.085,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1456,
+        "fps": 30.0,
+        "duration_sec": 16.766667,
+        "nb_frames": 503,
+        "bitrate_kbps": 7043,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "EgoRaw__mp4__Replace Tape Core on Tape Dispenser__8de91a05-862b-4ba6-8c81-cb2be7cc2255__head_left_camera__head_left_camera_undistorted": {
+      "file": "EgoRaw__mp4__Replace Tape Core on Tape Dispenser__8de91a05-862b-4ba6-8c81-cb2be7cc2255__head_left_camera__head_left_camera_undistorted.mp4",
+      "size_mb": 13.322,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1456,
+        "fps": 30.0,
+        "duration_sec": 15.566667,
+        "nb_frames": 467,
+        "bitrate_kbps": 7175,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "EgoRaw__mp4__Replace Tape Core on Tape Dispenser__8de91a05-862b-4ba6-8c81-cb2be7cc2255__head_right_camera__head_right_camera_undistorted": {
+      "file": "EgoRaw__mp4__Replace Tape Core on Tape Dispenser__8de91a05-862b-4ba6-8c81-cb2be7cc2255__head_right_camera__head_right_camera_undistorted.mp4",
+      "size_mb": 13.141,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1456,
+        "fps": 30.0,
+        "duration_sec": 15.566667,
+        "nb_frames": 467,
+        "bitrate_kbps": 7077,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "EgoRaw__mp4__Replenish Printer Paper Supplies__3faabf70-6e49-4f90-9548-fe315b9c844b__head_left_camera__head_left_camera_undistorted": {
+      "file": "EgoRaw__mp4__Replenish Printer Paper Supplies__3faabf70-6e49-4f90-9548-fe315b9c844b__head_left_camera__head_left_camera_undistorted.mp4",
+      "size_mb": 14.484,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1456,
+        "fps": 30.0,
+        "duration_sec": 13.9,
+        "nb_frames": 417,
+        "bitrate_kbps": 8737,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "EgoRaw__mp4__Replenish Printer Paper Supplies__3faabf70-6e49-4f90-9548-fe315b9c844b__head_right_camera__head_right_camera_undistorted": {
+      "file": "EgoRaw__mp4__Replenish Printer Paper Supplies__3faabf70-6e49-4f90-9548-fe315b9c844b__head_right_camera__head_right_camera_undistorted.mp4",
+      "size_mb": 13.378,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1456,
+        "fps": 30.0,
+        "duration_sec": 13.9,
+        "nb_frames": 417,
+        "bitrate_kbps": 8070,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "EgoRaw__mp4__Replenish Tape Dispenser Consumables__7c9cc4e2-e6d5-4d16-8787-e3f3721cd7ec__head_left_camera__head_left_camera_undistorted": {
+      "file": "EgoRaw__mp4__Replenish Tape Dispenser Consumables__7c9cc4e2-e6d5-4d16-8787-e3f3721cd7ec__head_left_camera__head_left_camera_undistorted.mp4",
+      "size_mb": 12.693,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1456,
+        "fps": 30.0,
+        "duration_sec": 11.566667,
+        "nb_frames": 347,
+        "bitrate_kbps": 9201,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "EgoRaw__mp4__Replenish Tape Dispenser Consumables__7c9cc4e2-e6d5-4d16-8787-e3f3721cd7ec__head_right_camera__head_right_camera_undistorted": {
+      "file": "EgoRaw__mp4__Replenish Tape Dispenser Consumables__7c9cc4e2-e6d5-4d16-8787-e3f3721cd7ec__head_right_camera__head_right_camera_undistorted.mp4",
+      "size_mb": 12.834,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1456,
+        "fps": 30.0,
+        "duration_sec": 11.566667,
+        "nb_frames": 347,
+        "bitrate_kbps": 9304,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "EgoRaw__mp4__Return Grippers to Box__56f1d178-cfef-4e48-827d-49f692e67a45__head_left_camera__head_left_camera_undistorted": {
+      "file": "EgoRaw__mp4__Return Grippers to Box__56f1d178-cfef-4e48-827d-49f692e67a45__head_left_camera__head_left_camera_undistorted.mp4",
+      "size_mb": 10.293,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1456,
+        "fps": 30.0,
+        "duration_sec": 11.7,
+        "nb_frames": 351,
+        "bitrate_kbps": 7375,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    },
+    "EgoRaw__mp4__Return Grippers to Box__56f1d178-cfef-4e48-827d-49f692e67a45__head_right_camera__head_right_camera_undistorted": {
+      "file": "EgoRaw__mp4__Return Grippers to Box__56f1d178-cfef-4e48-827d-49f692e67a45__head_right_camera__head_right_camera_undistorted.mp4",
+      "size_mb": 9.884,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1456,
+        "fps": 30.0,
+        "duration_sec": 11.7,
+        "nb_frames": 351,
+        "bitrate_kbps": 7083,
+        "pix_fmt": "yuv420p",
+        "has_audio": false,
+        "audio_codecs": []
+      }
+    }
+  },
+  "sampling_note": "Sample of 24 raw head-view MP4s (the smallest EgoRaw episodes) drawn from 8,653 MP4s totalling 980.8 GB. Specs confirmed independently by MCAP session metadata and LeRobot meta/info.json across all four annotated variants."
+}

@@ -56,8 +56,8 @@ Hand-object interaction,DexYCB,2021,Unknown,Open,CC-BY-NC-4.0,Live,9.2
 Hand-object interaction,Human Archive (HA-Multi),2026,3.9,Gated-Open,Apache-2.0,Live,8.5
 Hand-object interaction,AssemblyHands,2023,Unknown,Open,CC-BY-NC-4.0,Live,8.2
 Hand-object interaction,HOT3D,2025,~14,Gated-Open,Custom Academic,Live,7.8
-Hand-object interaction,EgoSuite-Open100K (EgoPro),2026,10000,Gated-Open,Custom Open,Live,7.5
-Hand-object interaction,EgoSuite-Open100K (EgoDemo),2026,50,Gated-Open,Custom Open,Live,7.5
+Hand-object interaction,EgoSuite-Open100K (EgoPro),2026,1103,Gated-Open,Custom Open,Live,7.5
+Hand-object interaction,EgoSuite-Open100K (EgoDemo),2026,79.54,Gated-Open,Custom Open,Live,7.5
 Hand-object interaction,ARCTIC,2023,2.17,Gated-Open,Custom Academic,Live,7.2
 Hand-object interaction,OpenEgo,2025,1107,Open,Mixed,Live but broken,7.0
 Hand-object interaction,HOI4D,2022,22.2,Open,Not specified,Live,7.0
@@ -84,7 +84,7 @@ Large-scale foundation,Human Archive (HA-Ego),2026,499.9,Gated-Open,Apache-2.0,L
 Large-scale foundation,HD-EPIC,2025,41,Open,CC-BY-NC-4.0,Live,8.2
 Large-scale foundation,Xperience-10M,2026,10000,Gated-Open,CC-BY-NC-4.0,Live,8.2
 Large-scale foundation,Ego4D,2022,3670,Gated-Open,Custom Academic,Live,7.5
-Large-scale foundation,EgoSuite-Open100K (EgoStandard),2026,90000,Gated-Open,Custom Open,Live,7.5
+Large-scale foundation,EgoSuite-Open100K (EgoStandard),2026,10757,Gated-Open,Custom Open,Live,7.5
 Large-scale foundation,EgoLife,2025,300,Gated-Open,S-Lab License,Live,7.0
 Navigation and localization,EgoSeg,2015,Unknown,Open,Not specified,Live,5.5
 Navigation and localization,VINST / Visual Diaries,2013,Unknown,Open,Not specified,Live,5.5

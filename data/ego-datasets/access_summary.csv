@@ -29,8 +29,8 @@ Modality,Audio,19
 Modality,Narrations/captions,15
 Modality,SLAM/odometry,15
 Modality,3D point clouds,14
-Modality,Depth (stereo),10
 Modality,3D scene reconstruction,8
+Modality,Depth (stereo),7
 Modality,Motion capture,6
 Modality,Multi-view,3
 Modality,Optical flow,2

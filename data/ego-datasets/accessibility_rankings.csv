@@ -26,9 +26,9 @@ Rank,Dataset Name,Ease of Access (0-10),Hours,Modality Count,License Status,URL 
 25,Ego4D,7.5,3670,6,Custom Academic,Live,Gated-Open,Largest ego dataset at 3670h. Gated but fast approval. Rich benchmarks across 5 task categories.
 26,Ego-Exo4D,7.5,1286,9,Custom Academic,Live,Gated-Open,Best dataset for ego-exo correspondence. Synchronized Aria + 4-5 GoPros. Gated but same fast approval as Ego4D.
 27,MECCANO,7.5,Unknown,3,Not specified,Live,Open,
-28,EgoSuite-Open100K (EgoStandard),7.5,90000,6,Custom Open,Live,Gated-Open,"Lightwheel head-view line, 90,000h planned. Stereo head cameras + 21-joint hand pose; body pose on the 10,000h subset. Gated review, mutable HF Bucket, released volume unverified."
-29,EgoSuite-Open100K (EgoPro),7.5,10000,7,Custom Open,Live,Gated-Open,"Lightwheel head-and-wrist line, 10,000h planned. Four synchronized views + hand pose; body pose on the 2,000h subset. Gated review, mutable HF Bucket, released volume unverified."
-30,EgoSuite-Open100K (EgoDemo),7.5,50,7,Custom Open,Live,Gated-Open,"50h developer sample, the only EgoSuite repo holding data directly. 1,960 annotated + 752 raw episodes verified by tree enumeration. 1.48 TB, LeRobot v3 + MCAP."
+28,EgoSuite-Open100K (EgoStandard),7.5,10757,5,Custom Open,Live,Gated-Open,"Lightwheel head-view line. Bucket is public and readable WITHOUT the repo gate: 53.53 TB, 376,637 MCAP episodes. Measured ~10,757 delivered hours vs 90,000 planned (12%)."
+29,EgoSuite-Open100K (EgoPro),7.5,1103,6,Custom Open,Live,Gated-Open,"Lightwheel head-and-wrist line, four synchronized views. Public bucket: 11.72 TB, 31,310 MCAP episodes. Measured ~1,103 delivered hours vs 10,000 planned (11%)."
+30,EgoSuite-Open100K (EgoDemo),7.5,79.54,6,Custom Open,Live,Gated-Open,"Developer sample. Publisher manifests total 79.54h across 2,712 episodes, not the advertised 50h. Only variant shipping LeRobot v3 alongside MCAP."
 31,Charades-Ego,7.2,68.8,1,Custom Academic,Live,Open,Excellent paired ego/exo data with direct S3 downloads; non-commercial AI2 license limits reuse.
 32,ARCTIC,7.2,2.17,4,Custom Academic,Live,Gated-Open,Beautiful bimanual hand data with MANO/SMPLX. MPG registration required. Non-commercial.
 33,GIMO,7.2,Unknown,5,Custom Academic,Live,Gated-Open,Non-commercial. Stanford/Tsinghua.

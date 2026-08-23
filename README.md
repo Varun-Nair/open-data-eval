@@ -102,8 +102,8 @@ Audio               ███████ 19
 SLAM/Odometry       ██████ 16
 Narrations          ██████ 15
 3D Point Clouds     ██████ 14
-Depth (Stereo)      ████ 10
 3D Scene Recon.     ███ 8
+Depth (Stereo)      ███ 7
 Motion Capture      ██ 6
 Multi-view          █ 3
 Optical Flow        █ 2

@@ -12,22 +12,22 @@
   "qp:qualityProfile": {
     "qp:schemaVersion": "1.0",
     "qp:evalLevel": "metadata",
-    "qp:evaluatedAt": "2026-08-22T18:57:55Z",
+    "qp:evaluatedAt": "2026-08-23T00:27:46Z",
     "qp:evaluatedBy": "open-data-eval",
     "scores": {
       "fps": {
-        "score": null,
-        "raw_value": null,
+        "score": 1.0,
+        "raw_value": 30.0,
         "method": "piecewise_continuous",
         "source": "catalog",
         "iso_mapping": "Acc-ML"
       },
       "resolution": {
-        "score": null,
-        "width": null,
-        "height": null,
-        "short_edge": null,
-        "tier": null,
+        "score": 1.0,
+        "width": 1920,
+        "height": 1456,
+        "short_edge": 1456,
+        "tier": "1080p+",
         "method": "piecewise_continuous",
         "source": "catalog",
         "iso_mapping": "Acc-ML"
@@ -35,23 +35,23 @@
       "modality_richness": {
         "modalities_present": [
           "Body pose annotations",
-          "Depth",
           "Hand pose annotations",
           "Multi-view",
           "Narrations/captions",
           "RGB video",
           "SLAM/odometry"
         ],
-        "modality_count": 7,
+        "modality_count": 6,
         "scores_by_usecase": {
           "manipulation": {
             "critical": {
               "present": [
-                "RGB video",
+                "RGB video"
+              ],
+              "missing": [
                 "Depth"
               ],
-              "missing": [],
-              "ratio": 1.0
+              "ratio": 0.5
             },
             "important": {
               "present": [
@@ -78,7 +78,7 @@
               ],
               "ratio": 0.0
             },
-            "score": 0.693
+            "score": 0.173
           },
           "action_recognition": {
             "critical": {
@@ -121,13 +121,12 @@
               "ratio": 1.0
             },
             "important": {
-              "present": [
-                "Depth"
-              ],
+              "present": [],
               "missing": [
+                "Depth",
                 "Stereo"
               ],
-              "ratio": 0.5
+              "ratio": 0.0
             },
             "bonus": {
               "present": [],
@@ -138,7 +137,7 @@
               ],
               "ratio": 0.0
             },
-            "score": 0.74
+            "score": 0.6
           },
           "navigation": {
             "critical": {
@@ -152,13 +151,13 @@
             },
             "important": {
               "present": [
-                "Depth",
                 "SLAM/odometry"
               ],
               "missing": [
+                "Depth",
                 "3D point clouds"
               ],
-              "ratio": 0.67
+              "ratio": 0.33
             },
             "bonus": {
               "present": [],
@@ -170,7 +169,7 @@
               ],
               "ratio": 0.0
             },
-            "score": 0.197
+            "score": 0.173
           },
           "robot_policy_learning": {
             "critical": {
@@ -185,14 +184,14 @@
             },
             "important": {
               "present": [
-                "Depth",
                 "Narrations/captions"
               ],
               "missing": [
+                "Depth",
                 "End-effector pose",
                 "Force/torque"
               ],
-              "ratio": 0.5
+              "ratio": 0.25
             },
             "bonus": {
               "present": [],
@@ -203,7 +202,7 @@
               ],
               "ratio": 0.0
             },
-            "score": 0.082
+            "score": 0.074
           },
           "vla_pretraining": {
             "critical": {
@@ -216,13 +215,13 @@
             },
             "important": {
               "present": [
-                "Depth",
                 "Hand pose annotations"
               ],
               "missing": [
+                "Depth",
                 "Proprioception"
               ],
-              "ratio": 0.67
+              "ratio": 0.33
             },
             "bonus": {
               "present": [
@@ -236,16 +235,16 @@
               ],
               "ratio": 0.2
             },
-            "score": 0.811
+            "score": 0.717
           }
         },
         "source": "catalog",
         "iso_mapping": "Div-ML"
       },
       "camera_calibration": {
-        "score": 0.85,
-        "tier": "intrinsics_extrinsics_unvalidated",
-        "notes": "Same rig calibration as the parent SKUs: per-camera foxglove.CameraCalibration (K, D, R, P) + FrameTransforms extrinsics + RawCameraCalibration pre-undistortion model (equiDis62 / brown) in the MCAP representation. The LeRobot representation carries head-left/head-right and optional wrist camera pose per frame. No independent validation described.",
+        "score": 0.6,
+        "tier": "intrinsics_extrinsics_no_distortion",
+        "notes": "Measured from delivered MCAP (3 episodes across EgoStandard, EgoProStandard and EgoProStandard-body, both buckets): every camera publishes foxglove.CameraCalibration with width, height, intrinsic matrix K, rectification R and projection P, plus extrinsics as foxglove.FrameTransforms. distortion_model is EMPTY and D is an EMPTY LIST in all sampled episodes, and no /sensor/camera_raw/*/calibration topic is present in any of them, so the pre-undistortion model documented in the DevKit is not actually delivered. Head intrinsics fx=fy=788.6157 with principal point exactly at image centre (960, 728), R=I and P=K - i.e. a rectified pinhole model on an already-undistorted stream (~101.2 deg hFOV). Wrist cameras use fx=587.525, fy=742.995 (non-square pixels), principal point (960.718, 774.016), ~117.1 deg hFOV. No independent validation reported.",
         "method": "tier",
         "source": "paper:HuggingFace:LightwheelAI/EgoDemo",
         "iso_mapping": "Aud-ML"
@@ -269,8 +268,8 @@
         "iso_mapping": "Acs-ML"
       },
       "scale": {
-        "score": 0.427,
-        "total_hours": 50.0,
+        "score": 0.476,
+        "total_hours": 79.54,
         "method": "log10(hrs+1)/log10(10001)",
         "source": "catalog",
         "iso_mapping": "Eff-ML"
@@ -292,23 +291,23 @@
       },
       "annotation_coverage": {
         "score": 0.723,
-        "notes": "Verified by HuggingFace tree enumeration: 1,960 annotated episodes (EgoStand 408, EgoStand-body 424, EgoProStandard 668, EgoProStandard-body 460, matching the MCAP file count exactly) out of 2,712 total, the remaining 752 being raw-video-only episodes (EgoRaw 266, EgoProRaw 486) with no pose or semantic annotations. Annotated episodes carry 21-joint hand pose (21,3)+(21,4), 22-joint full body (22,3)+(22,4) on the -body variants, and event-level semantic subtask descriptions; quaternions in (qw,qx,qy,qz) order, float32 world coordinates. Manifests publish stable IDs, provenance, task/scene metadata, duration, modality flags and SHA-256 checksums. 585 unique task names across variants.",
+        "notes": "Measured from the publisher's own per-episode manifests (2,712 rows across six variants): has_head_video 2712/2712 (100%), has_wrist_video 1614/2712 (59.5%), has_hand_pose 1960/2712 (72.3%), has_semantic_annotations 1960/2712 (72.3%), has_body_pose 884/2712 (32.6%). All 2,712 rows are publication_ready; 1,960 are cross_format_complete across LeRobot v3 and MCAP, the remaining 752 are raw-video-only. Manifests also publish scene_id, environment_id, duration_s, frame_count and fps per episode.",
         "method": "ratio",
         "source": "paper:HuggingFace:LightwheelAI/EgoDemo",
         "iso_mapping": "Com-ML"
       },
       "download_efficiency": {
-        "score": 0.294,
-        "hours_per_gb": 0.0338,
-        "total_hours": 50.0,
+        "score": 0.316,
+        "hours_per_gb": 0.0538,
+        "total_hours": 79.54,
         "download_size_gb": 1477.463,
         "method": "percentile_rank",
         "source": "catalog+paper",
         "iso_mapping": "Eff-ML"
       },
       "environment_diversity": {
-        "score": null,
-        "unique_environments": null,
+        "score": 0.889,
+        "unique_environments": 299.0,
         "method": "log_normalized",
         "source": "catalog",
         "iso_mapping": "Div-ML"
@@ -324,20 +323,20 @@
     },
     "classifications": {
       "capture_device": {
-        "value": "Lightwheel EgoSuite wearable rig: stereo head cameras (all variants) plus left/right wrist cameras (EgoPro variants); H.264. Specific hardware model not published.",
+        "value": "Lightwheel EgoSuite wearable rig. Measured: head_left / head_right 1920x1456 30fps h264 yuv420p (all variants), left_wrist / right_wrist 1920x1536 30fps h264 (EgoPro variants). Confirmed independently by MCAP session metadata and LeRobot meta/info.json. No audio stream in any variant.",
         "documented": true,
         "source": "paper:HuggingFace:LightwheelAI/EgoDemo",
         "iso_mapping": "Ide-ML"
       },
       "lens_type": {
-        "value": "fisheye",
-        "fov_degrees": null,
+        "value": "rectilinear",
+        "fov_degrees": 101.2,
         "documented": true,
         "source": "paper:HuggingFace:LightwheelAI/EgoDemo",
         "iso_mapping": "Ide-ML"
       },
       "video_format": {
-        "value": "MP4 (H.264)",
+        "value": "MP4 (H.264, yuv420p); MCAP (h264 CompressedVideo)",
         "source": "catalog"
       },
       "annotation_format": {
@@ -346,9 +345,9 @@
       }
     },
     "context": {
-      "total_hours": 50.0,
+      "total_hours": 79.54,
       "participants": "Not specified",
-      "scenes_environments": "Not specified",
+      "scenes_environments": "299",
       "commercial_use": "Yes",
       "category": "Hand-object interaction",
       "year": "2026",
@@ -359,8 +358,8 @@
     },
     "confidence": {
       "metadata_completeness": {
-        "score": 0.75,
-        "filled_fields": 12,
+        "score": 0.938,
+        "filled_fields": 15,
         "total_fields": 16,
         "method": "ratio",
         "iso_mapping": [
@@ -368,6 +367,77 @@
           "Und-ML"
         ]
       }
+    },
+    "file_eval": {
+      "eval_type": "file",
+      "evaluated_at": "2026-08-23T00:22:14.635406+00:00",
+      "dataset_path": "LightwheelAI/EgoDemo :: EgoRaw/mp4 (24-file head-view sample)",
+      "summary": {
+        "total_files": 24,
+        "files_probed": 24,
+        "files_with_errors": 0,
+        "total_duration_sec": 313.933,
+        "total_hours": 0.0872,
+        "total_frames": 9418,
+        "total_size_mb": 290.618,
+        "resolutions": {
+          "1920x1456": 24
+        },
+        "codecs": {
+          "h264": 24
+        },
+        "clips_with_audio": 0,
+        "clips_without_audio": 24
+      },
+      "distributions": {
+        "fps": {
+          "n": 24,
+          "mean": 30.0,
+          "min": 30.0,
+          "max": 30.0,
+          "std": 0.0,
+          "p5": 30.0,
+          "p95": 30.0
+        },
+        "duration_sec": {
+          "n": 24,
+          "mean": 13.0806,
+          "min": 7.5333,
+          "max": 18.1,
+          "std": 3.1039,
+          "p5": 7.5333,
+          "p95": 16.7667
+        },
+        "bitrate_kbps": {
+          "n": 24,
+          "mean": 7988.2083,
+          "min": 6376,
+          "max": 10138,
+          "std": 1161.9383,
+          "p5": 6445,
+          "p95": 9757
+        },
+        "nb_frames": {
+          "n": 24,
+          "mean": 392.4167,
+          "min": 226,
+          "max": 543,
+          "std": 93.1165,
+          "p5": 226,
+          "p95": 503
+        },
+        "file_size_mb": {
+          "n": 24,
+          "mean": 12.1091,
+          "min": 8.494,
+          "max": 14.484,
+          "std": 1.7667,
+          "p5": 8.978,
+          "p95": 14.085
+        }
+      },
+      "annotation_coverage": null,
+      "discrepancies": null
     }
   }
 }

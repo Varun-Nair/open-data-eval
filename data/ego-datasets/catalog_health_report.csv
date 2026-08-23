@@ -67,15 +67,15 @@ EgoProceL,4,Resolution; Frame Rate (fps); Download Size (estimated); License Typ
 Multimodal Focused Interaction Dataset,4,Resolution; Frame Rate (fps); Download Size (estimated); License Type,33
 EPIC-Tent,4,Resolution; Frame Rate (fps); Download Size (estimated); License Type,33
 Ego-1K,4,Total Hours; Number of Participants; Resolution; Frame Rate (fps),33
-EgoSuite-Open100K (EgoStandard),4,Number of Participants; Resolution; Frame Rate (fps); Download Size (estimated),33
-EgoSuite-Open100K (EgoPro),4,Number of Participants; Resolution; Frame Rate (fps); Download Size (estimated),33
 TACO,3,Total Hours; Download Size (estimated); License Type,50
 Xperience-10M,3,Number of Participants; Resolution; Frame Rate (fps),50
 First-Person Social Interactions (Disney),3,Frame Rate (fps); Download Size (estimated); License Type,50
 MECCANO,3,Total Hours; Download Size (estimated); License Type,50
 Aria Digital Twin (ADT),3,Total Hours; Number of Participants; Frame Rate (fps),50
-EgoSuite-Open100K (EgoDemo),3,Number of Participants; Resolution; Frame Rate (fps),50
 EgoGesture,2,Total Hours; Download Size (estimated),67
+EgoSuite-Open100K (EgoStandard),1,Number of Participants,83
+EgoSuite-Open100K (EgoPro),1,Number of Participants,83
+EgoSuite-Open100K (EgoDemo),1,Number of Participants,83
 Egocentric-10K,1,Number of Participants,83
 Egocentric-100K,1,Number of Participants,83
 HOI4D,1,License Type,83
