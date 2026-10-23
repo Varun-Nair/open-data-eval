@@ -10,6 +10,8 @@ BEOID,No License,Open data with no license specified.,Medium
 DoMSEV,No License,Open data with no license specified.,Medium
 EgoK360,No License,Open data with no license specified.,Medium
 FPVO,Unverified Download,URL Status: Dead. Access: Unavailable.,High
+Human Archive (HA-Multi),Unverified Download,URL Status: Dead (HF repo humanarchive/HA-Multi-Samples returns 401; withdrawn). Access: Unavailable. Successor release humanarchive/ego500 is gated with data upload pending.,High
+Human Archive (HA-Ego),Unverified Download,URL Status: Dead (HF repo humanarchive/HA-Ego-Samples returns 401; withdrawn). Access: Unavailable. Successor release humanarchive/ego500 is gated with data upload pending.,High
 HOI4D,No License,Open data with no license specified.,Medium
 TACO,No License,Open data with no license specified.,Medium
 OAKINK2,No License,Open data with no license specified.,Medium

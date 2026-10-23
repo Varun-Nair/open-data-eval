@@ -12,7 +12,7 @@
   "qp:qualityProfile": {
     "qp:schemaVersion": "1.0",
     "qp:evalLevel": "metadata",
-    "qp:evaluatedAt": "2026-10-23T14:20:36Z",
+    "qp:evaluatedAt": "2026-10-23T15:13:08Z",
     "qp:evaluatedBy": "open-data-eval",
     "scores": {
       "fps": {
@@ -35,12 +35,11 @@
       "modality_richness": {
         "modalities_present": [
           "3D point clouds",
-          "Body pose annotations",
           "Depth",
           "Hand pose annotations",
           "RGB video"
         ],
-        "modality_count": 5,
+        "modality_count": 4,
         "scores_by_usecase": {
           "manipulation": {
             "critical": {
@@ -311,8 +310,8 @@
         "iso_mapping": "Div-ML"
       },
       "demographic_diversity": {
-        "score": 0.241,
-        "participants": 9.0,
+        "score": 0.168,
+        "participants": 4.0,
         "geographic_locations": 1,
         "method": "log_normalized_product",
         "source": "catalog+paper",
@@ -344,7 +343,7 @@
     },
     "context": {
       "total_hours": 22.2,
-      "participants": "9",
+      "participants": "4",
       "scenes_environments": "610 rooms",
       "commercial_use": "Not specified",
       "category": "Hand-object interaction",

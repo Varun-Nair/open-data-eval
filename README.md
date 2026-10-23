@@ -54,37 +54,37 @@ The page opens on a **ranked leaderboard**: every dataset gets an Overall score 
 | Metric | Value |
 |--------|-------|
 | Datasets audited | 116 |
-| Total video hours | 135,500+ |
-| Fully accessible | 99 (88%) |
+| Total video hours | 152,500+ |
+| Fully accessible | 104 (90%) |
 | Broken downloads | 5 (4%) |
-| Dead links | 2 (2%) |
+| Dead links | 4 (3%) |
 | **No license specified** | **67 of 116 (58%)** |
 
 ### URL Status
 ```
-Live                ████████████████████████████████████████████ 102
+Live                ████████████████████████████████████████████ 104
 Broken download     ██ 5
+Dead                ██ 4
 Redirect            █ 2
-Dead                █ 2
 Live but gated      █ 1
 ```
 
 ### Access Level
 ```
-Open                ████████████████████████████████████████████ 76
-Gated-Open          ███████████████ 26
+Open                ████████████████████████████████████████████ 79
+Gated-Open          ██████████████ 25
 Restricted          █████ 9
-Unavailable         █ 1
+Unavailable         ██ 3
 ```
 
 ### License
 ```
 Not specified       ████████████████████████████████████████████ 67
+CC-BY-NC-4.0        ██████████ 15
 Custom Academic     █████████ 14
-CC-BY-NC-4.0        █████████ 14
+Custom Open         ████ 6
 Apache-2.0          ███ 5
-Custom Open         ███ 4
-CC-BY-4.0           █ 2
+CC-BY-4.0           ██ 3
 CC-BY-NC-SA-4.0     █ 2
 S-Lab License       █ 1
 Mixed               █ 1
@@ -92,26 +92,26 @@ CC-BY-NC-ND-4.0     █ 1
 CC-BY-SA-4.0        █ 1
 ```
 
-### Modalities (across all 112 datasets)
+### Modalities (across all 116 datasets)
 ```
-RGB Video           ████████████████████████████████████████████ 112
+RGB Video           ████████████████████████████████████████████ 116
 Eye Gaze            ████████████ 31
-Hand Pose           ████████████ 30
-IMU                 ███████████ 27
-Body Pose           ██████████ 25
+Hand Pose           ████████████ 31
+IMU                 ███████████ 29
+Body Pose           █████████ 23
 Depth (RGB-D)       ████████ 20
 Audio               ███████ 19
-SLAM/Odometry       ██████ 16
-Narrations          ██████ 15
-3D Point Clouds     ██████ 14
+Narrations          ███████ 18
+SLAM/Odometry       ███████ 18
+3D Point Clouds     █████ 14
 3D Scene Recon.     ███ 8
-Depth (Stereo)      ███ 7
-Motion Capture      ██ 6
-Multi-view          █ 3
+Depth (Stereo)      ███ 8
+Motion Capture      ███ 7
+Multi-view          ██ 4
 Optical Flow        █ 2
+Hand Masks          █ 2
 Object Tracking     █ 1
 mmWave              █ 1
-Hand Masks          █ 1
 3D Hand Pose        █ 1
 Object BBoxes       █ 1
 Tactile             █ 1

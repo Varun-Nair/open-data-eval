@@ -146,7 +146,7 @@ PAPER_METADATA = {
         "resolution_override": "1920x1080",  # paper: "primarily 1080p"; standardized 540p also available
         "fps_override": None,                  # already in catalog: "30 (standardized); native varies"
         "annotation_coverage": 1.0,
-        "annotation_notes": "Narrations=100% of 3,670h. Other annotations partial: Gaze 80h (2.2%), 3D 612h (17%), Stereo 491h (13%), FHO 116h.",
+        "annotation_notes": "Narrations=100% of 3,670h. Other modalities partial (paper Table 1): 3D scans 491h (13%), stereo 80h (2.2%), gaze 45h (1.2%), IMU 836h (23%), audio 2,535h (69%); FHO 116h.",
         "download_size_gb": 7000,              # ego4d-data.org: ~7TB primary full-scale
         "geo_locations": 9,                    # 9 countries, 74 worldwide sites
         "arxiv_id": "2110.07058",
@@ -597,6 +597,7 @@ PAPER_METADATA = {
     },
     "Human Archive (HA-Multi)": {
         # HuggingFace: humanarchive/HA-Multi-Samples (no arXiv paper)
+        # Repo returns 401 (withdrawn) as of 2026-10-23; publisher successor: humanarchive/ego500 (gated, CC-BY-NC-4.0, card marked draft)
         # 36-episode sample; full dataset 2,000+ hrs/week; YC W26
         "capture_device": "6 synchronized cameras: 1× egocentric fisheye (1920×1080), 1× chest (1920×1080), 2× wrist (1920×1080), 1× stereo pair head-mounted (1280×720); 256-taxel fiber-optic tactile gloves (both hands); 8 upper-body IMUs (head/chest/biceps/forearms + hand quaternions)",
         "calibration_tier": 0.85,              # Full stereo calibration: intrinsics + rational polynomial distortion (14 coeff)
@@ -613,10 +614,11 @@ PAPER_METADATA = {
         "download_size_gb": 64.066,            # ~64 GB video + ~0.066 GB Parquet sensor data
         "geo_locations": None,                 # Not specified
         "arxiv_id": None,                      # No paper; dataset-only release
-        "paper_ref": "HuggingFace:humanarchive/HA-Multi-Samples",
+        "paper_ref": "HuggingFace:humanarchive/HA-Multi-Samples (withdrawn; successor humanarchive/ego500)",
     },
     "Human Archive (HA-Ego)": {
         # HuggingFace: humanarchive/HA-Ego-Samples (no arXiv paper)
+        # Repo returns 401 (withdrawn) as of 2026-10-23; publisher successor: humanarchive/ego500 (500 h, gated, CC-BY-NC-4.0, card marked draft)
         # 500h egocentric chest-cam sample; 5,562 persons, 181 environments, 753 tasks; YC W26
         "capture_device": "Chest-mounted camera (1920×1080, 30fps, H.264); no additional sensors",
         "calibration_tier": 0.0,               # No calibration information published
@@ -632,7 +634,7 @@ PAPER_METADATA = {
         "download_size_gb": 2500.0,            # ~2.5 TB per dataset card
         "geo_locations": None,                 # Not specified; US-based
         "arxiv_id": None,                      # No paper; dataset-only release
-        "paper_ref": "HuggingFace:humanarchive/HA-Ego-Samples",
+        "paper_ref": "HuggingFace:humanarchive/HA-Ego-Samples (withdrawn; successor humanarchive/ego500)",
     },
     "EgoSuite-Open100K (EgoStandard)": {
         # HuggingFace: LightwheelAI/EgoStandard (no arXiv paper)

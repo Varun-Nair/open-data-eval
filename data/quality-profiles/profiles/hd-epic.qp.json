@@ -12,7 +12,7 @@
   "qp:qualityProfile": {
     "qp:schemaVersion": "1.0",
     "qp:evalLevel": "metadata",
-    "qp:evaluatedAt": "2026-10-23T14:20:36Z",
+    "qp:evaluatedAt": "2026-10-23T15:13:08Z",
     "qp:evaluatedBy": "open-data-eval",
     "scores": {
       "fps": {
@@ -37,7 +37,7 @@
           "3D scene reconstruction",
           "Audio",
           "Eye gaze",
-          "Hand pose annotations",
+          "Hand masks",
           "Object tracking",
           "RGB video"
         ],
@@ -54,17 +54,16 @@
               "ratio": 0.5
             },
             "important": {
-              "present": [
-                "Hand pose annotations"
-              ],
+              "present": [],
               "missing": [
+                "Hand pose annotations",
                 "Tactile",
                 "Force/torque",
                 "Narrations/captions",
                 "Proprioception",
                 "Gripper state"
               ],
-              "ratio": 0.17
+              "ratio": 0.0
             },
             "bonus": {
               "present": [
@@ -79,7 +78,7 @@
               ],
               "ratio": 0.17
             },
-            "score": 0.167
+            "score": 0.155
           },
           "action_recognition": {
             "critical": {
@@ -101,25 +100,26 @@
             },
             "bonus": {
               "present": [
-                "Eye gaze",
-                "Hand pose annotations"
+                "Eye gaze"
               ],
               "missing": [
+                "Hand pose annotations",
                 "IMU",
                 "Object bounding boxes"
               ],
-              "ratio": 0.5
+              "ratio": 0.25
             },
-            "score": 0.753
+            "score": 0.723
           },
           "hand_pose_estimation": {
             "critical": {
               "present": [
-                "RGB video",
+                "RGB video"
+              ],
+              "missing": [
                 "Hand pose annotations"
               ],
-              "missing": [],
-              "ratio": 1.0
+              "ratio": 0.5
             },
             "important": {
               "present": [],
@@ -138,7 +138,7 @@
               ],
               "ratio": 0.0
             },
-            "score": 0.6
+            "score": 0.15
           },
           "navigation": {
             "critical": {
@@ -216,14 +216,13 @@
               "ratio": 0.5
             },
             "important": {
-              "present": [
-                "Hand pose annotations"
-              ],
+              "present": [],
               "missing": [
                 "Depth",
+                "Hand pose annotations",
                 "Proprioception"
               ],
-              "ratio": 0.33
+              "ratio": 0.0
             },
             "bonus": {
               "present": [
@@ -237,7 +236,7 @@
               ],
               "ratio": 0.4
             },
-            "score": 0.185
+            "score": 0.162
           }
         },
         "source": "catalog",

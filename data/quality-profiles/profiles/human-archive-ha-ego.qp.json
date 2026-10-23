@@ -12,7 +12,7 @@
   "qp:qualityProfile": {
     "qp:schemaVersion": "1.0",
     "qp:evalLevel": "metadata",
-    "qp:evaluatedAt": "2026-10-23T14:20:36Z",
+    "qp:evaluatedAt": "2026-10-23T15:13:08Z",
     "qp:evaluatedBy": "open-data-eval",
     "scores": {
       "fps": {
@@ -236,7 +236,7 @@
         "tier": "none",
         "notes": "No calibration data published. Chest-mounted camera only. No intrinsics, distortion, or extrinsics provided. Source: HuggingFace dataset card.",
         "method": "tier",
-        "source": "paper:HuggingFace:humanarchive/HA-Ego-Samples",
+        "source": "paper:HuggingFace:humanarchive/HA-Ego-Samples (withdrawn; successor humanarchive/ego500)",
         "iso_mapping": "Aud-ML"
       },
       "license_clarity": {
@@ -249,10 +249,10 @@
         "iso_mapping": "Cpl-ML"
       },
       "accessibility": {
-        "score": 0.85,
-        "raw_score": 8.5,
-        "access_level": "Gated-Open",
-        "url_status": "Live",
+        "score": 0.45,
+        "raw_score": 4.5,
+        "access_level": "Unavailable",
+        "url_status": "Dead",
         "method": "weighted_sum_normalized",
         "source": "catalog",
         "iso_mapping": "Acs-ML"
@@ -261,7 +261,7 @@
         "score": 0.675,
         "total_hours": 499.9,
         "method": "log10(hrs+1)/log10(10001)",
-        "source": "paper:HuggingFace:humanarchive/HA-Ego-Samples",
+        "source": "paper:HuggingFace:humanarchive/HA-Ego-Samples (withdrawn; successor humanarchive/ego500)",
         "iso_mapping": "Eff-ML"
       },
       "dataloader": {
@@ -283,7 +283,7 @@
         "score": 0.5,
         "notes": "Per-segment task label (753 unique tasks) and environment label (181 unique) assigned via Gemini AI activity recognition. JSON metadata per person includes duration, environment, task, fps, codec, file size. No hand/body pose, no narrations, no frame-level annotations. Source: HuggingFace dataset card.",
         "method": "ratio",
-        "source": "paper:HuggingFace:humanarchive/HA-Ego-Samples",
+        "source": "paper:HuggingFace:humanarchive/HA-Ego-Samples (withdrawn; successor humanarchive/ego500)",
         "iso_mapping": "Com-ML"
       },
       "download_efficiency": {
@@ -315,14 +315,14 @@
       "capture_device": {
         "value": "Chest-mounted camera (1920\u00d71080, 30fps, H.264); no additional sensors",
         "documented": true,
-        "source": "paper:HuggingFace:humanarchive/HA-Ego-Samples",
+        "source": "paper:HuggingFace:humanarchive/HA-Ego-Samples (withdrawn; successor humanarchive/ego500)",
         "iso_mapping": "Ide-ML"
       },
       "lens_type": {
         "value": "standard",
         "fov_degrees": null,
         "documented": true,
-        "source": "paper:HuggingFace:humanarchive/HA-Ego-Samples",
+        "source": "paper:HuggingFace:humanarchive/HA-Ego-Samples (withdrawn; successor humanarchive/ego500)",
         "iso_mapping": "Ide-ML"
       },
       "video_format": {
