@@ -2230,7 +2230,7 @@ function Footer() {
       <div className="foot-inner">
         <span>
           <a href={REPO_URL} target="_blank" rel="noopener noreferrer">open-data-eval</a>
-          &nbsp;· CC-BY-4.0 · Varun Nair 2026
+          &nbsp;· CC-BY-4.0 · Varun Nair 2026 | <a href="https://x.com/BharatJain" target="_blank" rel="noopener noreferrer">Bharat Jain</a>
         </span>
         <span>Open Data Eval · Metadata Eval v1.0 · ISO/IEC 5259-2</span>
       </div>
