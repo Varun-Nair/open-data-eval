@@ -12,24 +12,24 @@
   "qp:qualityProfile": {
     "qp:schemaVersion": "1.0",
     "qp:evalLevel": "metadata",
-    "qp:evaluatedAt": "2026-10-23T15:13:08Z",
+    "qp:evaluatedAt": "2026-10-23T15:45:00Z",
     "qp:evaluatedBy": "open-data-eval",
     "scores": {
       "fps": {
         "score": 1.0,
-        "raw_value": 50.0,
+        "raw_value": 30.0,
         "method": "piecewise_continuous",
-        "source": "catalog",
+        "source": "paper:arXiv:2502.04144",
         "iso_mapping": "Acc-ML"
       },
       "resolution": {
         "score": 1.0,
-        "width": 1920,
-        "height": 1080,
-        "short_edge": 1080,
+        "width": 1408,
+        "height": 1408,
+        "short_edge": 1408,
         "tier": "1080p+",
         "method": "piecewise_continuous",
-        "source": "catalog",
+        "source": "paper:arXiv:2502.04144",
         "iso_mapping": "Acc-ML"
       },
       "modality_richness": {
@@ -243,11 +243,11 @@
         "iso_mapping": "Div-ML"
       },
       "camera_calibration": {
-        "score": null,
-        "tier": null,
-        "notes": "Not provided in HD-EPIC. EPIC-Fields (NeurIPS 2023) provides retroactive COLMAP calibration as a separate companion dataset.",
+        "score": 0.85,
+        "tier": "intrinsics_extrinsics_unvalidated",
+        "notes": "Release ships per-video static Aria device calibration (camera intrinsics with the Aria FisheyeRadTanThinPrism model, sensor-to-device extrinsics) and per-frame device-to-world poses from Aria MPS multi-video SLAM, as intermediate data aligned to the MP4s (hd-epic-annotations README); raw VRS files with factory calibration are also in the data.bris release. 3 of 156 videos use COLMAP poses manually aligned to the MPS kitchen (paper Supp. B.4). No separate calibration validation reported.",
         "method": "tier",
-        "source": "pending_paper_review",
+        "source": "paper:arXiv:2502.04144",
         "iso_mapping": "Aud-ML"
       },
       "license_clarity": {
@@ -292,7 +292,7 @@
       },
       "annotation_coverage": {
         "score": null,
-        "notes": "263 annotations/min (densest in EPIC family). Digital kitchen twins. Coverage fraction not stated in paper.",
+        "notes": "263 annotations/min (densest in EPIC family). Digital kitchen twins. Coverage fraction not stated in paper. The data.bris release also ships, for every video, Aria MPS per-frame camera poses, gaze and wrist/palm positions (wrist_and_palm_poses.csv; no finger joints).",
         "method": "ratio",
         "source": "pending_paper_review",
         "iso_mapping": "Com-ML"
@@ -324,20 +324,20 @@
     },
     "classifications": {
       "capture_device": {
-        "value": "GoPro (EPIC-KITCHENS family; specific Hero model not confirmed in HD-EPIC paper)",
+        "value": "Project Aria Gen 1 glasses (Profile 28: 1408\u00d71408 RGB at 30 fps, 2 SLAM cameras at 30 fps, eye tracking at 60 fps, 7 microphones)",
         "documented": true,
         "source": "paper:arXiv:2502.04144",
         "iso_mapping": "Ide-ML"
       },
       "lens_type": {
-        "value": "rectilinear",
-        "fov_degrees": 94,
+        "value": "fisheye",
+        "fov_degrees": 110,
         "documented": true,
         "source": "paper:arXiv:2502.04144",
         "iso_mapping": "Ide-ML"
       },
       "video_format": {
-        "value": "Not specified",
+        "value": "MP4 (converted from Aria VRS; raw VRS also released)",
         "source": "catalog"
       },
       "annotation_format": {
@@ -363,8 +363,8 @@
     },
     "confidence": {
       "metadata_completeness": {
-        "score": 0.875,
-        "filled_fields": 14,
+        "score": 0.938,
+        "filled_fields": 15,
         "total_fields": 16,
         "method": "ratio",
         "iso_mapping": [

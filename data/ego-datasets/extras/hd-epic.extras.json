@@ -18,7 +18,7 @@
       "action_labels":    { "present": true,  "note": "Verb/noun/pair classes per narration; recipe steps and high-level activities" },
       "object_boxes":     { "present": true,  "note": "20K object-movement tracks with 2D boxes at pick-up and put-down" },
       "segmentation":     { "present": true,  "note": "37K object masks lifted to 3D; 7.7M hand masks" },
-      "hand_pose":        { "present": false, "note": "Hands are released as masks, not keypoints" },
+      "hand_pose":        { "present": false, "note": "Masks only; Aria MPS wrist/palm positions ship in SLAM-and-Gaze, no finger joints" },
       "body_pose":        { "present": false, "note": null },
       "object_pose":      { "present": false, "note": null },
       "gaze":             { "present": true,  "note": "Per-frame 2D gaze centre + 3D direction; gaze-priming events per object" },
