@@ -12,7 +12,7 @@
   "qp:qualityProfile": {
     "qp:schemaVersion": "1.0",
     "qp:evalLevel": "metadata",
-    "qp:evaluatedAt": "2026-10-23T14:20:36Z",
+    "qp:evaluatedAt": "2026-10-23T15:13:08Z",
     "qp:evaluatedBy": "open-data-eval",
     "scores": {
       "fps": {
@@ -293,7 +293,7 @@
       },
       "annotation_coverage": {
         "score": 1.0,
-        "notes": "Narrations=100% of 3,670h. Other annotations partial: Gaze 80h (2.2%), 3D 612h (17%), Stereo 491h (13%), FHO 116h.",
+        "notes": "Narrations=100% of 3,670h. Other modalities partial (paper Table 1): 3D scans 491h (13%), stereo 80h (2.2%), gaze 45h (1.2%), IMU 836h (23%), audio 2,535h (69%); FHO 116h.",
         "method": "ratio",
         "source": "paper:arXiv:2110.07058",
         "iso_mapping": "Com-ML"

@@ -119,5 +119,10 @@
   "EgoSuite-Open100K (EgoStandard)": null,
   "EgoSuite-Open100K (EgoPro)": null,
   "EgoSuite-Open100K (EgoDemo)": null,
-  "Eidon Tracker POV": null
+  "Eidon Tracker POV": null,
+  "Open-AoE (OpenAoE-2000h)": {
+    "count": 6,
+    "source": "semantic_scholar",
+    "fetched_at": "2026-10-23"
+  }
 }

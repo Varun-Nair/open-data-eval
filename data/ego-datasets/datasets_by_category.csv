@@ -53,7 +53,7 @@ Gaze and eye tracking,Sanctuaria-Gaze,2025,Unknown,Restricted,Not specified,Live
 Hand-object interaction,HO-Cap,2024,Unknown,Open,CC-BY-4.0,Live,9.5
 Hand-object interaction,EgoDex,2025,829,Open,CC-BY-NC-ND-4.0,Live,9.2
 Hand-object interaction,DexYCB,2021,Unknown,Open,CC-BY-NC-4.0,Live,9.2
-Hand-object interaction,Human Archive (HA-Multi),2026,3.9,Gated-Open,Apache-2.0,Live,8.5
+Hand-object interaction,Human Archive (HA-Multi),2026,3.9,Unavailable,Apache-2.0,Dead,4.5
 Hand-object interaction,AssemblyHands,2023,Unknown,Open,CC-BY-NC-4.0,Live,8.2
 Hand-object interaction,HOT3D,2025,~14,Gated-Open,Custom Academic,Live,7.8
 Hand-object interaction,EgoSuite-Open100K (EgoPro),2026,1103,Gated-Open,Custom Open,Live,7.5
@@ -80,7 +80,7 @@ Industrial and procedural,ENIGMA-51,2024,Unknown,Open,Not specified,Live,5.5
 Industrial and procedural,ENIGMA-360,2024,Unknown,Open,Not specified,Live,5.5
 Industrial and procedural,EgoProceL,2022,62,Open,Not specified,Live,5.5
 Large-scale foundation,EPIC-KITCHENS-100,2021,100,Open,CC-BY-NC-4.0,Live,9.8
-Large-scale foundation,Human Archive (HA-Ego),2026,499.9,Gated-Open,Apache-2.0,Live,8.5
+Large-scale foundation,Human Archive (HA-Ego),2026,499.9,Unavailable,Apache-2.0,Dead,4.5
 Large-scale foundation,HD-EPIC,2025,41,Open,CC-BY-NC-4.0,Live,8.2
 Large-scale foundation,Xperience-10M,2026,10000,Gated-Open,CC-BY-NC-4.0,Live,8.2
 Large-scale foundation,Ego4D,2022,3670,Gated-Open,Custom Academic,Live,7.5

@@ -12,7 +12,7 @@
   "qp:qualityProfile": {
     "qp:schemaVersion": "1.0",
     "qp:evalLevel": "metadata",
-    "qp:evaluatedAt": "2026-10-23T14:20:36Z",
+    "qp:evaluatedAt": "2026-10-23T15:13:08Z",
     "qp:evaluatedBy": "open-data-eval",
     "scores": {
       "fps": {
@@ -34,12 +34,11 @@
       },
       "modality_richness": {
         "modalities_present": [
-          "Body pose annotations",
           "Hand pose annotations",
           "Motion capture",
           "RGB video"
         ],
-        "modality_count": 4,
+        "modality_count": 3,
         "scores_by_usecase": {
           "manipulation": {
             "critical": {

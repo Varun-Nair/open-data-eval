@@ -12,7 +12,7 @@
   "qp:qualityProfile": {
     "qp:schemaVersion": "1.0",
     "qp:evalLevel": "metadata",
-    "qp:evaluatedAt": "2026-10-23T14:20:36Z",
+    "qp:evaluatedAt": "2026-10-23T15:13:08Z",
     "qp:evaluatedBy": "open-data-eval",
     "scores": {
       "fps": {
@@ -351,7 +351,11 @@
       "year": "2026",
       "paper": "arXiv:2607.14183",
       "approximate_citations": "<10",
-      "citations": null,
+      "citations": {
+        "count": 6,
+        "source": "semantic_scholar",
+        "fetched_at": "2026-10-23"
+      },
       "no_paper": false
     },
     "confidence": {

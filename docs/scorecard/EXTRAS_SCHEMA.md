@@ -53,7 +53,7 @@ repo, the authors' YouTube channel). Every URL must have been checked to return 
       "gaze":             { "present": true,  "note": "~80 h with eye gaze" },
       "camera_pose":      { "present": true,  "note": "Subset with SLAM trajectories" },
       "depth":            { "present": false, "note": null },
-      "scene_3d":         { "present": true,  "note": "612 h with 3D scans / point clouds" },
+      "scene_3d":         { "present": true,  "note": "491 h with 3D scans / point clouds" },
       "audio_transcript": { "present": true,  "note": "AV diarization + transcripts subset" },
       "qa_language":      { "present": true,  "note": "NLQ / Episodic memory queries" }
     },
