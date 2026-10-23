@@ -2238,6 +2238,33 @@ function Footer() {
   );
 }
 
+// ─── theme toggle (light by default; the choice is stored in localStorage "ode-theme") ───
+function ThemeToggle() {
+  const read = () => (document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light");
+  const [theme, setTheme] = useState(read);
+  function toggle() {
+    const next = theme === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", next);
+    try { localStorage.setItem("ode-theme", next); } catch (e) {}
+    setTheme(next);
+  }
+  const dark = theme === "dark";
+  return (
+    <button type="button" className="theme-toggle" onClick={toggle}
+      aria-label={dark ? "Switch to light theme" : "Switch to dark theme"} title={dark ? "Light theme" : "Dark theme"}>
+      {dark
+        ? <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" strokeWidth="1.8" />
+            <path d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M5.3 5.3l1.7 1.7M17 17l1.7 1.7M5.3 18.7 7 17M17 7l1.7-1.7"
+              fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+          </svg>
+        : <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+            <path d="M20.2 14.6A8.4 8.4 0 0 1 9.4 3.8a7.2 7.2 0 1 0 10.8 10.8z" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
+          </svg>}
+    </button>
+  );
+}
+
 // ─── app ──────────────────────────────────────────────────────────
 function App() {
   const [route, navigate] = useHashRoute();
@@ -2278,7 +2305,10 @@ function App() {
                   <img src="./logo.svg" alt="" width="30" height="30" />Open Data Eval
                 </a>
               : <span aria-hidden="true" />}
-            <SegControl view={view} onPick={pickView} />
+            <div className="nav-right">
+              <SegControl view={view} onPick={pickView} />
+              <ThemeToggle />
+            </div>
           </nav>
           {view === "leaderboard" && <Hero stats={stats} />}
         </div>
