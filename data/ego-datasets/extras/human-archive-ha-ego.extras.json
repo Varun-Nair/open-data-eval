@@ -1,0 +1,42 @@
+{
+  "name": "Human Archive (HA-Ego)",
+  "tagline": "~500 h of chest-mounted 1080p video of real work in 181 environments (10,633 segments, 5,562 people) with AI task labels; sample repo gone.",
+  "links": {
+    "project": "https://www.humanarchive.ai/",
+    "paper": null,
+    "huggingface": "https://huggingface.co/datasets/humanarchive/ego500",
+    "github": null,
+    "download": "https://huggingface.co/datasets/humanarchive/ego500"
+  },
+  "hfDatasetId": "humanarchive/ego500",
+  "hfViewer": false,
+  "annotations": {
+    "format": "JSON metadata per segment (HA-Ego-Samples); Ego500 successor ships JSON step annotations",
+    "coverageNote": "HA-Ego-Samples (scored here) had Gemini task/environment labels per segment. Its repo is gone; Ego500 ('HA-Ego-500', gated, upload pending) adds 310K steps.",
+    "types": {
+      "narrations":       { "present": false, "note": "None in HA-Ego-Samples; Ego500 adds per-step imperative descriptions" },
+      "action_labels":    { "present": true,  "note": "Task (753) + environment (181) label per segment, Gemini-assigned" },
+      "object_boxes":     { "present": false, "note": null },
+      "segmentation":     { "present": false, "note": null },
+      "hand_pose":        { "present": false, "note": null },
+      "body_pose":        { "present": false, "note": null },
+      "object_pose":      { "present": false, "note": null },
+      "gaze":             { "present": false, "note": null },
+      "camera_pose":      { "present": false, "note": "No calibration or trajectory published" },
+      "depth":            { "present": false, "note": null },
+      "scene_3d":         { "present": false, "note": null },
+      "audio_transcript": { "present": false, "note": "No audio in any MP4" },
+      "qa_language":      { "present": false, "note": "Ego500 adds per-hand state + visible-object lists per step" }
+    },
+    "sample": "# Ego500 (HA-Ego-500) step record, from the authors' HF card (successor to HA-Ego-Samples)\n{\n  \"step\": 1,\n  \"start_time_seconds\": 0.0,\n  \"end_time_seconds\": 3.0,\n  \"description\": \"Pick up the cloth from the counter with the right hand.\",\n  \"task_phase\": \"task\",\n  \"left_hand\": \"empty\",\n  \"right_hand\": \"cloth\",\n  \"objects_visible\": [\"cloth\", \"counter\", \"sink\"]\n}"
+  },
+  "samples": [
+    {
+      "kind": "image",
+      "src": "https://ego500.humanarchive.ai/media/ui/ui-wide.jpg",
+      "caption": "Preview image from the Ego500 (HA-Ego-500) release page",
+      "credit": "ego500.humanarchive.ai"
+    }
+  ],
+  "verifiedAt": "2026-10-23"
+}

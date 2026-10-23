@@ -1,0 +1,93 @@
+{
+  "name": "ARCTIC",
+  "tagline": "2.1M frames (8 static + 1 ego views) of 10 subjects manipulating articulated objects bimanually, with MANO, SMPL-X and dense contact GT.",
+  "links": {
+    "project": "https://arctic.is.tue.mpg.de/",
+    "paper": "https://arxiv.org/abs/2204.13662",
+    "huggingface": null,
+    "github": "https://github.com/zc-alexfan/arctic",
+    "download": "https://arctic.is.tue.mpg.de/download.php"
+  },
+  "hfDatasetId": null,
+  "hfViewer": false,
+  "annotations": {
+    "format": "NPY per sequence (mano / smplx / object / egocam) + JSON meta + 2K images",
+    "coverageNote": "Every frame has MANO hand meshes, SMPL-X body, 7-D articulated object pose and egocentric camera pose from a 54-camera Vicon MoCap; contact fields derived.",
+    "types": {
+      "narrations": {
+        "present": false,
+        "note": null
+      },
+      "action_labels": {
+        "present": false,
+        "note": "Only sequence names (e.g. box_grab_01, box_use_01)"
+      },
+      "object_boxes": {
+        "present": null,
+        "note": "3D object box corners + their 2D projections in processed splits; no plain 2D boxes"
+      },
+      "segmentation": {
+        "present": false,
+        "note": "Masks renderable from GT with the provided scripts, not shipped"
+      },
+      "hand_pose": {
+        "present": true,
+        "note": "MANO rot / pose / trans / shape per frame, both hands; 21 joints per view in splits"
+      },
+      "body_pose": {
+        "present": true,
+        "note": "SMPL-X params per frame (body, jaw, eyes, hands)"
+      },
+      "object_pose": {
+        "present": true,
+        "note": "7-D pose (1 articulation + 3 rot + 3 trans) + object templates / meshes"
+      },
+      "gaze": {
+        "present": false,
+        "note": null
+      },
+      "camera_pose": {
+        "present": true,
+        "note": "Egocentric camera R/T per frame + intrinsics (egocam.dist.npy); static cams in meta"
+      },
+      "depth": {
+        "present": false,
+        "note": "Depth renderable from GT with scripts, not captured"
+      },
+      "scene_3d": {
+        "present": false,
+        "note": null
+      },
+      "audio_transcript": {
+        "present": false,
+        "note": null
+      },
+      "qa_language": {
+        "present": false,
+        "note": null
+      }
+    },
+    "sample": "# raw_seqs/s01/box_grab_01.mano.npy\n  rot         : frames x 3    # MANO global rotation (axis-angle)\n  pose        : frames x 45   # MANO pose params\n  trans       : frames x 3    # global translation\n  shape       : frames x 10   # MANO shape\n  fitting_err : frames\n# raw_seqs/s01/box_grab_01.object.npy\n  frames x 7                  # 1 articulation + 3 rot (axis-angle) + 3 trans\n# raw_seqs/s01/box_grab_01.egocam.dist.npy\n  R_k_cam_np : frames x 3 x 3   T_k_cam_np : frames x 3 x 1   intrinsics : 3 x 3   dist8 : 8"
+  },
+  "samples": [
+    {
+      "kind": "image",
+      "src": "https://arctic.is.tue.mpg.de/media/upload/teaser_small.jpg",
+      "caption": "Allocentric + egocentric frames, bimanual MANO meshes, changing contact and object articulation",
+      "credit": "arctic.is.tue.mpg.de"
+    },
+    {
+      "kind": "video",
+      "src": "https://download.is.tue.mpg.de/arctic/static/videos/dexterous.mp4",
+      "caption": "Reconstructed hands and object with per-vertex hand-object distance heatmaps",
+      "credit": "arctic.is.tue.mpg.de"
+    },
+    {
+      "kind": "youtube",
+      "src": "bvMm8gfFbZ8",
+      "caption": "ARCTIC overview video (linked from the GitHub README)",
+      "credit": "YouTube / AIT ETH (authors' lab)"
+    }
+  ],
+  "verifiedAt": "2026-10-23"
+}

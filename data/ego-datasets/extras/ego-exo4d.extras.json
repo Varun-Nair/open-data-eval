@@ -1,0 +1,54 @@
+{
+  "name": "Ego-Exo4D",
+  "tagline": "1,286 h of time-synced ego (Aria) + exo (GoPro) video of 740 participants doing skilled activities at 123 sites in 13 cities.",
+  "links": {
+    "project": "https://ego-exo4d-data.org/",
+    "paper": "https://arxiv.org/abs/2311.18259",
+    "huggingface": null,
+    "github": "https://github.com/facebookresearch/Ego4d",
+    "download": "https://docs.ego-exo4d-data.org/download/"
+  },
+  "hfDatasetId": null,
+  "hfViewer": false,
+  "annotations": {
+    "format": "JSON (annotations) + VRS/MPS (Aria sensor data)",
+    "coverageNote": "Atomic descriptions on 4,965/5,035 takes (~98.6%, 432K sentences); keysteps, proficiency, EgoPose and relation masks cover benchmark subsets.",
+    "types": {
+      "narrations":       { "present": true,  "note": "Atomic action descriptions: 432K timestamped sentences" },
+      "action_labels":    { "present": true,  "note": "Keystep segments (step_name, start/end, is_essential) on procedural takes" },
+      "object_boxes":     { "present": true,  "note": "Relations: one 2D box per active object on the ego clip" },
+      "segmentation":     { "present": true,  "note": "Relations: per-frame ego + exo object masks (encodedMask) with click logs" },
+      "hand_pose":        { "present": true,  "note": "EgoPose: 21 joints per hand in 3D + 2D ego/exo projections" },
+      "body_pose":        { "present": true,  "note": "EgoPose: 17-joint 3D body keypoints + 2D, flagged manual/auto" },
+      "object_pose":      { "present": false, "note": null },
+      "gaze":             { "present": true,  "note": "Aria MPS eye gaze per take" },
+      "camera_pose":      { "present": true,  "note": "Aria MPS 6-DoF trajectories; per-take intrinsics/extrinsics for all cameras" },
+      "depth":            { "present": false, "note": null },
+      "scene_3d":         { "present": true,  "note": "MPS semi-dense point clouds per capture" },
+      "audio_transcript": { "present": true,  "note": "Expert commentary transcriptions; multichannel audio in VRS" },
+      "qa_language":      { "present": true,  "note": "Expert commentary + demonstrator/demonstration proficiency labels" }
+    },
+    "sample": "{\n  \"annotations\": {\n    \"3c489f86-8896-4c86-8a5a-929999799d36\": [{\n      \"descriptions\": [{\n        \"text\": \"C touches the screw of the hub with his right hand.\",\n        \"timestamp\": 18.48356,\n        \"subject\": \"C\",\n        \"ego_visible\": true,\n        \"best_exo\": {\"raw_cam_id\": \"2\", \"cam_id\": \"cam02\"},\n        \"unsure\": false\n      }]\n    }]\n  }\n}"
+  },
+  "samples": [
+    {
+      "kind": "image",
+      "src": "https://ego-exo4d-data.org/assets/images/ego-exo-view.png",
+      "caption": "Paired ego (Aria fisheye) and exo (GoPro) views of the same cooking moments",
+      "credit": "ego-exo4d-data.org"
+    },
+    {
+      "kind": "video",
+      "src": "https://ego-exo4d-data.org/assets/videos/cooking/pointcloud.mp4",
+      "caption": "MPS point cloud of a kitchen capture with the Aria trajectory and four exo camera poses",
+      "credit": "ego-exo4d-data.org"
+    },
+    {
+      "kind": "youtube",
+      "src": "GdooXEBAnI8",
+      "caption": "Ego-Exo4D Dataset and Benchmark Suite - 2023 (official overview video)",
+      "credit": "YouTube / Ego4D channel"
+    }
+  ],
+  "verifiedAt": "2026-10-23"
+}

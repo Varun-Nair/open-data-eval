@@ -1,0 +1,48 @@
+{
+  "name": "EgoBody",
+  "tagline": "125 two-person sequences, 36 subjects, 15 scanned indoor scenes: HoloLens2 ego view + 3-5 Kinects with SMPL-X bodies for both people.",
+  "links": {
+    "project": "https://sanweiliti.github.io/egobody/egobody.html",
+    "paper": "https://arxiv.org/abs/2112.07642",
+    "huggingface": null,
+    "github": "https://github.com/sanweiliti/EgoBody",
+    "download": "https://egobody.ethz.ch/"
+  },
+  "hfDatasetId": null,
+  "hfViewer": false,
+  "annotations": {
+    "format": "PKL (SMPL-X / SMPL params per frame), NPZ (2D keypoints), CSV (sequence info, gaze), JSON (calibration), OBJ (scenes)",
+    "coverageNote": "Every sequence has SMPL-X fits for interactee and camera wearer (219,731 Kinect + 199,111 ego frames); gaze/hand/head tracking from HoloLens2.",
+    "types": {
+      "narrations":       { "present": false, "note": null },
+      "action_labels":    { "present": false, "note": null },
+      "object_boxes":     { "present": true,  "note": "Person crop box (center, scale) per ego frame in keypoints.npz" },
+      "segmentation":     { "present": false, "note": null },
+      "hand_pose":        { "present": true,  "note": "SMPL-X hand articulation; HoloLens2 hand tracking in head_hand_eye.csv" },
+      "body_pose":        { "present": true,  "note": "SMPL-X and SMPL params per frame for both people; OpenPose BODY_25 2D joints" },
+      "object_pose":      { "present": false, "note": null },
+      "gaze":             { "present": true,  "note": "HoloLens2 eye gaze per timestamp (head_hand_eye.csv)" },
+      "camera_pose":      { "present": true,  "note": "Per-frame PV camera-to-world transform; Kinect/HoloLens extrinsics" },
+      "depth":            { "present": true,  "note": "Kinect depth PNGs (3rd person) and HoloLens2 depth stream" },
+      "scene_3d":         { "present": true,  "note": "Textured OBJ mesh for each of the 15 scenes" },
+      "audio_transcript": { "present": false, "note": null },
+      "qa_language":      { "present": true,  "note": "Motion text descriptions via Motion-X (separate license)" }
+    },
+    "sample": "# data_info_release.csv (one row per sequence)\nrecording_name,body_idx_0,body_idx_1,body_idx_fpv,start_frame,end_frame,scene_name\nrecording_202xxxxx_Sxx_Sxx_xx,<gender of body 0>,<gender of body 1>,<interactee idx+gender>,<int>,<int>,<scene>\n\n# smplx_interactee_train/RECORDING_NAME/body_idx_x/results/frame_xxxxx/000.pkl\n{\"transl\": [...], \"global_orient\": [...], \"betas\": [...], \"body_pose\": [...]}  # SMPL-X params, master-Kinect frame"
+  },
+  "samples": [
+    {
+      "kind": "image",
+      "src": "https://raw.githubusercontent.com/sanweiliti/EgoBody/main/images/teaser_v2.jpg",
+      "caption": "Egocentric views with fitted SMPL-X bodies of the interactee and camera wearer",
+      "credit": "github.com/sanweiliti/EgoBody"
+    },
+    {
+      "kind": "image",
+      "src": "https://sanweiliti.github.io/egobody/images/setup.jpg",
+      "caption": "Capture setup: HoloLens2 wearer plus multi-Kinect rig in a scanned scene",
+      "credit": "sanweiliti.github.io"
+    }
+  ],
+  "verifiedAt": "2026-10-23"
+}

@@ -1,0 +1,81 @@
+{
+  "name": "OpenEgo",
+  "tagline": "1,107 h / 119.6M frames from 6 public ego datasets (258+ people, 600+ environments) unified to MANO-21 hand poses and action primitives.",
+  "links": {
+    "project": "https://www.openegocentric.com/",
+    "paper": "https://arxiv.org/abs/2509.05513",
+    "huggingface": null,
+    "github": "https://github.com/ahadjawaid/openego",
+    "download": "https://github.com/ahadjawaid/openego"
+  },
+  "hfDatasetId": null,
+  "hfViewer": false,
+  "annotations": {
+    "format": "JSON (annotation.json) + HDF5 (joints.hdf5, metadata.hdf5) + MP4",
+    "coverageNote": "Hand poses on all frames (camera frame, visibility-flagged); language primitives are auto-generated and only partially verified; EgoDex video not redistributed.",
+    "types": {
+      "narrations": {
+        "present": true,
+        "note": "Timestamped free-text action primitives with objects and actors per demo"
+      },
+      "action_labels": {
+        "present": true,
+        "note": "Task string + action segments with start/end timestamps"
+      },
+      "object_boxes": {
+        "present": false,
+        "note": null
+      },
+      "segmentation": {
+        "present": false,
+        "note": null
+      },
+      "hand_pose": {
+        "present": true,
+        "note": "21-joint MANO poses in camera coords + per-joint visibility; 2D via intrinsics"
+      },
+      "body_pose": {
+        "present": false,
+        "note": null
+      },
+      "object_pose": {
+        "present": false,
+        "note": "Not carried into the unified format (HOT3D / HO-Cap sources have it)"
+      },
+      "gaze": {
+        "present": false,
+        "note": null
+      },
+      "camera_pose": {
+        "present": null,
+        "note": "Extrinsics used to convert poses to camera frame; not in the shipped layout"
+      },
+      "depth": {
+        "present": false,
+        "note": null
+      },
+      "scene_3d": {
+        "present": false,
+        "note": null
+      },
+      "audio_transcript": {
+        "present": false,
+        "note": null
+      },
+      "qa_language": {
+        "present": false,
+        "note": null
+      }
+    },
+    "sample": "{\n  \"task\": \"Picking up and moving various objects on a table\",\n  \"actions\": [\n    {\n      \"start_timestamp\": 1.0,\n      \"end_timestamp\": 3.6,\n      \"objects\": [\"Tazo green tea carton\"],\n      \"actors\": [\"left_hand\"],\n      \"label\": \"left hand grasps, lifts, and then places the Tazo green tea carton back on the table\"\n    }\n  ],\n  \"video_info\": {\"num_frames\": 676, \"duration\": 22.53, \"fps\": 30, \"height\": 720, \"width\": 1280}\n}"
+  },
+  "samples": [
+    {
+      "kind": "image",
+      "src": "https://arxiv.org/html/2509.05513v1/high-low-task.png",
+      "caption": "Ego frames with 21-joint hand poses and action primitives for 'Assemble a GoPro camera' (paper figure)",
+      "credit": "arxiv.org (OpenEgo paper)"
+    }
+  ],
+  "verifiedAt": "2026-10-23"
+}

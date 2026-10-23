@@ -1,0 +1,48 @@
+{
+  "name": "MECCANO",
+  "tagline": "20 participants in 2 countries assembling a toy motorbike; RGB, depth, 200 Hz gaze; 8,857 action segments (61 classes), 64K object boxes.",
+  "links": {
+    "project": "https://iplab.dmi.unict.it/MECCANO/",
+    "paper": "https://arxiv.org/abs/2209.08691",
+    "huggingface": null,
+    "github": "https://github.com/fpv-iplab/MECCANO",
+    "download": "https://iplab.dmi.unict.it/legacy/MECCANO/"
+  },
+  "hfDatasetId": null,
+  "hfViewer": false,
+  "annotations": {
+    "format": "CSV (temporal action / verb segments), COCO-style JSON (active object, hand, next-active-object boxes)",
+    "coverageNote": "Temporal action segments span all 20 videos; boxes annotated on contact and past frames (64,349 active objects, 89,628 hands, 48,024 NAOs).",
+    "types": {
+      "narrations":       { "present": false, "note": null },
+      "action_labels":    { "present": true,  "note": "8,857 segments, 61 action / 12 verb classes, with start/end frames" },
+      "object_boxes":     { "present": true,  "note": "Active objects (20 classes), hands and next-active objects" },
+      "segmentation":     { "present": false, "note": null },
+      "hand_pose":        { "present": false, "note": null },
+      "body_pose":        { "present": false, "note": null },
+      "object_pose":      { "present": false, "note": null },
+      "gaze":             { "present": true,  "note": "Pupil gaze stream at 200 Hz for all videos" },
+      "camera_pose":      { "present": false, "note": null },
+      "depth":            { "present": true,  "note": "RealSense SR300 depth frames 640x480 @ 12 fps" },
+      "scene_3d":         { "present": false, "note": null },
+      "audio_transcript": { "present": false, "note": null },
+      "qa_language":      { "present": false, "note": null }
+    },
+    "sample": "video_id,action_id,action_name,start_frame,end_frame\n0001,0,check_booklet,00010.jpg,00052.jpg\n0007,20,take_red_4_perforated_junction_bar,01058.jpg,01069.jpg"
+  },
+  "samples": [
+    {
+      "kind": "image",
+      "src": "https://raw.githubusercontent.com/fpv-iplab/MECCANO/master/images/MECCANO_Multimodal.gif",
+      "caption": "Synchronized RGB, depth and gaze streams during toy-motorbike assembly",
+      "credit": "github.com/fpv-iplab/MECCANO"
+    },
+    {
+      "kind": "image",
+      "src": "https://iplab.dmi.unict.it/legacy/MECCANO/img/ehoi_qual.png",
+      "caption": "Egocentric human-object interaction detections with hand and object boxes",
+      "credit": "iplab.dmi.unict.it/MECCANO"
+    }
+  ],
+  "verifiedAt": "2026-10-23"
+}

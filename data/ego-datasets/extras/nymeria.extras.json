@@ -1,0 +1,48 @@
+{
+  "name": "Nymeria",
+  "tagline": "300 h of in-the-wild daily motion: 1,200 sequences, 264 participants, 50 locations, 240 Hz XSens body mocap and 310.5K narration sentences.",
+  "links": {
+    "project": "https://www.projectaria.com/datasets/nymeria/",
+    "paper": "https://arxiv.org/abs/2406.09905",
+    "huggingface": "https://huggingface.co/datasets/projectaria/Nymeria",
+    "github": "https://github.com/facebookresearch/nymeria_dataset",
+    "download": "https://explorer.projectaria.com/nymeria"
+  },
+  "hfDatasetId": "projectaria/Nymeria",
+  "hfViewer": false,
+  "annotations": {
+    "format": "CSV (narration, MPS trajectories, gaze), NPZ (XSens / Momentum body), JSON (metadata), VRS (sensors)",
+    "coverageNote": "All 1,200 sequences have body motion; narration coverage per card: motion narration 39 h, atomic actions 207 h, activity summaries 196 h.",
+    "types": {
+      "narrations":       { "present": true,  "note": "3 tiers: motion narration (<5 s), atomic action, activity summary (~30 s)" },
+      "action_labels":    { "present": true,  "note": "Atomic-action sentences per ~5 s clip; 20 scripted scenarios" },
+      "object_boxes":     { "present": true,  "note": "NymeriaPlus adds 2D/3D object boxes (2dbb_*.csv, 3dbb.csv)" },
+      "segmentation":     { "present": false, "note": null },
+      "hand_pose":        { "present": false, "note": "Wrist trajectories only (miniAria wristbands); no finger joints" },
+      "body_pose":        { "present": true,  "note": "XSens 240 Hz kinematics retargeted to Momentum; NymeriaPlus adds MHR + SMPL" },
+      "object_pose":      { "present": true,  "note": "NymeriaPlus: ShapeR instance-level 3D object reconstructions" },
+      "gaze":             { "present": true,  "note": "MPS general + personalized eye gaze CSVs (10.8M gaze points)" },
+      "camera_pose":      { "present": true,  "note": "MPS SLAM closed/open-loop trajectories for head, wrists, observer" },
+      "depth":            { "present": false, "note": null },
+      "scene_3d":         { "present": true,  "note": "MPS semi-dense point clouds per recording" },
+      "audio_transcript": { "present": false, "note": "Headset audio recorded (NymeriaPlus); no transcripts" },
+      "qa_language":      { "present": false, "note": null }
+    },
+    "sample": "# data/dataset_metadata.json (per-sequence record, abridged)\n\"20230607_s0_james_johnson_act0_e72nhq\": {\n  \"duration_s\": \"1220.64\", \"location\": \"Loc_04\", \"script\": \"S14-By_my_desk\",\n  \"body_motion\": true, \"head_slam\": true, \"head_general_gaze\": true,\n  \"left_wrist_slam\": true, \"right_wrist_slam\": true, \"observer_slam\": true,\n  \"motion_narration\": false, \"atomic_action\": true, \"activity_summarization\": true,\n  \"participant_age_group\": \"25-30\", \"participant_xsens_suit_size\": \"M\"\n}\n# narration/ ships motion_narration.csv, atomic_action.csv, activity_summarization.csv"
+  },
+  "samples": [
+    {
+      "kind": "image",
+      "src": "https://huggingface.co/datasets/projectaria/Nymeria/resolve/main/assets/teaser1.gif",
+      "caption": "100 random Nymeria samples: ego video with synchronized body motion",
+      "credit": "huggingface.co/datasets/projectaria/Nymeria"
+    },
+    {
+      "kind": "image",
+      "src": "https://raw.githubusercontent.com/facebookresearch/nymeria_dataset/main/.github/nymeria_plus_teaser.jpg",
+      "caption": "NymeriaPlus additions: MHR/SMPL bodies, object boxes and 3D object reconstructions",
+      "credit": "github.com/facebookresearch/nymeria_dataset"
+    }
+  ],
+  "verifiedAt": "2026-10-23"
+}

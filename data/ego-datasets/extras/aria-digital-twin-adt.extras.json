@@ -1,0 +1,42 @@
+{
+  "name": "Aria Digital Twin (ADT)",
+  "tagline": "236 Aria sequences in 2 digitized indoor scenes with per-frame 6-DoF poses for 398 objects, depth, instance masks, gaze and mocap skeletons.",
+  "links": {
+    "project": "https://www.projectaria.com/datasets/adt/",
+    "paper": "https://arxiv.org/abs/2306.06362",
+    "huggingface": "https://huggingface.co/datasets/projectaria/aria-digital-twin",
+    "github": "https://github.com/facebookresearch/projectaria_tools",
+    "download": "https://facebookresearch.github.io/projectaria_tools/docs/open_datasets/aria_digital_twin_dataset/dataset_download"
+  },
+  "hfDatasetId": "projectaria/aria-digital-twin",
+  "hfViewer": false,
+  "annotations": {
+    "format": "CSV (trajectory, 2D/3D boxes, object poses, gaze), JSON (instances, skeletons), VRS (depth, segmentation, synthetic video)",
+    "coverageNote": "Ground truth is generated for every frame of all sequences; skeleton files exist only where a wearer wore the mocap suit.",
+    "types": {
+      "narrations":       { "present": false, "note": null },
+      "action_labels":    { "present": false, "note": null },
+      "object_boxes":     { "present": true,  "note": "2D boxes per instance on RGB and both SLAM cameras, with visibility ratio" },
+      "segmentation":     { "present": true,  "note": "Per-pixel instance ids in segmentations.vrs" },
+      "hand_pose":        { "present": false, "note": null },
+      "body_pose":        { "present": true,  "note": "OptiTrack skeleton markers + joints (Skeleton_*.json) for suited wearers" },
+      "object_pose":      { "present": true,  "note": "6-DoF object trajectories (scene_objects.csv) + 3D models for 398 objects" },
+      "gaze":             { "present": true,  "note": "3D gaze vectors with depth (eyegaze.csv)" },
+      "camera_pose":      { "present": true,  "note": "aria_trajectory.csv 6-DoF device pose; MPS SLAM trajectories" },
+      "depth":            { "present": true,  "note": "Metric depth (mm) for all three camera streams in depth_images.vrs" },
+      "scene_3d":         { "present": true,  "note": "Digital-twin object meshes (5 mm accuracy); MPS semi-dense points" },
+      "audio_transcript": { "present": false, "note": null },
+      "qa_language":      { "present": false, "note": null }
+    },
+    "sample": "# scene_objects.csv (6-DoF object pose per timestamp; -1 = static)\nobject_uid,timestamp[ns],t_wo_x[m],t_wo_y[m],t_wo_z[m],q_wo_w,q_wo_x,q_wo_y,q_wo_z\n\n# 2d_bounding_box.csv\nstream_id,object_uid,timestamp[ns],x_min[pixel],x_max[pixel],y_min[pixel],y_max[pixel],visibility_ratio[%]\n\n# instances.json (per instance)\n{\"instance_id\": IID1, \"instance_name\": \"XXXX\", \"prototype_name\": \"XXXX\", \"category\": \"XXXX\",\n \"motion_type\": \"static/dynamic\", \"instance_type\": \"object/human\", \"rigidity\": \"rigid/deformable\",\n \"canonical_pose\": {\"up_vector\": [x, y, z], \"front_vector\": [x, y, z]}}"
+  },
+  "samples": [
+    {
+      "kind": "image",
+      "src": "https://huggingface.co/datasets/projectaria/aria-digital-twin/resolve/main/assets/ADT_intro.jpg",
+      "caption": "ADT overview: real Aria frames alongside synthetic renders, depth, masks and object poses",
+      "credit": "huggingface.co/datasets/projectaria/aria-digital-twin"
+    }
+  ],
+  "verifiedAt": "2026-10-23"
+}

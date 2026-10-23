@@ -1,0 +1,372 @@
+{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    "cr": "http://mlcommons.org/croissant/",
+    "qp": "http://opendataeval.org/qp/",
+    "iso": "http://opendataeval.org/iso5259/"
+  },
+  "@type": "cr:Dataset",
+  "name": "Ego-OSCAR-550h (Stereo-550)",
+  "url": "https://huggingface.co/datasets/fpvlabs/stereo-550",
+  "dct:conformsTo": "http://opendataeval.org/qp/1.0",
+  "qp:qualityProfile": {
+    "qp:schemaVersion": "1.0",
+    "qp:evalLevel": "metadata",
+    "qp:evaluatedAt": "2026-10-23T14:20:36Z",
+    "qp:evaluatedBy": "open-data-eval",
+    "scores": {
+      "fps": {
+        "score": 1.0,
+        "raw_value": 30.0,
+        "method": "piecewise_continuous",
+        "source": "catalog",
+        "iso_mapping": "Acc-ML"
+      },
+      "resolution": {
+        "score": 0.7,
+        "width": 1280,
+        "height": 720,
+        "short_edge": 720,
+        "tier": "720p",
+        "method": "piecewise_continuous",
+        "source": "catalog",
+        "iso_mapping": "Acc-ML"
+      },
+      "modality_richness": {
+        "modalities_present": [
+          "Depth",
+          "IMU",
+          "Narrations/captions",
+          "RGB video"
+        ],
+        "modality_count": 4,
+        "scores_by_usecase": {
+          "manipulation": {
+            "critical": {
+              "present": [
+                "RGB video",
+                "Depth"
+              ],
+              "missing": [],
+              "ratio": 1.0
+            },
+            "important": {
+              "present": [
+                "Narrations/captions"
+              ],
+              "missing": [
+                "Hand pose annotations",
+                "Tactile",
+                "Force/torque",
+                "Proprioception",
+                "Gripper state"
+              ],
+              "ratio": 0.17
+            },
+            "bonus": {
+              "present": [
+                "IMU"
+              ],
+              "missing": [
+                "Audio",
+                "Optical flow",
+                "Object bounding boxes",
+                "End-effector pose",
+                "Segmentation masks"
+              ],
+              "ratio": 0.17
+            },
+            "score": 0.667
+          },
+          "action_recognition": {
+            "critical": {
+              "present": [
+                "RGB video"
+              ],
+              "missing": [],
+              "ratio": 1.0
+            },
+            "important": {
+              "present": [
+                "Narrations/captions"
+              ],
+              "missing": [
+                "Audio",
+                "Optical flow"
+              ],
+              "ratio": 0.33
+            },
+            "bonus": {
+              "present": [
+                "IMU"
+              ],
+              "missing": [
+                "Eye gaze",
+                "Hand pose annotations",
+                "Object bounding boxes"
+              ],
+              "ratio": 0.25
+            },
+            "score": 0.723
+          },
+          "hand_pose_estimation": {
+            "critical": {
+              "present": [
+                "RGB video"
+              ],
+              "missing": [
+                "Hand pose annotations"
+              ],
+              "ratio": 0.5
+            },
+            "important": {
+              "present": [
+                "Depth"
+              ],
+              "missing": [
+                "Stereo"
+              ],
+              "ratio": 0.5
+            },
+            "bonus": {
+              "present": [
+                "IMU"
+              ],
+              "missing": [
+                "Tactile",
+                "Segmentation masks"
+              ],
+              "ratio": 0.33
+            },
+            "score": 0.195
+          },
+          "navigation": {
+            "critical": {
+              "present": [
+                "RGB video",
+                "IMU"
+              ],
+              "missing": [],
+              "ratio": 1.0
+            },
+            "important": {
+              "present": [
+                "Depth"
+              ],
+              "missing": [
+                "SLAM/odometry",
+                "3D point clouds"
+              ],
+              "ratio": 0.33
+            },
+            "bonus": {
+              "present": [],
+              "missing": [
+                "Audio",
+                "Stereo",
+                "LiDAR",
+                "Segmentation masks"
+              ],
+              "ratio": 0.0
+            },
+            "score": 0.693
+          },
+          "robot_policy_learning": {
+            "critical": {
+              "present": [
+                "RGB video"
+              ],
+              "missing": [
+                "Proprioception",
+                "Gripper state"
+              ],
+              "ratio": 0.33
+            },
+            "important": {
+              "present": [
+                "Depth",
+                "Narrations/captions"
+              ],
+              "missing": [
+                "End-effector pose",
+                "Force/torque"
+              ],
+              "ratio": 0.5
+            },
+            "bonus": {
+              "present": [],
+              "missing": [
+                "Tactile",
+                "Audio",
+                "Joint torques"
+              ],
+              "ratio": 0.0
+            },
+            "score": 0.082
+          },
+          "vla_pretraining": {
+            "critical": {
+              "present": [
+                "RGB video",
+                "Narrations/captions"
+              ],
+              "missing": [],
+              "ratio": 1.0
+            },
+            "important": {
+              "present": [
+                "Depth"
+              ],
+              "missing": [
+                "Hand pose annotations",
+                "Proprioception"
+              ],
+              "ratio": 0.33
+            },
+            "bonus": {
+              "present": [
+                "IMU"
+              ],
+              "missing": [
+                "Audio",
+                "Eye gaze",
+                "SLAM/odometry",
+                "Optical flow"
+              ],
+              "ratio": 0.2
+            },
+            "score": 0.717
+          }
+        },
+        "source": "catalog",
+        "iso_mapping": "Div-ML"
+      },
+      "camera_calibration": {
+        "score": 1.0,
+        "tier": "intrinsics_extrinsics_validated",
+        "notes": "Per-session calibration.json: pinhole model with radial-tangential distortion (k1, k2, p1, p2, k3) per camera plus stereo rotation/translation (42 mm baseline), from an 8x6 chessboard with 30 mm squares at 1280x720 following Zhang (2000). Validation: reprojection error below 0.03 px per camera; mean per-pixel epipolar error after rectification 0.4 px across all 13 devices; visual-inertial residual sync offset 700 us checked with Kalibr's cam-IMU offset test. Source: arXiv:2608.08285 + HuggingFace card.",
+        "method": "tier",
+        "source": "paper:arXiv:2608.08285",
+        "iso_mapping": "Aud-ML"
+      },
+      "license_clarity": {
+        "score": 0.5,
+        "license_type": "Custom Open",
+        "tier": "custom_named",
+        "commercial_use": "Yes",
+        "method": "tier",
+        "source": "catalog",
+        "iso_mapping": "Cpl-ML"
+      },
+      "accessibility": {
+        "score": 0.65,
+        "raw_score": 6.5,
+        "access_level": "Gated-Open",
+        "url_status": "Live",
+        "method": "weighted_sum_normalized",
+        "source": "catalog",
+        "iso_mapping": "Acs-ML"
+      },
+      "scale": {
+        "score": 0.685,
+        "total_hours": 550.0,
+        "method": "log10(hrs+1)/log10(10001)",
+        "source": "catalog",
+        "iso_mapping": "Eff-ML"
+      },
+      "dataloader": {
+        "score": 0.0,
+        "available": false,
+        "framework": null,
+        "method": "tier",
+        "source": "catalog",
+        "iso_mapping": "Acs-ML"
+      },
+      "documentation_quality": {
+        "score": 0.667,
+        "rating": 2,
+        "method": "normalized_0_3",
+        "source": "catalog",
+        "iso_mapping": "Und-ML"
+      },
+      "annotation_coverage": {
+        "score": 1.0,
+        "notes": "209,315 free-form open-vocabulary action captions with start_time/end_time covering essentially the entire 550 h timeline (median 94 segments per session; 460 verbs, 32,630 object phrases, 57,104 verb-object combinations, 192,509 ordered task transitions), produced with FPV Labs' internal Vidur labelling system. Per-session stereo calibration.json on 100% of sessions; IMU on 1,271 of 1,462 sessions (86.9%). Paper reports per-frame hand detections (94% frame detection rate) but they are not in the card's per-session file list, so no hand annotations are claimed. No camera pose, object pose or depth maps released. Source: arXiv:2608.08285 + HuggingFace card.",
+        "method": "ratio",
+        "source": "paper:arXiv:2608.08285",
+        "iso_mapping": "Com-ML"
+      },
+      "download_efficiency": {
+        "score": 0.739,
+        "hours_per_gb": 0.2992,
+        "total_hours": 550.0,
+        "download_size_gb": 1838.2,
+        "method": "percentile_rank",
+        "source": "catalog+paper",
+        "iso_mapping": "Eff-ML"
+      },
+      "environment_diversity": {
+        "score": 0.579,
+        "unique_environments": 40.0,
+        "method": "log_normalized",
+        "source": "catalog",
+        "iso_mapping": "Div-ML"
+      },
+      "demographic_diversity": {
+        "score": 0.341,
+        "participants": 25.0,
+        "geographic_locations": 1,
+        "method": "log_normalized_product",
+        "source": "catalog+paper",
+        "iso_mapping": "Div-ML"
+      }
+    },
+    "classifications": {
+      "capture_device": {
+        "value": "Ego-OSCAR open-hardware head-mounted rig: Dexcin USB stereo module with two OmniVision global-shutter sensors (1280x720 per eye, 30 fps, 126 deg FOV, 42 mm baseline, side-by-side MJPEG capture, H.264 MP4 release) + TDK InvenSense ICM-20948 6-axis IMU (120 Hz per paper; ~180 Hz synced stream per card), Radxa Rock 5C (RK3588) + Seeed Xiao ESP32-S3. Source: arXiv:2608.08285.",
+        "documented": true,
+        "source": "paper:arXiv:2608.08285",
+        "iso_mapping": "Ide-ML"
+      },
+      "lens_type": {
+        "value": "wide-angle (126 deg; pinhole + radial-tangential model)",
+        "fov_degrees": 126,
+        "documented": true,
+        "source": "paper:arXiv:2608.08285",
+        "iso_mapping": "Ide-ML"
+      },
+      "video_format": {
+        "value": "MP4 (H.264, yuv420p; 5-minute clips, separate left/right files)",
+        "source": "catalog"
+      },
+      "annotation_format": {
+        "value": "JSON (action labels, calibration); CSV (IMU)",
+        "source": "catalog"
+      }
+    },
+    "context": {
+      "total_hours": 550.0,
+      "participants": "25",
+      "scenes_environments": "40+ indoor environments (paper; FPV Labs blog says 100+)",
+      "commercial_use": "Yes",
+      "category": "Large-scale foundation",
+      "year": "2026",
+      "paper": "arXiv:2608.08285",
+      "approximate_citations": "<10 (not retrieved; Semantic Scholar rate-limited 2026-10-23)",
+      "citations": null,
+      "no_paper": false
+    },
+    "confidence": {
+      "metadata_completeness": {
+        "score": 1.0,
+        "filled_fields": 16,
+        "total_fields": 16,
+        "method": "ratio",
+        "iso_mapping": [
+          "Com-ML",
+          "Und-ML"
+        ]
+      }
+    }
+  }
+}

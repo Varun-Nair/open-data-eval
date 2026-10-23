@@ -1,0 +1,38 @@
+{
+  "name": "Open-AoE (OpenAoE-2000h)",
+  "tagline": "~2,000 h of smartphone egocentric manipulation from 500+ contributors, with MANO hands, camera trajectories and atomic actions.",
+  "links": {
+    "project": "https://github.com/ant-research/Open-AoE",
+    "paper": "https://arxiv.org/abs/2607.14183",
+    "huggingface": "https://huggingface.co/datasets/inclusionAI/OpenAoE-2000h",
+    "github": "https://github.com/ant-research/Open-AoE",
+    "download": "https://huggingface.co/datasets/inclusionAI/OpenAoE-2000h"
+  },
+  "hfDatasetId": "inclusionAI/OpenAoE-2000h",
+  "hfViewer": true,
+  "annotations": {
+    "format": "JSON / NPZ",
+    "coverageNote": "Atomic-action segments span every video from 0.0 s to the last frame with no gaps; MANO hands valid on ~98-99% of entries (100 h audit).",
+    "types": {
+      "narrations":       { "present": true,  "note": "One-sentence description per atomic action, English and Chinese" },
+      "action_labels":    { "present": true,  "note": "verb / object / hand per segment with start and end timestamps and frames" },
+      "object_boxes":     { "present": true,  "note": "Action-region bbox per atomic action, not an object detector box" },
+      "segmentation":     { "present": false, "note": null },
+      "hand_pose":        { "present": true,  "note": "Bilateral MANO pose, shape and root per frame in world and camera frames" },
+      "body_pose":        { "present": false, "note": null },
+      "object_pose":      { "present": false, "note": null },
+      "gaze":             { "present": false, "note": null },
+      "camera_pose":      { "present": true,  "note": "Metric-scale 6-DoF cam_c2w trajectory from visual SLAM (DROID-W)" },
+      "depth":            { "present": false, "note": "camera_traj.npz ships without per-frame depth" },
+      "scene_3d":         { "present": false, "note": null },
+      "audio_transcript": { "present": false, "note": null },
+      "qa_language":      { "present": false, "note": null }
+    },
+    "sample": "[\n  {\n    \"id\": 1, \"start_ts\": \"0.0\", \"end_ts\": \"3.0\", \"start_frame\": \"0\", \"end_frame\": \"90\",\n    \"scene\": \"bedroom\",\n    \"atomic_action\": [{\n      \"verb\": \"grasp\", \"object\": \"plastic lid\", \"hand\": \"right\",\n      \"description\": \"The person grasps a small clear plastic lid from the table surface.\",\n      \"bbox\": [630, 320, 720, 420], \"confidence\": 0.95\n    }]\n  }\n]"
+  },
+  "samples": [
+    { "kind": "image", "src": "https://raw.githubusercontent.com/ant-research/Open-AoE/main/docs/fig1-open-aoe-overview.png", "caption": "Open-AoE overview: smartphone capture, MANO hands, trajectories and atomic actions", "credit": "github.com/ant-research/Open-AoE" },
+    { "kind": "hf-viewer", "src": "inclusionAI/OpenAoE-2000h", "caption": "Preview of the per-sample files on Hugging Face", "credit": "Hugging Face" }
+  ],
+  "verifiedAt": "2026-10-23"
+}

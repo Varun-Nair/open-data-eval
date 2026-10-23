@@ -1,0 +1,54 @@
+{
+  "name": "EgoSuite-Open100K (EgoPro)",
+  "tagline": "Head + dual wrist-view line of EgoSuite-Open100K: 10,000 h planned (8K h hands + 2K h hands+body); ~1,103 h delivered as MCAP when measured.",
+  "links": {
+    "project": "https://egosuite100k.lightwheel.ai/",
+    "paper": null,
+    "huggingface": "https://huggingface.co/datasets/LightwheelAI/EgoPro",
+    "github": "https://github.com/LightwheelAI/LW-Egosuite-DevKit",
+    "download": "https://huggingface.co/buckets/LightwheelAI/EgoPro"
+  },
+  "hfDatasetId": "LightwheelAI/EgoPro",
+  "hfViewer": false,
+  "annotations": {
+    "format": "MCAP (embedded Protobuf topics: /pose/*, /annotation/*, foxglove.CompressedVideo x4 cameras); card also promises LeRobot v3",
+    "coverageNote": "Sampled episodes carry 21-joint hand pose, head/headcam/wrist-cam pose, semantic segments and bad_frame flags; body pose only in EgoProStandard-body.",
+    "types": {
+      "narrations":       { "present": true,  "note": "SemanticSegment.subtask_description text per time segment" },
+      "action_labels":    { "present": true,  "note": "Skill tags + start/end time per segment; task_description per episode" },
+      "object_boxes":     { "present": false, "note": null },
+      "segmentation":     { "present": false, "note": null },
+      "hand_pose":        { "present": true,  "note": "21 joints per hand, world-frame position + quaternion (float32)" },
+      "body_pose":        { "present": true,  "note": "22-joint full body (EgoProStandard-body, 2,000 of 10,000 h planned)" },
+      "object_pose":      { "present": false, "note": null },
+      "gaze":             { "present": false, "note": "Right-eye camera pose topic only; no gaze vector" },
+      "camera_pose":      { "present": true,  "note": "Head, headcam and both wrist-camera poses + calibration/extrinsics" },
+      "depth":            { "present": false, "note": "head_depth declared in metadata but never published in sampled episodes" },
+      "scene_3d":         { "present": false, "note": null },
+      "audio_transcript": { "present": false, "note": "/sensor/audio optional; absent in sampled episodes" },
+      "qa_language":      { "present": false, "note": null }
+    },
+    "sample": "// /annotation/semantic_segments message (Protobuf schema from docs.lightwheel.net)\nmessage SemanticSegment {\n  common.header.Header header = 1;\n  string task_description = 2;   // episode-level, same for all segments\n  SegmentInfo segment = 3;\n}\nmessage SegmentInfo {\n  string subtask_description = 1;\n  repeated string skill = 2;\n  double start_time = 3;\n  double end_time = 4;\n}\n// video topics: /sensor/camera/{head_left,head_right,left_wrist,right_wrist}/video (H.264)"
+  },
+  "samples": [
+    {
+      "kind": "image",
+      "src": "https://lw-cdn.lightwheel.net/build/egosuite-open100k/assets/005__081_%E7%89%A9%E6%B5%81__%E5%8C%85%E8%A3%B9%E6%89%98%E7%9B%98%E5%A0%86%E7%A0%81-DGQlkHIu.webp",
+      "caption": "Project-page sample: logistics task (stacking parcels on a pallet)",
+      "credit": "egosuite100k.lightwheel.ai"
+    },
+    {
+      "kind": "image",
+      "src": "https://raw.githubusercontent.com/LightwheelAI/LW-Egosuite-DevKit/main/assets/demo.png",
+      "caption": "LW-VIZ dashboard: head and wrist streams with 3D hand/body skeletons",
+      "credit": "github.com/LightwheelAI/LW-Egosuite-DevKit"
+    },
+    {
+      "kind": "video",
+      "src": "https://huggingface.co/spaces/LightwheelAI/README/resolve/main/assets/egosuite-open100k-promo.mp4",
+      "caption": "EgoSuite-Open100K announcement video",
+      "credit": "huggingface.co/spaces/LightwheelAI/README"
+    }
+  ],
+  "verifiedAt": "2026-10-23"
+}

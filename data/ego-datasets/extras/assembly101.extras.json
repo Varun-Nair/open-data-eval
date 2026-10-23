@@ -1,0 +1,87 @@
+{
+  "name": "Assembly101",
+  "tagline": "513 h / 4,321 videos of 53 people assembling 101 toy vehicles from 12 synced views (8 static + 4 ego), with 1M fine + 100K coarse actions.",
+  "links": {
+    "project": "https://assembly-101.github.io/",
+    "paper": "https://arxiv.org/abs/2203.14712",
+    "huggingface": "https://huggingface.co/datasets/cvml-nus/assembly101",
+    "github": "https://github.com/assembly-101/assembly101-annotations",
+    "download": "https://github.com/assembly-101/assembly101-download-scripts"
+  },
+  "hfDatasetId": "cvml-nus/assembly101",
+  "hfViewer": false,
+  "annotations": {
+    "format": "CSV + TXT (action labels); 3D hand poses in AssemblyPoses.zip",
+    "coverageNote": "1M fine-grained segments (1,380 classes = 24 verbs x 90 objects) + 100K coarse segments (202 classes) over all 4,321 videos; 18M 3D hand poses; mistake labels.",
+    "types": {
+      "narrations": {
+        "present": false,
+        "note": null
+      },
+      "action_labels": {
+        "present": true,
+        "note": "1,380 fine-grained (verb + object) and 202 coarse classes with frame ranges @30 fps"
+      },
+      "object_boxes": {
+        "present": false,
+        "note": null
+      },
+      "segmentation": {
+        "present": false,
+        "note": null
+      },
+      "hand_pose": {
+        "present": true,
+        "note": "18M 3D hand poses from the 4 egocentric monochrome cameras (AssemblyPoses)"
+      },
+      "body_pose": {
+        "present": false,
+        "note": null
+      },
+      "object_pose": {
+        "present": false,
+        "note": null
+      },
+      "gaze": {
+        "present": false,
+        "note": null
+      },
+      "camera_pose": {
+        "present": null,
+        "note": "Not documented"
+      },
+      "depth": {
+        "present": false,
+        "note": null
+      },
+      "scene_3d": {
+        "present": false,
+        "note": "3D data is hand poses only; no scene scans"
+      },
+      "audio_transcript": {
+        "present": false,
+        "note": null
+      },
+      "qa_language": {
+        "present": false,
+        "note": null
+      }
+    },
+    "sample": "# fine-grained-annotations/train.csv\nid,video,start_frame,end_frame,action_id,verb_id,noun_id,action_cls,verb_cls,noun_cls,toy_id,toy_name,is_shared,is_RGB\n7,nusar-2021_action_both_9033-a30_9033_user_id_2021-02-04_131528/C10404_rgb.mp4,84,111,10,18,27,clap hand,clap,hand,a30,suv,0,1\n\n# fine-grained-annotations/actions.csv\nid,action_id,verb_id,noun_id,action_cls,verb_cls,noun_cls\n12,380,7,22,remove excavator arm,remove,excavator arm"
+  },
+  "samples": [
+    {
+      "kind": "video",
+      "src": "https://assembly-101.github.io/assets/12_view_assembly.mp4",
+      "caption": "All 12 synchronized views (8 static RGB + 4 monochrome egocentric) of one toy-vehicle assembly",
+      "credit": "assembly-101.github.io"
+    },
+    {
+      "kind": "image",
+      "src": "https://assembly-101.github.io/assets/assembly101_rig.png",
+      "caption": "Capture rig: 8 static cameras on a frame plus the 4-camera egocentric headset (inset)",
+      "credit": "assembly-101.github.io"
+    }
+  ],
+  "verifiedAt": "2026-10-23"
+}

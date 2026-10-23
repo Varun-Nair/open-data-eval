@@ -1,0 +1,48 @@
+{
+  "name": "EPIC-KITCHENS-55",
+  "tagline": "55 h / 11.5M frames from 32 kitchens in 4 cities: 39,596 action segments and 454K object boxes, narrated post-hoc by the wearers.",
+  "links": {
+    "project": "https://epic-kitchens.github.io/2018",
+    "paper": "https://arxiv.org/abs/1804.02748",
+    "huggingface": null,
+    "github": "https://github.com/epic-kitchens/epic-kitchens-55-annotations",
+    "download": "https://data.bris.ac.uk/data/dataset/3h91syskeag572hl6tvuovwv4d"
+  },
+  "hfDatasetId": null,
+  "hfViewer": false,
+  "annotations": {
+    "format": "CSV + Pickle (pandas)",
+    "coverageNote": "All 432 videos narrated; 39,596 action segments; 454,255 object boxes on sampled frames (352 noun classes, 125 verb classes). Superseded by EPIC-KITCHENS-100.",
+    "types": {
+      "narrations":       { "present": true,  "note": "Post-hoc wearer narrations, transcribed via AMT" },
+      "action_labels":    { "present": true,  "note": "125 verb / 352 noun classes with start/stop timestamps and frames" },
+      "object_boxes":     { "present": true,  "note": "454,255 boxes for 352 object classes on sampled frames" },
+      "segmentation":     { "present": false, "note": "VISOR masks exist only via the EPIC-KITCHENS-100 release" },
+      "hand_pose":        { "present": false, "note": null },
+      "body_pose":        { "present": false, "note": null },
+      "object_pose":      { "present": false, "note": null },
+      "gaze":             { "present": false, "note": null },
+      "camera_pose":      { "present": false, "note": "EPIC-Fields poses are released under EPIC-KITCHENS-100 only" },
+      "depth":            { "present": false, "note": null },
+      "scene_3d":         { "present": false, "note": null },
+      "audio_transcript": { "present": true,  "note": "Narration audio transcribed; raw audio kept in the videos" },
+      "qa_language":      { "present": false, "note": null }
+    },
+    "sample": "# EPIC_train_action_labels.csv\nuid,participant_id,video_id,narration,start_timestamp,stop_timestamp,start_frame,stop_frame,verb,verb_class,noun,noun_class,all_nouns,all_noun_classes\n0,P01,P01_01,open door,00:00:00.14,00:00:03.37,8,202,open,2,door,8,['door'],[8]\n1,P01,P01_01,turn on light,00:00:04.37,00:00:06.17,262,370,turn-on,12,light,113,['light'],[113]\n\n# EPIC_train_object_labels.csv\nnoun_class,noun,participant_id,video_id,frame,bounding_boxes\n20,bag,P01,P01_01,056581,\"[(76, 1260, 462, 186)]\""
+  },
+  "samples": [
+    {
+      "kind": "video",
+      "src": "https://epic-kitchens.github.io/static/videos/04x04_h264_720.mp4",
+      "caption": "16 EPIC-KITCHENS-55 kitchens side by side: washing up, chopping, cooking on the hob",
+      "credit": "epic-kitchens.github.io"
+    },
+    {
+      "kind": "youtube",
+      "src": "Dj6Y3H0ubDw",
+      "caption": "EPIC-KITCHENS 2018 trailer (linked from the project page)",
+      "credit": "YouTube / Dima Damen (EPIC-KITCHENS PI)"
+    }
+  ],
+  "verifiedAt": "2026-10-23"
+}

@@ -1,0 +1,48 @@
+{
+  "name": "DexYCB",
+  "tagline": "582K RGB-D frames of 10 subjects grasping 20 YCB objects from 8 synchronized cameras, with 3D hand and 6-DoF object pose on every frame.",
+  "links": {
+    "project": "https://dex-ycb.github.io/",
+    "paper": "https://arxiv.org/abs/2104.04631",
+    "huggingface": null,
+    "github": "https://github.com/NVlabs/dex-ycb-toolkit",
+    "download": "https://dex-ycb.github.io/"
+  },
+  "hfDatasetId": null,
+  "hfViewer": false,
+  "annotations": {
+    "format": "NPZ label files per frame (seg, pose_y, pose_m, joint_3d, joint_2d) + YAML/JSON metadata",
+    "coverageNote": "All 582K frames (1,000 sequences x 8 cameras) carry hand/object segmentation, MANO hand pose and 6-DoF YCB object poses.",
+    "types": {
+      "narrations":       { "present": false, "note": null },
+      "action_labels":    { "present": false, "note": "Sequences are single grasp trials; no verb/noun labels" },
+      "object_boxes":     { "present": true,  "note": "2D boxes derived from masks for the COCO-style detection benchmark" },
+      "segmentation":     { "present": true,  "note": "Per-pixel map: background, 21 YCB object ids, hand (255)" },
+      "hand_pose":        { "present": true,  "note": "MANO PCA pose + 21 3D/2D joints per frame" },
+      "body_pose":        { "present": false, "note": null },
+      "object_pose":      { "present": true,  "note": "6-DoF [R|t] for every present YCB object; CAD models shipped" },
+      "gaze":             { "present": false, "note": null },
+      "camera_pose":      { "present": true,  "note": "Factory intrinsics + extrinsics for all 8 Azure Kinect cameras" },
+      "depth":            { "present": true,  "note": "Aligned depth PNG per RGB frame (Azure Kinect)" },
+      "scene_3d":         { "present": false, "note": null },
+      "audio_transcript": { "present": false, "note": null },
+      "qa_language":      { "present": false, "note": null }
+    },
+    "sample": "{\n  \"color_file\": \".../20200709-subject-01/20200709_141841/932122060861/color_000053.jpg\",\n  \"depth_file\": \".../932122060861/aligned_depth_to_color_000053.png\",\n  \"label_file\": \".../932122060861/labels_000053.npz\",\n  \"intrinsics\": {\"fx\": 613.076, \"fy\": 611.999, \"ppx\": 313.028, \"ppy\": 245.009},\n  \"ycb_ids\": [1, 11, 12, 20],\n  \"ycb_grasp_ind\": 0,\n  \"mano_side\": \"right\",\n  \"mano_betas\": [0.699, -0.169, -0.896, \"...\"]\n}\n# labels_*.npz keys: seg [H,W], pose_y [num_obj,3,4], pose_m [1,51], joint_3d [1,21,3], joint_2d [1,21,2]"
+  },
+  "samples": [
+    {
+      "kind": "image",
+      "src": "https://raw.githubusercontent.com/NVlabs/dex-ycb-toolkit/master/docs/visualize_pose_1.jpg",
+      "caption": "Ground-truth hand and YCB object poses rendered on one camera view",
+      "credit": "github.com/NVlabs/dex-ycb-toolkit"
+    },
+    {
+      "kind": "youtube",
+      "src": "Q4wyBaZeBw0",
+      "caption": "CVPR 2021 presentation video of the DexYCB benchmark",
+      "credit": "YouTube (Yu-Wei Chao, first author)"
+    }
+  ],
+  "verifiedAt": "2026-10-23"
+}

@@ -1,0 +1,42 @@
+{
+  "name": "RoboX EgoGrasp v0.2",
+  "tagline": "Gated HF collection of 7,342 iPhone clips; EgoGrasp campaign: 3,711 recordings, 1,036 object classes, 42 contributors, 7.4 h measured.",
+  "links": {
+    "project": "https://huggingface.co/datasets/RoboXTechnologies/RoboX-Egocentric-Collection-v0.2",
+    "paper": null,
+    "huggingface": "https://huggingface.co/datasets/RoboXTechnologies/RoboX-Egocentric-Collection-v0.2",
+    "github": null,
+    "download": "https://huggingface.co/datasets/RoboXTechnologies/RoboX-Egocentric-Collection-v0.2"
+  },
+  "hfDatasetId": "RoboXTechnologies/RoboX-Egocentric-Collection-v0.2",
+  "hfViewer": false,
+  "annotations": {
+    "format": "JSONL per clip under ego_grasp/annotations/{actions,environment,hand_keypoints,object_tracks,people,sensors}; JSON manifests + validation reports",
+    "coverageNote": "ego_grasp README (7,697 clips): hand_keypoints 95.6 %, object_tracks 95.5 % (temporal 29.4 %), sensors 99.2 %, actions ~100 %, environment 100 %, people 95.2 %.",
+    "types": {
+      "narrations":       { "present": true,  "note": "Per-clip narration + action phases from the Gemini-assisted pipeline" },
+      "action_labels":    { "present": true,  "note": "Campaign phases: reach, grasp, lift, hold, place, release (actions/)" },
+      "object_boxes":     { "present": true,  "note": "Object tracks with per-frame boxes; mostly AI fallback, 29 % temporal" },
+      "segmentation":     { "present": false, "note": null },
+      "hand_pose":        { "present": true,  "note": "21-joint hand keypoints for both hands on 95.6 % of clips" },
+      "body_pose":        { "present": null,  "note": "people/ annotations exist; whether they hold body keypoints is unverified" },
+      "object_pose":      { "present": false, "note": null },
+      "gaze":             { "present": false, "note": null },
+      "camera_pose":      { "present": true,  "note": "ARKit 6-DoF pose, IMU and intrinsics per frame (sensors/, 99.2 %)" },
+      "depth":            { "present": null,  "note": "rgbd_full sensor tier on 4,355 clips; depth frames not confirmed in files" },
+      "scene_3d":         { "present": false, "note": "Scene planes/light estimates only (environment/)" },
+      "audio_transcript": { "present": false, "note": "ffprobe: no audio streams in any of 15,587 MP4s" },
+      "qa_language":      { "present": true,  "note": "Spatial-context labels (surface, environment, viewpoint) per clip" }
+    },
+    "sample": null
+  },
+  "samples": [
+    {
+      "kind": "video",
+      "src": "https://huggingface.co/datasets/RoboXTechnologies/RoboX-EgoGrasp-v0.1/resolve/main/RoboX_movie.mp4",
+      "caption": "EgoGrasp campaign showcase reel (hosted in the open v0.1 sample repo)",
+      "credit": "huggingface.co/datasets/RoboXTechnologies/RoboX-EgoGrasp-v0.1"
+    }
+  ],
+  "verifiedAt": "2026-10-23"
+}

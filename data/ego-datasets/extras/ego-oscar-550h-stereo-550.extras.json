@@ -1,0 +1,38 @@
+{
+  "name": "Ego-OSCAR-550h (Stereo-550)",
+  "tagline": "550 h of calibrated 720p stereo video with IMU from an open-hardware head rig, captioned end to end with 209k free-form action segments.",
+  "links": {
+    "project": "https://www.fpvlabs.ai/essays/ego-oscar",
+    "paper": "https://arxiv.org/abs/2608.08285",
+    "huggingface": "https://huggingface.co/datasets/fpvlabs/stereo-550",
+    "github": "https://github.com/fpv-labs/ego-oscar",
+    "download": "https://huggingface.co/datasets/fpvlabs/stereo-550"
+  },
+  "hfDatasetId": "fpvlabs/stereo-550",
+  "hfViewer": false,
+  "annotations": {
+    "format": "JSON / CSV",
+    "coverageNote": "209,315 free-form captions cover ~100% of the 550 h timeline; per-session stereo calibration on every session; IMU on 86.9% of sessions.",
+    "types": {
+      "narrations":       { "present": true,  "note": "Open-vocabulary free-form captions, median 94 segments per session" },
+      "action_labels":    { "present": true,  "note": "Timestamped segments (start_time, end_time, text); 460 verbs, 32,630 object phrases" },
+      "object_boxes":     { "present": null,  "note": "Paper reports per-frame hand detections (94%); not in the card's file list" },
+      "segmentation":     { "present": false, "note": null },
+      "hand_pose":        { "present": false, "note": "No hand pose shipped; license carves out possible WiLoR/MANO layers" },
+      "body_pose":        { "present": false, "note": null },
+      "object_pose":      { "present": false, "note": null },
+      "gaze":             { "present": false, "note": null },
+      "camera_pose":      { "present": false, "note": "Not released; paper reports visual-odometry convergence only" },
+      "depth":            { "present": null,  "note": "Calibrated 42 mm stereo pair at 1280x720; no depth maps shipped" },
+      "scene_3d":         { "present": false, "note": null },
+      "audio_transcript": { "present": false, "note": null },
+      "qa_language":      { "present": false, "note": null }
+    },
+    "sample": "// <session_id>_action_labels.json (fields per the dataset card; values abridged)\n{\n  \"session_id\": \"...\",\n  \"segments\": [\n    { \"start_time\": \"...\", \"end_time\": \"...\", \"text\": \"<free-form action caption>\" },\n    { \"start_time\": \"...\", \"end_time\": \"...\", \"text\": \"<free-form action caption>\" }\n  ]\n}\n// calibration.json: left/right camera matrix (fx, fy, cx, cy), distortion (k1, k2, p1, p2, k3),\n// stereo rotation + translation, baseline ~42 mm"
+  },
+  "samples": [
+    { "kind": "image", "src": "https://cdn-uploads.huggingface.co/production/uploads/614efbb6ddd8df0d8bfd0a5a/A71Hwrq4Z98pst09a_2jk.gif", "caption": "Animated preview from the Stereo-550 dataset card", "credit": "huggingface.co/datasets/fpvlabs/stereo-550" },
+    { "kind": "image", "src": "https://www.fpvlabs.ai/images/ego-oscar-action-labels-poster.webp", "caption": "Action-label poster from the Ego-OSCAR release essay", "credit": "fpvlabs.ai" }
+  ],
+  "verifiedAt": "2026-10-23"
+}

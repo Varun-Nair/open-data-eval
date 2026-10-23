@@ -1,0 +1,48 @@
+{
+  "name": "Ego4D",
+  "tagline": "3,670 h of daily-life video from 931 camera wearers at 74 sites in 9 countries; every hour narrated (3.85M sentences).",
+  "links": {
+    "project": "https://ego4d-data.org/",
+    "paper": "https://arxiv.org/abs/2110.07058",
+    "huggingface": null,
+    "github": "https://github.com/facebookresearch/Ego4d",
+    "download": "https://ego4d-data.org/docs/start-here/"
+  },
+  "hfDatasetId": null,
+  "hfViewer": false,
+  "annotations": {
+    "format": "JSON",
+    "coverageNote": "Narrations cover all 3,670 h (13.2 sentences/min). Audio 2,535 h, IMU 836 h, 3D scans 491 h, stereo 80 h, gaze 45 h; benchmark labels on subsets.",
+    "types": {
+      "narrations":       { "present": true,  "note": "3.85M dense timestamped sentences ('#C C picks up ...') plus clip summaries" },
+      "action_labels":    { "present": true,  "note": "Moments Queries: 110 activity classes with segments (~300 h); FHO verb-noun labels" },
+      "object_boxes":     { "present": true,  "note": "FHO hand and object boxes on critical frames (~116 h); VQ response tracks (~403 h)" },
+      "segmentation":     { "present": false, "note": null },
+      "hand_pose":        { "present": false, "note": "Hands appear only as 2D boxes in FHO" },
+      "body_pose":        { "present": false, "note": null },
+      "object_pose":      { "present": false, "note": null },
+      "gaze":             { "present": true,  "note": "Raw eye gaze for 45 h (Indiana U. and Georgia Tech captures)" },
+      "camera_pose":      { "present": true,  "note": "VQ3D subset only: poses estimated by registering frames to Matterport scans" },
+      "depth":            { "present": false, "note": null },
+      "scene_3d":         { "present": true,  "note": "Matterport3D meshes for 491 h of video (subset of sites)" },
+      "audio_transcript": { "present": true,  "note": "AV diarization + speech transcription on a ~50 h subset" },
+      "qa_language":      { "present": true,  "note": "NLQ natural-language queries (~240 h); Goal-Step hierarchical step labels" }
+    },
+    "sample": "{\n  \"<video_uid>\": {\n    \"narration_pass_1\": {\n      \"narrations\": [\n        { \"timestamp_sec\": 12.4, \"narration_text\": \"#C C picks up the knife\" },\n        { \"timestamp_sec\": 15.1, \"narration_text\": \"#C C cuts the onion on the chopping board\" }\n      ]\n    }\n  }\n}"
+  },
+  "samples": [
+    {
+      "kind": "image",
+      "src": "https://ego4d-data.org/assets/images/Ego4D-Collage.jpg",
+      "caption": "Collage of first-person frames: shopping, cooking, mowing, bike repair, card games",
+      "credit": "ego4d-data.org"
+    },
+    {
+      "kind": "youtube",
+      "src": "xmzt9GCo8lE",
+      "caption": "'EGO4D - Around the World in 3,000 Hours of Egocentric Video' (official overview)",
+      "credit": "YouTube / Ego4D channel"
+    }
+  ],
+  "verifiedAt": "2026-10-23"
+}

@@ -1,0 +1,93 @@
+{
+  "name": "H2O",
+  "tagline": "571K RGB-D frames (4 static + 1 ego Kinect) of 4 subjects handling 8 objects: both-hand 3D pose, 6-DoF object pose, 36 action classes.",
+  "links": {
+    "project": "https://taeinkwon.com/projects/h2o/",
+    "paper": "https://arxiv.org/abs/2104.11181",
+    "huggingface": null,
+    "github": "https://github.com/taeinkwon/h2odataset",
+    "download": "https://h2odataset.ethz.ch/"
+  },
+  "hfDatasetId": null,
+  "hfViewer": false,
+  "annotations": {
+    "format": "TXT per frame (hand_pose, hand_pose_MANO, obj_pose, obj_pose_RT, cam_pose, action / verb labels) + PNG RGB-D",
+    "coverageNote": "Per-frame hand (21 joints + MANO), 6-DoF object and camera poses for all 5 views; annotated flag per hand (0/1); action labels on the ego view (cam4) only.",
+    "types": {
+      "narrations": {
+        "present": false,
+        "note": null
+      },
+      "action_labels": {
+        "present": true,
+        "note": "36 action classes (11 verbs x 8 objects) + verb labels per frame, ego view"
+      },
+      "object_boxes": {
+        "present": false,
+        "note": null
+      },
+      "segmentation": {
+        "present": false,
+        "note": null
+      },
+      "hand_pose": {
+        "present": true,
+        "note": "21 3D joints per hand + MANO (3 trans, 48 pose, 10 shape) with annotated flag"
+      },
+      "body_pose": {
+        "present": false,
+        "note": null
+      },
+      "object_pose": {
+        "present": true,
+        "note": "6-DoF RT + 21 keypoints (center, 8 corners, 12 edge mids) + object meshes"
+      },
+      "gaze": {
+        "present": false,
+        "note": null
+      },
+      "camera_pose": {
+        "present": true,
+        "note": "4x4 cam-to-world per frame per camera + intrinsics (fx, fy, cx, cy)"
+      },
+      "depth": {
+        "present": true,
+        "note": "1280x720 Azure Kinect depth per view"
+      },
+      "scene_3d": {
+        "present": true,
+        "note": "Scene point clouds from calibrated RGB-D (per paper)"
+      },
+      "audio_transcript": {
+        "present": false,
+        "note": null
+      },
+      "qa_language": {
+        "present": false,
+        "note": null
+      }
+    },
+    "sample": "# <subject>/<scene>/<seq>/cam4/hand_pose/000123.txt   (128 numbers)\n1  x1 y1 z1 ... x21 y21 z21     # left : annotated flag + 21 joints (camera frame)\n1  x1 y1 z1 ... x21 y21 z21     # right\n# cam4/hand_pose_MANO/000123.txt (118 numbers): flag + 3 trans + 48 pose + 10 shape, per hand\n# cam4/obj_pose/000123.txt (64 numbers)\n5  x1 y1 z1 ... x21 y21 z21     # class 5 = milk; center, 8 corners, 12 edge midpoints\n# cam4/obj_pose_RT/000123.txt : class + 4x4 cam-to-object\n# cam4/cam_pose/000123.txt    : 16 numbers, 4x4 cam-to-world\n# cam4/action_label/000123.txt: 23 (pour milk)     verb_label: 5 (pour)"
+  },
+  "samples": [
+    {
+      "kind": "image",
+      "src": "https://taeinkwon.com/projects/h2o/images/teaser.png",
+      "caption": "4 static + 1 egocentric Kinect views with 3D hand and object boxes, and the reconstructed 3D scene",
+      "credit": "taeinkwon.com/projects/h2o"
+    },
+    {
+      "kind": "image",
+      "src": "https://taeinkwon.com/projects/h2o/images/teaser_1.gif",
+      "caption": "Ego view with hand-object overlay next to the reconstructed meshes, action 'Open Chips'",
+      "credit": "taeinkwon.com/projects/h2o"
+    },
+    {
+      "kind": "youtube",
+      "src": "ZGobBcsxmYQ",
+      "caption": "[ICCV 2021] H2O overview video (embedded on the project page)",
+      "credit": "YouTube / Taein Kwon (first author)"
+    }
+  ],
+  "verifiedAt": "2026-10-23"
+}
