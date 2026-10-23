@@ -1,0 +1,54 @@
+{
+  "name": "EgoLife",
+  "tagline": "300 h of egocentric video of 6 people living together for 7 days (Aria glasses, 15 GoPros, mmWave), with captions, ASR and 3K QAs.",
+  "links": {
+    "project": "https://egolife-ai.github.io/blog/",
+    "paper": "https://arxiv.org/abs/2503.03803",
+    "huggingface": "https://huggingface.co/datasets/lmms-lab/EgoLife",
+    "github": "https://github.com/EvolvingLMMs-Lab/EgoLife",
+    "download": "https://huggingface.co/datasets/lmms-lab/EgoLife"
+  },
+  "hfDatasetId": "lmms-lab/EgoLife",
+  "hfViewer": true,
+  "annotations": {
+    "format": "MP4 video + SRT captions + JSON QA + CSV (gaze, IMU, radar)",
+    "coverageNote": "361K narrations merged into 25K captions over the week; ~50 h ASR; EgoLifeQA has 3,000 MCQs (500 per person). HF repo notes data cleaning is ongoing.",
+    "types": {
+      "narrations":       { "present": true,  "note": "361K dense narrations (avg 2.65 s) merged into 25K visual-audio captions (SRT)" },
+      "action_labels":    { "present": true,  "note": "Event/activity labels listed in the paper's dataset card" },
+      "object_boxes":     { "present": false, "note": null },
+      "segmentation":     { "present": false, "note": null },
+      "hand_pose":        { "present": false, "note": null },
+      "body_pose":        { "present": false, "note": null },
+      "object_pose":      { "present": false, "note": null },
+      "gaze":             { "present": true,  "note": "Aria eye-gaze CSV per recording (paper's dataset card)" },
+      "camera_pose":      { "present": null,  "note": "Not documented" },
+      "depth":            { "present": false, "note": null },
+      "scene_3d":         { "present": false, "note": null },
+      "audio_transcript": { "present": true,  "note": "ASR transcripts (~50 h), split per participant and manually reviewed" },
+      "qa_language":      { "present": true,  "note": "EgoLifeQA: 3,000 MCQs in 5 types (EntityLog, EventRecall, HabitInsight, ...)" }
+    },
+    "sample": "{\n  \"ID\": \"1\",\n  \"query_time\": {\"date\": \"DAY1\", \"time\": \"11210217\"},\n  \"type\": \"EntityLog\",\n  \"need_audio\": false,\n  \"trigger\": \"The table was filled with various tools and parts\",\n  \"question\": \"Who used the screwdriver first?\",\n  \"choice_a\": \"Tasha\", \"choice_b\": \"Alice\", \"choice_c\": \"Shure\", \"choice_d\": \"Lucia\",\n  \"answer\": \"B\",\n  \"target_time\": {\"date\": \"DAY1\", \"time\": \"11152408\"},\n  \"keywords\": \"use screwdriver\",\n  \"reason\": \"Saw Alice tightening screws with a screwdriver\"\n}"
+  },
+  "samples": [
+    {
+      "kind": "image",
+      "src": "https://raw.githubusercontent.com/EvolvingLMMs-Lab/EgoLife/main/assets/egolife_teaser.png",
+      "caption": "Six participants' week in the EgoHouse: ego views with gaze, audio, IMU, transcript and captions",
+      "credit": "github.com/EvolvingLMMs-Lab/EgoLife"
+    },
+    {
+      "kind": "video",
+      "src": "https://egolife-ai.github.io/blog/static/videos/trailer_0224_compress.mp4",
+      "caption": "Official EgoLife trailer from the project page",
+      "credit": "egolife-ai.github.io"
+    },
+    {
+      "kind": "hf-viewer",
+      "src": "lmms-lab/EgoLife",
+      "caption": "Browse the released EgoLife videos (per participant, per day) on Hugging Face",
+      "credit": "Hugging Face"
+    }
+  ],
+  "verifiedAt": "2026-10-23"
+}

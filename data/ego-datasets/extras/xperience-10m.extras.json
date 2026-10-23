@@ -1,0 +1,42 @@
+{
+  "name": "Xperience-10M",
+  "tagline": "10,000 h / 10M interaction episodes with 4 fisheye + stereo cams, SLAM poses, depth, hand and body mocap, IMU and 16M caption sentences.",
+  "links": {
+    "project": "https://huggingface.co/datasets/ropedia-ai/xperience-10m",
+    "paper": null,
+    "huggingface": "https://huggingface.co/datasets/ropedia-ai/xperience-10m",
+    "github": "https://github.com/Ropedia/HOMIE-toolkit",
+    "download": "https://huggingface.co/datasets/ropedia-ai/xperience-10m"
+  },
+  "hfDatasetId": "ropedia-ai/xperience-10m",
+  "hfViewer": false,
+  "annotations": {
+    "format": "HDF5 (annotation.hdf5 per episode) + MP4 (4 fisheye + rectified stereo pair)",
+    "coverageNote": "Per episode: SLAM poses, stereo depth, hand + full-body mocap, IMU, captions. 2.88B RGB, 720M depth, 576M pose/mocap frames; gated, non-commercial.",
+    "types": {
+      "narrations":       { "present": true,  "note": "16M caption sentences: task / subtask / action / interaction / objects" },
+      "action_labels":    { "present": null,  "note": "Caption 'action' and 'subtask' text per segment; no class taxonomy documented" },
+      "object_boxes":     { "present": false, "note": null },
+      "segmentation":     { "present": false, "note": null },
+      "hand_pose":        { "present": true,  "note": "hand_mocap: 21 3D joints per hand + MANO pose, global orient and betas" },
+      "body_pose":        { "present": true,  "note": "full_body_mocap: 52 keypoints, body quats, contacts, root / CPF transforms" },
+      "object_pose":      { "present": false, "note": null },
+      "gaze":             { "present": false, "note": null },
+      "camera_pose":      { "present": true,  "note": "slam: per-frame quat_wxyz + trans_xyz (576M poses)" },
+      "depth":            { "present": true,  "note": "depth: maps + confidence from rectified stereo (720M frames)" },
+      "scene_3d":         { "present": true,  "note": "slam/point_cloud per episode" },
+      "audio_transcript": { "present": null,  "note": "Audio in the videos; transcripts not documented" },
+      "qa_language":      { "present": false, "note": null }
+    },
+    "sample": "--- annotation.hdf5 contents (top-level) ---\n  calibration: group    (cam0, cam01, cam1, cam2, cam3: K, T_c_b, ...)\n  depth: group           (depth, confidence, depth_min, depth_max, scale)\n  full_body_mocap: group (keypoints, contacts, body_quats, ...)\n  hand_mocap: group     (left_joints_3d, right_joints_3d, mano params)\n  imu: group            (device_timestamp_ns, accel_xyz, gyro_xyz, keyframe_indices)\n  slam: group           (quat_wxyz, trans_xyz, frame_names, point_cloud)\n  caption: ...          metadata: ..."
+  },
+  "samples": [
+    {
+      "kind": "image",
+      "src": "https://raw.githubusercontent.com/Ropedia/HOMIE-toolkit/main/assets/rerun.png",
+      "caption": "One episode in HOMIE-toolkit's Rerun view: 4 fisheye + stereo cams, depth, IMU, 3D skeleton, captions",
+      "credit": "github.com/Ropedia/HOMIE-toolkit"
+    }
+  ],
+  "verifiedAt": "2026-10-23"
+}

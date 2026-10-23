@@ -1,0 +1,48 @@
+{
+  "name": "HD-EPIC",
+  "tagline": "41 h of multi-day Aria recordings in 9 kitchens: 59K actions at 263 annotations/min, digital-twin scenes and a 26K-question VQA.",
+  "links": {
+    "project": "https://hd-epic.github.io/",
+    "paper": "https://arxiv.org/abs/2502.04144",
+    "huggingface": null,
+    "github": "https://github.com/hd-epic/hd-epic-annotations",
+    "download": "https://data.bris.ac.uk/data/dataset/3cqb5b81wk2dc2379fx1mrxh47"
+  },
+  "hfDatasetId": null,
+  "hfViewer": false,
+  "annotations": {
+    "format": "Pickle + CSV + JSON",
+    "coverageNote": "Every video is narrated (59K actions, 69 recipes); 20K object movements, 37K 3D-lifted masks, 51K audio events and gaze priming are annotated across the 41 h.",
+    "types": {
+      "narrations":       { "present": true,  "note": "59K 'how & why' narrations with start/end, verbs, nouns and hands used" },
+      "action_labels":    { "present": true,  "note": "Verb/noun/pair classes per narration; recipe steps and high-level activities" },
+      "object_boxes":     { "present": true,  "note": "20K object-movement tracks with 2D boxes at pick-up and put-down" },
+      "segmentation":     { "present": true,  "note": "37K object masks lifted to 3D; 7.7M hand masks" },
+      "hand_pose":        { "present": false, "note": "Hands are released as masks, not keypoints" },
+      "body_pose":        { "present": false, "note": null },
+      "object_pose":      { "present": false, "note": null },
+      "gaze":             { "present": true,  "note": "Per-frame 2D gaze centre + 3D direction; gaze-priming events per object" },
+      "camera_pose":      { "present": true,  "note": "Per-frame device-to-world transforms + Aria calibration (intermediate data)" },
+      "depth":            { "present": false, "note": null },
+      "scene_3d":         { "present": true,  "note": "Digital twins of the 9 kitchens with 413 fixtures; 3D object locations" },
+      "audio_transcript": { "present": true,  "note": "Spoken narrations transcribed; 51K audio-event labels (HD-EPIC-Sounds)" },
+      "qa_language":      { "present": true,  "note": "VQA: 26K 5-way questions on recipes, nutrition, actions, 3D, motion and gaze" }
+    },
+    "sample": "{\n  \"unique_narration_id\": \"P01-20240202-110250-1\",\n  \"participant_id\": \"P01\",\n  \"video_id\": \"P01-20240202-110250\",\n  \"narration\": \"Open the upper cupboard by holding the handle of the cupboard with the left hand.\",\n  \"start_timestamp\": 7.44,\n  \"end_timestamp\": 8.75,\n  \"verbs\": [\"open\", \"hold\"],\n  \"nouns\": [\"upper cupboard\", \"handle of cupboard\"],\n  \"main_actions\": [[\"open\", \"upper cupboard\"]],\n  \"hands\": [\"left hand\"],\n  \"narration_timestamp\": 8.0\n}"
+  },
+  "samples": [
+    {
+      "kind": "image",
+      "src": "https://hd-epic.github.io/static/media/hd_epic_poster.png",
+      "caption": "Fisheye RGB frames from the nine HD-EPIC kitchens, recorded with Project Aria glasses",
+      "credit": "hd-epic.github.io"
+    },
+    {
+      "kind": "youtube",
+      "src": "YZo1sqXp5U0",
+      "caption": "Full recording P01-20240202-110250 (6.6 min), as linked from the official annotation repo",
+      "credit": "YouTube (HD-EPIC authors' channel)"
+    }
+  ],
+  "verifiedAt": "2026-10-23"
+}

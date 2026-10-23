@@ -1,0 +1,54 @@
+{
+  "name": "HOT3D",
+  "tagline": "833 min of Aria + Quest 3 multi-view ego video: 19 people handling 33 scanned objects, with mocap-grade 3D hand and 6-DoF object poses.",
+  "links": {
+    "project": "https://facebookresearch.github.io/hot3d/",
+    "paper": "https://arxiv.org/abs/2411.19167",
+    "huggingface": "https://huggingface.co/datasets/bop-benchmark/hot3d",
+    "github": "https://github.com/facebookresearch/hot3d",
+    "download": "https://www.projectaria.com/datasets/hot3D/"
+  },
+  "hfDatasetId": "bop-benchmark/hot3d",
+  "hfViewer": true,
+  "annotations": {
+    "format": "VRS + JSONL/CSV (full dataset); per-frame JSON inside tar clips (HOT3D-Clips)",
+    "coverageNote": "1.16M of 1.5M multi-view frames passed QA with full hand+object poses (77%); HOT3D-Clips: 3,832 fully annotated 150-frame clips (2,804 train, 1,028 test).",
+    "types": {
+      "narrations":       { "present": false, "note": null },
+      "action_labels":    { "present": false, "note": null },
+      "object_boxes":     { "present": true,  "note": "Amodal 2D boxes per camera stream for hands and objects (HOT3D-Clips)" },
+      "segmentation":     { "present": true,  "note": "Amodal (rendered) and modal (SAM2) object masks per stream (HOT3D-Clips)" },
+      "hand_pose":        { "present": true,  "note": "MANO (thetas + wrist xform) and UmeTrack (20 joint angles) per frame, mocap GT" },
+      "body_pose":        { "present": false, "note": null },
+      "object_pose":      { "present": true,  "note": "6-DoF T_world_from_object per frame + 33 PBR-scanned GLB meshes" },
+      "gaze":             { "present": true,  "note": "Aria eye-gaze stream" },
+      "camera_pose":      { "present": true,  "note": "T_world_from_camera per stream per frame; headset trajectory" },
+      "depth":            { "present": false, "note": null },
+      "scene_3d":         { "present": true,  "note": "Scene point clouds (Aria MPS)" },
+      "audio_transcript": { "present": false, "note": null },
+      "qa_language":      { "present": false, "note": null }
+    },
+    "sample": "# clip-<CLIP-ID>.tar / <FRAME-ID>.hands.json\n{\n  \"left\": {\n    \"mano_pose\": {\"thetas\": [<MANO pose params>], \"wrist_xform\": [<axis-angle 3>, <translation 3>]},\n    \"umetrack_pose\": {\"joint_angles\": [<20 floats>], \"wrist_xform\": [[<4x4 matrix>]]},\n    \"boxes_amodal\": {\"214-1\": [<x0, y0, x1, y1>], \"1201-1\": [...], \"1201-2\": [...]},\n    \"visibilities_modeled\": {\"214-1\": <fraction visible>, ...}\n  },\n  \"right\": { ... }\n}\n# <FRAME-ID>.objects.json: T_world_from_object {translation_xyz, quaternion_wxyz}, boxes_amodal, masks_amodal, masks_modal, visibilities_*"
+  },
+  "samples": [
+    {
+      "kind": "image",
+      "src": "https://facebookresearch.github.io/hot3d/assets/hot3d_teaser.jpg",
+      "caption": "Aria RGB + mono views with GT hand and object outlines, and the 3D scene with point cloud and poses",
+      "credit": "facebookresearch.github.io/hot3d"
+    },
+    {
+      "kind": "youtube",
+      "src": "V4luyrOhKfA",
+      "caption": "HOT3D-Clips | Aria (embedded on the project page)",
+      "credit": "YouTube / Tomas Hodan (first author)"
+    },
+    {
+      "kind": "hf-viewer",
+      "src": "bop-benchmark/hot3d",
+      "caption": "HOT3D-Clips files on Hugging Face (object models, train/test clips, splits)",
+      "credit": "Hugging Face"
+    }
+  ],
+  "verifiedAt": "2026-10-23"
+}

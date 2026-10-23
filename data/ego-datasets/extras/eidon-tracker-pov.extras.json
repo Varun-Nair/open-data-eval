@@ -1,0 +1,37 @@
+{
+  "name": "Eidon Tracker POV",
+  "tagline": "1,274 h of head-cam household chores from 27 contributors, paired with 7-point IMU arm tracking; CC-BY-4.0 final release.",
+  "links": {
+    "project": "https://huggingface.co/datasets/eidon-ai/tracker-pov",
+    "paper": null,
+    "huggingface": "https://huggingface.co/datasets/eidon-ai/tracker-pov",
+    "github": null,
+    "download": "https://huggingface.co/datasets/eidon-ai/tracker-pov"
+  },
+  "hfDatasetId": "eidon-ai/tracker-pov",
+  "hfViewer": true,
+  "annotations": {
+    "format": "Parquet",
+    "coverageNote": "Every recording carries a task label, QC status and QC metrics; VLM object tags on a subset; no temporal segments or keypoints.",
+    "types": {
+      "narrations":       { "present": false, "note": null },
+      "action_labels":    { "present": true,  "note": "One task_type per recording (9 household activities; 67.5% folding_laundry)" },
+      "object_boxes":     { "present": false, "note": null },
+      "segmentation":     { "present": false, "note": null },
+      "hand_pose":        { "present": false, "note": "Hand presence ratio from MediaPipe is a QC metric only" },
+      "body_pose":        { "present": false, "note": "7-point IMU orientation (hands, forearms, shoulders, chest) at 24 Hz; no keypoints" },
+      "object_pose":      { "present": false, "note": null },
+      "gaze":             { "present": false, "note": null },
+      "camera_pose":      { "present": false, "note": null },
+      "depth":            { "present": false, "note": null },
+      "scene_3d":         { "present": false, "note": null },
+      "audio_transcript": { "present": false, "note": null },
+      "qa_language":      { "present": false, "note": "objects_detected VLM tags on a subset of recordings" }
+    },
+    "sample": "{\n  \"recording_id\": 1,\n  \"contributor_id\": 1,\n  \"task_type\": \"cooking\",\n  \"duration_seconds\": 12.0,\n  \"qc_status\": \"flagged\",\n  \"flag_reasons\": [\"Expected task is 'cooking' but frames show object inspection/unpacking (portable stove, dishes, cables)\"],\n  \"video_width\": 1920, \"video_height\": 1080, \"video_fps\": 29.917,\n  \"sensor_schema_version\": 1,\n  \"n_slots\": 7, \"has_chest\": true, \"has_raw_motion\": false, \"n_snapshots\": 293\n}"
+  },
+  "samples": [
+    { "kind": "hf-viewer", "src": "eidon-ai/tracker-pov", "caption": "Browse recordings with their task labels, QC scores and video", "credit": "Hugging Face" }
+  ],
+  "verifiedAt": "2026-10-23"
+}

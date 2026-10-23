@@ -1,0 +1,42 @@
+{
+  "name": "RoboX EgoGrasp v0.1",
+  "tagline": "10-clip sample (92 s, 2 people) of iPhone ego grasps: 21-joint hand keypoints, grasp segments, IMU, 6-DoF pose; 1,800+ on request.",
+  "links": {
+    "project": "https://huggingface.co/datasets/RoboXTechnologies/RoboX-EgoGrasp-v0.1",
+    "paper": null,
+    "huggingface": "https://huggingface.co/datasets/RoboXTechnologies/RoboX-EgoGrasp-v0.1",
+    "github": null,
+    "download": "https://huggingface.co/datasets/RoboXTechnologies/RoboX-EgoGrasp-v0.1"
+  },
+  "hfDatasetId": "RoboXTechnologies/RoboX-EgoGrasp-v0.1",
+  "hfViewer": false,
+  "annotations": {
+    "format": "JSONL (clips index, per-frame hand keypoints, actions, sensors, object tracks) + JSON manifests",
+    "coverageNote": "All 10 clips have hand keypoints, action segments and sensor streams; object tracks for 1/10 clips. Labels are Gemini-2.5-flash-lite generated, human-verified.",
+    "types": {
+      "narrations":       { "present": true,  "note": "One AI-generated narration sentence per clip in clips.jsonl" },
+      "action_labels":    { "present": true,  "note": "grasp / idle segments with start/end sec and frames" },
+      "object_boxes":     { "present": true,  "note": "Normalized boxes + class per frame in object_tracks (1 of 10 clips)" },
+      "segmentation":     { "present": false, "note": null },
+      "hand_pose":        { "present": true,  "note": "21 joints 2D + 3D world per hand, grip type, finger curl angles" },
+      "body_pose":        { "present": false, "note": "App captures body pose but it is not exported in this sample" },
+      "object_pose":      { "present": false, "note": null },
+      "gaze":             { "present": false, "note": null },
+      "camera_pose":      { "present": true,  "note": "ARKit 6-DoF pose, velocity and 3x3 intrinsics per frame (sensors.jsonl)" },
+      "depth":            { "present": false, "note": null },
+      "scene_3d":         { "present": false, "note": null },
+      "audio_transcript": { "present": false, "note": "has_audio = false on all clips" },
+      "qa_language":      { "present": true,  "note": "Object / grip / scene labels per clip (labels block)" }
+    },
+    "sample": "{\n  \"clip_id\": \"clip_000001\", \"duration\": 13.19, \"fps\": 60, \"resolution\": [1920, 1080],\n  \"has_video\": true, \"has_audio\": false, \"campaign\": \"ego_grasp\",\n  \"contributor_id\": \"anon_001\", \"device_model\": \"iPhone\", \"quality_score\": 0.9,\n  \"labels\": {\"object\": \"Cup / Mug\", \"object_domain\": \"cup_mug\", \"grip_type\": \"pinch\"},\n  \"narration\": \"A hand grasps a cup mug, lifts it, and then releases it. ...\",\n  \"action_segments\": [{\"label\": \"grasp\", \"start_sec\": 0, \"end_sec\": 12.99, \"start_frame\": 0, \"end_frame\": 779}],\n  \"annotation_meta\": {\"ai_provider\": \"gemini\", \"ai_model\": \"gemini-2.5-flash-lite\", \"status\": \"verified\"},\n  \"files\": {\"hand_keypoints\": \"annotations/hand_keypoints/clip_000001.jsonl\", \"object_tracks\": null,\n            \"actions\": \"annotations/actions/clip_000001.jsonl\", \"sensors\": \"annotations/sensors/clip_000001.jsonl\"}\n}"
+  },
+  "samples": [
+    {
+      "kind": "video",
+      "src": "https://huggingface.co/datasets/RoboXTechnologies/RoboX-EgoGrasp-v0.1/resolve/main/RoboX_movie.mp4",
+      "caption": "EgoGrasp showcase reel from the dataset card (first-person smartphone grasps)",
+      "credit": "huggingface.co/datasets/RoboXTechnologies/RoboX-EgoGrasp-v0.1"
+    }
+  ],
+  "verifiedAt": "2026-10-23"
+}

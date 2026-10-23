@@ -1,0 +1,54 @@
+{
+  "name": "EPIC-KITCHENS-100",
+  "tagline": "100 h / 20M frames of unscripted kitchen video from 37 participants in 45 kitchens, with 89,977 narrated verb-noun action segments.",
+  "links": {
+    "project": "https://epic-kitchens.github.io/2024",
+    "paper": "https://arxiv.org/abs/2006.13256",
+    "huggingface": null,
+    "github": "https://github.com/epic-kitchens/epic-kitchens-100-annotations",
+    "download": "https://github.com/epic-kitchens/download-scripts-100"
+  },
+  "hfDatasetId": null,
+  "hfViewer": false,
+  "annotations": {
+    "format": "CSV + Pickle (pandas)",
+    "coverageNote": "All 700 videos are fully narrated; 89,977 action segments span the 100 h. VISOR, EPIC-Fields and EPIC-SOUNDS are add-on releases on the same videos.",
+    "types": {
+      "narrations":       { "present": true,  "note": "Wearer pause-and-talk narrations, transcribed and timestamped" },
+      "action_labels":    { "present": true,  "note": "97 verb / 300 noun classes with start/stop timestamps and frame indices" },
+      "object_boxes":     { "present": true,  "note": "454K boxes inherited from EK-55 frames; VISOR adds 67K hand-object relations" },
+      "segmentation":     { "present": true,  "note": "VISOR: 271K manual + 9.9M dense masks over 257 object classes" },
+      "hand_pose":        { "present": false, "note": null },
+      "body_pose":        { "present": false, "note": null },
+      "object_pose":      { "present": false, "note": null },
+      "gaze":             { "present": false, "note": null },
+      "camera_pose":      { "present": true,  "note": "EPIC-Fields: camera poses for 671 videos / 18.7M registered frames" },
+      "depth":            { "present": false, "note": null },
+      "scene_3d":         { "present": true,  "note": "EPIC-Fields sparse 3D reconstructions per video" },
+      "audio_transcript": { "present": true,  "note": "Narration transcripts; EPIC-SOUNDS adds 78.4K audio-event segments (44 classes)" },
+      "qa_language":      { "present": false, "note": null }
+    },
+    "sample": "narration_id,participant_id,video_id,narration_timestamp,start_timestamp,stop_timestamp,start_frame,stop_frame,narration,verb,verb_class,noun,noun_class,all_nouns,all_noun_classes\nP01_01_0,P01,P01_01,00:00:01.089,00:00:00.14,00:00:03.37,8,202,open door,open,3,door,3,['door'],[3]\nP01_01_1,P01,P01_01,00:00:02.629,00:00:04.37,00:00:06.17,262,370,turn on light,turn-on,6,light,114,['light'],[114]"
+  },
+  "samples": [
+    {
+      "kind": "video",
+      "src": "https://epic-kitchens.github.io/static/videos/03x03_videoWall.mp4",
+      "caption": "Nine kitchens side by side with their narrations, e.g. 'stir chicken', 'stretch dough'",
+      "credit": "epic-kitchens.github.io"
+    },
+    {
+      "kind": "image",
+      "src": "https://epic-kitchens.github.io/static/img/stats-figures/masks.png",
+      "caption": "Hand-object detections (L-P / R-P / O boxes) and segmentation masks on EK-100 frames",
+      "credit": "epic-kitchens.github.io"
+    },
+    {
+      "kind": "youtube",
+      "src": "8IzkrWAfAGg",
+      "caption": "EPIC-KITCHENS-100 Egocentric Dataset Trailer",
+      "credit": "YouTube / Dima Damen (EPIC-KITCHENS PI)"
+    }
+  ],
+  "verifiedAt": "2026-10-23"
+}

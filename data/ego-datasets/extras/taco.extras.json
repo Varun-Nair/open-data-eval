@@ -1,0 +1,99 @@
+{
+  "name": "TACO",
+  "tagline": "2,317 sequences / 5.2M frames: 14 people in bimanual tool-object tasks (151 triplets, 206 object meshes); 12 allocentric + 1 ego RGB-D cams.",
+  "links": {
+    "project": "https://taco2024.github.io/",
+    "paper": "https://arxiv.org/abs/2401.08399",
+    "huggingface": "https://huggingface.co/datasets/leolyliu/TACO",
+    "github": "https://github.com/leolyliu/TACO-Instructions",
+    "download": "https://huggingface.co/datasets/leolyliu/TACO"
+  },
+  "hfDatasetId": "leolyliu/TACO",
+  "hfViewer": false,
+  "annotations": {
+    "format": "PKL (MANO hands) + NPY (object poses) + OBJ meshes + MP4/AVI video + JSON camera params",
+    "coverageNote": "All 2,317 v1 sequences have MANO hand + 6-DoF tool/target poses and action triplets; ego RGB-D for 2,212; marker-removed allocentric video for 2,120.",
+    "types": {
+      "narrations": {
+        "present": false,
+        "note": null
+      },
+      "action_labels": {
+        "present": true,
+        "note": "<tool, action, object> triplet per sequence (151 triplets, 15 action types)"
+      },
+      "object_boxes": {
+        "present": false,
+        "note": null
+      },
+      "segmentation": {
+        "present": true,
+        "note": "Automatic hand-object 2D segmentation (rendered meshes + SAM / Track-Anything)"
+      },
+      "hand_pose": {
+        "present": true,
+        "note": "MANO pose per frame per hand (left/right_hand.pkl) + shape (hand_shape betas)"
+      },
+      "body_pose": {
+        "present": false,
+        "note": null
+      },
+      "object_pose": {
+        "present": true,
+        "note": "6-DoF tool_<name>.npy / target_<name>.npy per frame + 206 scanned OBJ meshes"
+      },
+      "gaze": {
+        "present": false,
+        "note": null
+      },
+      "camera_pose": {
+        "present": true,
+        "note": "Allocentric camera intrinsics / extrinsics JSON (12 FLIR cams); ego projection code"
+      },
+      "depth": {
+        "present": true,
+        "note": "Egocentric depth video (RealSense L515, 1920x1080 uint16, 0.25 mm units)"
+      },
+      "scene_3d": {
+        "present": false,
+        "note": null
+      },
+      "audio_transcript": {
+        "present": false,
+        "note": null
+      },
+      "qa_language": {
+        "present": false,
+        "note": null
+      }
+    },
+    "sample": "Hand_Poses/(stir, spoon, bowl)/20231105_019/\n  right_hand.pkl         # per-frame MANO params (loaded by mano_params_to_hand_info)\n  right_hand_shape.pkl   # {\"hand_shape\": tensor[10]}  MANO betas\n  left_hand.pkl, left_hand_shape.pkl\nObject_Poses/(stir, spoon, bowl)/20231105_019/\n  tool_<tool_name>.npy, target_<target_name>.npy   # per-frame 6-DoF poses\nObject_Models/001_cm.obj ... 218_cm.obj            # scanned meshes, cm units\nEgocentric_RGB_Videos/<triplet>/<sequence>/color.mp4\nEgocentric_Depth_Videos/<triplet>/<sequence>/egocentric_depth.avi\nAllocentric_RGB_Videos/<triplet>/<sequence>/22070938.mp4 ...   # 12 cameras"
+  },
+  "samples": [
+    {
+      "kind": "image",
+      "src": "https://taco2024.github.io/static/images/teaser.png",
+      "caption": "Third-person + egocentric frames, hand-object meshes, segmentation, triplet labels and the 3 benchmarks",
+      "credit": "taco2024.github.io"
+    },
+    {
+      "kind": "image",
+      "src": "https://raw.githubusercontent.com/leolyliu/TACO-Instructions/master/assets/example.gif",
+      "caption": "Rendered MANO hands with ladle and bowl meshes for sequence 20231105_019 (stir, spoon, bowl)",
+      "credit": "github.com/leolyliu/TACO-Instructions"
+    },
+    {
+      "kind": "video",
+      "src": "https://taco2024.github.io/static/videos/stir_spoon_bowl.mp4",
+      "caption": "Hand and object meshes overlaid on a third-person view of a 'stir spoon bowl' sequence",
+      "credit": "taco2024.github.io"
+    },
+    {
+      "kind": "youtube",
+      "src": "bIgHylU1oZo",
+      "caption": "TACO overview video (linked from the README and project page)",
+      "credit": "YouTube / leoly (first author)"
+    }
+  ],
+  "verifiedAt": "2026-10-23"
+}

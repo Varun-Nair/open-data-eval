@@ -1,0 +1,48 @@
+{
+  "name": "Egocentric-100K",
+  "tagline": "100,405 h of head-mounted fisheye video from 14,228 factory workers (2.01M clips) at 456x256; raw footage plus per-worker intrinsics.",
+  "links": {
+    "project": "https://huggingface.co/datasets/builddotai/Egocentric-100K",
+    "paper": null,
+    "huggingface": "https://huggingface.co/datasets/builddotai/Egocentric-100K",
+    "github": null,
+    "download": "https://huggingface.co/datasets/builddotai/Egocentric-100K"
+  },
+  "hfDatasetId": "builddotai/Egocentric-100K",
+  "hfViewer": false,
+  "annotations": {
+    "format": "JSON sidecar per MP4 inside WebDataset TAR shards; intrinsics.json per worker",
+    "coverageNote": "No semantic labels in the main corpus; only clip metadata and fisheye intrinsics. A separate 30K-frame evaluation set has Gemini hand-visibility labels.",
+    "types": {
+      "narrations":       { "present": false, "note": null },
+      "action_labels":    { "present": false, "note": null },
+      "object_boxes":     { "present": false, "note": null },
+      "segmentation":     { "present": false, "note": null },
+      "hand_pose":        { "present": false, "note": null },
+      "body_pose":        { "present": false, "note": null },
+      "object_pose":      { "present": false, "note": null },
+      "gaze":             { "present": false, "note": null },
+      "camera_pose":      { "present": false, "note": "Kannala-Brandt fisheye intrinsics scaled to 456x256; no extrinsics" },
+      "depth":            { "present": false, "note": null },
+      "scene_3d":         { "present": false, "note": null },
+      "audio_transcript": { "present": false, "note": "No audio recorded" },
+      "qa_language":      { "present": false, "note": null }
+    },
+    "sample": "{\n  \"factory_id\": \"factory_002\",\n  \"worker_id\": \"worker_002\",\n  \"video_index\": 0,\n  \"duration_sec\": 1200.0,\n  \"width\": 456,\n  \"height\": 256,\n  \"fps\": 30.0,\n  \"size_bytes\": 599697350,\n  \"codec\": \"h265\"\n}"
+  },
+  "samples": [
+    {
+      "kind": "image",
+      "src": "https://cdn-uploads.huggingface.co/production/uploads/690d75303df78b892c337cd4/SJYu017CA4wam1E8lRKHH.jpeg",
+      "caption": "Teaser from the dataset card: manual-labor footage from head-mounted cameras",
+      "credit": "huggingface.co/datasets/builddotai/Egocentric-100K"
+    },
+    {
+      "kind": "image",
+      "src": "https://cdn-uploads.huggingface.co/production/uploads/690d75303df78b892c337cd4/r_2QF4JOAGePFhP6bfCVE.png",
+      "caption": "Card figure comparing hand visibility and manipulation density with other ego datasets",
+      "credit": "huggingface.co/datasets/builddotai/Egocentric-100K"
+    }
+  ],
+  "verifiedAt": "2026-10-23"
+}

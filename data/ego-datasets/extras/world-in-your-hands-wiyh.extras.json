@@ -1,0 +1,38 @@
+{
+  "name": "World In Your Hands (WIYH)",
+  "tagline": "1,045 h of in-the-wild human manipulation from the chest- and glove-mounted Oracle Suite across 8+ scenes, with hand and camera poses.",
+  "links": {
+    "project": "https://wiyh.tars-ai.com/",
+    "paper": "https://arxiv.org/abs/2512.24310",
+    "huggingface": "https://huggingface.co/datasets/tars-robotics/WIYH",
+    "github": "https://github.com/tars-robotics/World-In-Your-Hands",
+    "download": "https://huggingface.co/datasets/tars-robotics/WIYH"
+  },
+  "hfDatasetId": "tars-robotics/WIYH",
+  "hfViewer": false,
+  "annotations": {
+    "format": "JSON",
+    "coverageNote": "Every sample has a task description, subtask intervals, per-frame camera and end-effector poses and hand states; atomic instructions cover ~400 of 1,045 h.",
+    "types": {
+      "narrations":       { "present": true,  "note": "task_description plus one description per subtask" },
+      "action_labels":    { "present": true,  "note": "Subtask intervals with timestamp_range, frame_index_range and status" },
+      "object_boxes":     { "present": false, "note": null },
+      "segmentation":     { "present": null,  "note": "Paper: SAM instance masks; not in the card's JSON spec" },
+      "hand_pose":        { "present": true,  "note": "hand_states vectors per frame; paper describes 3D hand skeletons" },
+      "body_pose":        { "present": false, "note": null },
+      "object_pose":      { "present": false, "note": null },
+      "gaze":             { "present": false, "note": null },
+      "camera_pose":      { "present": true,  "note": "ego_poses per camera relative to frame 0 and chest-frame camera poses" },
+      "depth":            { "present": null,  "note": "Paper: FoundationStereo-estimated depth; not in the card's JSON spec" },
+      "scene_3d":         { "present": false, "note": null },
+      "audio_transcript": { "present": false, "note": null },
+      "qa_language":      { "present": null,  "note": "Paper: 100k vision-language instances; not in the card's JSON spec" }
+    },
+    "sample": "{\n  \"worldcode_name\": \"worldcode_HS-2-1420125020208_2025-10-21-14-50-09_3_s0_vlta_reorg_sample_1-2\",\n  \"task_description\": \"...\",\n  \"status\": \"success\",\n  \"num_frames\": \"...\",\n  \"subtasks\": [{ \"subtask_index\": 1, \"subtask_description\": \"...\", \"status\": \"...\",\n                 \"timestamp_range\": [\"...\", \"...\"], \"frame_index_range\": [\"...\", \"...\"] }],\n  \"camera_calibration\": { \"lf_chest_fisheye\": { \"intrinsic\": \"3x3\", \"distortion\": \"...\",\n                           \"width\": \"...\", \"height\": \"...\", \"camera_model\": \"fisheye\" } },\n  \"frames\": [{ \"frame_index\": 0, \"timestamp\": \"...\",\n               \"images\": { \"lf_chest_fisheye\": \"camera/lf_chest_fisheye/....jpg\" },\n               \"chest_poses\": \"...\", \"ego_poses\": \"...\", \"chest_0_poses\": \"...\", \"hand_states\": \"...\" }]\n}"
+  },
+  "samples": [
+    { "kind": "image", "src": "https://raw.githubusercontent.com/tars-robotics/World-In-Your-Hands/main/assets/vis.png", "caption": "Visualisation of WIYH multi-camera capture and hand annotations", "credit": "github.com/tars-robotics/World-In-Your-Hands" },
+    { "kind": "video", "src": "https://wiyh.tars-ai.com/videos/banquet-1.mp4", "caption": "Banquet-scene recording from the Oracle Suite", "credit": "wiyh.tars-ai.com" }
+  ],
+  "verifiedAt": "2026-10-23"
+}

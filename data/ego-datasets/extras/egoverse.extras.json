@@ -1,0 +1,42 @@
+{
+  "name": "EgoVerse",
+  "tagline": "Growing multi-lab robot-learning corpus: 1,362 h / 80K episodes (paper), 1,965 tasks, 240 scenes, 2,087 demonstrators, head pose + language.",
+  "links": {
+    "project": "https://egoverse.ai/",
+    "paper": "https://arxiv.org/abs/2604.07607",
+    "huggingface": null,
+    "github": "https://github.com/GaTech-RL2/EgoVerse",
+    "download": "https://egoverse-research-workbench.vercel.app/"
+  },
+  "hfDatasetId": null,
+  "hfViewer": false,
+  "annotations": {
+    "format": "Zarr v3 episode stores (arrays + zarr.json attrs); language spans as JSON strings in the annotations array",
+    "coverageNote": "Every episode has task metadata, camera intrinsics and 6-DoF head pose; hand keypoints, wrist cams, gaze and sub-step language spans vary by contributing lab.",
+    "types": {
+      "narrations":       { "present": true,  "note": "Span-based sub-step text ({text, start_idx, end_idx}); optional but encouraged" },
+      "action_labels":    { "present": true,  "note": "task_name / task_description per episode (1,965 task types)" },
+      "object_boxes":     { "present": false, "note": null },
+      "segmentation":     { "present": false, "note": null },
+      "hand_pose":        { "present": true,  "note": "21 MANO keypoints x3 per hand (obs_keypoints) when hand tracking exists" },
+      "body_pose":        { "present": false, "note": null },
+      "object_pose":      { "present": false, "note": null },
+      "gaze":             { "present": true,  "note": "obs_eye_gaze unit direction vector where available (Aria)" },
+      "camera_pose":      { "present": true,  "note": "obs_head_pose 6-DoF in SLAM world frame, required for all episodes" },
+      "depth":            { "present": true,  "note": "EgoVerse-I industry rigs capture depth (per paper/catalog)" },
+      "scene_3d":         { "present": false, "note": null },
+      "audio_transcript": { "present": false, "note": null },
+      "qa_language":      { "present": false, "note": null }
+    },
+    "sample": "# annotations array entry (one JSON string per span)\n{\"text\": \"pick up the shirt\", \"start_idx\": 0, \"end_idx\": 145}\n\n# zarr.json attrs (episode metadata, abridged)\n{\n  \"embodiment\": \"human_bimanual\",\n  \"total_frames\": 2712,\n  \"fps\": 30,\n  \"task_name\": \"fold_clothes\",\n  \"task_description\": \"folding a 2T baby shirt on a blue table\"\n}"
+  },
+  "samples": [
+    {
+      "kind": "image",
+      "src": "https://raw.githubusercontent.com/GaTech-RL2/EgoVerse/main/assets/egoverse.png",
+      "caption": "EgoVerse overview figure from the official repository",
+      "credit": "github.com/GaTech-RL2/EgoVerse"
+    }
+  ],
+  "verifiedAt": "2026-10-23"
+}

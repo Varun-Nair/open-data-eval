@@ -1,0 +1,93 @@
+{
+  "name": "EgoVid-5M",
+  "tagline": "5M 1080p clips (~120 frames each) cut from Ego4D, each with LLM text descriptions and SfM+IMU-fused camera trajectories for video generation",
+  "links": {
+    "project": "https://egovid.github.io/",
+    "paper": "https://arxiv.org/abs/2411.08380",
+    "huggingface": "https://huggingface.co/datasets/Jeff-Wang/EgoVid-5M",
+    "github": "https://github.com/JeffWang987/EgoVid",
+    "download": "https://modelscope.cn/datasets/iic/EgoVid/"
+  },
+  "hfDatasetId": "Jeff-Wang/EgoVid-5M",
+  "hfViewer": true,
+  "annotations": {
+    "format": "CSV (clip metadata, captions, IMU) + NPY camera poses (poses.zip)",
+    "coverageNote": "All 5M clips carry LLaVA/Qwen2 descriptions and SfM+IMU camera poses; EgoVid-65K has IMU-validated kinematics; 1.2K val clips. Videos come from Ego4D.",
+    "types": {
+      "narrations": {
+        "present": true,
+        "note": "llava_cap detailed captions + 'name' action descriptions (LLaVA-NeXT-Video, Qwen2)"
+      },
+      "action_labels": {
+        "present": true,
+        "note": "verb_cls / noun_cls per clip (from Ego4D narrations)"
+      },
+      "object_boxes": {
+        "present": false,
+        "note": null
+      },
+      "segmentation": {
+        "present": false,
+        "note": null
+      },
+      "hand_pose": {
+        "present": false,
+        "note": null
+      },
+      "body_pose": {
+        "present": false,
+        "note": null
+      },
+      "object_pose": {
+        "present": false,
+        "note": null
+      },
+      "gaze": {
+        "present": false,
+        "note": null
+      },
+      "camera_pose": {
+        "present": true,
+        "note": "Per-frame ego camera extrinsics: ParticleSfM + IMU, Kalman-fused (fused_pose.npy)"
+      },
+      "depth": {
+        "present": false,
+        "note": null
+      },
+      "scene_3d": {
+        "present": false,
+        "note": null
+      },
+      "audio_transcript": {
+        "present": false,
+        "note": null
+      },
+      "qa_language": {
+        "present": false,
+        "note": null
+      }
+    },
+    "sample": "# egovid-val.csv columns (dataset_infos.json)\nvideo_id, name, frame_num, fps,\ngyro_x, gyro_y, gyro_z, accl_x, accl_y, accl_z,\nnoun_cls, verb_cls, llava_cap,\nflow_mean, flow_0_4, flow_4_8, flow_8_12, flow_12_16, flow_16_,\nti_sim, ii_sim, dover_score, egovideo_score\n\n# poses/<video_id>_<start>_<end>/\nintri.npy [3,3]  sfm_pose.npy [N,4,4]  imu_pose.npy  fused_pose.npy (recommended)  cost.txt"
+  },
+  "samples": [
+    {
+      "kind": "image",
+      "src": "https://raw.githubusercontent.com/JeffWang987/EgoVid/main/asset/clean_ann.jpg",
+      "caption": "Annotation pipeline: SfM+IMU kinematic control, MLLM text descriptions and cleaning metrics",
+      "credit": "github.com/JeffWang987/EgoVid"
+    },
+    {
+      "kind": "video",
+      "src": "https://egovid.github.io/static/videos/egovid.mp4",
+      "caption": "Mosaic of EgoVid-5M source clips: cooking, shopping, cycling, gardening, driving",
+      "credit": "egovid.github.io"
+    },
+    {
+      "kind": "hf-viewer",
+      "src": "Jeff-Wang/EgoVid-5M",
+      "caption": "EgoVid-5M annotation tables on Hugging Face (first author's upload)",
+      "credit": "Hugging Face"
+    }
+  ],
+  "verifiedAt": "2026-10-23"
+}

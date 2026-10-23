@@ -1,0 +1,48 @@
+{
+  "name": "EgoDex",
+  "tagline": "829 h / 338K episodes of 1080p 30 Hz Apple Vision Pro video on 194 tabletop tasks, with ARKit 3D hand, upper-body and camera poses.",
+  "links": {
+    "project": "https://github.com/apple/ml-egodex",
+    "paper": "https://arxiv.org/abs/2505.11709",
+    "huggingface": null,
+    "github": "https://github.com/apple/ml-egodex",
+    "download": "https://github.com/apple/ml-egodex"
+  },
+  "hfDatasetId": null,
+  "hfViewer": false,
+  "annotations": {
+    "format": "HDF5 per episode (SE(3) joint transforms, confidences, llm_description attr) paired with MP4",
+    "coverageNote": "Each episode: MP4 + HDF5 with 30 Hz SE(3) transforms (camera, 25 joints per hand, upper body) and a GPT-4 task description. 725 h train / 7 h test / 97 h extra.",
+    "types": {
+      "narrations":       { "present": false, "note": "One task-level description per episode, not timestamped" },
+      "action_labels":    { "present": true,  "note": "Task folder = one of 194 tabletop tasks per episode (no temporal segments)" },
+      "object_boxes":     { "present": false, "note": null },
+      "segmentation":     { "present": false, "note": null },
+      "hand_pose":        { "present": true,  "note": "25 joints per hand as 4x4 transforms per frame (ARKit), optional confidences" },
+      "body_pose":        { "present": true,  "note": "Upper-body joints (hip, spine, neck, shoulders, arms, wrists) per frame" },
+      "object_pose":      { "present": false, "note": null },
+      "gaze":             { "present": false, "note": null },
+      "camera_pose":      { "present": true,  "note": "camera 4x4 transform per frame (ARKit) + fixed 3x3 intrinsics" },
+      "depth":            { "present": false, "note": null },
+      "scene_3d":         { "present": false, "note": null },
+      "audio_transcript": { "present": false, "note": null },
+      "qa_language":      { "present": true,  "note": "f.attrs['llm_description'] (GPT-4 merge of collector metadata) per episode" }
+    },
+    "sample": "# <task>/<i>.hdf5  (paired with <task>/<i>.mp4; N = 30 * seconds)\ncamera\n└── intrinsic            # 3 x 3, identical in every file\ntransforms               # each N x 4 x 4 SE(3), ARKit origin frame\n├── camera\n├── leftHand\n├── rightHand\n├── leftIndexFingerTip\n└── ... (64 more joints)\nconfidences              # optional, each N scalars in [0, 1]\n├── leftHand\n└── ...\nattrs: llm_description   # + llm_description2 for reversible tasks"
+  },
+  "samples": [
+    {
+      "kind": "image",
+      "src": "https://arxiv.org/html/2505.11709v1/figs/collage_edit.jpg",
+      "caption": "Nine EgoDex episodes with projected fingertip trajectories: shoelaces, books, laundry, cups (paper figure)",
+      "credit": "arxiv.org (EgoDex paper)"
+    },
+    {
+      "kind": "image",
+      "src": "https://arxiv.org/html/2505.11709v1/grid_v4.png",
+      "caption": "Grid of Vision Pro episodes with the dataset's headline stats and annotation types (paper figure)",
+      "credit": "arxiv.org (EgoDex paper)"
+    }
+  ],
+  "verifiedAt": "2026-10-23"
+}

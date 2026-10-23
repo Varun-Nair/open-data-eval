@@ -1,0 +1,54 @@
+{
+  "name": "EgoSuite-Open100K (EgoDemo)",
+  "tagline": "Developer sample of EgoSuite-Open100K: 2,712 episodes / 79.5 h, 584 tasks, 299 environments in LeRobot v3, MCAP and MP4 (card says 50 h).",
+  "links": {
+    "project": "https://egosuite100k.lightwheel.ai/",
+    "paper": null,
+    "huggingface": "https://huggingface.co/datasets/LightwheelAI/EgoDemo",
+    "github": "https://github.com/LightwheelAI/LW-Egosuite-DevKit",
+    "download": "https://huggingface.co/datasets/LightwheelAI/EgoDemo"
+  },
+  "hfDatasetId": "LightwheelAI/EgoDemo",
+  "hfViewer": false,
+  "annotations": {
+    "format": "LeRobot v3 Parquet + MCAP (embedded Protobuf) for 4 annotated variants; MP4 + JSON for EgoRaw / EgoProRaw; per-variant manifests",
+    "coverageNote": "Manifest flags over 2,712 episodes: head video 100 %, wrist video 59.5 %, hand pose 72.3 %, semantic annotations 72.3 %, body pose 32.6 %.",
+    "types": {
+      "narrations":       { "present": true,  "note": "Subtask text per time segment on the 1,960 annotated episodes" },
+      "action_labels":    { "present": true,  "note": "Skill tags + start/end per segment; task name per episode (584 tasks)" },
+      "object_boxes":     { "present": false, "note": null },
+      "segmentation":     { "present": false, "note": null },
+      "hand_pose":        { "present": true,  "note": "21 joints per hand, (21,3) pos + (21,4) quat float32, world frame" },
+      "body_pose":        { "present": true,  "note": "22-joint (22,3)+(22,4) in EgoStand-body / EgoProStandard-body (884 episodes)" },
+      "object_pose":      { "present": false, "note": null },
+      "gaze":             { "present": false, "note": null },
+      "camera_pose":      { "present": true,  "note": "Head/headcam (and wrist) poses + pinhole calibration per camera" },
+      "depth":            { "present": false, "note": "Declared in session metadata, never published in sampled MCAPs" },
+      "scene_3d":         { "present": false, "note": null },
+      "audio_transcript": { "present": false, "note": "ffprobe: no audio in raw MP4s; no audio topic in MCAP" },
+      "qa_language":      { "present": false, "note": null }
+    },
+    "sample": "// /annotation/semantic_segments (Protobuf, also mirrored in LeRobot v3 parquet)\nmessage SemanticSegment {\n  common.header.Header header = 1;\n  string task_description = 2;\n  SegmentInfo segment = 3;   // subtask_description, repeated skill, start_time, end_time\n}\n// manifests/*.parquet|jsonl row fields (per episode): episode uuid, source_episode_uuid,\n//   task, scene_id, environment_id, duration_s, frame_count, fps, repository paths,\n//   has_head_video, has_wrist_video, has_hand_pose, has_body_pose, has_semantic_annotations,\n//   publication_ready, cross_format_complete, sha256"
+  },
+  "samples": [
+    {
+      "kind": "image",
+      "src": "https://lw-cdn.lightwheel.net/build/egosuite-open100k/assets/002__021_%E9%A4%90%E6%97%85__%E5%86%B7%E9%A5%AE%E5%88%B6%E4%BD%9C-Cuif8cZM.webp",
+      "caption": "Project-page sample: hospitality task (preparing a cold drink)",
+      "credit": "egosuite100k.lightwheel.ai"
+    },
+    {
+      "kind": "image",
+      "src": "https://raw.githubusercontent.com/LightwheelAI/LW-Egosuite-DevKit/main/assets/demo.png",
+      "caption": "LW-VIZ dashboard view of an episode: video, 3D hand/body skeletons, subtask text",
+      "credit": "github.com/LightwheelAI/LW-Egosuite-DevKit"
+    },
+    {
+      "kind": "video",
+      "src": "https://huggingface.co/spaces/LightwheelAI/README/resolve/main/assets/egosuite-open100k-promo.mp4",
+      "caption": "EgoSuite-Open100K announcement video",
+      "credit": "huggingface.co/spaces/LightwheelAI/README"
+    }
+  ],
+  "verifiedAt": "2026-10-23"
+}

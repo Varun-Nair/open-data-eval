@@ -1,0 +1,87 @@
+{
+  "name": "HOI4D",
+  "tagline": "2.4M RGB-D ego frames, 4,000+ sequences: 4 people handle 800 objects (16 categories) in 610 rooms; hand pose, object pose, panoptic labels.",
+  "links": {
+    "project": "https://hoi4d.github.io/",
+    "paper": "https://arxiv.org/abs/2203.01577",
+    "huggingface": null,
+    "github": "https://github.com/leolyliu/HOI4D-Instructions",
+    "download": "https://hoi4d.github.io/"
+  },
+  "hfDatasetId": null,
+  "hfViewer": false,
+  "annotations": {
+    "format": "JSON (actions, object pose) + PNG masks + PCD (3D) + pickle (MANO hands)",
+    "coverageNote": "Per-frame action labels, 2D motion masks, MANO hand pose and category-level object pose on all released sequences; part of the data is held out as a test set.",
+    "types": {
+      "narrations": {
+        "present": false,
+        "note": null
+      },
+      "action_labels": {
+        "present": true,
+        "note": "Per-frame action segments (event, startTime, endTime) in action/color.json"
+      },
+      "object_boxes": {
+        "present": false,
+        "note": null
+      },
+      "segmentation": {
+        "present": true,
+        "note": "2D motion masks (hands + interacting objects); 3D static and 4D dynamic panoptic seg"
+      },
+      "hand_pose": {
+        "present": true,
+        "note": "MANO per frame (poseCoeff 48, beta 10, trans) + 21 projected 2D keypoints"
+      },
+      "body_pose": {
+        "present": false,
+        "note": null
+      },
+      "object_pose": {
+        "present": true,
+        "note": "Category-level part poses (center, rotation, dimensions) + CAD meshes, articulated parts"
+      },
+      "gaze": {
+        "present": false,
+        "note": null
+      },
+      "camera_pose": {
+        "present": true,
+        "note": "Per-frame camera trajectory (output.log, Open3D pinhole trajectory)"
+      },
+      "depth": {
+        "present": true,
+        "note": "Aligned depth video per sequence (align_depth/depth_video.avi)"
+      },
+      "scene_3d": {
+        "present": true,
+        "note": "Reconstructed static scene point cloud per sequence (raw_pc.pcd + label.pcd)"
+      },
+      "audio_transcript": {
+        "present": false,
+        "note": null
+      },
+      "qa_language": {
+        "present": false,
+        "note": null
+      }
+    },
+    "sample": "# <seq>/handpose/<frame>.pickle  (MANO, right hand)\n  poseCoeff : 48 floats   # 3 global rotation + 45 MANO pose params\n  beta      : 10 floats   # MANO shape (same for each human ID H*)\n  trans     : [x, y, z]   # hand translation in camera frame\n  kps2D     : 21 x 2      # projected keypoints on the image\n\n# <seq>/objpose/<frame>.json  ->  dataList[i]\n  center     : {x, y, z}\n  rotation   : {x, y, z}            # Euler XYZ\n  dimensions : {length, width, height}"
+  },
+  "samples": [
+    {
+      "kind": "image",
+      "src": "https://hoi4d.github.io/teaser.png",
+      "caption": "Hand action segments, motion segmentation, 3D hand + category-level object pose, panoptic seg, object mesh",
+      "credit": "hoi4d.github.io"
+    },
+    {
+      "kind": "youtube",
+      "src": "yzNqm0JISU0",
+      "caption": "HOI4D overview video (embedded on the project page)",
+      "credit": "YouTube / Yunze Liu (first author)"
+    }
+  ],
+  "verifiedAt": "2026-10-23"
+}

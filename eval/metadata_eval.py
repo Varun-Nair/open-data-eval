@@ -124,6 +124,10 @@ TARGET_DATASETS = [
     "EgoSuite-Open100K (EgoStandard)",
     "EgoSuite-Open100K (EgoPro)",
     "EgoSuite-Open100K (EgoDemo)",
+    "Eidon Tracker POV",
+    "Open-AoE (OpenAoE-2000h)",
+    "Ego-OSCAR-550h (Stereo-550)",
+    "World In Your Hands (WIYH)",
 ]
 
 
@@ -705,6 +709,79 @@ PAPER_METADATA = {
         "geo_locations": None,                 # multi-country collection; exact country count not stated in paper
         "arxiv_id": "2604.07607",
         "paper_ref": "arXiv:2604.07607",
+    },
+    "Eidon Tracker POV": {
+        # HuggingFace: eidon-ai/tracker-pov + eidon-ai/tracker-pov-imu (no arXiv paper). Cards read 2026-10-23.
+        # 1,273.8h, 13,451 recordings, 27 contributors, 9.05 TB video + 9.5 GB IMU; final release, company wound down.
+        "capture_device": "Head-mounted camera (model not published; per-recording ffprobe fields show 1080p to 4K, mostly 30 fps) + 7-sensor 9-axis IMU harness at 24 Hz (left/right hand, forearm, shoulder, chest), both captured by the same phone app. Source: HuggingFace dataset card.",
+        "calibration_tier": 0.0,               # no camera calibration published
+        "calibration_notes": "No camera intrinsics, distortion or extrinsics published. No hardware camera-IMU sync: card states camera and IMU capture were started back to back in the same app with a few milliseconds of offset, and must be aligned by timestamp (frame N -> t_ms = N / video_fps * 1000, nearest IMU row). Chest IMU recommended as reference frame. Source: HuggingFace dataset card.",
+        "lens_type": None,                     # not published
+        "fov_degrees": None,
+        "fps_override": None,                  # catalog carries 30 (mostly; 29.917 / 29.97 present)
+        "resolution_override": None,           # catalog carries 1920x1080 to 3840x2160
+        "annotation_coverage": 0.5,            # recording-level task label + QC metrics on 100% of recordings; no temporal segments,
+                                               # hand pose or narrations (same tier as HA-Ego's per-segment task labels)
+        "annotation_notes": "Every recording has one task_type label (9 household activities), an automated qc_status (valid 11,841 / flagged 1,138 / invalid 472 recordings) with QC metrics (hand_presence_ratio, stability, lighting, blur) and per-recording ffprobe fields; VLM-derived objects_detected tags on a subset only. No temporal action segments, no hand/body keypoints, no narrations. Raw accel/gyro/mag present on 2,841 of 13,451 recordings (21.1%); orientation quaternions on all. Source: HuggingFace dataset card.",
+        "total_hours_override": None,          # catalog carries 1273.8h from the card
+        "download_size_gb": 9059.5,            # 9.05 TB video repo (API usedStorage 9,020.77 GB) + 9.5 GB IMU repo; excludes the 1.55 TB video-only bucket
+        "geo_locations": None,                 # not published (US company; BIPA/GDPR referenced)
+        "arxiv_id": None,
+        "paper_ref": "HuggingFace:eidon-ai/tracker-pov",
+    },
+    "Open-AoE (OpenAoE-2000h)": {
+        # arXiv 2607.14183 (Ant Group AoE Team, 15 Jul 2026) + HuggingFace card/data spec inclusionAI/OpenAoE-2000h
+        # ~2,000h smartphone egocentric manipulation, 500+ contributors, 400+ phones, 400+ scenes, 8,000+ tasks. Read 2026-10-23.
+        "capture_device": "Consumer smartphones (400+ device models; Android per deviceInfo fields), 30 fps, 1280x720 majority / 1920x1080 by device; wearing/mounting method not described. Source: arXiv:2607.14183 + HuggingFace card.",
+        "calibration_tier": 0.5,               # per-video intrinsics + 5-coefficient distortion; single camera (no extrinsics); no validation described
+        "calibration_notes": "Per-video video_info.json carries calibrated fx/fy/cx/cy (fx != fy in raw metadata) and lensDistortion [k1,k2,p1,p2,k3] from the phone; undistorted_video_info.json recomputes intrinsics with zeroed distortion and adds horizontal/vertical FOV (example 1080p sample: 101.25 deg x 68.63 deg). camera_traj.npz repeats the undistorted intrinsic. Single camera, so no extrinsics; no independent validation reported. Release note 2026-07-30: samples with camera-intrinsics vs video-resolution mismatches were removed. Source: HuggingFace data specification.",
+        "lens_type": "rectilinear",            # smartphone main camera; undistorted variant shipped
+        "fov_degrees": None,                   # varies by phone; only a per-sample example is published
+        "fps_override": None,                  # catalog carries 30
+        "resolution_override": None,           # catalog carries 1280x720 / 1920x1080
+        "annotation_coverage": 1.0,            # atomic-action segments span every video with no gaps; MANO hands valid ~98-99% of entries
+        "annotation_notes": "ego_action_annotation.json: segment-level atomic actions (verb, object, hand, English description, action-region bbox, confidence, scene) spanning 0.0 s to the last frame with no gaps or overlaps (100 h audit: 99.99% temporal coverage, mean segment 9.64 s, 13.97 segments/min, 32,407 distinct descriptions). hands.npz: per-frame bilateral MANO pose/shape/root in world and camera frames (valid for at least one hand in 98.93%, both hands in 98.02% of entries). camera_traj.npz: metric-scale 6-DoF cam_c2w from visual SLAM. Annotations are automatic with human-in-the-loop review. Source: arXiv:2607.14183 + HuggingFace card.",
+        "total_hours_override": None,          # catalog carries 2000 (card: all data for the ~2000h release uploaded 2026-10-17)
+        "download_size_gb": 22976.7,           # card: 23 TB total file size; API usedStorage 22,976,658,068,156 bytes
+        "geo_locations": None,                 # not published (bilingual zh/en annotations; Ant Group, China)
+        "arxiv_id": "2607.14183",
+        "paper_ref": "arXiv:2607.14183",
+    },
+    "Ego-OSCAR-550h (Stereo-550)": {
+        # arXiv 2608.08285 v2 (FPV Labs, Aug 2026) + HuggingFace card fpvlabs/stereo-550 + FPV Labs blog. Read 2026-10-23.
+        # ~550h per camera (~1,100 stereo camera-hours), 1,462 sessions, 25 contributors, 13 devices, India.
+        "capture_device": "Ego-OSCAR open-hardware head-mounted rig: Dexcin USB stereo module with two OmniVision global-shutter sensors (1280x720 per eye, 30 fps, 126 deg FOV, 42 mm baseline, side-by-side MJPEG capture, H.264 MP4 release) + TDK InvenSense ICM-20948 6-axis IMU (120 Hz per paper; ~180 Hz synced stream per card), Radxa Rock 5C (RK3588) + Seeed Xiao ESP32-S3. Source: arXiv:2608.08285.",
+        "calibration_tier": 1.0,               # intrinsics + radial-tangential distortion + stereo extrinsics, per session, validated
+        "calibration_notes": "Per-session calibration.json: pinhole model with radial-tangential distortion (k1, k2, p1, p2, k3) per camera plus stereo rotation/translation (42 mm baseline), from an 8x6 chessboard with 30 mm squares at 1280x720 following Zhang (2000). Validation: reprojection error below 0.03 px per camera; mean per-pixel epipolar error after rectification 0.4 px across all 13 devices; visual-inertial residual sync offset 700 us checked with Kalibr's cam-IMU offset test. Source: arXiv:2608.08285 + HuggingFace card.",
+        "lens_type": "wide-angle (126 deg; pinhole + radial-tangential model)",
+        "fov_degrees": 126,                    # paper: 126 deg per sensor
+        "fps_override": None,                  # catalog carries 30
+        "resolution_override": None,           # catalog carries 1280x720
+        "annotation_coverage": 1.0,            # captions cover ~100% of the recorded timeline
+        "annotation_notes": "209,315 free-form open-vocabulary action captions with start_time/end_time covering essentially the entire 550 h timeline (median 94 segments per session; 460 verbs, 32,630 object phrases, 57,104 verb-object combinations, 192,509 ordered task transitions), produced with FPV Labs' internal Vidur labelling system. Per-session stereo calibration.json on 100% of sessions; IMU on 1,271 of 1,462 sessions (86.9%). Paper reports per-frame hand detections (94% frame detection rate) but they are not in the card's per-session file list, so no hand annotations are claimed. No camera pose, object pose or depth maps released. Source: arXiv:2608.08285 + HuggingFace card.",
+        "total_hours_override": None,          # catalog carries 550 (per camera)
+        "download_size_gb": 1838.2,            # API usedStorage 1,838,194,632,047 bytes; card says 1.86 TB
+        "geo_locations": 1,                    # paper: all capture took place in India
+        "arxiv_id": "2608.08285",
+        "paper_ref": "arXiv:2608.08285",
+    },
+    "World In Your Hands (WIYH)": {
+        # arXiv 2512.24310 v3 (TARS Robotics, 15 Mar 2026) + HuggingFace card/croissant tars-robotics/WIYH + GitHub devkit. Read 2026-10-23.
+        # Paper Table 1: 1,045h, 125.4k clips, 10 scenarios, 100+ skills; HF repo 36.5 TB in 8 scene folders, croissant v1.0.0 published 2026-04-01.
+        "capture_device": "TARS Oracle Suite: H-FPVHive chest unit (two fisheye + two pinhole RGB cameras + four IR lenses, hardware-synchronised), H-Gloves (three fisheye cameras, six IMUs, five fingertip pressure sensors per glove), wrist-mounted fisheye cameras 1536x1920 with 180 deg FOV, H-Backpack with NVIDIA Orin compute; frame rate not stated. Source: arXiv:2512.24310.",
+        "calibration_tier": 0.85,              # per-camera intrinsics + distortion + chest-frame camera poses shipped; no calibration validation described
+        "calibration_notes": "Each WorldCode sample ships camera_calibration per camera (e.g. lf_chest_fisheye, ldr_hand_fisheye): 3x3 intrinsic, distortion parameters, width, height, camera_model=fisheye; per-frame chest_0_poses give each camera's pose in the chest frame (extrinsics) and ego_poses the camera trajectory relative to frame 0. Paper reports a mocap-room test with mean positional error below 5 mm for the pose pipeline, but no calibration-specific validation (reprojection/epipolar error) is published. Source: HuggingFace card + arXiv:2512.24310.",
+        "lens_type": "fisheye",                # chest and glove/wrist cameras are fisheye (camera_model field; paper)
+        "fov_degrees": 180,                    # wrist-mounted fisheye cameras per paper; chest cameras not stated
+        "fps_override": None,                  # not stated in paper or card
+        "resolution_override": None,           # catalog carries 1536x1920 (wrist cameras); chest resolution not stated
+        "annotation_coverage": 1.0,            # every sample has task + subtask intervals, per-frame camera/end-effector poses and hand states
+        "annotation_notes": "Every WorldCode JSON carries task_description, subtasks (index, description, status, timestamp_range, frame_index_range), per-frame camera poses (ego_poses, chest_0_poses), end-effector poses in the chest frame and hand_states when the end effector is a hand; wrist_poses are placeholder zeros in this export. Paper additionally describes 3D hand skeletons, 6D wrist trajectories, 400 h of atomic action instructions, 100k vision-language instances, SAM instance masks, FoundationStereo depth and tactile signals; only the fields in the card's JSON spec are counted here. Croissant notes annotations are produced by an automatic pipeline and may contain noise. Source: HuggingFace card + croissant.json + arXiv:2512.24310.",
+        "total_hours_override": None,          # catalog carries 1045 (paper Table 1)
+        "download_size_gb": 36849.5,           # API usedStorage 36,849,534,298,691 bytes; card says 36.5 TB
+        "geo_locations": None,                 # not published
+        "arxiv_id": "2512.24310",
+        "paper_ref": "arXiv:2512.24310",
     },
 }
 

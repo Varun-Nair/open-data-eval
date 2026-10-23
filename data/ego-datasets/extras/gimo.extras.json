@@ -1,0 +1,48 @@
+{
+  "name": "GIMO",
+  "tagline": "217 motion trajectories, 11 subjects, 19 scanned indoor scenes: 129K HoloLens2 ego frames with 3D eye gaze and inertial-mocap SMPL-X bodies.",
+  "links": {
+    "project": "https://github.com/y-zheng18/GIMO",
+    "paper": "https://arxiv.org/abs/2204.09443",
+    "huggingface": null,
+    "github": "https://github.com/y-zheng18/GIMO",
+    "download": "https://github.com/y-zheng18/GIMO"
+  },
+  "hfDatasetId": null,
+  "hfViewer": false,
+  "annotations": {
+    "format": "CSV (dataset index, head/hand/eye poses), PKL + OBJ (SMPL-X per frame), PLY (gaze point clouds), BVH (raw mocap), JSON (transforms)",
+    "coverageNote": "Every sequence ships SMPL-X poses, synchronized HoloLens2 gaze and a scanned scene mesh; access is by signed agreement (encrypted download).",
+    "types": {
+      "narrations":       { "present": false, "note": null },
+      "action_labels":    { "present": false, "note": null },
+      "object_boxes":     { "present": false, "note": null },
+      "segmentation":     { "present": false, "note": null },
+      "hand_pose":        { "present": true,  "note": "Noitom suit records hand joints; SMPL-X fits include hands" },
+      "body_pose":        { "present": true,  "note": "SMPL-X per frame (VPoser latent + orient/trans) from 96 fps inertial mocap" },
+      "object_pose":      { "present": false, "note": null },
+      "gaze":             { "present": true,  "note": "3D gaze points per frame (eye_pc/*.ply, head_hand_eye.csv)" },
+      "camera_pose":      { "present": true,  "note": "Per-frame egocentric camera poses in *_pv.txt" },
+      "depth":            { "present": false, "note": null },
+      "scene_3d":         { "present": true,  "note": "LiDAR-scanned textured OBJ + downsampled PLY per scene" },
+      "audio_transcript": { "present": false, "note": null },
+      "qa_language":      { "present": false, "note": null }
+    },
+    "sample": "# dataset.csv (per-sequence index read by dataset/eval_dataset.py)\nsequence_path,training,start_frame,end_frame,scene,transformation\nbedroom0210/2022-02-10-031338,<0|1>,<int>,<int>,bedroom0210,<transform_info json>\n\n# scene/sequence/smplx_local/<frame>.pkl\n{\"orient\": tensor(3), \"trans\": tensor(3), \"latent\": tensor(32)}  # VPoser latent, decode to SMPL-X"
+  },
+  "samples": [
+    {
+      "kind": "image",
+      "src": "https://raw.githubusercontent.com/y-zheng18/GIMO/main/assets/dataset_overview.jpg",
+      "caption": "Dataset overview: ego views, gaze, SMPL-X motion and scanned scenes",
+      "credit": "github.com/y-zheng18/GIMO"
+    },
+    {
+      "kind": "image",
+      "src": "https://raw.githubusercontent.com/y-zheng18/GIMO/main/assets/demo.gif",
+      "caption": "Demo clip: body motion and gaze rendered inside a scanned scene",
+      "credit": "github.com/y-zheng18/GIMO"
+    }
+  ],
+  "verifiedAt": "2026-10-23"
+}

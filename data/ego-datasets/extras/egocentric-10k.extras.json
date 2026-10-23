@@ -1,0 +1,48 @@
+{
+  "name": "Egocentric-10K",
+  "tagline": "10,000 h of head-mounted 1080p video from 2,153 workers in 85 factories (192,900 clips); raw footage plus per-worker fisheye intrinsics.",
+  "links": {
+    "project": "https://huggingface.co/datasets/builddotai/Egocentric-10K",
+    "paper": null,
+    "huggingface": "https://huggingface.co/datasets/builddotai/Egocentric-10K",
+    "github": null,
+    "download": "https://huggingface.co/datasets/builddotai/Egocentric-10K"
+  },
+  "hfDatasetId": "builddotai/Egocentric-10K",
+  "hfViewer": false,
+  "annotations": {
+    "format": "JSON sidecar per MP4 inside WebDataset TAR shards; intrinsics.json per worker",
+    "coverageNote": "No semantic labels in the main corpus; only clip metadata and fisheye intrinsics. A separate 30K-frame evaluation set has Gemini hand-visibility labels.",
+    "types": {
+      "narrations":       { "present": false, "note": null },
+      "action_labels":    { "present": false, "note": null },
+      "object_boxes":     { "present": false, "note": null },
+      "segmentation":     { "present": false, "note": null },
+      "hand_pose":        { "present": false, "note": null },
+      "body_pose":        { "present": false, "note": null },
+      "object_pose":      { "present": false, "note": null },
+      "gaze":             { "present": false, "note": null },
+      "camera_pose":      { "present": false, "note": "Kannala-Brandt fisheye intrinsics only; no extrinsics/trajectory" },
+      "depth":            { "present": false, "note": null },
+      "scene_3d":         { "present": false, "note": null },
+      "audio_transcript": { "present": false, "note": "No audio recorded" },
+      "qa_language":      { "present": false, "note": null }
+    },
+    "sample": "{\n  \"factory_id\": \"factory_002\",\n  \"worker_id\": \"worker_002\",\n  \"video_index\": 0,\n  \"duration_sec\": 1200.0,\n  \"width\": 1920,\n  \"height\": 1080,\n  \"fps\": 30.0,\n  \"size_bytes\": 599697350,\n  \"codec\": \"h265\"\n}"
+  },
+  "samples": [
+    {
+      "kind": "image",
+      "src": "https://cdn-uploads.huggingface.co/production/uploads/690d75303df78b892c337cd4/sFme7NIwDDD4lrNrg37yI.png",
+      "caption": "Teaser from the dataset card: head-mounted views of factory work",
+      "credit": "huggingface.co/datasets/builddotai/Egocentric-10K"
+    },
+    {
+      "kind": "video",
+      "src": "https://cdn-uploads.huggingface.co/production/uploads/690d75303df78b892c337cd4/lvA-v9UG-Xs77rd4JImJl.mp4",
+      "caption": "Dataset-card preview reel of factory-floor footage",
+      "credit": "huggingface.co/datasets/builddotai/Egocentric-10K"
+    }
+  ],
+  "verifiedAt": "2026-10-23"
+}

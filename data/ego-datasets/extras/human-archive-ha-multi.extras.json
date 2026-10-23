@@ -1,0 +1,42 @@
+{
+  "name": "Human Archive (HA-Multi)",
+  "tagline": "36-episode sample (3.9 h, 11 household tasks): 6 synced cameras, 256-taxel tactile gloves on both hands, 8 IMUs, LeRobot v3; full set sold.",
+  "links": {
+    "project": "https://www.humanarchive.ai/",
+    "paper": null,
+    "huggingface": null,
+    "github": "https://github.com/huggingface/lerobot",
+    "download": "https://www.humanarchive.ai/contact.html"
+  },
+  "hfDatasetId": null,
+  "hfViewer": false,
+  "annotations": {
+    "format": "LeRobot v3: Parquet (data/, meta/episodes, meta/tasks), JSON (meta/info.json, stats.json), H.264 MP4 per camera",
+    "coverageNote": "All 36 episodes carry tactile, IMU and a task label at 30 fps (<33 ms alignment). The HF repo humanarchive/HA-Multi-Samples now returns 401 (withdrawn).",
+    "types": {
+      "narrations":       { "present": false, "note": null },
+      "action_labels":    { "present": true,  "note": "One task label per episode (11 tasks: cleaning, cooking, ironing, folding...)" },
+      "object_boxes":     { "present": false, "note": null },
+      "segmentation":     { "present": false, "note": null },
+      "hand_pose":        { "present": true,  "note": "Glove IMU quaternion + per-finger bend derived from 256 taxels (no joints)" },
+      "body_pose":        { "present": false, "note": "8 upper-body IMUs (accel/gyro) but no skeleton/SMPL" },
+      "object_pose":      { "present": false, "note": null },
+      "gaze":             { "present": false, "note": null },
+      "camera_pose":      { "present": false, "note": "Intrinsics + 74.95 mm stereo baseline published; no trajectory" },
+      "depth":            { "present": true,  "note": "Head-mounted 1280x720 stereo pair for depth reconstruction (no depth maps)" },
+      "scene_3d":         { "present": false, "note": null },
+      "audio_transcript": { "present": false, "note": "No audio in any MP4" },
+      "qa_language":      { "present": false, "note": null }
+    },
+    "sample": "# data/chunk-000/file-000.parquet columns (per frame, 30 fps), from the dataset card\nepisode_index, timestamp,\nobservation.tactile.left (256,), observation.tactile.right (256,),\nobservation.tactile.left_glove_imu (12,), observation.tactile.right_glove_imu (12,),\nobservation.imu.head (9,), observation.imu.chest (6,),\nobservation.imu.left_bicep (6,), observation.imu.right_bicep (6,),\nobservation.imu.left_forearm (6,), observation.imu.right_forearm (6,),\nobservation.imu.left_hand (4,), observation.imu.right_hand (4,)\n# meta/episodes: episode 0 = Cooking, Kitchen, 26,469 frames, 14.7 min"
+  },
+  "samples": [
+    {
+      "kind": "image",
+      "src": "https://cdn-uploads.huggingface.co/production/uploads/69cbab90907c9d6af1c0361c/JjT0LLTOyAbyoE9QgJak5.png",
+      "caption": "Header image from the (archived) HA-Multi-Samples dataset card",
+      "credit": "huggingface.co (humanarchive)"
+    }
+  ],
+  "verifiedAt": "2026-10-23"
+}
