@@ -1,15 +1,7 @@
-# Scorecard backdrop credits
+# Scorecard asset credits
 
-The scorecard background is **procedurally generated** — there are no photographic, video or
-third-party media assets in this directory or hotlinked from the page.
-
-| Layer | How it is made | Where |
-| --- | --- | --- |
-| Aurora gradient mesh | Four blurred `radial-gradient` blobs drifting on `transform` keyframes (38–52 s, alternate) | `index.html` → `.sky .aurora` |
-| Radar motif | Inline SVG of concentric pentagons + spokes (the same five-axis geometry as the score-profile radar chart), rotating once every 300 s | `index.html` → `.sky .motif` |
-| Film grain | Inline SVG `feTurbulence` tile (data URI, ~600 bytes) at 6–10 % opacity | `index.html` → `.grain` |
-
-All three layers are static under `prefers-reduced-motion: reduce`. Added weight: ~0 KB of media.
+The page uses no photographic, video or decorative media assets: the background is a plain
+colour (`--c-bg`, white by default, `#0f1115` in the dark theme chosen with the nav toggle).
 
 Fonts are loaded from Google Fonts under the SIL Open Font License 1.1:
 
