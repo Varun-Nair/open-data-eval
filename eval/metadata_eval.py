@@ -202,15 +202,15 @@ PAPER_METADATA = {
     },
     "HD-EPIC": {
         # arXiv 2502.04144 (CVPR 2025)
-        "capture_device": "GoPro (EPIC-KITCHENS family; specific Hero model not confirmed in HD-EPIC paper)",
-        "calibration_tier": None,               # not confirmed; paper mentions Aria MPS but device is GoPro family; ambiguous
-        "calibration_notes": "Not provided in HD-EPIC. EPIC-Fields (NeurIPS 2023) provides retroactive COLMAP calibration as a separate companion dataset.",
-        "lens_type": "rectilinear",             # inferred from EPIC-KITCHENS family (GoPro linear mode)
-        "fov_degrees": 94,                      # inferred
-        "resolution_override": None,            # catalog: "1920x1080 (assumed; EPIC-KITCHENS family standard)" — parses correctly
-        "fps_override": None,
+        "capture_device": "Project Aria Gen 1 glasses (Profile 28: 1408×1408 RGB at 30 fps, 2 SLAM cameras at 30 fps, eye tracking at 60 fps, 7 microphones)",
+        "calibration_tier": 0.85,               # Aria device calibration + MPS per-frame poses shipped; no separate validation reported (same tier as EgoLife)
+        "calibration_notes": "Release ships per-video static Aria device calibration (camera intrinsics with the Aria FisheyeRadTanThinPrism model, sensor-to-device extrinsics) and per-frame device-to-world poses from Aria MPS multi-video SLAM, as intermediate data aligned to the MP4s (hd-epic-annotations README); raw VRS files with factory calibration are also in the data.bris release. 3 of 156 videos use COLMAP poses manually aligned to the MPS kitchen (paper Supp. B.4). No separate calibration validation reported.",
+        "lens_type": "fisheye",                 # Aria RGB camera
+        "fov_degrees": 110,                     # Aria RGB 110° FOV
+        "resolution_override": "1408x1408",     # paper Sec. 3 + Supp. B: Profile 28, 1408×1408 RGB
+        "fps_override": 30,                     # paper: 30 FPS RGB; MP4s exported at 30 FPS (Supp. B)
         "annotation_coverage": None,            # 263 annotations/min but coverage fraction not stated
-        "annotation_notes": "263 annotations/min (densest in EPIC family). Digital kitchen twins. Coverage fraction not stated in paper.",
+        "annotation_notes": "263 annotations/min (densest in EPIC family). Digital kitchen twins. Coverage fraction not stated in paper. The data.bris release also ships, for every video, Aria MPS per-frame camera poses, gaze and wrist/palm positions (wrist_and_palm_poses.csv; no finger joints).",
         "download_size_gb": 2300,              # catalog: 2.3 TiB
         "geo_locations": 1,                    # UK (Bristol area, per EPIC-KITCHENS)
         "arxiv_id": "2502.04144",
